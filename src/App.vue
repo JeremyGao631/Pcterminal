@@ -1,24 +1,24 @@
 <template>
   <div id="app">
       <el-container>
-    <el-header>
-      <tabBar/>
-    </el-header>
-    <el-main>
-            <div class="main-content">
-                <div class="main-wrap">
+        <el-header>
+          <tabBar/>
+        </el-header>
+        <el-main>
+          <div class="main-content">
+              <div class="main-wrap">
                     <!-- <router-view class="main" /> -->
-                    <keep-alive>
-                        <router-view v-if="$route.meta.keepAlive" class="main" />
+                <keep-alive>
+                  <router-view v-if="$route.meta.keepAlive" class="main" />
                     </keep-alive>
-                    <router-view v-if="!$route.meta.keepAlive" class="main" />
-                </div>
+                  <router-view v-if="!$route.meta.keepAlive" class="main" />
+              </div>
             </div>
-    </el-main>
-    <el-footer>
-      <footBar />
-    </el-footer>
-  </el-container>
+        </el-main>
+        <el-footer>
+          <footBar />
+        </el-footer>
+      </el-container>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
