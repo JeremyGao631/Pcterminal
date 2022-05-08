@@ -7,7 +7,7 @@
             <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
                 <el-menu-item text-color="#151515" index="1">HOME</el-menu-item>
                 <el-menu-item index="2">ONLINE SHOWROOM</el-menu-item>
-                <el-menu-item index="3">ELL YOUR CAR</el-menu-item>
+                <el-menu-item index="3">SELL YOUR CAR</el-menu-item>
                 <el-menu-item index="4">ABOUT</el-menu-item>
                 <el-menu-item index="5">CONTACT</el-menu-item>
             </el-menu>
