@@ -50,8 +50,8 @@ export default {
     line-height: 1rem;
   }
   .el-footer {
-    text-align: center;
-    line-height: 1rem;
+    text-align: left;
+    padding: 0;
   }
   .main-content {
     flex: 1;
@@ -60,11 +60,10 @@ export default {
   }
   .main-wrap {
     flex: 1;
-    overflow-y: scroll;
   }
   .el-main {
     text-align: center;
-    line-height: 60rem;
+    padding: 0;
   }
   
   body > .el-container {
