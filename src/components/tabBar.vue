@@ -1,7 +1,7 @@
 <template>
     <div class="jj">
         <div>
-            <img class="img" src="../assets/homeLogo.png" alt="">
+            <img class="img" src="../assets/images/components/TopBar.png" alt="">
         </div>
         <!-- text-color="#fff"
               active-text-color="#ffd04b"-->
