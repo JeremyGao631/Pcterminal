@@ -4,6 +4,7 @@ import 'babel-polyfill'
 import router from './router'
 import './plugins/element.js'
 import Router from 'vue-router'
+import "@/assets/css/test.css"
 // 提交测试
 Vue.config.productionTip = false
 

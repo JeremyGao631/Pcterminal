@@ -41,8 +41,8 @@ const baseRoute = [
     }
   },
   {
-    // sell your car
-    path: '/ell',
+    // ell your car
+    path: '/sell',
     name: 'sellCar',
     component: () => import('@/views/home/sellCar.vue'),
     meta: {
