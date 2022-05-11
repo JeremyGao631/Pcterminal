@@ -41,10 +41,10 @@ const baseRoute = [
     }
   },
   {
-    // ell your car
+    // sell your car
     path: '/ell',
-    name: 'ellCar',
-    component: () => import('@/views/home/ellCar.vue'),
+    name: 'sellCar',
+    component: () => import('@/views/home/sellCar.vue'),
     meta: {
       keepAlive: false,
     }

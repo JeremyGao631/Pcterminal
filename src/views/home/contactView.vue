@@ -221,6 +221,7 @@ export default({
         .img {
             width: 100%;
             height: 300px;
+            margin-bottom:-4px;
         }
         .location {
             margin-top:-100px;
