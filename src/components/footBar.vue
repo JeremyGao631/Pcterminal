@@ -48,7 +48,7 @@
         this.$router.push('/showRoom')
       },
       sell() {
-        this.$router.push('/ell')
+        this.$router.push('/sell')
       },
       about() {
         this.$router.push('/about')
