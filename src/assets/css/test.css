@@ -1,0 +1,13 @@
+@font-face{
+  font-family: 'DINCondensed-Bold';
+  src: url('../../assets/css/DINCondensedBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'PingFangSC-Semibold';
+  src: url('../../assets/css/PingFangSCSemibold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
