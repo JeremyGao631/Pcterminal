@@ -64,8 +64,8 @@ export default({
         }
         .text { 
           position:absolute;
-          top:162px;
-          left:145px;
+          top: 162px;
+          left: 145px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -112,14 +112,14 @@ export default({
               .contentView {
                 display:flex;
                 flex-direction: column;
-                margin-top:44px;
+                margin-top: 44px;
                 margin-left: 237px;
                 .yourCar {
                   width: 220px;
                   height: 32px;
                   font-size: 20px;
                   text-align: left;
-                  margin-bottom:10px;
+                  margin-bottom: 10px;
                   font-family: DINCondensed-Bold, DINCondensed;
                   font-weight: bold;
                   color: #212020;
@@ -136,7 +136,7 @@ export default({
                   line-height: 22px;
                 }
               }
-          }
+            }
           }
         }
     }

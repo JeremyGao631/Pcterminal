@@ -359,20 +359,20 @@ export default {
             text-align: center;
             color: #FFFFFF;
             line-height: 130px;
-            margin-left:20px;
-            margin-right:50px;
+            margin-left: 20px;
+            margin-right: 50px;
         }
         .el-icon-my-right {
             background: url('../../assets/images/home/right.png') no-repeat;
             background-size: cover;
             display:inline-block;
-            height:16px;
-            width:16px;
+            height: 16px;
+            width: 16px;
             margin-right: -16px;
         }
     }
     .middle {
-        padding-bottom:200px;
+        padding-bottom: 200px;
         .title {
             width: 568px;
             height: 130px;
@@ -382,27 +382,28 @@ export default {
             color: #151515;
             line-height: 130px;
             letter-spacing: 2px;
-            margin: 114px 0 0 150px;
+            margin: 114px 0 0 240px;
             text-align:left;
         }
         .show {
             display: flex;
             align-items: top;
             justify-content: center;
-            margin:31px 100px 0 100px;
+            margin: 31px 120px 0 120px;
             .left {
-                width:310px;
-                margin-right:20px;
+                width: 210px;
+                margin-right: 20px;
                 display:inline-block;
                 vertical-align: top;
+                padding-left: 130px;
                 .choose {
                    position: relative;
-                   border-top:1px solid #151515;
+                   border-top: 1px solid #151515;
                    .chooseleft {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -412,7 +413,7 @@ export default {
                         position: absolute;
                         right: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -423,7 +424,7 @@ export default {
                     text-align: left;
                     margin-top: 60px;
                     div:nth-child(n+1) {
-                        margin-top:10px;
+                        margin-top: 10px;
                     }
                     .el-checkbox {
                         /deep/ .el-checkbox__label {
@@ -437,7 +438,7 @@ export default {
                     }
                 }
                 .viewall {
-                    margin-top:10px;
+                    margin-top: 10px;
                     .viewleft {
                         font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
@@ -451,21 +452,21 @@ export default {
                         height: 5px;
                         font-weight: bold;
                         float:left;
-                        padding-left:5px;
+                        padding-left: 5px;
                     }
                 }
                 .newviewall {
-                    margin-top:50px;
+                    margin-top: 50px;
                 }
                 .viewmodel {
-                    margin-top:20px;
+                    margin-top: 20px;
                     position: relative;
                     border-top:1px solid #151515;
                     .modelleft {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -475,7 +476,7 @@ export default {
                         position: absolute;
                         right: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -483,14 +484,14 @@ export default {
                    } 
                 }
                 .viewtr {
-                    margin-top:20px;
+                    margin-top: 20px;
                     position: relative;
-                    border-top:1px solid #151515;
+                    border-top: 1px solid #151515;
                     .trleft {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -500,7 +501,7 @@ export default {
                         position: absolute;
                         right: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -511,14 +512,14 @@ export default {
                     margin-top:60px;
                 }
                 .viewyear {
-                    margin-top:20px;
+                    margin-top: 20px;
                     position: relative;
-                    border-top:1px solid #151515;
+                    border-top: 1px solid #151515;
                     .yearleft {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -528,7 +529,7 @@ export default {
                         position: absolute;
                         right: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -536,18 +537,18 @@ export default {
                    } 
                 }
                 .block {
-                    margin-top:60px;
+                    margin-top: 60px;
                     padding:0 20px;
                     /deep/  .el-slider__bar {
                         background-color:#151515;
                     }
                     /deep/  .el-slider__button {
                         background-color:#151515;
-                        border:2px solid #151515;
+                        border: 2px solid #151515;
                     }
                 }
                 .showyear {
-                    margin:10px 10px 100px 10px;
+                    margin: 10px 10px 100px 10px;
                     position: relative;
                     .minyear {
                         line-height: 48px;
@@ -575,17 +576,17 @@ export default {
                     }
                 }
                 .newviewyear {
-                    margin-top:60px;
+                    margin-top: 60px;
                 }
                 .viewprice {
-                    margin-top:60px;
+                    margin-top: 60px;
                     position: relative;
-                    border-top:1px solid #151515;
+                    border-top: 1px solid #151515;
                     .priceleft {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -595,7 +596,7 @@ export default {
                         position: absolute;
                         right: 0;
                         top: 20px;
-                        font-size:20px;
+                        font-size: 20px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -632,11 +633,11 @@ export default {
                 }
             }
             .right {
-                width:890px;
-                margin-left:20px;
+                width: 990px;
+                margin-left: 20px;
                 display:inline-block;
                 .texttitle {
-                    height:48px;
+                    height: 48px;
                     .titleleft {
                         float: left;
                         span {
@@ -647,7 +648,7 @@ export default {
                             color: #151515;
                             line-height: 48px;
                             letter-spacing: 1px;
-                            margin-right:10px;
+                            margin-right: 10px;
                         }
                         /deep/ .el-input__inner {
                             background-color:#F4F6F8;
@@ -662,7 +663,7 @@ export default {
                             font-weight: 300;
                             color: #151515;
                             line-height: 48px;
-                            margin-right:10px;
+                            margin-right: 10px;
                         }
                         .textright {
                             height: 30px;
@@ -676,30 +677,30 @@ export default {
                     }
                 }
                 .showimg {
-                    margin-top:40px;
+                    margin-top: 40px;
                     .textcard {
                         float:left;
                         margin-right: 35px;
-                        padding-bottom:60px;
+                        padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
-                            margin-left:3px;
+                            margin-left: 3px;
                         }
                         .imgcard {
-                            height:191px;
-                            width:275px;
+                            height: 191px;
+                            width: 275px;
                             .img {
                                width:100%; 
                             }
                         }
                         .cardtitle {
                             text-align:left;
-                            padding-top:30px;
-                            padding-bottom:20px;
-                            padding-left:19px;
+                            padding-top: 30px;
+                            padding-bottom: 20px;
+                            padding-left: 19px;
                             .yeartype, .kind  {
                                 font-weight:bold;
-                                font-size:25px;
+                                font-size: 25px;
                                 color: #212020;
                             }
                         }

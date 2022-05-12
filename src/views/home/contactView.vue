@@ -148,11 +148,11 @@ export default({
                     line-height: 100px;
                 }
                 .input-view {
-                    margin-left:150px;
+                    margin-left: 150px;
                     display: flex;
                     .el-input {
                         font-size: 12px;
-                        width:200px;
+                        width: 200px;
                         margin: 10px 20px;
                     }
                     .el-textarea{
@@ -162,12 +162,12 @@ export default({
                     }
                 }
                 .el-button {
-                    margin-top:25px;
-                    margin-left:153px;
+                    margin-top: 25px;
+                    margin-left: 153px;
                     width: 144px;
                     font-size: 12px;
                     height: 40px;
-                    border-radius:0;
+                    border-radius: 0;
                     color:#fff;
                     background-color: #151515;
                 }

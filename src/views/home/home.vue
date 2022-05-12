@@ -364,7 +364,7 @@ export default {
     font-weight: bold;
     color: #FFFFFF;
     line-height: 36px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
   }
   .content-text {
     font-size: 120px;
@@ -398,15 +398,15 @@ export default {
     text-align: center;
     color: #FFFFFF;
     line-height: 130px;
-    margin-left:20px;
-    margin-right:50px;
+    margin-left: 20px;
+    margin-right: 50px;
   }
   .el-icon-my-right {
     background: url('../../assets/images/home/right.png') no-repeat;
     background-size: cover;
     display:inline-block;
-    height:16px;
-    width:16px;
+    height: 16px;
+    width: 16px;
     margin-right: -16px;
   }
  .middle {
@@ -420,18 +420,18 @@ export default {
       text-align:left;
     }
     .texttitle {
-      padding-top:78px;
-      border-bottom:2px solid #12100f;
-      margin-left:150px;
-      margin-right:150px;
-      height:35px;
+      padding-top: 78px;
+      border-bottom: 2px solid #12100f;
+      margin-left: 150px;
+      margin-right: 150px;
+      height: 35px;
       font-family: DINCondensed-Bold;
         .left {
           float: left;
           .btn_anniu {
             margin-right: 20px;
             padding: 10px 25px;
-            font-size:22px;
+            font-size: 22px;
             color: #909090;
           }
           .newStyle{
@@ -451,17 +451,17 @@ export default {
         }
     }
     .textcontent {
-      margin-left:150px;
-      margin-right:150px;
+      margin-left: 150px;
+      margin-right: 150px;
       padding-top: 60px;
 
       .textcard {
         float:left;
-        margin-right: 34px;
-        padding-bottom:60px;
+        margin-right: 30px;
+        padding-bottom: 60px;
           span {
             font-family: DINCondensed-Bold;
-            margin-left:3px;
+            margin-left: 3px;
           }
       }
       .clearfix {
@@ -477,8 +477,8 @@ export default {
     background: url('../../assets/images/home/yellowright.png') no-repeat;
     background-size: cover;
     display:inline-block;
-    height:16px;
-    width:16px;
+    height: 16px;
+    width: 16px;
     margin-right: -16px;
   }
 

@@ -66,16 +66,16 @@
     flex-wrap: nowrap;
     align-items: center;
     .left {
-        margin-left:200px;
+        margin-left: 200px;
       .img {
         margin-right: 255px;
-        margin-top:10px;
+        margin-top: 10px;
         width: 88px;
         height: 54px;
       }
       .bottom {
-        padding-top:10px;
-        padding-bottom:10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         .bottom-logo {
           margin-right: 25px;
           width: 20px;
@@ -96,17 +96,17 @@
     .line {
       width: 260px;
       height: 200px;
-      margin-top:45px;
+      margin-top: 45px;
       border-left: 1px solid #313030
     }
     .right {
       text-align: left;
-      padding-top:80px;
+      padding-top: 80px;
       .guide {
         width: 61px;
         height: 30px;
         font-size: 20px;
-        padding-bottom:10px;
+        padding-bottom: 10px;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
         color: #F7941E;
@@ -114,7 +114,7 @@
       }
       .components {
         width: 39px;
-        padding-bottom:15px;
+        padding-bottom: 15px;
         height: 20px;
         font-size: 12px;
         font-family: DINCondensed-Bold, DINCondensed;
@@ -124,7 +124,7 @@
       }
       .component {
         width: 39px;
-        padding-bottom:43px;
+        padding-bottom: 43px;
         height: 20px;
         font-size: 12px;
         font-family: DINCondensed-Bold, DINCondensed;
@@ -135,12 +135,12 @@
     }
     .among {
       text-align: left;
-      padding-left:110px;
-      padding-top:15px;
+      padding-left: 110px;
+      padding-top: 15px;
       .guide {
         width: 61px;
         height: 30px;
-        padding-bottom:10px;
+        padding-bottom: 10px;
         font-size: 20px;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
@@ -149,7 +149,7 @@
       }
       .components {
         width: 39px;
-        padding-bottom:15px;
+        padding-bottom: 15px;
         height: 20px;
         font-size: 12px;
         font-family: DINCondensed-Bold, DINCondensed;
