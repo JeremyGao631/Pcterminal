@@ -56,7 +56,7 @@
           </div>
         </div>
         <div v-show='1===number'>
-          <div class="textcard" v-for="index in information" :key="index">
+          <div class="textcard" v-for="index in information1" :key="index">
             <div class="imgcard" style="height:191px;width:275px;">
               <img :src="index.url" style="height:100%;width:100%;" />
             </div>
@@ -87,6 +87,29 @@
     <!--底部内容展示-->
     <div class="bottom">
       <div class="title">OUR SERVICES</div> 
+      <div class="serviceinfo" style="width:100%;display: flex;align-items: center;justify-content: center;padding-top:61px;padding-bottom:200px;">
+        <div class="infotext" style="width: 320px;height: 468px;background: #FFFFFF;margin-right:84px;">
+          <img src="../../assets/images/home/onlineshowroom.png" style="width: 320px;height:200px;" /> 
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;width:320px;height: 268px;inline-height:268px;">
+            <span style="font-family:DINCondensed-Bold;font-weight: bold;color: #212020;font-size:30px;">Online Showroom</span><br />
+            <span style="font-family:PingFangSC-Semibold;font-weight: 400;color: #BEBEBE;font-size:12px;margin:0 50px 45px 45px;">Browse our hand-selected range of elite makes and models, including rare European, luxury and sports vehicles.</span>
+          </div>
+        </div> 
+        <div class="infotext" style="width: 320px;height: 468px;background: #FFFFFF;margin-right:84px;">
+          <img src="../../assets/images/home/sellyourcar.png" style="width: 320px;height:200px;" />
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;width:320px;height: 268px;inline-height:268px;">
+            <span style="font-family:DINCondensed-Bold;font-weight: bold;color: #212020;font-size:30px;">Sell Your Car</span><br />
+            <span style="font-family:PingFangSC-Semibold;font-weight: 400;color: #BEBEBE;font-size:12px;margin:0 50px 45px 45px;">A fair price is your guarantee with specialist valuations and quality service to make the process simple.</span>
+          </div>
+        </div>
+        <div class="infotext" style="width: 320px;height: 468px;background: #FFFFFF;">
+          <img src="../../assets/images/home/visitourstore.png" style="width: 320px;height:200px;" />
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;width:320px;height: 268px;inline-height:268px;">
+            <span style="font-family:DINCondensed-Bold;font-weight: bold;color: #212020;font-size:30px;">Visit Our Store</span><br />
+            <span style="font-family:PingFangSC-Semibold;font-weight: 400;color: #BEBEBE;font-size:12px;margin:0 50px 45px 45px;">Visit our store to see latest stock and xperience the unique virtual race car driving, or speak with our experienced team.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -186,6 +209,96 @@ export default {
                 {
                   url: require('../../assets/images/home/8.png'),
                   year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                }
+      ],
+      information1: [
+                {
+                  url: require('../../assets/images/home/1.jpg'),
+                  year:'1111',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl.Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/2.jpg'),
+                  year:'2222',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/3.jpg'),
+                  year:'3333',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/4.jpg'),
+                  year:'4444',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/5.jpg'),
+                  year:'5555',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/6.jpg'),
+                  year:'6666',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/7.jpg'),
+                  year:'7777',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'8888',
                   type: 'MERCEDES-BENZ',
                   kind: 'C63S AMG',
                   price: '$149000.00',
