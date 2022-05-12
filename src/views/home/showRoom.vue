@@ -14,10 +14,10 @@
         </div>
         <div class="middle">
             <div class="title">START A NEW SEARCH</div>
-            <div class="show">
+            <div class="show" >
                 <div class="left">
                     <div class="choose">
-                        <div class="chooseleft">MAKE</div>
+                        <div class="chooseleft">Make</div>
                         <div class="chooseright" @click="testshow()" v-show="show">-</div>
                         <div class="chooseright" @click="testshow()" v-show="!show">+</div>
                         <div style="clear:both;"></div>
@@ -42,32 +42,33 @@
                     </div>
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
-                        <div class="viewright">∨∧</div>
+                        <div class="viewright" @click="testshow5()" v-show="show5">∨</div>
+                        <div class="viewright" @click="testshow5()" v-show="!show5">∧</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
                     <!--model-->
-                    <div class="viewmodel">
+                    <div class="viewmodel" v-show="show5">
                         <div class="modelleft">Model</div>
                         <div class="modelright" @click="testshow1()" v-show="show1">-</div>
                         <div class="modelright" @click="testshow1()" v-show="!show1">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show1">
+                    <div class="choosetext" v-show="show1 && show5">
                         <div>
                             <el-checkbox v-model="checked6">any</el-checkbox>
                         </div>
                     </div>
                     <!--tr-->
-                    <div class="viewtr" :class="{ newviewtr:!show1}">
+                    <div class="viewtr" :class="{ newviewtr:!show1}" v-show="show5">
                         <div class="trleft">Transmission</div>
                         <div class="trright" @click="testshow2()" v-show="show2">-</div>
                         <div class="trright" @click="testshow2()" v-show="!show2">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show2">
+                    <div class="choosetext" v-show="show2 && show5">
                         <div>
                             <el-checkbox v-model="checked7">Auto</el-checkbox>
                         </div>
@@ -76,14 +77,14 @@
                         </div>
                     </div>
                     <!--year-->
-                    <div class="viewyear" :class="{ newviewyear:!show2}">
+                    <div class="viewyear" :class="{ newviewyear:!show2}" v-show="show5">
                         <div class="yearleft">Year</div>
                         <div class="yearright" @click="testshow3()" v-show="show3">-</div>
                         <div class="yearright" @click="testshow3()" v-show="!show3">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show3">
+                    <div class="block" v-show="show3 && show5">
                         <el-slider
                         v-model="value"
                         range
@@ -93,19 +94,19 @@
                         @change="move(value)">
                         </el-slider>
                     </div>
-                    <div class="showyear" v-show="show3">
+                    <div class="showyear" v-show="show3 && show5">
                         <div class="minyear">2008</div>
                         <div class="maxyear">2022</div>
                     </div>
                     <!--price-->
-                    <div class="viewprice" >
+                    <div class="viewprice" v-show="show5">
                         <div class="priceleft">Price</div>
                         <div class="priceright" @click="testshow4()" v-show="show4">-</div>
                         <div class="priceright" @click="testshow4()" v-show="!show4">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show4">
+                    <div class="block" v-show="show4 && show5">
                         <el-slider
                         v-model="value"
                         range
@@ -115,12 +116,63 @@
                         @change="move(value)">
                         </el-slider>
                     </div>
-                    <div class="showprice" v-show="show4">
+                    <div class="showprice" v-show="show4 && show5">
                         <div class="minprice">$0</div>
                         <div class="maxprice">$190303</div>
                     </div>
                 </div>
-                <div class="right">2222</div>
+                <div style="clear:both;"></div>
+                <div class="right">
+                    <div class="texttitle">
+                        <div class="titleleft">
+                            <span >SORT BY</span>
+                            <el-select v-model="value" placeholder="Date:High To Low">
+                                <el-option
+                                v-for="item in options"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                                </el-option>
+                            </el-select>
+                        </div>
+                        <div class="titleright">
+                            <span class="textleft">AVAILIABLE</span>
+                            <span class="textright">55 Cars</span>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="showimg">
+                        <div class="textcard" v-for="index in information" :key="index">
+                            <div class="imgcard" style="height:171px;width:272px;" >
+                                <img :src="index.url"  style="height:191px"/>
+                            </div>
+                            <div class="cardtitle" >
+                                <span class="yeartype">{{index.year}} {{index.type}}</span>
+                                <br />
+                                <span class="kind" >{{index.kind}}</span>
+                            </div>
+                            <div style="padding-bottom:20px;display: flex;align-items: center;justify-content: space-between;padding-left:19px;">
+                                <span style="font-weight:bold;font-size: 20px;color: #212020">{{index.price}}</span>
+                                <span style="font-size: 16px;color: #4A4A4A;line-height: 19px;margin-top:3px;margin-left:5px;font-family:DINCondensed-Bold;font-weight: bold;opacity:0.7;">{{index.info}}</span>
+                            </div>
+                            <div style="border-bottom:1px solid #979797;margin-left:19px;opacity:0.1;"></div>
+                            <div style="padding-top:20px;display: flex;align-items: center;justify-content: left;padding-left:19px;">
+                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;margin-right:25px;color: #4A4A4A;opacity:0.7;">{{index.distance}}</span>
+                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;margin-right:25px;color: #4A4A4A;opacity:0.7;">{{index.info1}}</span>
+                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;color: #4A4A4A;opacity:0.7;">{{index.info2}}</span>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <el-pagination
+                        background
+                        layout="prev, pager, next"
+                        :total="100"
+                        page-size="9"
+                        prev-text="Previous"
+                        next-text="Next">
+                    </el-pagination>
+                </div>
             </div>
         </div>
     </div>
@@ -138,6 +190,7 @@ export default {
         show2:true,
         show3:true,
         show4:true,
+        show5:true,
         checked1:false,
         checked2:false,
         checked3:false,
@@ -146,6 +199,96 @@ export default {
         checked6:false,
         checked7:false,
         checked8:false,
+        information: [
+                {
+                  url: require('../../assets/images/home/1.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl.Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/2.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/3.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/4.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/5.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/6.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/7.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                }
+      ]
     }
   },
   methods: {
@@ -163,6 +306,9 @@ export default {
     },
     testshow4(){
         this.show4 = !this.show4;
+    },
+    testshow5(){
+        this.show5 = !this.show5;
     },
     move(value){
         return value;
@@ -241,11 +387,14 @@ export default {
         }
         .show {
             display: flex;
-            align-items: center;
+            align-items: top;
             justify-content: center;
-            margin:31px 150px 0 150px;
+            margin:31px 100px 0 100px;
             .left {
                 width:310px;
+                margin-right:20px;
+                display:inline-block;
+                vertical-align: top;
                 .choose {
                    position: relative;
                    border-top:1px solid #151515;
@@ -275,6 +424,16 @@ export default {
                     margin-top: 60px;
                     div:nth-child(n+1) {
                         margin-top:10px;
+                    }
+                    .el-checkbox {
+                        /deep/ .el-checkbox__label {
+                            height: 22px;
+                            font-size: 16px;
+                            font-family: PingFangSC-Light, PingFang SC;
+                            font-weight: 300;
+                            color: #151515;
+                            line-height: 22px
+                        }
                     }
                 }
                 .viewall {
@@ -474,6 +633,87 @@ export default {
             }
             .right {
                 width:890px;
+                margin-left:20px;
+                display:inline-block;
+                .texttitle {
+                    height:48px;
+                    .titleleft {
+                        float: left;
+                        span {
+                            height: 48px;
+                            font-size: 20px;
+                            font-family: DINCondensed-Bold, DINCondensed;
+                            font-weight: bold;
+                            color: #151515;
+                            line-height: 48px;
+                            letter-spacing: 1px;
+                            margin-right:10px;
+                        }
+                        /deep/ .el-input__inner {
+                            background-color:#F4F6F8;
+                        }
+                    }
+                    .titleright {
+                        float: right;
+                        .textleft {
+                            height: 22px;
+                            font-size: 16px;
+                            font-family: PingFangSC-Light, PingFang SC;
+                            font-weight: 300;
+                            color: #151515;
+                            line-height: 48px;
+                            margin-right:10px;
+                        }
+                        .textright {
+                            height: 30px;
+                            font-size: 20px;
+                            font-family: DINCondensed-Bold, DINCondensed;
+                            font-weight: bold;
+                            color: #151515;
+                            line-height: 48px;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+                .showimg {
+                    margin-top:40px;
+                    .textcard {
+                        float:left;
+                        margin-right: 35px;
+                        padding-bottom:60px;
+                        span {
+                            font-family: DINCondensed-Bold;
+                            margin-left:3px;
+                        }
+                        .imgcard {
+                            height:191px;
+                            width:275px;
+                            .img {
+                               width:100%; 
+                            }
+                        }
+                        .cardtitle {
+                            text-align:left;
+                            padding-top:30px;
+                            padding-bottom:20px;
+                            padding-left:19px;
+                            .yeartype, .kind  {
+                                font-weight:bold;
+                                font-size:25px;
+                                color: #212020;
+                            }
+                        }
+                    }
+                    .textcard:nth-child(3), .textcard:nth-child(6), .textcard:nth-child(9) {
+                        margin-right: 0px;
+                    }
+                }
+                /deep/.el-pagination.is-background .btn-next{
+                    min-width: 100px;
+                }
+                /deep/.el-pagination.is-background .btn-prev{
+                    min-width: 100px;
+                }
             }
         }
     }
