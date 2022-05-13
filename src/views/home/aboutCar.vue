@@ -102,8 +102,8 @@ export default({
         }
         .text { 
           position:absolute;
-          top:162px;
-          left:145px;
+          top: 162px;
+          left: 145px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -131,8 +131,8 @@ export default({
             width: 775px;
             height: 100px;
             font-size: 40px;
-            margin-top:65px;
-            margin-bottom:43px;
+            margin-top: 65px;
+            margin-bottom: 43px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #151515;
@@ -156,7 +156,7 @@ export default({
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin:14px 0;
+                    margin: 14px 0;
                     font-size: 20px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
@@ -167,7 +167,7 @@ export default({
                     height: 120px;
                     text-align: left;
                     font-size: 12px;
-                    padding-bottom:20px;
+                    padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;
@@ -180,7 +180,7 @@ export default({
             flex-wrap: wrap;
             justify-content: center;
             margin-left: 100px;
-            margin-bottom:70px;
+            margin-bottom: 70px;
             .weOffer {
                 display: flex;
                 flex-direction: column;
@@ -194,7 +194,7 @@ export default({
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin-top:18px;
+                    margin-top: 18px;
                     font-size: 18px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
@@ -205,7 +205,7 @@ export default({
                     height: 120px;
                     text-align: left;
                     font-size: 12px;
-                    padding-bottom:20px;
+                    padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;
@@ -220,8 +220,8 @@ export default({
         }
         .ourStory {
             display: flex;
-            margin-left:234px;
-            margin-top:95px;
+            margin-left: 234px;
+            margin-top: 95px;
             .storyImg {
                 width: 521px;
                 height: 322px;

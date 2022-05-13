@@ -159,8 +159,8 @@ export default({
         }
         .text { 
           position:absolute;
-          top:162px;
-          left:145px;
+          top: 162px;
+          left: 145px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -230,7 +230,7 @@ export default({
                   height: 32px;
                   font-size: 22px;
                   text-align: left;
-                  margin-bottom:10px;
+                  margin-bottom: 10px;
                   font-family: DINCondensed-Bold, DINCondensed;
                   font-weight: bold;
                   color: #212020;
@@ -247,7 +247,7 @@ export default({
                   line-height: 22px;
                 }
               }
-          }
+            }
           }
         }
         .bottom {
