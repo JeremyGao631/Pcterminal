@@ -5,8 +5,7 @@ import router from './router'
 import './plugins/element.js'
 import Router from 'vue-router'
 import "@/assets/css/test.css"
-// import 'lib-flexible'
-// import  "amfe-flexible";
+import 'lib-flexible/flexible'
 
 // 提交测试
 Vue.config.productionTip = false

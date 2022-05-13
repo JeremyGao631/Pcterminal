@@ -57,8 +57,8 @@
     flex-wrap: nowrap;
     align-items: flex-end;
     .img {
-      margin-left: 15rem;
-      margin-right: 29rem;
+      margin-left: 15px;
+      margin-right: 29px;
       width: 78px;
       height: 50px;
     }
