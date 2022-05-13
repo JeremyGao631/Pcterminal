@@ -15,7 +15,6 @@
               </div>
             </div>
           </div>
-          <img :src="img.url" alt="">
           <div>
 
           </div>
