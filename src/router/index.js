@@ -50,6 +50,15 @@ const baseRoute = [
     }
   },
   {
+    // car detail
+    path: '/carDetail',
+    name: 'carDetail',
+    component: () => import('@/views/home/carDetail.vue'),
+    meta: {
+      keepAlive: false,
+    }
+  },
+  {
     path: '*', // 未匹配到路由时重定向
     redirect: '/home',
     meta: {
