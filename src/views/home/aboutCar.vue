@@ -100,30 +100,30 @@ export default({
 </script>
 <style lang="less" scoped>
     .contact {
+        width: 100%;
         .imgs {
-            width: 100%;
-            height: 997px;
+            height: 782px;
+            margin: 0 auto;
         }
         .text { 
           position:absolute;
-          top: 220px;
-          left: 200px;
+          top: 192px;
+          left: 186px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 120px;
+            font-size: 100px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            margin-top:20px;
             width: 683px;
             height: 183px;
-            font-size: 55px;
+            font-size: 45px;
             text-align: left;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -135,7 +135,7 @@ export default({
             width: 775px;
             height: 100px;
             font-size: 80px;
-            margin-top: 180px;
+            margin-top: 60px;
             margin-bottom: 43px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -143,16 +143,17 @@ export default({
             line-height: 100px;
         }
         .style {
-            margin-left: 227px;
+            width:83%;
             margin-bottom:160px;
             display: flex;
             flex-wrap: wrap;
+            padding-left:231px;
             justify-content: center;
             .weOffer {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 800px;
+                width: 558px;
                 .imgStyle {
                     width: 74px;
                     height: 71px;
@@ -169,11 +170,11 @@ export default({
                     color: #212020;
                 }
                 .information {
-                    width: 426px;
+                    width: 335px;
                     height: 120px;
                     text-align: left;
-                    font-size: 20px;
-                    padding-bottom: 20px;
+                    font-size: 16px;
+                    padding-bottom: 25px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;
@@ -191,7 +192,7 @@ export default({
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 400px;
+                width: 247px;
                 .imgStyle {
                     width: 36px;
                     height: 38px;
@@ -200,18 +201,18 @@ export default({
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin-top: 38px;
-                    font-size: 40px;
-                    margin-bottom:30px;
+                    margin-top: 20px;
+                    font-size: 20px;
+                    margin-bottom:10px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #212020;
                 }
                 .information {
-                    width: 250px;
+                    width: 185px;
                     height: 120px;
                     text-align: left;
-                    font-size: 20px;
+                    font-size: 12px;
                     padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -227,12 +228,12 @@ export default({
         }
         .visit{
             position:absolute;
-            top: 3461px;
-            left:680px;
+            top: 2848px;
+            left:373px;
             .visitTitle {
                 width: 555px;
                 height: 100px;
-                font-size: 80px;
+                font-size: 65px;
                 text-align: center;
                 padding-left:115px;
                 font-family: DINCondensed-Bold, DINCondensed;
@@ -256,19 +257,18 @@ export default({
             margin-left: 234px;
             margin-top: 95px;
             .storyImg {
-                width: 731px;
-                height: 462px;
-                margin-left:45px;
+                width: 621px;
+                height: 357px;
                 background: #FFFFFF;
             }
             .title {
                 text-align: right;
-                margin-left:200px;
-                margin-top:100px;
+                margin-left:50px;
+                margin-top:50px;
                 .storyTit {
                     width: 344px;
                     height: 100px;
-                    font-size: 80px;
+                    font-size: 65px;
                     padding-left:173px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
@@ -276,9 +276,10 @@ export default({
                     line-height: 100px;
                 }
                 .story {
-                    width: 514px;
+                    width: 456px;
+                    padding-left:56px;
                     height: 168px;
-                    font-size: 18px;
+                    font-size: 16px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;

@@ -130,20 +130,21 @@ export default({
 </script>
 <style lang="less" scoped>
     .contact {
+        width: 100%;
         .imgs {
-            width: 100%;
-            height: 997px;
+            height: 781px;
+            margin: 0 auto;
         }
         .text { 
           position:absolute;
-          top: 220px;
+          top: 200px;
           left: 200px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 120px;
+            font-size: 100px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
@@ -153,7 +154,7 @@ export default({
         .contact-main {
             margin-left: -78px;
             .table {
-                margin: 95px 0 35px 755px;
+                margin: 95px 0 35px 550px;
                 width: 902px;
                 height: 772px;
                 background-color: #f4f6f8;
@@ -193,8 +194,8 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 1258px;
-                left: 210px;
+                top: 1019px;
+                left: 80px;
                 .top {
                     display: flex;
                     .information {
@@ -203,8 +204,8 @@ export default({
                         align-items: center;
                         margin-right: 20px;
                         margin-bottom: 20px;
-                        width: 289px;
-                        height: 306px;
+                        width: 249px;
+                        height: 300px;
                         background: #FFFFFF;
                         box-shadow: 0px 14px 48px 0px rgba(73, 73, 73, 0.07);
                         .img {
@@ -246,9 +247,9 @@ export default({
             margin-top:-100px;
             position: relative;
             top: 305px;
-            right: 68px;
+            right: 48px;
             .border {
-                width: 510px;
+                width: 410px;
                 height: 210px;
             }
             .top {
@@ -256,13 +257,14 @@ export default({
                 align-items: flex-start;
                 flex-direction: row;
                 position: absolute;
-                left: 887px;
+                left: 611px;
                 top: 71px;
                 .logo {
                     width: 78px;
                 }
                 .tips {
-                    width: 250px;
+                    width: 176px;
+                    padding-top:10px;
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     color: #FFFDFD;

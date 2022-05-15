@@ -19,6 +19,11 @@
                 <img :src="img.url" alt="" class="img">
               </div>
             </div>
+            <div class="imgs">
+              <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
+              <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
+              <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
+            </div>
           </div>
         </div>
         <div class="bottom">
@@ -97,7 +102,7 @@
             <div class="input4">
               <div class="input1">
                 <div class="name">COMMENTS</div>
-                <el-input type="textarea" :rows="5" />
+                <el-input type="textarea" :rows="8" />
               </div>
               <el-button type="primary" class="btn">SUBMIT</el-button>
             </div>
@@ -143,6 +148,11 @@ export default({
               {url: [require('../../assets/images/sellyourcar/GetYourInstantOffer.png')]},
               {url: [require('../../assets/images/sellyourcar/GetCashPayment.png')]}
             ],
+            imgs: [
+              {url: [require('../../assets/images/sellyourcar/1.png')]},
+              {url: [require('../../assets/images/sellyourcar/2.png')]},
+              {url: [require('../../assets/images/sellyourcar/3.png')]}
+            ],
             visit: 'Please visit our showroom in Burwood to inspect our range of vehicles and discuss your needs. Our Sales team speak English and Chinese, and we look forward to helping you with your next car sale or purchase.',
             story: 'Autohome Australia were established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.'
         }
@@ -153,30 +163,30 @@ export default({
 </script>
 <style lang="less" scoped>
     .contact {
+      width: 100%;
         .imgs {
-            width: 100%;
-            height: 997px;
+          height: 780px;
+          margin: 0 auto;
         }
          .text { 
           position:absolute;
-          top: 220px;
-          left: 200px;
+          top: 163px;
+          left: 175px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 120px;
+            font-size: 100px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            margin-top:20px;
             width: 683px;
             height: 183px;
-            font-size: 55px;
+            font-size: 45px;
             text-align: left;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -185,50 +195,73 @@ export default({
           }
         }
         .between {
-          width: 100%;
-          height: 845px;
+          height: 680px;
           background: #F4F6F8;
           .sell {
             .title {
               height: 32px;
-              font-size: 100px;
-              padding:192px 0 30px 108px;
+              font-size: 80px;
+              padding:90px 0 30px 108px;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
-              letter-spacing: 105px;
+              letter-spacing: 75px;
             }
             .image {
               display: flex;
               position: relative;
-              top: 65px;
-            .imggs {
-              padding-left: 302px;
-              .img {
-                width: 274px;
-                height: 385px;
-                background: #FFFFFF;
+              bottom: 260px;
+              .imggs {
+                padding-left: 215px;
+                .img {
+                  width: 194px;
+                  height: 285px;
+                  background: #FFFFFF;
+                }
               }
             }
-          }
+            .imgs {
+              .imgs1 {
+                width: 43px;
+                height: 43px;
+                background: #FFFFFF;
+                position: absolute;
+                top: 1258px;
+                left: 441px;
+              }
+              .imgs2 {
+                width: 43px;
+                height: 43px;
+                background: #FFFFFF;
+                position: absolute;
+                top: 1258px;
+                left: 843px;
+              }
+              .imgs3 {
+                width: 43px;
+                height: 43px;
+                background: #FFFFFF;
+                position: absolute;
+                top: 1258px;
+                left: 1252px;
+              }
+            }
             .content {
-              width: 81%;
-              margin-left:108px;
-              height: 407px;
+              width: 83%;
+              margin-left:17%;
+              height: 307px;
               background: #FFFFFF;
               display: flex;
-              position: absolute;
-              left: 282px;
               .contentView {
                 display:flex;
                 flex-direction: column;
-                margin-top:84px;
-                margin-left: 240px;
+                margin-top:44px;
+                margin-left: 182px;
                 .yourCar {
-                  width: 320px;
+                  width: 220px;
                   height: 32px;
-                  font-size: 40px;
+                  font-size: 28px;
                   text-align: left;
                   margin-bottom: 20px;
                   font-family: DINCondensed-Bold, DINCondensed;
@@ -237,9 +270,9 @@ export default({
                   line-height: 32px;
                 }
                 .style {
-                  width: 255px;
+                  width: 165px;
                   height: 110px;
-                  font-size: 16px;
+                  font-size: 12px;
                   text-align: left;
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
@@ -253,12 +286,12 @@ export default({
         .bottom {
           background-color: #fff;
           .contact {
-            margin-top:85px;
-            padding-left: 250px;
+            width: 50%;
+            margin-top:150px;
+            padding-left: 200px;
             .us {
-              width: 725px;
               height: 100px;
-              font-size: 80px;
+              font-size: 60px;
               text-align: left;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
@@ -269,7 +302,7 @@ export default({
             .started {
               width: 735px;
               height: 66px;
-              font-size: 20px;
+              font-size: 16px;
               text-align: left;
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
@@ -284,9 +317,9 @@ export default({
             .detail {
               position: relative;
               top: 85px;
-              width: 400px;
+              width: 300px;
               height: 60px;
-              font-size: 40px;
+              font-size: 35px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -297,9 +330,9 @@ export default({
             .privacy {
               position: relative;
               top: 240px;
-              width: 400px;
+              width: 300px;
               height: 60px;
-              font-size: 40px;
+              font-size: 35px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -310,9 +343,9 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 400px;
+              width: 300px;
               height: 60px;
-              font-size: 40px;
+              font-size: 35px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -330,6 +363,7 @@ export default({
               .name{
                 text-align: left;
                 margin-bottom: 15px;
+                font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
               }
@@ -348,6 +382,7 @@ export default({
               .name{
                 text-align: left;
                 margin-bottom: 15px;
+                font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
               }
@@ -367,6 +402,7 @@ export default({
               }
               .name{
                 text-align: left;
+                font-size: 20px;
                 margin-bottom: 15px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
@@ -393,6 +429,7 @@ export default({
               .name{
                 text-align: left;
                 margin-bottom: 15px;
+                font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
               }
@@ -402,7 +439,7 @@ export default({
                 color: fff;
                 background-color: #000;
                 position: relative;
-                top: 110px;
+                top: 160px;
                 left: -26px;
               }
               
@@ -415,9 +452,9 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 400px;
+              width: 300px;
               height: 60px;
-              font-size: 40px;
+              font-size: 35px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -435,6 +472,7 @@ export default({
               .name{
                 text-align: left;
                 margin-bottom: 15px;
+                font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
               }
@@ -448,9 +486,9 @@ export default({
             display: flex;
             flex-direction: column;
             position: relative;
-            top:254px;
+            top:234px;
             .tex {
-              font-size: 14px;
+              font-size: 16px;
               text-align: left;
               margin-top:50px;
               padding: 0 80px;
@@ -462,7 +500,6 @@ export default({
         }
     }
     .el-input__inner {
-        width: 100%;
         border: 1px solid #000 !important;
         border-radius: 0 !important;
       }
