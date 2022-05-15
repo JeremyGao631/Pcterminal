@@ -132,6 +132,7 @@ export default({
     .contact {
         width: 100%;
         .imgs {
+            width: 100%;
             height: 781px;
         }
         .text { 
