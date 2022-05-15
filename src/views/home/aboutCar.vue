@@ -28,7 +28,11 @@
                 <div class="information">{{ items.information }}</div>
             </div>
         </div>
-        <img class="img" src="../../assets/images/about/VisitOurShowroom.png" alt="">
+        <img class="img" src="../../assets/images/about/VisitOurShowroom.png" alt="">   
+        <div class="visit">
+            <div class="visitTitle">VISIT OUR SHOWROOM</div>
+            <div class="visitText">{{ visit }}</div>
+        </div>
     </div>
 </template>
 <script>
@@ -98,28 +102,28 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 670px;
+            height: 997px;
         }
         .text { 
           position:absolute;
-          top: 162px;
-          left: 145px;
+          top: 220px;
+          left: 200px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 65px;
+            font-size: 120px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            margin-top:-20px;
+            margin-top:20px;
             width: 683px;
             height: 183px;
-            font-size: 32px;
+            font-size: 55px;
             text-align: left;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -130,8 +134,8 @@ export default({
         .offer {
             width: 775px;
             height: 100px;
-            font-size: 40px;
-            margin-top: 65px;
+            font-size: 80px;
+            margin-top: 180px;
             margin-bottom: 43px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -139,7 +143,8 @@ export default({
             line-height: 100px;
         }
         .style {
-            margin-left: 303px;
+            margin-left: 227px;
+            margin-bottom:160px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -147,26 +152,27 @@ export default({
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 600px;
+                width: 800px;
                 .imgStyle {
-                    width: 54px;
-                    height: 51px;
+                    width: 74px;
+                    height: 71px;
                 }
                 .title {
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin: 14px 0;
-                    font-size: 20px;
+                    margin: 9px 0;
+                    padding-bottom:12px;
+                    font-size: 40px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #212020;
                 }
                 .information {
-                    width: 266px;
+                    width: 426px;
                     height: 120px;
                     text-align: left;
-                    font-size: 12px;
+                    font-size: 20px;
                     padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -185,26 +191,27 @@ export default({
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 299px;
+                width: 400px;
                 .imgStyle {
-                    width: 38px;
-                    height: 40px;
+                    width: 36px;
+                    height: 38px;
                 }
                 .title {
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin-top: 18px;
-                    font-size: 18px;
+                    margin-top: 38px;
+                    font-size: 40px;
+                    margin-bottom:30px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #212020;
                 }
                 .information {
-                    width: 149px;
+                    width: 250px;
                     height: 120px;
                     text-align: left;
-                    font-size: 12px;
+                    font-size: 20px;
                     padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -215,34 +222,63 @@ export default({
         }
         .img {
             width: 100%;
-            height: 300px;
+            height: 583px;
             margin-bottom:-4px;
+        }
+        .visit{
+            position:absolute;
+            top: 3461px;
+            left:680px;
+            .visitTitle {
+                width: 555px;
+                height: 100px;
+                font-size: 80px;
+                text-align: center;
+                padding-left:115px;
+                font-family: DINCondensed-Bold, DINCondensed;
+                font-weight: bold;
+                color: #FFFFFF;
+                line-height: 100px;
+            }
+            .visitText {
+                width: 794px;
+                height: 66px;
+                font-size: 16px;
+                text-align: center;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #FFFFFF;
+                line-height: 22px;
+            }
         }
         .ourStory {
             display: flex;
             margin-left: 234px;
             margin-top: 95px;
             .storyImg {
-                width: 521px;
-                height: 322px;
+                width: 731px;
+                height: 462px;
+                margin-left:45px;
                 background: #FFFFFF;
             }
             .title {
                 text-align: right;
-                margin-left: 100px;
+                margin-left:200px;
+                margin-top:100px;
                 .storyTit {
                     width: 344px;
                     height: 100px;
-                    font-size: 40px;
+                    font-size: 80px;
+                    padding-left:173px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
                     line-height: 100px;
                 }
                 .story {
-                    width: 344px;
+                    width: 514px;
                     height: 168px;
-                    font-size: 12px;
+                    font-size: 18px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;

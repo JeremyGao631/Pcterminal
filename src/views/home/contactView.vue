@@ -1,6 +1,9 @@
 <template>
     <div class="contact">
         <img class="imgs" src="../../assets/images/contact/ContactUsNow.png" alt="">
+        <div class="text">
+          <div class="title">CONTACT US NOW</div>
+        </div>
         <div class="contact-main">
             <div class= "table">
                 <span class="title">CONTACT</span>
@@ -32,7 +35,7 @@
                 <div class="input-view">
                         <el-input
                             type="textarea"
-                            :autosize="{ minRows: 4, maxRows: 20}"
+                            :autosize="{ minRows: 8, maxRows: 20}"
                             placeholder="Message*"
                             v-model="message" />
                 </div>
@@ -129,44 +132,60 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 670px;
+            height: 997px;
+        }
+        .text { 
+          position:absolute;
+          top: 220px;
+          left: 200px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .title {
+            height: 130px;
+            font-size: 120px;
+            font-family: DINCondensed-Bold, DINCondensed;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 130px;
+          }
         }
         .contact-main {
             margin-left: -78px;
             .table {
                 margin: 95px 0 35px 755px;
-                width: 580px;
-                height: 450px;
+                width: 902px;
+                height: 772px;
                 background-color: #f4f6f8;
                 .title {
-                    margin-top: 40px;
                     margin-left: 140px;
-                    font-size: 32px;
+                    font-size: 80px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
-                    line-height: 100px;
+                    line-height: 230px;
                 }
                 .input-view {
-                    margin-left: 150px;
+                    margin-left: 195px;
                     display: flex;
                     .el-input {
-                        font-size: 12px;
-                        width: 200px;
+                        font-size: 20px;
+                        width: 278px;
                         margin: 10px 20px;
                     }
                     .el-textarea{
-                        font-size: 13px;
+                        font-size: 20px;
                         margin-left: 20px;
-                        width: 390px;
+                        margin-top:20px;
+                        width: 595px;
                     }
                 }
                 .el-button {
                     margin-top: 25px;
                     margin-left: 153px;
-                    width: 144px;
-                    font-size: 12px;
-                    height: 40px;
+                    width: 231px;
+                    font-size: 20px;
+                    height: 58px;
                     border-radius: 0;
                     color:#fff;
                     background-color: #151515;
@@ -174,8 +193,8 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 872px;
-                left: 410px;
+                top: 1258px;
+                left: 210px;
                 .top {
                     display: flex;
                     .information {
@@ -184,30 +203,30 @@ export default({
                         align-items: center;
                         margin-right: 20px;
                         margin-bottom: 20px;
-                        width: 166px;
-                        height: 182px;
+                        width: 289px;
+                        height: 306px;
                         background: #FFFFFF;
                         box-shadow: 0px 14px 48px 0px rgba(73, 73, 73, 0.07);
                         .img {
-                            margin-bottom: 14px;
-                            margin-top:15px;
-                            width: 50px;
-                            height: 50px;
+                            margin-top:55px;
+                            margin-bottom:40px;
+                            width: 66px;
+                            height: 66px;
                         }
                         .title {
-                            width: 61px;
+                            width: 111px;
                             height: 22px;
-                            font-size: 18px;
+                            font-size: 40px;
                             font-family: DINCondensed-Bold, DINCondensed;
                             font-weight: bold;
                             color: #212020;
                             line-height: 32px;
-                            margin-bottom: 10px;
+                            margin-bottom: 35px;
                         }
                         .contact {
-                            width: 140px;
+                            width: 250px;
                             height: 28px;
-                            font-size: 2px;
+                            font-size: 10px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
                             color: #151515;
@@ -220,29 +239,30 @@ export default({
         }
         .img {
             width: 100%;
-            height: 300px;
+            height: 441px;
             margin-bottom:-4px;
         }
         .location {
             margin-top:-100px;
             position: relative;
-            top: 209px;
-            right: 49px;
+            top: 305px;
+            right: 68px;
             .border {
-                width: 350px;
+                width: 510px;
+                height: 210px;
             }
             .top {
                 display: flex;
                 align-items: flex-start;
                 flex-direction: row;
                 position: absolute;
-                left: 647px;
-                top: 51px;
+                left: 887px;
+                top: 71px;
                 .logo {
-                    width: 55px;
+                    width: 78px;
                 }
                 .tips {
-                    width: 150px;
+                    width: 250px;
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     color: #FFFDFD;

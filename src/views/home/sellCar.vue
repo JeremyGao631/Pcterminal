@@ -155,28 +155,28 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 670px;
+            height: 997px;
         }
-        .text { 
+         .text { 
           position:absolute;
-          top: 162px;
-          left: 145px;
+          top: 220px;
+          left: 200px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 65px;
+            font-size: 120px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            margin-top:-20px;
-            width: 514px;
+            margin-top:20px;
+            width: 683px;
             height: 183px;
-            font-size: 32px;
+            font-size: 55px;
             text-align: left;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -186,36 +186,36 @@ export default({
         }
         .between {
           width: 100%;
-          height: 565px;
+          height: 845px;
           background: #F4F6F8;
           .sell {
             .title {
               height: 32px;
-              font-size: 50px;
-              padding:102px 0 20px 48px;
+              font-size: 100px;
+              padding:192px 0 30px 108px;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
-              letter-spacing: 73px;
+              letter-spacing: 105px;
             }
             .image {
               display: flex;
               position: relative;
-              top: 49px;
+              top: 65px;
             .imggs {
-              width: 210px;
-              padding-left: 202px;
+              padding-left: 302px;
               .img {
-                width: 205px;
-                height: 279px;
+                width: 274px;
+                height: 385px;
                 background: #FFFFFF;
               }
             }
           }
             .content {
               width: 81%;
-              height: 293px;
+              margin-left:108px;
+              height: 407px;
               background: #FFFFFF;
               display: flex;
               position: absolute;
@@ -223,23 +223,23 @@ export default({
               .contentView {
                 display:flex;
                 flex-direction: column;
-                margin-top:44px;
-                margin-left: 180px;
+                margin-top:84px;
+                margin-left: 240px;
                 .yourCar {
-                  width: 220px;
+                  width: 320px;
                   height: 32px;
-                  font-size: 22px;
+                  font-size: 40px;
                   text-align: left;
-                  margin-bottom: 10px;
+                  margin-bottom: 20px;
                   font-family: DINCondensed-Bold, DINCondensed;
                   font-weight: bold;
                   color: #212020;
                   line-height: 32px;
                 }
                 .style {
-                  width: 165px;
+                  width: 255px;
                   height: 110px;
-                  font-size: 12px;
+                  font-size: 16px;
                   text-align: left;
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
@@ -254,21 +254,22 @@ export default({
           background-color: #fff;
           .contact {
             margin-top:85px;
-            padding-left: 265px;
+            padding-left: 250px;
             .us {
               width: 725px;
               height: 100px;
-              font-size: 40px;
+              font-size: 80px;
               text-align: left;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
+              margin-bottom: 20px;
               color: #212020;
               line-height: 100px;
             }
             .started {
-              width: 535px;
+              width: 735px;
               height: 66px;
-              font-size: 12px;
+              font-size: 20px;
               text-align: left;
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
@@ -283,9 +284,9 @@ export default({
             .detail {
               position: relative;
               top: 85px;
-              width: 256px;
-              height: 46px;
-              font-size: 20px;
+              width: 400px;
+              height: 60px;
+              font-size: 40px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -296,9 +297,9 @@ export default({
             .privacy {
               position: relative;
               top: 240px;
-              width: 256px;
-              height: 46px;
-              font-size: 20px;
+              width: 400px;
+              height: 60px;
+              font-size: 40px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -309,9 +310,9 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 256px;
-              height: 46px;
-              font-size: 20px;
+              width: 400px;
+              height: 60px;
+              font-size: 40px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -414,9 +415,9 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 256px;
-              height: 46px;
-              font-size: 20px;
+              width: 400px;
+              height: 60px;
+              font-size: 40px;
               text-align: center;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
