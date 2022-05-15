@@ -19,11 +19,11 @@
                 <img :src="img.url" alt="" class="img">
               </div>
             </div>
-            <!-- <div class="imgs">
+            <div class="imgs">
               <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
               <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
               <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="bottom">
@@ -249,7 +249,7 @@ export default({
               display: flex;
               position: relative;
               bottom: 272px;
-              left: 5.5%;
+              left: 7.5%;
               .imggs {
                 padding-left: 14%;
                 .img {
@@ -260,6 +260,9 @@ export default({
               }
             }
             .imgs {
+              display: flex;
+              position: relative;
+              bottom: 820px;
               .imgs1 {
                 width: 43px;
                 height: 43px;
@@ -274,7 +277,7 @@ export default({
                 background: #FFFFFF;
                 position: absolute;
                 top: 60.5%;
-                left: 56%;
+                left: 58%;
               }
               .imgs3 {
                 width: 43px;
@@ -282,7 +285,7 @@ export default({
                 background: #FFFFFF;
                 position: absolute;
                 top: 60.5%;
-                left: 83%;
+                left: 82%;
               }
             }
             .content {
