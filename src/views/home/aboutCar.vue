@@ -225,7 +225,7 @@ export default({
         .img {
             width: 100%;
             height: 583px;
-            margin-bottom:-4px;
+            margin-bottom:-25px;
         }
         .visit{
             position:absolute;
