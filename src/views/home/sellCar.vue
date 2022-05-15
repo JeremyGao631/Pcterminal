@@ -19,11 +19,11 @@
                 <img :src="img.url" alt="" class="img">
               </div>
             </div>
-            <div class="imgs">
+            <!-- <div class="imgs">
               <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
               <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
               <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="bottom">
@@ -201,6 +201,7 @@ export default({
     .contact {
       width: 100%;
         .imgs {
+          width: 100%;
           height: 780px;
         }
          .text { 
@@ -212,14 +213,14 @@ export default({
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 90px;
+            font-size: 80px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            width: 683px;
+            width: 497px;
             height: 183px;
             font-size: 45px;
             text-align: left;
@@ -232,6 +233,7 @@ export default({
         .between {
           height: 615px;
           background: #F4F6F8;
+          position: relative;
           .sell {
             .title {
               height: 32px;
@@ -246,7 +248,8 @@ export default({
             .image {
               display: flex;
               position: relative;
-              bottom: 273px;
+              bottom: 272px;
+              left: 5.5%;
               .imggs {
                 padding-left: 14%;
                 .img {
@@ -262,15 +265,15 @@ export default({
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1237px;
-                left: 30%;
+                top: 60.5%;
+                left: 33%;
               }
               .imgs2 {
                 width: 43px;
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1237px;
+                top: 60.5%;
                 left: 56%;
               }
               .imgs3 {
@@ -278,21 +281,23 @@ export default({
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1237px;
+                top: 60.5%;
                 left: 83%;
               }
             }
             .content {
-              width: 83%;
-              margin-left:17%;
+              width: 76%;
               height: 307px;
               background: #FFFFFF;
               display: flex;
+              position: relative;
+              left: 24%;
               .contentView {
                 display:flex;
                 flex-direction: column;
                 margin-top:44px;
-                margin-left: 182px;
+                padding-right: 5%;
+                padding-left: 12%;
                 .yourCar {
                   width: 220px;
                   height: 32px;
@@ -465,7 +470,7 @@ export default({
               margin-left: 87px;
               .input1 {
                 margin-right: 81px;
-                width: 783px;
+                width: 90%;
                 height: 107px;
               }
               .name{
@@ -534,7 +539,7 @@ export default({
               font-size: 16px;
               text-align: left;
               margin-top:50px;
-              padding: 0 120px;
+              padding: 0 13%;
               font-weight: 400;
               font-family: PingFangSC-Light, PingFang SC;
               color: #151515;
@@ -545,6 +550,7 @@ export default({
     /deep/.el-input__inner {
         border: 1px solid #000 ;
         border-radius: 0 ;
+        width: 100%;
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;

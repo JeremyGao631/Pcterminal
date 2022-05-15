@@ -102,6 +102,7 @@ export default({
     .contact {
         width: 100%;
         .imgs {
+            width: 100%;
             height: 782px;
         }
         .text { 
@@ -131,7 +132,7 @@ export default({
           }
         }
         .offer {
-            width: 720px;
+            width: 42%;
             height: 100px;
             font-size: 60px;
             margin-top: 60px;
@@ -257,13 +258,13 @@ export default({
             margin-left: 215px;
             margin-top: 95px;
             .storyImg {
-                width: 621px;
+                width: 49%;
                 height: 357px;
                 background: #FFFFFF;
             }
             .title {
                 text-align: right;
-                margin-left:-1%;
+                margin-left:2%;
                 margin-top:38px;
                 .storyTit {
                     width: 344px;

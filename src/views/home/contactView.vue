@@ -6,6 +6,7 @@
         </div>
         <div class="contact-main">
             <div class= "table">
+                <div class="table1">
                 <span class="title">CONTACT</span>
                 <div class="input-view">
                     <el-input 
@@ -40,6 +41,8 @@
                             v-model="message" />
                 </div>
                 <el-button :disabled="this.name === '' || this.phone === '' || this.email === '' || this.address === ''" @click="contactSubmit()">SUBMIT</el-button>
+                </div>
+
             </div>
             <div class="left">
                 <div class="top">
@@ -130,8 +133,8 @@ export default({
 </script>
 <style lang="less" scoped>
     .contact {
-        width: 100%;
         .imgs {
+            width: 100%;
             height: 781px;
         }
         .text { 
@@ -154,9 +157,13 @@ export default({
             margin-left: 8px;
             .table {
                 margin: 95px 200px 35px 40%;
-                width: 681px;
+                width: 52%;
                 height: 588px;
                 background-color: #f4f6f8;
+                position: relative;
+                .table1 {
+                    position: absolute;
+                    left:13%;
                 .title {
                     margin-left: 60px;
                     font-size: 60px;
@@ -192,11 +199,12 @@ export default({
                     color:#fff;
                     background-color: #151515;
                 }
+                }
             }
             .left {
                 position:absolute;
                 top: 990px;
-                left: 13%;
+                left: 19%;
                 .top {
                     display: flex;
                     .information {
@@ -247,8 +255,8 @@ export default({
         .location {
             margin-top:-100px;
             position: relative;
-            top: 255px;
-            right: 48px;
+            top: 275px;
+            right: 3.3%;
             .border {
                 width: 410px;
                 height: 210px;
@@ -258,7 +266,7 @@ export default({
                 align-items: flex-start;
                 flex-direction: row;
                 position: absolute;
-                left: 42%;
+                left: 43%;
                 top: 71px;
                 .logo {
                     width: 78px;
@@ -294,8 +302,10 @@ font-size: 14px;
 }
 /deep/.el-input__inner::placeholder {
     color: #000;
+    font-size: 14px;
 }
 /deep/.el-textarea__inner::placeholder{
     color:#000;
+    font-size: 14px;
 }
 </style>
