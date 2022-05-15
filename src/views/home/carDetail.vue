@@ -60,27 +60,58 @@
     </div>
   </div>
   <div class="booking">
-    <div class="title">BOOK INSPECTION</div>
-    <div class="userinput">
-      <div class="inputtable">
-        <span>name</span>
-        <el-input />
-      </div>
-      <div class="inputtable">
-        <span>Phone</span>
-        <el-input />
-      </div>
-      <div class="inputtable">
-        <span>Time</span>
-        <el-input />
-      </div>
-      <div class="submit">
-        <div class="newbutton">
-          <el-button >
-            <span>SUBMIT</span>
-            <i class="el-icon-my-yellowright"></i>
-          </el-button>
+    <div class="bookingtext">
+      <div class="title">BOOK INSPECTION</div>
+      <div class="userinput">
+        <div class="inputtable">
+          <span>Name</span>
+          <el-input />
         </div>
+        <div class="inputtable">
+          <span>Phone</span>
+          <el-input />
+        </div>
+        <div class="inputtable">
+          <span>Time</span>
+          <el-input />
+        </div>
+        <div class="inputtable">
+          <div class="newbutton">
+            <el-button >
+              <span>SUBMIT</span>
+              <i class="el-icon-my-yellowright"></i>
+            </el-button>
+          </div>
+        </div>
+      </div>
+      <div class="sectitle">SIMILAR VEHICLES</div>
+      <div class="textcontent">
+        <div class="textcard" v-for="index in information1" :key="index">
+          <div class="imgcard">
+            <img :src="index.url" />
+          </div>
+          <div class="titlecard" >
+            <span >{{index.year}} {{index.type}}</span>
+            <br />
+            <span >{{index.kind}}</span>
+          </div>
+          <div class="contentcard">
+            <span class="contentcard-price">{{index.price}}</span>
+            <span class="contentcard-info">{{index.info}}</span>
+          </div>
+          <div class="break" ></div>
+          <div class="detailcard" >
+            <span >{{index.distance}}</span>
+            <span >{{index.info1}}</span>
+            <span >{{index.info2}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="choosepage">
+        <el-pagination
+          layout="prev, pager, next"
+          :total="50">
+        </el-pagination>
       </div>
     </div>
   </div>
@@ -136,7 +167,53 @@ name: 'CarDetail',
           name: 'Seats',
           result: 'Seats'
         },
-      ]
+      ],
+      information1: [
+                {
+                  url: require('../../assets/images/home/1.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/2.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/3.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/4.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                }
+      ],
     }
   }
 }
@@ -147,7 +224,7 @@ name: 'CarDetail',
   background-color: #F4F6F8;
   width:100%;
   .infodetail {
-    padding-bottom:200px;
+    padding-bottom:40px;
     width:1440px;
     margin: 0 auto;
     .title {
@@ -156,18 +233,18 @@ name: 'CarDetail',
       font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 20px 50px 20px;
+      margin: 0 200px 50px 200px;
       padding-top:92px;
       text-align:left;
       letter-spacing: 1px;
     }
     .content {
-      margin:49px 20px 0px 20px;
+      margin:49px 200px 0px 200px;
       display: flex;
       align-items: top;
       justify-content: center;
       .contentleft {
-        width:35%;
+        width:45%;
         margin-right:20px;
         .pricekind {
           .price {
@@ -217,6 +294,7 @@ name: 'CarDetail',
               color: black;
               line-height: 25px;
               text-align: left;
+              white-space: nowrap;
             }
           }
         }
@@ -230,14 +308,14 @@ name: 'CarDetail',
         .littleshow {
           background-color: white;
           width:100%;
-          height:100px;
+          height:80px;
           margin-top: 60px;
           display: flex;
           align-items: center;
           justify-content: center;
           .showleft {
             height: 50px;
-            margin:0 15px;
+            margin:0 10px;
             img {
               float:left;
               height:100%;
@@ -274,7 +352,7 @@ name: 'CarDetail',
         }
       }
       .contentright {
-        width:calc(65% - 40px);
+        width:calc(55% - 40px);
         margin-left:20px;
         .bigimg {
           width: 100%;
@@ -286,7 +364,7 @@ name: 'CarDetail',
           }
         }
         .smallimg {
-         height: 100px;
+         height: 80px;
          display: flex;
          align-items: center;
          justify-content: center;
@@ -304,20 +382,203 @@ name: 'CarDetail',
     }
   }
   .booking {
-    background-color: #F4F6F8;
-    padding-bottom:200px;
-    width:1440px;
-    margin: 0 auto;
-    .title {
-      font-size: 70px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #212020;
-      line-height: 55px;
-      margin: 0 20px 50px 20px;
-      padding-top:92px;
-      text-align:left;
-      letter-spacing: 1px;
+    background-color: #FFFFFF;
+    .bookingtext {
+      padding-bottom:200px;
+      width:1440px;
+      margin: 0 auto;
+      .title {
+        font-size: 70px;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        color: #212020;
+        line-height: 55px;
+        margin: 0 200px 50px 200px;
+        padding-top:92px;
+        text-align:left;
+        letter-spacing: 1px;
+      }
+      .userinput {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin: 0 200px;
+        .inputtable {
+          margin-right: 80px;
+          span {
+            float:left;
+            margin-bottom:10px;
+            font-size: 20px;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            color:#151515;
+            line-height: 20px;
+          }
+          /deep/ .el-input__inner {
+            border: 1px solid black;
+            height:58px;
+            width:231px;
+          }
+          .el-button {
+            width: 171px;
+            height: 58px;
+            border: 1px solid #151515 ;
+            background-color: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            margin-top:30px;
+            span {
+              color:#F4F6F8;
+              font-size: 20px;
+              font-family: DINCondensed-Bold;
+              font-weight: bold;
+              text-align: center;
+              line-height: 130px;
+              margin-right:45px;
+              padding-top: 10px;
+            }
+            .el-icon-my-yellowright {
+              background: url('../../assets/images/carDetail/youjt.png') no-repeat;
+              background-size: cover;
+              display:inline-block;
+              height: 16px;
+              width: 16px;
+              margin-right: -16px;
+              margin-top: 65px;
+            }
+          }
+        }
+      }
+      .sectitle {
+        font-size: 70px;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        color: #212020;
+        line-height: 55px;
+        margin: 0 200px 50px 200px;
+        padding-top:170px;
+        text-align:left;
+        letter-spacing: 1px;
+      }
+      .textcontent {
+        overflow: hidden;
+        margin-left: 200px;
+        margin-right: 100px;
+        .textcard {
+          float:left;
+          margin-right:30px;
+          width: calc(100% / 4 - 30px);
+          .imgcard {
+            width: 100%;
+            height: 211px;
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+          .titlecard {
+            text-align:left;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            padding-left: 19px;
+            span {
+              font-family: DINCondensed-Bold;
+              margin-left: 3px;
+              font-weight:bold;
+              font-size: 30px;
+              color: #212020;
+              line-height: 32px;
+            }
+          }
+          .contentcard {
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 19px;
+            padding-right: 15px;
+            .contentcard-price {
+              font-family:DINCondensed-Bold;
+              font-weight:bold;
+              font-size: 24px;
+              color: #212020;
+              line-height: 29px;
+            }
+            .contentcard-info {
+              font-size: 16px;
+              color: #4A4A4A;
+              line-height: 19px;
+              margin-top: 3px;
+              font-family:DINCondensed-Bold;
+              font-weight: bold;
+              opacity:0.7;
+            }
+          }
+          .break {
+            border-bottom: 1px solid #979797;
+            margin-left: 19px;
+            opacity:0.1;
+          }
+          .detailcard {
+            padding-top:20px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding-left: 19px;
+            span {
+              font-size: 14px;
+              font-family:PingFangSC-Semibold;
+              font-weight: 600;
+              margin-right: 30px;
+              color: #4A4A4A;
+              opacity:0.7;
+              margin-right: 36px;
+              line-height: 20px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+      .choosepage {
+        margin: 20px 120px 0 200px;
+        text-align: right;
+        .el-pagination {
+          /deep/ .btn-prev{
+              width: 30px;
+              height: 30px;
+              background-image: url('../../assets/images/carDetail/leftjt.png');
+              background-size: 100% 100%;
+          }
+          /deep/ i {
+            display:none;
+          }
+          /deep/ .btn-next{
+              width: 30px;
+              height: 30px;
+              background-image: url('../../assets/images/carDetail/rightjt.png');
+              background-size: 100% 100%;
+          }
+          /deep/ .el-pager {
+            margin-top:15px;
+              li:not(.disabled) {
+                  width:10px;
+                  height:2px;
+                  border:1px solid #151515;
+                  font-weight: bold;
+                  color: #151515;
+                  font-size:0;
+              }
+              li:not(.disabled).active {
+                  background-color: #151515;
+                  color:#F4F6F8;
+                  font-size:0;
+              }
+              
+          }
+        }
+      }
     }
   }
 }
