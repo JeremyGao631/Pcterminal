@@ -59,6 +59,13 @@
       </div>
     </div>
   </div>
+  <div class="detailtext">
+    <span class="texttitle">DEALER COMMENTS</span>
+    <br />
+    <span class="textcontent">The team at Autohome AU make selling your car as easy and convenient as possible. 
+      <br />Simply send us your vehicle details using the form below and let our team take care of the rest. 
+      <br />Contact us now.</span>
+  </div>
   <div class="booking">
     <div class="bookingtext">
       <div class="title">BOOK INSPECTION</div>
@@ -244,7 +251,7 @@ name: 'CarDetail',
       align-items: top;
       justify-content: center;
       .contentleft {
-        width:45%;
+        width:40%;
         margin-right:20px;
         .pricekind {
           .price {
@@ -352,8 +359,8 @@ name: 'CarDetail',
         }
       }
       .contentright {
-        width:calc(55% - 40px);
-        margin-left:20px;
+        width:calc(60% - 15px);
+        margin-left:10px;
         .bigimg {
           width: 100%;
           height: 495px;
@@ -379,6 +386,30 @@ name: 'CarDetail',
          }
         }
       }
+    }
+  }
+  .detailtext {
+    background-color: #FFFFFF;
+    width:1040px;
+    height:179px;
+    margin:0 420px 40px 420px;
+    .texttitle {
+      width: 184px;
+      height: 130px;
+      font-size: 30px;
+      font-family: DINCondensed-Bold, DINCondensed;
+      font-weight: bold;
+      color: #151515;
+      line-height: 75px;
+    }
+    .textcontent {
+      width: 794px;
+      height: 66px;
+      font-size: 16px;
+      font-family: DINCondensed-Bold, PingFang SC;
+      font-weight: 400;
+      color: #4A4A4A;
+      line-height: 22px;
     }
   }
   .booking {
