@@ -602,7 +602,7 @@ export default {
       white-space: nowrap;
       padding-top:114px;
       text-align:left;
-      margin: 114px auto  0 70px;
+      margin: 114px auto 0  70px;
     }
     .serviceinfo {
       width:1240px;
