@@ -344,7 +344,7 @@ export default {
   
     /deep/ .el-carousel__indicators--horizontal {
       bottom: 0;
-      left: 120px;
+      left: 195px;
       transform: translateY(-64px);
       .el-carousel__button {
         width: 10px;
@@ -371,7 +371,7 @@ export default {
   text-align: left;
   div {
     position: absolute;
-    left: 70px;
+    left: 140px;
     top: 177px;
     .content-title {
       font-size: 60px;
@@ -427,7 +427,7 @@ export default {
 }
 
 .middle {
-  margin: 0 100px;
+  margin: 0 180px;
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -550,6 +550,7 @@ export default {
           opacity:0.7;
           margin-right: 36px;
           line-height: 20px;
+          white-space: nowrap;
         }
       }
     }
@@ -596,10 +597,7 @@ export default {
 
 .bottom {
     background-color:#F4F6F8;
-    width:100%;
-    margin: 0 auto;
     .title {
-      width:1240px;
       font-size: 70px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
@@ -607,15 +605,15 @@ export default {
       white-space: nowrap;
       padding-top:114px;
       text-align:left;
-      margin: 84px 0  0 128px;
+      margin: 84px 0  0 180px;
     }
     .serviceinfo {
-      width:1240px;
       margin-left: 200px;
+      margin-right:200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top:61px;
+      padding-top:52px;
       padding-bottom:200px;
       .infotext {
         margin-right:85px;
