@@ -83,9 +83,9 @@
         }
       }
       .tips {
-        width: 227px;
+        width: 220px;
         height: 40px;
-        font-size: 13px;
+        font-size: 16px;
         text-align: left;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
@@ -105,7 +105,7 @@
       .guide {
         width: 61px;
         height: 30px;
-        font-size: 20px;
+        font-size: 30px;
         padding-bottom: 10px;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
@@ -116,7 +116,7 @@
         width: 39px;
         padding-bottom: 15px;
         height: 20px;
-        font-size: 12px;
+        font-size: 16px;
         font-family: DINCondensed-Bold, DINCondensed;
         width: 150px;
         color: #909090;
@@ -126,7 +126,7 @@
         width: 39px;
         padding-bottom: 43px;
         height: 20px;
-        font-size: 12px;
+        font-size: 16px;
         font-family: DINCondensed-Bold, DINCondensed;
         width: 150px;
         color: #909090;
@@ -141,7 +141,7 @@
         width: 61px;
         height: 30px;
         padding-bottom: 10px;
-        font-size: 20px;
+        font-size: 30px;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
         color: #F7941E;
@@ -151,7 +151,7 @@
         width: 39px;
         padding-bottom: 15px;
         height: 20px;
-        font-size: 12px;
+        font-size: 16px;
         font-family: DINCondensed-Bold, DINCondensed;
         width: 300px;
         color: #909090;
