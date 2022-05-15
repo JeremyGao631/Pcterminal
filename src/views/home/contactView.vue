@@ -35,7 +35,7 @@
                 <div class="input-view">
                         <el-input
                             type="textarea"
-                            :autosize="{ minRows: 8, maxRows: 20}"
+                            :autosize="{ minRows: 5, maxRows: 20}"
                             placeholder="Message*"
                             v-model="message" />
                 </div>
@@ -137,7 +137,7 @@ export default({
         }
         .text { 
           position:absolute;
-          top: 200px;
+          top: 180px;
           left: 200px;
           display: flex;
           flex-direction: column;
@@ -152,41 +152,43 @@ export default({
           }
         }
         .contact-main {
-            margin-left: -78px;
+            margin-left: 8px;
             .table {
-                margin: 95px 0 35px 550px;
-                width: 902px;
-                height: 772px;
+                margin: 95px 0 35px 595px;
+                width: 681px;
+                height: 588px;
                 background-color: #f4f6f8;
                 .title {
-                    margin-left: 140px;
-                    font-size: 80px;
+                    margin-left: 60px;
+                    font-size: 60px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
-                    line-height: 230px;
+                    line-height: 193px;
                 }
                 .input-view {
-                    margin-left: 195px;
+                    margin-left: 70px;
+                    margin-top: -34px;
+                    margin-bottom: 35px;
                     display: flex;
                     .el-input {
                         font-size: 20px;
-                        width: 278px;
+                        width: 252px;
                         margin: 10px 20px;
                     }
                     .el-textarea{
                         font-size: 20px;
                         margin-left: 20px;
                         margin-top:20px;
-                        width: 595px;
+                        width: 84%;
                     }
                 }
                 .el-button {
-                    margin-top: 25px;
-                    margin-left: 153px;
-                    width: 231px;
-                    font-size: 20px;
-                    height: 58px;
+                    margin-top: 10px;
+                    margin-left: 31px;
+                    width: 180px;
+                    font-size: 13px;
+                    height: 46px;
                     border-radius: 0;
                     color:#fff;
                     background-color: #151515;
@@ -194,8 +196,8 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 1019px;
-                left: 80px;
+                top: 990px;
+                left: 203px;
                 .top {
                     display: flex;
                     .information {
@@ -204,20 +206,20 @@ export default({
                         align-items: center;
                         margin-right: 20px;
                         margin-bottom: 20px;
-                        width: 249px;
-                        height: 300px;
+                        width: 226px;
+                        height: 241px;
                         background: #FFFFFF;
                         box-shadow: 0px 14px 48px 0px rgba(73, 73, 73, 0.07);
                         .img {
-                            margin-top:55px;
-                            margin-bottom:40px;
-                            width: 66px;
-                            height: 66px;
+                            margin-top:30px;
+                            margin-bottom:30px;
+                            width: 49px;
+                            height: 49px;
                         }
                         .title {
                             width: 111px;
                             height: 22px;
-                            font-size: 40px;
+                            font-size: 30px;
                             font-family: DINCondensed-Bold, DINCondensed;
                             font-weight: bold;
                             color: #212020;
@@ -225,9 +227,9 @@ export default({
                             margin-bottom: 35px;
                         }
                         .contact {
-                            width: 250px;
+                            width: 200px;
                             height: 28px;
-                            font-size: 10px;
+                            font-size: 14px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
                             color: #151515;
@@ -240,13 +242,13 @@ export default({
         }
         .img {
             width: 100%;
-            height: 441px;
+            height: 352px;
             margin-bottom:-4px;
         }
         .location {
             margin-top:-100px;
             position: relative;
-            top: 305px;
+            top: 255px;
             right: 48px;
             .border {
                 width: 410px;
@@ -272,4 +274,23 @@ export default({
             }
         }
     }
+/deep/.el-input__inner {
+border: 1px solid #000 ;
+border-radius: 0 ;
+font-size: 14px;
+}
+/deep/.el-input--suffix .el-input__inner {
+  padding-right: 14px !important;
+}
+/deep/.el-textarea__inner {
+  border: 1px solid #000 ;
+  border-radius: 0 ;
+}
+/deep/.el-input__inner {
+    width: 217px;
+}
+/deep/.el-textarea__inner {
+    margin-left:18px;
+    width: 508px;
+}
 </style>

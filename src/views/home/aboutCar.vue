@@ -107,14 +107,14 @@ export default({
         }
         .text { 
           position:absolute;
-          top: 192px;
+          top: 202px;
           left: 186px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 100px;
+            font-size: 90px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
@@ -132,9 +132,9 @@ export default({
           }
         }
         .offer {
-            width: 775px;
+            width: 720px;
             height: 100px;
-            font-size: 80px;
+            font-size: 60px;
             margin-top: 60px;
             margin-bottom: 43px;
             font-family: DINCondensed-Bold, DINCondensed;
@@ -155,8 +155,8 @@ export default({
                 align-items: flex-start;
                 width: 558px;
                 .imgStyle {
-                    width: 74px;
-                    height: 71px;
+                    width: 58px;
+                    height: 59px;
                 }
                 .title {
                     width: 250px;
@@ -164,7 +164,7 @@ export default({
                     text-align: left;
                     margin: 9px 0;
                     padding-bottom:12px;
-                    font-size: 40px;
+                    font-size: 33px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #212020;
@@ -186,23 +186,23 @@ export default({
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-left: 100px;
+            margin-left: 119px;
             margin-bottom: 70px;
             .weOffer {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 247px;
+                width: 300px;
                 .imgStyle {
-                    width: 36px;
-                    height: 38px;
+                    width: 32px;
+                    height: 34px;
                 }
                 .title {
                     width: 250px;
                     height: 32px;
                     text-align: left;
                     margin-top: 20px;
-                    font-size: 20px;
+                    font-size: 25px;
                     margin-bottom:10px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
@@ -212,7 +212,7 @@ export default({
                     width: 185px;
                     height: 120px;
                     text-align: left;
-                    font-size: 12px;
+                    font-size: 16px;
                     padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -223,26 +223,26 @@ export default({
         }
         .img {
             width: 100%;
-            height: 583px;
+            height: 395px;
             margin-bottom:-4px;
         }
         .visit{
             position:absolute;
-            top: 2848px;
+            top: 2728px;
             left:373px;
             .visitTitle {
                 width: 555px;
                 height: 100px;
                 font-size: 65px;
                 text-align: center;
-                padding-left:115px;
+                padding-left:100px;
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
                 color: #FFFFFF;
                 line-height: 100px;
             }
             .visitText {
-                width: 794px;
+                width: 743px;
                 height: 66px;
                 font-size: 16px;
                 text-align: center;
@@ -254,7 +254,7 @@ export default({
         }
         .ourStory {
             display: flex;
-            margin-left: 234px;
+            margin-left: 215px;
             margin-top: 95px;
             .storyImg {
                 width: 621px;
@@ -263,12 +263,12 @@ export default({
             }
             .title {
                 text-align: right;
-                margin-left:50px;
-                margin-top:50px;
+                margin-left:-10px;
+                margin-top:38px;
                 .storyTit {
                     width: 344px;
                     height: 100px;
-                    font-size: 65px;
+                    font-size: 60px;
                     padding-left:173px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;

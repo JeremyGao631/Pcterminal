@@ -32,7 +32,7 @@
             <div class="started">{{ started }}</div>
           </div>
           <div class="form">
-            <div class="detail">Personal Details</div>
+            <div class="detail">PERSONAL DETAILS</div>
             <div class="inputs">
               <div class="input1">
                 <div class="name">Name*</div>
@@ -59,14 +59,28 @@
                 <el-input />
               </div>
               <div>
-                <div class="name">Model</div>
-                <el-input />
+                <div class="name">Model*</div>
+                <el-select v-model="value" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </div>
             </div>
             <div class="input2">
               <div class="input1">
                 <div class="name">Transmission*</div>
-                <el-input />
+                <el-select v-model="value" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </div>
               <div  class="input1">
                 <div class="name">Odometer*</div>
@@ -88,7 +102,14 @@
               </div>
               <div>
                 <div class="name">Logbook</div>
-                <el-input />
+                <el-select v-model="value" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </div>
             </div>
             <div class="input3">
@@ -143,6 +164,21 @@ export default({
                 title: 'Get cash payment'
               }
             ],
+            options: [
+              {
+                value:'1',
+                label:'1'
+              },
+              {
+                value:'1',
+                label:'1'
+              },
+              {
+                value:'1',
+                label:'1'
+              }
+            ],
+            value: '',
             img: [
               {url: [require('../../assets/images/sellyourcar/BringInYourCar.png')]},
               {url: [require('../../assets/images/sellyourcar/GetYourInstantOffer.png')]},
@@ -177,7 +213,7 @@ export default({
           align-items: flex-start;
           .title {
             height: 130px;
-            font-size: 100px;
+            font-size: 90px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
@@ -195,13 +231,13 @@ export default({
           }
         }
         .between {
-          height: 680px;
+          height: 615px;
           background: #F4F6F8;
           .sell {
             .title {
               height: 32px;
-              font-size: 80px;
-              padding:90px 0 30px 108px;
+              font-size: 75px;
+              padding:90px 0 20px 116px;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
               color: #e4e6ea;
@@ -211,12 +247,12 @@ export default({
             .image {
               display: flex;
               position: relative;
-              bottom: 260px;
+              bottom: 273px;
               .imggs {
-                padding-left: 215px;
+                padding-left: 211px;
                 .img {
-                  width: 194px;
-                  height: 285px;
+                  width: 199px;
+                  height: 295px;
                   background: #FFFFFF;
                 }
               }
@@ -227,7 +263,7 @@ export default({
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1258px;
+                top: 1237px;
                 left: 441px;
               }
               .imgs2 {
@@ -235,16 +271,16 @@ export default({
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1258px;
-                left: 843px;
+                top: 1237px;
+                left: 850px;
               }
               .imgs3 {
                 width: 43px;
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 1258px;
-                left: 1252px;
+                top: 1237px;
+                left: 1257px;
               }
             }
             .content {
@@ -270,7 +306,7 @@ export default({
                   line-height: 32px;
                 }
                 .style {
-                  width: 165px;
+                  width: 185px;
                   height: 110px;
                   font-size: 12px;
                   text-align: left;
@@ -287,8 +323,8 @@ export default({
           background-color: #fff;
           .contact {
             width: 50%;
-            margin-top:150px;
-            padding-left: 200px;
+            margin-top:108px;
+            padding-left: 247px;
             .us {
               height: 100px;
               font-size: 60px;
@@ -300,7 +336,7 @@ export default({
               line-height: 100px;
             }
             .started {
-              width: 735px;
+              width: 706px;
               height: 66px;
               font-size: 16px;
               text-align: left;
@@ -317,10 +353,11 @@ export default({
             .detail {
               position: relative;
               top: 85px;
-              width: 300px;
-              height: 60px;
-              font-size: 35px;
-              text-align: center;
+              width: 285px;
+              height: 43px;
+              font-size: 30px;
+              padding-right:32px;
+              text-align: right;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
@@ -330,10 +367,11 @@ export default({
             .privacy {
               position: relative;
               top: 240px;
-              width: 300px;
-              height: 60px;
-              font-size: 35px;
-              text-align: center;
+              width: 285px;
+              height: 45px;
+              font-size: 30px;
+              text-align: right;
+              padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
@@ -343,10 +381,11 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 300px;
-              height: 60px;
-              font-size: 35px;
-              text-align: center;
+              width: 285px;
+              height: 45px;
+              font-size: 30px;
+              text-align: right;
+              padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
@@ -410,11 +449,11 @@ export default({
               .btn{
                 width: 147px;
                 height: 44px;
-                color: fff;
+                color: #fff;
                 background-color: #000;
                 position: relative;
                 left: -6px;
-                top: 33px;
+                top: 38px;
               }
               
             }
@@ -452,10 +491,11 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 300px;
-              height: 60px;
-              font-size: 35px;
-              text-align: center;
+              width: 285px;
+              height: 45px;
+              font-size: 30px;
+              text-align: right;
+              padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
@@ -499,8 +539,15 @@ export default({
           }
         }
     }
-    .el-input__inner {
-        border: 1px solid #000 !important;
-        border-radius: 0 !important;
+    /deep/.el-input__inner {
+        border: 1px solid #000 ;
+        border-radius: 0 ;
       }
+/deep/.el-input--suffix .el-input__inner {
+  padding-right: 14px !important;
+}
+/deep/.el-textarea__inner {
+  border: 1px solid #000 ;
+  border-radius: 0 ;
+}
 </style>

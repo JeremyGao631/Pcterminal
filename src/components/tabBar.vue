@@ -64,9 +64,15 @@
     }
     .menu {
       position:absolute;
-      left: 780px;
+      left: 720px;
     }
   }
+  /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
+    border-bottom: none;
+    font-weight: bold;
+    font-weight: normal;
+    font-size: 16px;
+}
   .el-menu.el-menu--horizontal {
     border-bottom: none;
   }
