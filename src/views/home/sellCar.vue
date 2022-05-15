@@ -42,7 +42,7 @@
                 <div class="name">Mobile*</div>
                 <el-input />
               </div>
-              <div>
+              <div class="input1">
                 <div class="name">Email</div>
                 <el-input />
               </div>
@@ -58,7 +58,7 @@
                 <div class="name">Make*</div>
                 <el-input />
               </div>
-              <div>
+              <div class="input1">
                 <div class="name">Model*</div>
                 <el-select v-model="value" placeholder="请选择">
                   <el-option
@@ -86,7 +86,7 @@
                 <div class="name">Odometer*</div>
                 <el-input />
               </div>
-              <div>
+              <div class="input1">
                 <div class="name">Rego number</div>
                 <el-input />
               </div>
@@ -100,7 +100,7 @@
                 <div class="name">Trim</div>
                 <el-input />
               </div>
-              <div>
+              <div class="input1">
                 <div class="name">Logbook</div>
                 <el-select v-model="value" placeholder="请选择">
                   <el-option
@@ -122,7 +122,7 @@
             <div class="detail">COMMENTS</div>
             <div class="input4">
               <div class="input1">
-                <div class="name">COMMENTS</div>
+                <div class="name special">COMMENTS</div>
                 <el-input type="textarea" :rows="8" />
               </div>
               <el-button type="primary" class="btn">SUBMIT</el-button>
@@ -348,6 +348,7 @@ export default({
               font-weight: 400;
               color: #4A4A4A;
               line-height: 22px;
+              margin-bottom:20px;
             }
           }
           .form {
@@ -357,7 +358,7 @@ export default({
             .detail {
               position: relative;
               top: 85px;
-              width: 285px;
+              width: 420px;
               height: 43px;
               font-size: 30px;
               padding-right:32px;
@@ -371,7 +372,7 @@ export default({
             .privacy {
               position: relative;
               top: 240px;
-              width: 285px;
+              width: 420px;
               height: 45px;
               font-size: 30px;
               text-align: right;
@@ -385,7 +386,7 @@ export default({
             .detail1 {
               position: relative;
               top: 85px;
-              width: 285px;
+              width: 420px;
               height: 45px;
               font-size: 30px;
               text-align: right;
@@ -400,8 +401,20 @@ export default({
               padding-top:120px;
               display: flex;
               margin-left: 12%;
+              justify-content: center;
+              align-items: center;
               .input1 {
                 margin-right: 81px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                .el-select {
+                  /deep/ .el-input {
+                    width:260px;
+                  }
+                }
               }
               .name{
                 text-align: left;
@@ -419,8 +432,20 @@ export default({
               padding-top:32px;
               display: flex;
               margin-left: 12%;
+              justify-content: center;
+              align-items: center;
               .input1 {
                 margin-right: 81px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                .el-select {
+                  /deep/ .el-input{
+                    width:260px;
+                  }
+                }
               }
               .name{
                 text-align: left;
@@ -438,12 +463,21 @@ export default({
               padding-top:32px;
               display: flex;
               margin-left: 12%;
+              margin-right: 12%;
+              justify-content: center;
+              padding-right: 300px;
               .input1 {
                 margin-right: 81px;
                 width: 373px;
                 height: 107px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
               }
               .name{
+                padding-left:20px;
                 text-align: left;
                 font-size: 20px;
                 margin-bottom: 15px;
@@ -469,9 +503,23 @@ export default({
               padding-top:130px;
               margin-left: 87px;
               .input1 {
-                margin-right: 81px;
-                width: 90%;
+                margin:0 12%;
+                width: 783px;
                 height: 107px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                .special {
+                  margin-left:15px;
+                }
+                .el-textarea {
+                  /deep/ .el-textarea__inner {
+                    width:950px;
+                    margin-left:15px;
+                  }
+                }
               }
               .name{
                 text-align: left;
@@ -514,8 +562,15 @@ export default({
               padding-top:120px;
               display: flex;
               margin-left: 12%;
+              justify-content: center;
+              align-items: center;
               .input2 {
                 margin-right: 81px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
               }
               .name{
                 text-align: left;
