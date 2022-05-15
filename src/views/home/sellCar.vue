@@ -56,11 +56,18 @@
               </div>
               <div  class="input1">
                 <div class="name">Make*</div>
-                <el-input />
+                <el-select v-model="value" placeholder="Make:Any">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </div>
               <div class="input1">
                 <div class="name">Model*</div>
-                <el-select v-model="value" placeholder="请选择">
+                <el-select v-model="value" placeholder="Model:Any">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -73,7 +80,7 @@
             <div class="input2">
               <div class="input1">
                 <div class="name">Transmission*</div>
-                <el-select v-model="value" placeholder="请选择">
+                <el-select v-model="value" placeholder="Transmission:Any">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -102,7 +109,7 @@
               </div>
               <div class="input1">
                 <div class="name">Logbook</div>
-                <el-select v-model="value">
+                <el-select v-model="value" placeholder="Yes">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
