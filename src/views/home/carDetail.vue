@@ -240,20 +240,21 @@ name: 'CarDetail',
       font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 200px 50px 200px;
+      margin: 0 160px 50px 200px;
       padding-top:92px;
       text-align:left;
       letter-spacing: 1px;
     }
     .content {
-      margin:49px 200px 0px 200px;
+      margin:49px 160px 0px 200px;
       display: flex;
       align-items: top;
       justify-content: center;
       .contentleft {
-        width:40%;
+        width:35%;
         margin-right:20px;
         .pricekind {
+          margin-bottom:10px;
           .price {
             float:left;
             width:200px;
@@ -264,6 +265,7 @@ name: 'CarDetail',
             line-height: 48px;
             letter-spacing: 2px;
             margin-right:10px;
+            
           }
           .kind {
             float:left;
@@ -276,8 +278,8 @@ name: 'CarDetail',
           }
         }
         .list {
-          margin: 10px 0;
-          padding: 10px 0;
+          margin: 5px 0;
+          padding: 5px 0;
           .listresult {
             .listname {
               float:left;
@@ -321,8 +323,8 @@ name: 'CarDetail',
           align-items: center;
           justify-content: center;
           .showleft {
-            height: 50px;
-            margin:0 10px;
+            height: 30px;
+            margin:0 20px;
             img {
               float:left;
               height:100%;
@@ -334,36 +336,36 @@ name: 'CarDetail',
               height:100%;
               text-align: left;
               .texttop {
-                font-size: 24px;
+                font-size: 16px;
                 font-family: DINCondensed-Bold;
                 font-weight: bold;
                 color: black;
-                line-height: 31px;
+                line-height: 16px;
               }
               .texttop-right {
-                font-size: 24px;
+                font-size: 16px;
                 font-family: DINCondensed-Bold;
                 font-weight: bold;
                 color: black;
-                line-height: 31px;
+                line-height: 16px;
               }
               .textbottom {
-                font-size: 16px;
+                font-size: 12px;
                 font-family: DINCondensed-Bold;
                 font-weight: 400;
                 color: #909090;
-                line-height: 22px;
+                line-height: 12px;
               }
             }
           }
         }
       }
       .contentright {
-        width:calc(60% - 15px);
+        width:calc(65%);
         margin-left:10px;
         .bigimg {
           width: 100%;
-          height: 495px;
+          height: 400px;
           img {
             height: 100%;
             width: 100%;
@@ -390,9 +392,9 @@ name: 'CarDetail',
   }
   .detailtext {
     background-color: #FFFFFF;
-    width:1040px;
+    width:1080px;
     height:179px;
-    margin:0 420px 40px 420px;
+    margin:0 380px 40px 420px;
     .texttitle {
       width: 184px;
       height: 130px;

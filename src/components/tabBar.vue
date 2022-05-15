@@ -57,15 +57,14 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;
-    margin:0 80px;
     .img {
-      margin-left: 100px;
+      margin-left: 180px;
       width: 78px;
       height: 50px;
     }
     .menu {
       position:absolute;
-      left: 830px;
+      left: 1040px;
     }
   }
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {

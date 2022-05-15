@@ -65,9 +65,8 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    padding:0 190px;
     .left {
-        margin-left: 200px;
+        margin-left: 300px;
       .img {
         margin-right: 255px;
         margin-top: 10px;
