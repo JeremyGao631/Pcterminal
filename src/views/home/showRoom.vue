@@ -331,7 +331,7 @@ export default {
     }
     .inlinetext {
         position: absolute;
-        left: 70px;
+        left: 140px;
         top: 229px;
     }
     .content-text {
@@ -380,7 +380,7 @@ export default {
     }
     .middle {
         padding-bottom: 200px;
-        margin: 0 121px;
+        margin: 0 180px;
         .title {
             font-size: 70px;
             font-family: DINCondensed-Bold, DINCondensed;
@@ -390,6 +390,7 @@ export default {
             letter-spacing: 2px;
             margin: 114px 0 0 20px;
             text-align:left;
+            letter-spacing: 2px;
         }
         .show {
             display: flex;
