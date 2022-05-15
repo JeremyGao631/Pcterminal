@@ -688,7 +688,7 @@ export default {
                     .textcard {
                         float:left;
                         margin: 0 20px;
-                        width: calc(33.33% - 40px);
+                        width: calc(33.33% - 45px);
                         padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
@@ -764,9 +764,6 @@ export default {
                             line-height: 20px;
                             }
                         }
-                    }
-                    .textcard:nth-child(3), .textcard:nth-child(6), .textcard:nth-child(9) {
-                        margin-right: 0px;
                     }
                 }
 

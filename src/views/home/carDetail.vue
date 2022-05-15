@@ -1,4 +1,5 @@
 <template>
+<div class="carDetail">
   <div class="infodetail">
     <div class="title">{{information.title}}</div>
     <div class="content">
@@ -21,6 +22,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -78,6 +80,31 @@ name: 'CarDetail',
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+.carDetail {
+  background-color: #F4F6F8;
+  width:100%;
+  .infodetail {
+    width:1440px;
+    margin: 0 auto;
+    .title {
+      font-size: 70px;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #212020;
+      line-height: 55px;
+      margin: 0 20px 50px 20px;
+      padding-top:92px;
+      text-align:left;
+      letter-spacing: 1px;
+    }
+    .content {
+      margin:49px 20px 0px 20px;
+      display: flex;
+      align-items: top;
+      justify-content: center;
+    }
+  }
+}
 
 </style>

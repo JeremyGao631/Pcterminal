@@ -478,7 +478,7 @@ export default {
     .textcard {
       float:left;
       margin: 0 20px;
-      width: calc(25% - 40px);
+      width: calc(25% - 45px);
       padding-bottom: 60px;
       .imgcard {
         width: 100%;
@@ -549,9 +549,6 @@ export default {
           line-height: 20px;
         }
       }
-    }
-    .textcard:nth-child(4){
-      margin-right: 0px;
     }
     .textcard:nth-last-child(1) {
       margin-right: 0px;
