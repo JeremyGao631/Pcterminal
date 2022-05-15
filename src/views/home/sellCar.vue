@@ -56,7 +56,14 @@
               </div>
               <div  class="input1">
                 <div class="name">Make*</div>
-                <el-input />
+                <el-select v-model="value" placeholder="请选择">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </div>
               <div class="input1">
                 <div class="name">Model*</div>
@@ -166,8 +173,8 @@ export default({
             ],
             options: [
               {
-                value:'2',
-                label:'1'
+                value:'1',
+                label:'Model:Any'
               },
               {
                 value:'1',
@@ -178,7 +185,7 @@ export default({
                 label:'1'
               }
             ],
-            value: '',
+            value: 'Model: Any',
             img: [
               {url: [require('../../assets/images/sellyourcar/BringInYourCar.png')]},
               {url: [require('../../assets/images/sellyourcar/GetYourInstantOffer.png')]},
@@ -503,8 +510,7 @@ export default({
               padding-top:130px;
               margin-left: 87px;
               .input1 {
-                margin:0 12%;
-                width: 783px;
+                width: 82%;
                 height: 107px;
                 .el-input {
                   /deep/ .el-input__inner {
@@ -516,7 +522,7 @@ export default({
                 }
                 .el-textarea {
                   /deep/ .el-textarea__inner {
-                    width:950px;
+                    width:100%;
                     margin-left:15px;
                   }
                 }
@@ -606,6 +612,10 @@ export default({
         border: 1px solid #000 ;
         border-radius: 0 ;
         width: 100%;
+        font-size: 17px;
+        font-family: DINCondensed-Bold, DINCondensed;
+        color: #000;
+        font-weight: bold;
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
@@ -614,5 +624,7 @@ export default({
   border: 1px solid #000 ;
   border-radius: 0 ;
   width: 100%;
+
 }
+
 </style>
