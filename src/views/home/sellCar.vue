@@ -202,7 +202,6 @@ export default({
       width: 100%;
         .imgs {
           height: 780px;
-          margin: 0 auto;
         }
          .text { 
           position:absolute;
@@ -249,7 +248,7 @@ export default({
               position: relative;
               bottom: 273px;
               .imggs {
-                padding-left: 211px;
+                padding-left: 14%;
                 .img {
                   width: 199px;
                   height: 295px;
@@ -264,7 +263,7 @@ export default({
                 background: #FFFFFF;
                 position: absolute;
                 top: 1237px;
-                left: 441px;
+                left: 30%;
               }
               .imgs2 {
                 width: 43px;
@@ -272,7 +271,7 @@ export default({
                 background: #FFFFFF;
                 position: absolute;
                 top: 1237px;
-                left: 850px;
+                left: 56%;
               }
               .imgs3 {
                 width: 43px;
@@ -280,7 +279,7 @@ export default({
                 background: #FFFFFF;
                 position: absolute;
                 top: 1237px;
-                left: 1257px;
+                left: 83%;
               }
             }
             .content {
@@ -395,7 +394,7 @@ export default({
             .inputs {
               padding-top:120px;
               display: flex;
-              margin-left: 87px;
+              margin-left: 12%;
               .input1 {
                 margin-right: 81px;
               }
@@ -414,7 +413,7 @@ export default({
             .input2 {
               padding-top:32px;
               display: flex;
-              margin-left: 87px;
+              margin-left: 12%;
               .input1 {
                 margin-right: 81px;
               }
@@ -433,7 +432,7 @@ export default({
             .input3 {
               padding-top:32px;
               display: flex;
-              margin-left: 87px;
+              margin-left: 12%;
               .input1 {
                 margin-right: 81px;
                 width: 373px;
@@ -446,14 +445,18 @@ export default({
                 font-family: DINCondensed-Bold, DINCondensed;
                 font-weight: bold;
               }
+              /deep/.el-input__inner {
+                width: 80%;
+                margin-left:-19%;
+              }
               .btn{
                 width: 147px;
                 height: 44px;
                 color: #fff;
                 background-color: #000;
                 position: relative;
-                left: -6px;
-                top: 38px;
+                left: -12%;
+                top: 36px;
               }
               
             }
@@ -505,7 +508,7 @@ export default({
             .inputs {
               padding-top:120px;
               display: flex;
-              margin-left: 87px;
+              margin-left: 12%;
               .input2 {
                 margin-right: 81px;
               }
@@ -531,7 +534,7 @@ export default({
               font-size: 16px;
               text-align: left;
               margin-top:50px;
-              padding: 0 80px;
+              padding: 0 120px;
               font-weight: 400;
               font-family: PingFangSC-Light, PingFang SC;
               color: #151515;
@@ -549,5 +552,6 @@ export default({
 /deep/.el-textarea__inner {
   border: 1px solid #000 ;
   border-radius: 0 ;
+  width: 100%;
 }
 </style>

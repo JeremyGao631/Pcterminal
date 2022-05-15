@@ -101,7 +101,7 @@ export default({
                     information: '0498 698 000'
                 },
                 {
-                    title:'Email',
+                    title:'E-mail',
                     information: 'enquiries@auto-home.com.au'
                 },
                 {
@@ -133,7 +133,6 @@ export default({
         width: 100%;
         .imgs {
             height: 781px;
-            margin: 0 auto;
         }
         .text { 
           position:absolute;
@@ -154,7 +153,7 @@ export default({
         .contact-main {
             margin-left: 8px;
             .table {
-                margin: 95px 0 35px 595px;
+                margin: 95px 200px 35px 40%;
                 width: 681px;
                 height: 588px;
                 background-color: #f4f6f8;
@@ -197,7 +196,7 @@ export default({
             .left {
                 position:absolute;
                 top: 990px;
-                left: 203px;
+                left: 13%;
                 .top {
                     display: flex;
                     .information {
@@ -231,7 +230,7 @@ export default({
                             height: 28px;
                             font-size: 14px;
                             font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
+                            font-weight: bold;
                             color: #151515;
                             line-height: 28px;
                         }
@@ -259,7 +258,7 @@ export default({
                 align-items: flex-start;
                 flex-direction: row;
                 position: absolute;
-                left: 611px;
+                left: 42%;
                 top: 71px;
                 .logo {
                     width: 78px;
@@ -292,5 +291,8 @@ font-size: 14px;
 /deep/.el-textarea__inner {
     margin-left:18px;
     width: 508px;
+}
+el-inout::-webkit-input-placeholder {
+    color:#000
 }
 </style>
