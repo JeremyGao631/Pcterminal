@@ -3,8 +3,8 @@
         <img class="contentimg" src="../../assets/images/onlineshowroom/OnlineShowroom.png"  alt="暂无图片" />
         <div class="inlinetext">
             <span class="content-text">
-                <span>ONLINE</span><br />
-                <span>SHOWROOM</span><br />
+                <span style="padding-left:60px">ONLINE</span><br />
+                <span style="padding-left:60px">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button>
@@ -347,6 +347,8 @@ export default {
     .el-button {
         width: 231px;
         height: 58px;
+        position: absolute;
+        left:68px;
         border: 1px solid #FFFFFF ;
         margin-top: 79px;
         background-color: transparent;
@@ -378,8 +380,7 @@ export default {
     }
     .middle {
         padding-bottom: 200px;
-        margin: 0 auto;
-        width: 1440px;
+        margin: 0 121px;
         .title {
             font-size: 70px;
             font-family: DINCondensed-Bold, DINCondensed;

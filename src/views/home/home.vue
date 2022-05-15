@@ -10,7 +10,7 @@
               <span class="content-title">Excellent-performance</span><br />
               <span class="content-text">
                 <span>DISTINCTIVE</span><br />
-                <span>QUALITY</span><br />
+                <span style="padding-left: 51px;">QUALITY</span><br />
               </span>
               <el-button>
                 <span>BOOK SERVICE</span>
@@ -378,6 +378,7 @@ export default {
       font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #FFFFFF;
+      padding-left:51px;
       line-height: 36px;
       padding-bottom: 10px;
     }
@@ -385,9 +386,12 @@ export default {
       font-size: 120px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
+      padding-left: 51px;
       color: #FFFFFF;
     }
     .el-button {
+      position: relative;
+      left: 59px;
       width: 231px;
       height: 58px;
       border: 1px solid #FFFFFF ;
@@ -423,8 +427,7 @@ export default {
 }
 
 .middle {
-  margin: 0 auto;
-  width: 1440px;
+  margin: 0 100px;
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -557,6 +560,8 @@ export default {
   }
   .newbutton {
     float:right;
+    position: relative;
+    left: -34px;
     .el-button {
       width: 231px;
       height: 58px;
@@ -602,7 +607,7 @@ export default {
       white-space: nowrap;
       padding-top:114px;
       text-align:left;
-      margin: 114px auto  0 70px;
+      margin: 84px 0  0 128px;
     }
     .serviceinfo {
       width:1240px;
