@@ -102,7 +102,7 @@
               </div>
               <div class="input1">
                 <div class="name">Logbook</div>
-                <el-select v-model="value" placeholder="请选择">
+                <el-select v-model="value">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -166,7 +166,7 @@ export default({
             ],
             options: [
               {
-                value:'1',
+                value:'2',
                 label:'1'
               },
               {
