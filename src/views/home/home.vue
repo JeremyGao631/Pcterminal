@@ -344,7 +344,7 @@ export default {
   
     /deep/ .el-carousel__indicators--horizontal {
       bottom: 0;
-      left: 70px;
+      left: 120px;
       transform: translateY(-64px);
       .el-carousel__button {
         width: 10px;

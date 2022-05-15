@@ -168,7 +168,7 @@
                         <el-pagination
                             background
                             layout="prev, pager, next"
-                            :total="100"
+                            :total="60"
                             page-size="9"
                             prev-text="Previous"
                             next-text="Next">
@@ -689,7 +689,7 @@ export default {
                     .textcard {
                         float:left;
                         margin: 0 20px;
-                        width: calc(33.33% - 45px);
+                        width: calc(100% / 3 - 40px);
                         padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
@@ -763,6 +763,7 @@ export default {
                             opacity:0.7;
                             margin-right: 36px;
                             line-height: 20px;
+                            white-space: nowrap;
                             }
                         }
                     }
