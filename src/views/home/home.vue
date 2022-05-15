@@ -421,21 +421,21 @@ export default {
 }
 
 .middle {
-  position:relative;
+  margin: 0 auto;
+  width: 1440px;
   .title {
     font-size: 80px;
     font-family: DINCondensed-Bold;
     font-weight: bold;
     color: #151515;
     white-space: nowrap;
-    margin: 114px 0 0 260px;
+    margin: 114px 20px 0 20px;
     text-align:left;
   }
   .texttitle {
+    margin: 0 20px;
     padding-top: 78px;
     border-bottom: 2px solid #12100f;
-    margin-left: 260px;
-    margin-right: 263px;
     height: 50px;
     font-family: DINCondensed-Bold;
       .left {
@@ -469,19 +469,20 @@ export default {
       }
   }
   .textcontent {
-    margin-left: 260px;
-    margin-right: 263px;
     padding-top: 60px;
+    overflow: hidden;
     .textcard {
       float:left;
-      margin-right: 43px;
+      margin: 0 20px;
+      width: calc(25% - 40px);
       padding-bottom: 60px;
       .imgcard {
-        width: 358px;
-        height: 252px;
+        width: 100%;
+        height: 220px;
         img {
-          height: 251px;
+          height: 100%;
           width: 100%;
+          object-fit: cover;
         }
       }
       .titlecard {
