@@ -141,6 +141,7 @@ export default({
             font-weight: bold;
             color: #151515;
             line-height: 100px;
+            margin-left: 45px;
         }
         .style {
             width:83%;
@@ -185,8 +186,8 @@ export default({
         .styles {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            margin-left: 100px;
+            justify-content: left;
+            margin-left: 234px;
             margin-bottom: 70px;
             .weOffer {
                 display: flex;

@@ -611,15 +611,15 @@ export default {
     }
     .serviceinfo {
       width:1240px;
-      margin:0 auto;
+      margin-left: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       padding-top:61px;
       padding-bottom:200px;
       .infotext {
-        margin: 0 40px;
-        width: calc(33.3% - 80px);
+        margin-right:85px;
+        width: calc(100% / 3 - 85px);
         height: 508px;
         background: #FFFFFF;
         img {

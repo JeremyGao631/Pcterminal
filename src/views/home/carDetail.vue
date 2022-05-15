@@ -110,7 +110,7 @@
       <div class="choosepage">
         <el-pagination
           layout="prev, pager, next"
-          :total="50">
+          :total="30">
         </el-pagination>
       </div>
     </div>

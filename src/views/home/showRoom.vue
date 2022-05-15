@@ -136,7 +136,7 @@
                             </el-select>
                         </div>
                         <div class="titleright">
-                            <span class="textleft">AVAILIABLE</span>
+                            <span class="textleft">AVAILABLE</span>
                             <span class="textright">55 Cars</span>
                         </div>
                     </div>
@@ -443,7 +443,7 @@ export default {
                     }
                 }
                 .viewall {
-                    margin-top: 10px;
+                    margin-top: 20px;
                     .viewleft {
                         font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
