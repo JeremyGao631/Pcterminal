@@ -80,11 +80,13 @@
           </div>
         </div>
       </div>
-      <div class="newbutton">
-        <el-button >
-          <span>SHOW ALL</span>
-          <i class="el-icon-my-yellowright"></i>
-        </el-button>
+      <div class="test11">
+        <div class="newbutton">
+          <el-button >
+            <span>SHOW ALL</span>
+            <i class="el-icon-my-yellowright"></i>
+          </el-button>
+        </div>
       </div>
       <div style="clear:both;"></div>
     </div>
@@ -342,7 +344,7 @@ export default {
   
     /deep/ .el-carousel__indicators--horizontal {
       bottom: 0;
-      left: 260px;
+      left: 70px;
       transform: translateY(-64px);
       .el-carousel__button {
         width: 10px;
@@ -369,8 +371,8 @@ export default {
   text-align: left;
   div {
     position: absolute;
-    left: 260px;
-    top: 125px;
+    left: 70px;
+    top: 177px;
     .content-title {
       font-size: 60px;
       font-family: DINCondensed-Bold;
@@ -424,26 +426,27 @@ export default {
   margin: 0 auto;
   width: 1440px;
   .title {
-    font-size: 80px;
+    font-size: 70px;
     font-family: DINCondensed-Bold;
     font-weight: bold;
     color: #151515;
     white-space: nowrap;
     margin: 114px 20px 0 20px;
     text-align:left;
+    letter-spacing: 2px; 
   }
   .texttitle {
     margin: 0 20px;
     padding-top: 78px;
     border-bottom: 2px solid #12100f;
-    height: 50px;
+    height: 35px;
     font-family: DINCondensed-Bold;
       .left {
         float: left;
         .btn_anniu {
           margin-right: 20px;
           padding: 10px 25px;
-          font-size: 37px;
+          font-size: 22px;
           color: #909090;
         }
         .newStyle{
@@ -452,6 +455,7 @@ export default {
           font-weight: bold;
           margin-right: 20px;
           padding: 10px 25px;
+          font-size: 22px;
           color: #212020;
         }
       }
@@ -461,7 +465,7 @@ export default {
           font-weight:bold;
           font-family: DINCondensed-Bold;
           color: #212020;
-          font-size: 35px;
+          font-size: 22px;
         }
       }
       .clearfix {
@@ -474,11 +478,11 @@ export default {
     .textcard {
       float:left;
       margin: 0 20px;
-      width: calc(25% - 40px);
+      width: calc(25% - 45px);
       padding-bottom: 60px;
       .imgcard {
         width: 100%;
-        height: 220px;
+        height: 211px;
         img {
           height: 100%;
           width: 100%;
@@ -494,7 +498,7 @@ export default {
           font-family: DINCondensed-Bold;
           margin-left: 3px;
           font-weight:bold;
-          font-size: 35px;
+          font-size: 30px;
           color: #212020;
           line-height: 32px;
         }
@@ -505,20 +509,19 @@ export default {
         align-items: center;
         justify-content: space-between;
         padding-left: 19px;
-        padding-right: 22px;
+        padding-right: 15px;
         .contentcard-price {
           font-family:DINCondensed-Bold;
           font-weight:bold;
-          font-size: 27px;
+          font-size: 24px;
           color: #212020;
           line-height: 29px;
         }
         .contentcard-info {
-          font-size: 19px;
+          font-size: 16px;
           color: #4A4A4A;
           line-height: 19px;
           margin-top: 3px;
-          margin-left: 5px;
           font-family:DINCondensed-Bold;
           font-weight: bold;
           opacity:0.7;
@@ -536,7 +539,7 @@ export default {
         justify-content: left;
         padding-left: 19px;
         span {
-          font-size: 12px;
+          font-size: 14px;
           font-family:PingFangSC-Semibold;
           font-weight: 600;
           margin-right: 30px;
@@ -547,23 +550,17 @@ export default {
         }
       }
     }
-    .textcard:nth-child(4){
-      margin-right: 0px;
-    }
     .textcard:nth-last-child(1) {
       margin-right: 0px;
       padding-bottom:120px;
     }
   }
   .newbutton {
-    position:absolute;
-    bottom:0;
-    right:265px;
+    float:right;
     .el-button {
       width: 231px;
       height: 58px;
       border: 1px solid #F7941E ;
-      margin-top: 45px;
       background-color: transparent;
       color:#F7941E;
       display: flex;
@@ -594,28 +591,32 @@ export default {
 
 .bottom {
     background-color:#F4F6F8;
+    width:100%;
+    margin: 0 auto;
     .title {
-      font-size: 80px;
+      width:1240px;
+      font-size: 70px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #151515;
       white-space: nowrap;
-      padding: 114px 0 0 260px;
+      padding-top:114px;
       text-align:left;
-      margin-top:114px;
+      margin: 114px auto  0 70px;
     }
     .serviceinfo {
-      width:100%;
+      width:1240px;
+      margin:0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
       padding-top:61px;
       padding-bottom:200px;
       .infotext {
-        width: 419px;
+        margin: 0 40px;
+        width: calc(33.3% - 80px);
         height: 508px;
         background: #FFFFFF;
-        margin-right:85px;
         img {
           width: 100%;
           height:240px;
