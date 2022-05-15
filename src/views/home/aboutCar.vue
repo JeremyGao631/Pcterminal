@@ -141,6 +141,7 @@ export default({
             font-weight: bold;
             color: #151515;
             line-height: 100px;
+            margin-left: 45px;
         }
         .style {
             width:83%;

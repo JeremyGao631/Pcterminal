@@ -136,7 +136,7 @@
                             </el-select>
                         </div>
                         <div class="titleright">
-                            <span class="textleft">AVAILIABLE</span>
+                            <span class="textleft">AVAILABLE</span>
                             <span class="textright">55 Cars</span>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                         <el-pagination
                             background
                             layout="prev, pager, next"
-                            :total="100"
+                            :total="60"
                             page-size="9"
                             prev-text="Previous"
                             next-text="Next">
@@ -331,7 +331,7 @@ export default {
     }
     .inlinetext {
         position: absolute;
-        left: 70px;
+        left: 140px;
         top: 229px;
     }
     .content-text {
@@ -380,7 +380,7 @@ export default {
     }
     .middle {
         padding-bottom: 200px;
-        margin: 0 121px;
+        margin: 0 180px;
         .title {
             font-size: 70px;
             font-family: DINCondensed-Bold, DINCondensed;
@@ -390,6 +390,7 @@ export default {
             letter-spacing: 2px;
             margin: 114px 0 0 20px;
             text-align:left;
+            letter-spacing: 2px;
         }
         .show {
             display: flex;
@@ -443,7 +444,7 @@ export default {
                     }
                 }
                 .viewall {
-                    margin-top: 10px;
+                    margin-top: 20px;
                     .viewleft {
                         font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
@@ -689,7 +690,7 @@ export default {
                     .textcard {
                         float:left;
                         margin: 0 20px;
-                        width: calc(33.33% - 45px);
+                        width: calc(100% / 3 - 40px);
                         padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
@@ -763,6 +764,7 @@ export default {
                             opacity:0.7;
                             margin-right: 36px;
                             line-height: 20px;
+                            white-space: nowrap;
                             }
                         }
                     }
