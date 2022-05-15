@@ -230,7 +230,7 @@ export default({
         .visit{
             position:absolute;
             top: 2728px;
-            left:26%;
+            left:30%;
             .visitTitle {
                 width: 555px;
                 height: 100px;
@@ -255,7 +255,7 @@ export default({
         }
         .ourStory {
             display: flex;
-            margin-left: 215px;
+            margin-left: 285px;
             margin-top: 95px;
             .storyImg {
                 width: 49%;

@@ -266,7 +266,7 @@ export default({
                 align-items: flex-start;
                 flex-direction: row;
                 position: absolute;
-                left: 43%;
+                left: 44%;
                 top: 71px;
                 .logo {
                     width: 78px;
