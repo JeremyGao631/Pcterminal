@@ -30,7 +30,7 @@
           <span class="btn_anniu" @click="change(1)" :class="{ newStyle:1===number}">SEARCH INVENTORY</span>
         </div>
         <div class="right">
-          <span type="text">AVAILIABLE 55 CARS</span>
+          <span type="text">AVAILABLE 55 CARS</span>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -605,7 +605,7 @@ export default {
       white-space: nowrap;
       padding-top:114px;
       text-align:left;
-      margin: 84px 0  0 180px;
+      margin: 84px 0  0 240px;
     }
     .serviceinfo {
       margin-left: 200px;
@@ -617,7 +617,7 @@ export default {
       padding-bottom:200px;
       .infotext {
         margin-right:85px;
-        width: calc(100% / 3 - 85px);
+        width: calc(100% / 3 - 125px);
         height: 508px;
         background: #FFFFFF;
         img {
@@ -641,7 +641,7 @@ export default {
             font-family:PingFangSC-Semibold;
             font-weight: 400;
             color: #BEBEBE;
-            font-size:12px;
+            font-size:14px;
             margin:0 50px 45px 45px;
           }
         }
