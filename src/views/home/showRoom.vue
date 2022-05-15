@@ -331,7 +331,7 @@ export default {
     }
     .inlinetext {
         position: absolute;
-        left: 260px;
+        left: 70px;
         top: 229px;
     }
     .content-text {
@@ -378,25 +378,25 @@ export default {
     }
     .middle {
         padding-bottom: 200px;
+        margin: 0 auto;
+        width: 1440px;
         .title {
-            width: 568px;
-            height: 130px;
-            font-size: 80px;
+            font-size: 70px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #151515;
             line-height: 130px;
             letter-spacing: 2px;
-            margin: 114px 0 0 260px;
+            margin: 114px 0 0 20px;
             text-align:left;
         }
         .show {
             display: flex;
             align-items: top;
             justify-content: center;
-            margin: 31px 260px 0 260px;
+            margin: 31px 20px 0 20px;
             .left {
-                width: 312px;
+                width: 20%;
                 margin-right: 20px;
                 display:inline-block;
                 vertical-align: top;
@@ -637,11 +637,12 @@ export default {
                 }
             }
             .right {
-                width: calc(100% - 312px);
+                width: calc(80% - 40px);
                 margin-left: 20px;
                 display:inline-block;
                 .texttitle {
                     height: 48px;
+                    margin-left:20px;
                     .titleleft {
                         float: left;
                         span {
@@ -677,26 +678,29 @@ export default {
                             color: #151515;
                             line-height: 48px;
                             letter-spacing: 1px;
-                            padding-right:60px;
+                            padding-right:20px;
                         }
                     }
                 }
                 .showimg {
                     margin-top: 40px;
+                    overflow: hidden;
                     .textcard {
                         float:left;
-                        margin-right: 43px;
+                        margin: 0 20px;
+                        width: calc(33.33% - 40px);
                         padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
                             margin-left: 3px;
                         }
                         .imgcard {
-                            height: 252px;
-                            width: 358px;
+                            width:100%;
+                            height: 211px;
                             img {
                                width:100%; 
-                               height:252px;
+                               height:100%;     
+                               object-fit: cover;
                             }
                         }
                         .titlecard {
@@ -708,7 +712,7 @@ export default {
                             font-family: DINCondensed-Bold;
                             margin-left: 3px;
                             font-weight:bold;
-                            font-size: 35px;
+                            font-size: 30px;
                             color: #212020;
                             line-height: 32px;
                             }
@@ -723,12 +727,12 @@ export default {
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
                             font-weight:bold;
-                            font-size: 27px;
+                            font-size: 24px;
                             color: #212020;
                             line-height: 29px;
                             }
                             .contentcard-info {
-                            font-size: 19px;
+                            font-size: 16px;
                             color: #4A4A4A;
                             line-height: 19px;
                             margin-top: 3px;
@@ -750,7 +754,7 @@ export default {
                             justify-content: left;
                             padding-left: 19px;
                             span {
-                            font-size: 12px;
+                            font-size: 14px;
                             font-family:PingFangSC-Semibold;
                             font-weight: 600;
                             margin-right: 30px;
