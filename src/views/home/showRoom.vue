@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <img src="../../assets/images/onlineshowroom/OnlineShowroom.png"  alt="暂无图片" />
+        <img class="contentimg" src="../../assets/images/onlineshowroom/OnlineShowroom.png"  alt="暂无图片" />
         <div class="inlinetext">
             <span class="content-text">
                 <span>ONLINE</span><br />
@@ -142,36 +142,38 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="showimg">
-                        <div class="textcard" v-for="index in information" :key="index">
-                            <div class="imgcard" style="height:171px;width:272px;" >
-                                <img :src="index.url"  style="height:191px"/>
+                        <div class="textcard" v-for="index in information" :key="index" @click="cardetail()">
+                            <div class="imgcard"  >
+                                <img :src="index.url"  />
                             </div>
-                            <div class="cardtitle" >
-                                <span class="yeartype">{{index.year}} {{index.type}}</span>
+                            <div class="titlecard" >
+                                <span >{{index.year}} {{index.type}}</span>
                                 <br />
-                                <span class="kind" >{{index.kind}}</span>
+                                <span >{{index.kind}}</span>
                             </div>
-                            <div style="padding-bottom:20px;display: flex;align-items: center;justify-content: space-between;padding-left:19px;">
-                                <span style="font-weight:bold;font-size: 20px;color: #212020">{{index.price}}</span>
-                                <span style="font-size: 16px;color: #4A4A4A;line-height: 19px;margin-top:3px;margin-left:5px;font-family:DINCondensed-Bold;font-weight: bold;opacity:0.7;">{{index.info}}</span>
+                            <div class="contentcard">
+                                <span class="contentcard-price">{{index.price}}</span>
+                                <span class="contentcard-info">{{index.info}}</span>
                             </div>
-                            <div style="border-bottom:1px solid #979797;margin-left:19px;opacity:0.1;"></div>
-                            <div style="padding-top:20px;display: flex;align-items: center;justify-content: left;padding-left:19px;">
-                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;margin-right:25px;color: #4A4A4A;opacity:0.7;">{{index.distance}}</span>
-                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;margin-right:25px;color: #4A4A4A;opacity:0.7;">{{index.info1}}</span>
-                                <span style="font-size: 12px;font-family:PingFangSC-Semibold;font-weight: 600;color: #4A4A4A;opacity:0.7;">{{index.info2}}</span>
+                            <div class="break" ></div>
+                            <div class="detailcard" >
+                                <span >{{index.distance}}</span>
+                                <span >{{index.info1}}</span>
+                                <span >{{index.info2}}</span>
                             </div>
                         </div>
                         <div style="clear:both;"></div>
                     </div>
-                    <el-pagination
-                        background
-                        layout="prev, pager, next"
-                        :total="100"
-                        page-size="9"
-                        prev-text="Previous"
-                        next-text="Next">
-                    </el-pagination>
+                    <div class="pagebutton">
+                        <el-pagination
+                            background
+                            layout="prev, pager, next"
+                            :total="100"
+                            page-size="9"
+                            prev-text="Previous"
+                            next-text="Next">
+                        </el-pagination>
+                    </div>
                 </div>
             </div>
         </div>
@@ -312,6 +314,9 @@ export default {
     },
     move(value){
         return value;
+    },
+    cardetail(){
+        this.$router.push('/carDetail')
     }
   }
 }
@@ -320,7 +325,7 @@ export default {
 
 <style lang="less" scoped>
 .content {
-    img {
+    .contentimg {
         width: 100%;
         height: 997px;
     }
@@ -382,20 +387,19 @@ export default {
             color: #151515;
             line-height: 130px;
             letter-spacing: 2px;
-            margin: 114px 0 0 240px;
+            margin: 114px 0 0 260px;
             text-align:left;
         }
         .show {
             display: flex;
             align-items: top;
             justify-content: center;
-            margin: 31px 120px 0 120px;
+            margin: 31px 260px 0 260px;
             .left {
-                width: 210px;
+                width: 312px;
                 margin-right: 20px;
                 display:inline-block;
                 vertical-align: top;
-                padding-left: 130px;
                 .choose {
                    position: relative;
                    border-top: 1px solid #151515;
@@ -403,7 +407,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -440,7 +444,7 @@ export default {
                 .viewall {
                     margin-top: 10px;
                     .viewleft {
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -466,7 +470,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -491,7 +495,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -519,7 +523,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -586,7 +590,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 20px;
+                        font-size: 27px;
                         font-family: DINCondensed-Bold, DINCondensed;
                         font-weight: bold;
                         color: #151515;
@@ -633,7 +637,7 @@ export default {
                 }
             }
             .right {
-                width: 990px;
+                width: calc(100% - 312px);
                 margin-left: 20px;
                 display:inline-block;
                 .texttitle {
@@ -642,13 +646,13 @@ export default {
                         float: left;
                         span {
                             height: 48px;
-                            font-size: 20px;
+                            font-size: 27px;
                             font-family: DINCondensed-Bold, DINCondensed;
                             font-weight: bold;
                             color: #151515;
                             line-height: 48px;
                             letter-spacing: 1px;
-                            margin-right: 10px;
+                            margin-right: 20px;
                         }
                         /deep/ .el-input__inner {
                             background-color:#F4F6F8;
@@ -673,6 +677,7 @@ export default {
                             color: #151515;
                             line-height: 48px;
                             letter-spacing: 1px;
+                            padding-right:60px;
                         }
                     }
                 }
@@ -680,28 +685,79 @@ export default {
                     margin-top: 40px;
                     .textcard {
                         float:left;
-                        margin-right: 35px;
+                        margin-right: 43px;
                         padding-bottom: 60px;
                         span {
                             font-family: DINCondensed-Bold;
                             margin-left: 3px;
                         }
                         .imgcard {
-                            height: 191px;
-                            width: 275px;
-                            .img {
+                            height: 252px;
+                            width: 358px;
+                            img {
                                width:100%; 
+                               height:252px;
                             }
                         }
-                        .cardtitle {
+                        .titlecard {
                             text-align:left;
                             padding-top: 30px;
                             padding-bottom: 20px;
                             padding-left: 19px;
-                            .yeartype, .kind  {
-                                font-weight:bold;
-                                font-size: 25px;
-                                color: #212020;
+                            span {
+                            font-family: DINCondensed-Bold;
+                            margin-left: 3px;
+                            font-weight:bold;
+                            font-size: 35px;
+                            color: #212020;
+                            line-height: 32px;
+                            }
+                        }
+                        .contentcard {
+                            padding-bottom: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-left: 19px;
+                            padding-right: 22px;
+                            .contentcard-price {
+                            font-family:DINCondensed-Bold;
+                            font-weight:bold;
+                            font-size: 27px;
+                            color: #212020;
+                            line-height: 29px;
+                            }
+                            .contentcard-info {
+                            font-size: 19px;
+                            color: #4A4A4A;
+                            line-height: 19px;
+                            margin-top: 3px;
+                            margin-left: 5px;
+                            font-family:DINCondensed-Bold;
+                            font-weight: bold;
+                            opacity:0.7;
+                            }
+                        }
+                        .break {
+                            border-bottom: 1px solid #979797;
+                            margin-left: 19px;
+                            opacity:0.1;
+                        }
+                        .detailcard {
+                            padding-top:20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: left;
+                            padding-left: 19px;
+                            span {
+                            font-size: 12px;
+                            font-family:PingFangSC-Semibold;
+                            font-weight: 600;
+                            margin-right: 30px;
+                            color: #4A4A4A;
+                            opacity:0.7;
+                            margin-right: 36px;
+                            line-height: 20px;
                             }
                         }
                     }
@@ -709,11 +765,44 @@ export default {
                         margin-right: 0px;
                     }
                 }
-                /deep/.el-pagination.is-background .btn-next{
-                    min-width: 100px;
-                }
-                /deep/.el-pagination.is-background .btn-prev{
-                    min-width: 100px;
+
+                .pagebutton {
+                    .el-pagination.is-background {
+                        /deep/ .btn-prev{
+                            width: 144px;
+                            height: 40px;
+                            border:1px solid #151515;
+                            font-weight: bold;
+                            color: #151515;
+                            background-color: transparent;
+                            margin-right: 14px;
+                        }
+                        /deep/ .btn-next{
+                            width: 144px;
+                            height: 40px;
+                            border:1px solid #151515;
+                            font-weight: bold;
+                            color: #151515;
+                            background-color: transparent;
+                            margin-left: 14px;
+                        }
+                        /deep/ .el-pager {
+                            li:not(.disabled) {
+                                width:34px;
+                                height:40px;
+                                border:1px solid #151515;
+                                font-weight: bold;
+                                color: #151515;
+                                background-color: transparent;
+                                margin-left: 14px;
+                                line-height: 40px;
+                            }
+                            li:not(.disabled).active {
+                                background-color: #151515;
+                                color:#F4F6F8;
+                            }
+                        }
+                    }
                 }
             }
         }
