@@ -174,7 +174,7 @@ export default({
             options: [
               {
                 value:'1',
-                label:'Model:Any'
+                label:''
               },
               {
                 value:'1',
@@ -185,7 +185,7 @@ export default({
                 label:'1'
               }
             ],
-            value: 'Model: Any',
+            value: '',
             img: [
               {url: [require('../../assets/images/sellyourcar/BringInYourCar.png')]},
               {url: [require('../../assets/images/sellyourcar/GetYourInstantOffer.png')]},
