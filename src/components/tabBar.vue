@@ -63,7 +63,6 @@
       height: 50px;
     }
     .menu {
-      width: 100%;
       position:absolute;
       left: 780px;
     }
