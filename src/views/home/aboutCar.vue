@@ -103,7 +103,6 @@ export default({
         width: 100%;
         .imgs {
             height: 782px;
-            margin: 0 auto;
         }
         .text { 
           position:absolute;
@@ -230,7 +229,7 @@ export default({
         .visit{
             position:absolute;
             top: 2728px;
-            left:373px;
+            left:26%;
             .visitTitle {
                 width: 555px;
                 height: 100px;
@@ -264,7 +263,7 @@ export default({
             }
             .title {
                 text-align: right;
-                margin-left:-10px;
+                margin-left:-1%;
                 margin-top:38px;
                 .storyTit {
                     width: 344px;
