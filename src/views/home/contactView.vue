@@ -292,7 +292,10 @@ font-size: 14px;
     margin-left:18px;
     width: 508px;
 }
-el-inout::-webkit-input-placeholder {
-    color:#000
+/deep/.el-input__inner::placeholder {
+    color: #000;
+}
+/deep/.el-textarea__inner::placeholder{
+    color:#000;
 }
 </style>
