@@ -190,7 +190,7 @@ export default({
             options: [
               {
                 value:'1',
-                label:'Model:Any'
+                label:''
               },
               {
                 value:'2',
@@ -243,7 +243,7 @@ export default({
       width: 100%;
         .imgs {
           width: 100%;
-          height: 780px;
+          height: 997px;
         }
          .text { 
           position:absolute;
@@ -303,7 +303,7 @@ export default({
             .imgs {
               display: flex;
               position: relative;
-              bottom: 820px;
+              bottom: 950px;
               .imgs1 {
                 width: 43px;
                 height: 43px;
@@ -369,6 +369,7 @@ export default({
         }
         .bottom {
           background-color: #fff;
+          margin-left:170px;
           .contact {
             width: 50%;
             margin-top:108px;
@@ -553,17 +554,17 @@ export default({
               justify-content: center;
               padding-right: 300px;
               .input1 {
-                margin-right: 81px;
+                margin-right: 105px;
                 width: 373px;
                 height: 107px;
                 .el-input {
                   /deep/ .el-input__inner {
-                    width:260px;
+                    width:420px;
                   }
                 }
               }
               .name{
-                padding-left:20px;
+                margin-left:20px;
                 text-align: left;
                 font-size: 20px;
                 margin-bottom: 15px;
@@ -572,7 +573,7 @@ export default({
               }
               /deep/.el-input__inner {
                 width: 80%;
-                margin-left:-19%;
+                margin-left:6%;
               }
               .btn{
                 width: 147px;
@@ -580,7 +581,6 @@ export default({
                 color: #fff;
                 background-color: #000;
                 position: relative;
-                left: -12%;
                 top: 36px;
               }
               
@@ -597,12 +597,12 @@ export default({
                   }
                 }
                 .special {
-                  margin-left:15px;
+                  margin-left:80px;
                 }
                 .el-textarea {
                   /deep/ .el-textarea__inner {
                     width:100%;
-                    margin-left:15px;
+                    margin-left:80px;
                   }
                 }
               }

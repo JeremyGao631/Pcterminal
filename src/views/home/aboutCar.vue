@@ -20,7 +20,7 @@
                 <div class="story">{{ story }}</div>
             </div>
         </div>
-        <div class="offer">WHY CHOOSE US</div>
+        <div class="offer spcialoffer">WHY CHOOSE US</div>
         <div class="styles">
             <div v-for="(items,index) in chooses" :key="index" class="weOffer">
                 <img :src="items.img" alt="" class="imgStyle">
@@ -103,7 +103,7 @@ export default({
         width: 100%;
         .imgs {
             width: 100%;
-            height: 782px;
+            height: 997px;
         }
         .text { 
           position:absolute;
@@ -142,6 +142,18 @@ export default({
             color: #151515;
             line-height: 100px;
             margin-left: 40px;
+        }
+        .spcialoffer {
+            width: 42%;
+            height: 100px;
+            font-size: 60px;
+            margin-top: 60px;
+            margin-bottom: 43px;
+            font-family: DINCondensed-Bold, DINCondensed;
+            font-weight: bold;
+            color: #151515;
+            line-height: 100px;
+            margin-left: 150px;
         }
         .style {
             width:83%;
@@ -256,8 +268,9 @@ export default({
         }
         .ourStory {
             display: flex;
-            margin-left: 285px;
+            margin-left: 395px;
             margin-top: 95px;
+            margin-right:400px;
             .storyImg {
                 width: 49%;
                 height: 357px;

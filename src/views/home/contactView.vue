@@ -165,7 +165,7 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 781px;
+            height: 997px;
         }
         .text { 
           position:absolute;
@@ -193,7 +193,7 @@ export default({
                 position: relative;
                 .table1 {
                     position: absolute;
-                    left:13%;
+                    left:14%;
                 .title {
                     margin-left: 60px;
                     font-size: 60px;
@@ -233,7 +233,7 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 991px;
+                top: 1210px;
                 left: 21%;
                 .top {
                     display: flex;
@@ -338,11 +338,16 @@ font-size: 14px;
     width: 508px;
 }
 /deep/.el-input__inner::placeholder {
-    color: #000;
-    font-size: 14px;
+    font-size: 20px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+color: #151515;
+line-height: 130px;
 }
 /deep/.el-textarea__inner::placeholder{
-    color:#000;
-    font-size: 14px;
+    font-size: 20px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+color:#151515;
 }
 </style>

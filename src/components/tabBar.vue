@@ -64,7 +64,7 @@
     }
     .menu {
       position:absolute;
-      left: 750px;
+      left: 47%;
     }
   }
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
