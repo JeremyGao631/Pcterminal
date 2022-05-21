@@ -28,8 +28,8 @@
                         required 
                     />
                     <el-input 
-                        v-model="address"
-                        placeholder="Address*" 
+                        v-model="postcode"
+                        placeholder="Postcode*" 
                         required 
                     />
                 </div>
@@ -69,6 +69,22 @@
                         <span class="contact"> {{ information[3].information }}</span>
                     </div>
                 </div>
+                <!--新增-->
+                <div class="top">
+                    <div class =information @click="goHome()">
+                        <img class="img" src="../../assets/images/contact/Wechat.png" alt="">
+                        <span class="title"> {{ information[4].title }}</span>
+                        <span class="contact"> {{ information[4].information }}</span>
+                    </div>
+                    <div class =information @click="code()">
+                        <img class="img" src="../../assets/images/contact/Address.png" alt="">
+                        <span class="title"> {{ information[5].title }}</span>
+                        <span class="contact"> {{ information[5].information }}</span>
+                    </div>
+                </div>
+                <div>
+                    <!-- <img class="showcode" src="../../assets/images/about/CarForSale.png" alt=""> -->
+                </div>
             </div>
         </div>
         <div class="location">
@@ -101,7 +117,7 @@ export default({
             information: [
                 {
                     title:'Phone',
-                    information: '0498 698 000'
+                    information: '0406 118 999'
                 },
                 {
                     title:'E-mail',
@@ -109,11 +125,19 @@ export default({
                 },
                 {
                     title:'Wechat',
-                    information: 'buyingcars'
+                    information: 'Autohome_388'
                 },
                 {
-                    title:'Address',
+                    title:'Postcode',
                     information: '388 Parramatta Road，Burwood, NSW 2134'
+                },
+                {
+                    title:'Facebook',
+                    information: 'Autohome Australia'
+                },
+                {
+                    title:'Whatsapp',
+                    information: '0406 118 999'
                 }
             ]
         }
@@ -127,6 +151,12 @@ export default({
                 this.disabled = false
                 
             }
+        },
+        goHome() {
+            this.$router.push('/home')
+        },
+        code() {
+
         }
     }
 })
@@ -158,7 +188,7 @@ export default({
             .table {
                 margin: 95px 200px 35px 40%;
                 width: 52%;
-                height: 588px;
+                height: 750px;
                 background-color: #f4f6f8;
                 position: relative;
                 .table1 {
@@ -203,8 +233,8 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 990px;
-                left: 19%;
+                top: 991px;
+                left: 21%;
                 .top {
                     display: flex;
                     .information {
@@ -213,15 +243,15 @@ export default({
                         align-items: center;
                         margin-right: 20px;
                         margin-bottom: 20px;
-                        width: 226px;
-                        height: 241px;
+                        width: 205px;
+                        height: 210px;
                         background: #FFFFFF;
                         box-shadow: 0px 14px 48px 0px rgba(73, 73, 73, 0.07);
                         .img {
-                            margin-top:30px;
-                            margin-bottom:30px;
-                            width: 49px;
-                            height: 49px;
+                            margin-top:19px;
+                            margin-bottom:19px;
+                            width: 45px;
+                            height: 45px;
                         }
                         .title {
                             width: 111px;
@@ -231,7 +261,7 @@ export default({
                             font-weight: bold;
                             color: #212020;
                             line-height: 32px;
-                            margin-bottom: 35px;
+                            margin-bottom: 19px;
                         }
                         .contact {
                             width: 200px;
@@ -243,6 +273,13 @@ export default({
                             line-height: 28px;
                         }
                     } 
+                }
+                .showcode {
+                    width: 150px;
+                    height: 150px;
+                    position: absolute;
+                    top:245px;
+                    left:15px;
                 }
 
             }

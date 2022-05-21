@@ -11,14 +11,14 @@
             <div class="tips">{{tips}}</div>
         </div>
         <div class="line"/>
-        <div class="right">
+        <!-- <div class="right">
           <div class="guide">GUIDE</div>
           <div @click="home()" class="components">HOME</div>
           <div @click="showroom()" class="components">ONLINE SHOWROOM</div>
           <div @click="sell()" class="components">SELL YOUR CAR</div>
           <div @click="about()" class="components">ABOUT</div>
           <div @click="contact()" class="component">CONTACT</div>
-        </div>
+        </div> -->
         <div class="among">
           <div class="guide">CONTACT</div>
           <div class="components">Tel: 0498698000</div>
@@ -65,8 +65,9 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
     .left {
-        margin-left: 300px;
+        margin-left: 0;
       .img {
         margin-right: 255px;
         margin-top: 10px;
@@ -78,7 +79,7 @@
         padding-bottom: 10px;
         .bottom-logo {
           margin-right: 25px;
-          width: 20px;
+          width: 23px;
           height: 27px;
         }
       }

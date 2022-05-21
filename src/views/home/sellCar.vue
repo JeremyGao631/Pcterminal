@@ -32,55 +32,43 @@
             <div class="started">{{ started }}</div>
           </div>
           <div class="form">
+            <!-- details提交单-->
             <div class="detail">PERSONAL DETAILS</div>
             <div class="inputs">
               <div class="input1">
                 <div class="name">Name*</div>
-                <el-input />
+                <el-input v-model="form.name" />
               </div>
               <div  class="input1">
                 <div class="name">Mobile*</div>
-                <el-input />
+                <el-input v-model="form.mobile" />
               </div>
               <div class="input1">
                 <div class="name">Email</div>
-                <el-input />
+                <el-input v-model="form.email" />
               </div>
 
             </div>
+            <!-- // vehicle details提交单-->
             <div class="detail1">MY VEHICLE DETAILS</div>
             <div class="inputs">
               <div class="input1">
                 <div class="name">Year*</div>
-                <el-input />
+                <el-input v-model="forms.year" />
               </div>
               <div  class="input1">
                 <div class="name">Make*</div>
-                <el-select v-model="value" placeholder="请选择">
-                  <el-option
-                    v-for="item in options"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
-                  </el-option>
-                </el-select>
+                <el-input v-model="forms.make" />
               </div>
               <div class="input1">
                 <div class="name">Model*</div>
-                <el-select v-model="value" placeholder="请选择">
-                  <el-option
-                    v-for="item in options"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
-                  </el-option>
-                </el-select>
+                <el-input v-model="forms.model" />
               </div>
             </div>
             <div class="input2">
               <div class="input1">
                 <div class="name">Transmission*</div>
-                <el-select v-model="value" placeholder="请选择">
+                <el-select v-model="forms.transmission" placeholder="请选择">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -91,38 +79,39 @@
               </div>
               <div  class="input1">
                 <div class="name">Odometer*</div>
-                <el-input />
+                <el-input v-model="forms.odometer" />
               </div>
-              <div class="input1">
-                <div class="name">Rego number</div>
-                <el-input />
-              </div>
-            </div>
-            <div class="input2">
               <div class="input1">
                 <div class="name">Color</div>
-                <el-input />
+                <el-input v-model="forms.color" />
               </div>
+            </div>
+            <div class="input5">
               <div  class="input1">
-                <div class="name">Trim</div>
-                <el-input />
+                <div class="name">Trim color</div>
+                <el-input v-model="forms.trimcolor" />
               </div>
+              
               <div class="input1">
                 <div class="name">Logbook</div>
-                <el-select v-model="value">
+                <el-select v-model="forms.logbook">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in logbooks"
                     :key="item.value"
                     :label="item.label"
-                    :value="item.value">
+                    :value="item.value"
+                    @click="book(item)">
                   </el-option>
                 </el-select>
+              </div>
+              <div  class="input7">
+                <el-input disabled />
               </div>
             </div>
             <div class="input3">
               <div class="input1">
                 <div class="name">Photo Upload</div>
-                <el-input />
+                <el-input v-model="forms.photo" />
               </div>
               <el-button type="primary" class="btn">UPLOAD</el-button>
             </div>
@@ -130,16 +119,24 @@
             <div class="input4">
               <div class="input1">
                 <div class="name special">COMMENTS</div>
-                <el-input type="textarea" :rows="8" />
+                <el-input v-model="forms.comments" type="textarea" :rows="8" />
               </div>
               <el-button type="primary" class="btn">SUBMIT</el-button>
             </div>
             <div class="privacy">PRIVACY</div>
             <div class="formText">
-              <span class="tex">Your contact details are being collected by Autohome AU to enable us to record the details of the vehicle you are interested in and to consider the purchase of your trade-in vehicle. We may disclose your personal information to third parties to check whether and how, your vehicle is encumbered.</span>
-              <span class="tex">From time to time, Autohome AU would like to contact you and to let you know about our products and services, including special offers.</span>
-              <span class="tex">If you do not want us to do so, please let us know by contacting us. You can let us know at any time if you no longer wish to be contacted for these purposes. Your consent will remain current until you advise us otherwise.</span>
-              <span class="tex">If you do not provide us with your personal information, we may not be able to consider any offer made by you.</span>
+              <span class="tex">Your contact details are being collected by Autohome AU to enable us to record the details of the
+                                vehicle you are interested in and to consider the purchase of your trade-in vehicle. We may disclose
+                                your personal information to third parties to check whether and how, your vehicle is encumbered.</span>
+              <span class="tex1">· From time to time, Autohome AU would like to contact you and to let you know about our products
+                                and services, including special offers.</span>
+              <span class="tex1">· If you do not want us to do so, please let us know by contacting us. You can let us know at any time
+                                if you no longer wish to be contacted for these purposes. Your consent will remain current until you
+                                advise us otherwise.
+</span>
+              <span class="tex1">· If you do not provide us with your personal information, we may not be able to consider any offer
+                                made by you.
+</span>
             </div>
           </div>
         </div>
@@ -155,6 +152,25 @@ export default({
     },
     data() {
         return {
+          // details提交单
+          form: {
+            name:'',
+            mobile: '',
+            email: ''
+          },
+          // vehicle details提交单
+          forms: {
+            year:'',
+            make: '',
+            model: '',
+            transmission: '',
+            odometer: '',
+            color: '',
+            trimcolor: '',
+            logbook: '',
+            photo: '',
+            comments: ''
+          },
             point: 'The easiest way to sell your car, hassle free and stress free',
             started: 'The team at Autohome AU make selling your car as easy and convenient as possible. Simply send us your vehicle details using the form below and let our team take care of the rest. Contact us now.',
             content: [
@@ -177,15 +193,29 @@ export default({
                 label:'Model:Any'
               },
               {
-                value:'1',
-                label:'1'
+                value:'2',
+                label:'yes'
               },
               {
-                value:'1',
-                label:'1'
+                value:'3',
+                label:'no'
               }
             ],
-            value: 'Model: Any',
+            logbooks: [
+              {
+                value:'1',
+                label:'full dealer service history'
+              },
+              {
+                value:'2',
+                label:'Partialy dealer service history'
+              },
+              {
+                value:'3',
+                label:'No service Logbook'
+              }
+            ],
+            logbook: 'full dealer service history',
             img: [
               {url: [require('../../assets/images/sellyourcar/BringInYourCar.png')]},
               {url: [require('../../assets/images/sellyourcar/GetYourInstantOffer.png')]},
@@ -201,6 +231,10 @@ export default({
         }
     },
     methods: {
+      book(item) {
+        this.logbook = item.label
+        console.log(this.logbook)
+      }
     }
 })
 </script>
@@ -469,6 +503,48 @@ export default({
                 border: 1px solid #000;
               }
             }
+            .input5 {
+              padding-top:32px;
+              display: flex;
+              margin-left: 12%;
+              justify-content: center;
+              align-items: center;
+              .input1 {
+                margin-right: 81px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                .el-select {
+                  /deep/ .el-input{
+                    width:260px;
+                  }
+                }
+              }
+              .input7 {
+                margin-left: 77px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                /deep/.el-input.is-disabled .el-input__inner {
+                  border:none;
+                }
+              }
+              .name{
+                text-align: left;
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-family: DINCondensed-Bold, DINCondensed;
+                font-weight: bold;
+              }
+              .el-input__inner {
+                width: 100%;
+                border: 1px solid #000;
+              }
+            }
             .input3 {
               padding-top:32px;
               display: flex;
@@ -602,8 +678,21 @@ export default({
             .tex {
               font-size: 16px;
               text-align: left;
-              margin-top:50px;
-              padding: 0 13%;
+              margin-top:51px;
+              padding-left: 11%;
+              padding-right: 20%;
+              line-height: 20px;
+              font-weight: 400;
+              font-family: PingFangSC-Light, PingFang SC;
+              color: #151515;
+            }
+            .tex1 {
+              font-size: 16px;
+              text-align: left;
+              margin-top:5px;
+              padding-left: 11%;
+              padding-right: 20%;
+              line-height: 20px;
               font-weight: 400;
               font-family: PingFangSC-Light, PingFang SC;
               color: #151515;

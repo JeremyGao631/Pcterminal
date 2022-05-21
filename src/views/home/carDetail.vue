@@ -72,23 +72,27 @@
       <div class="userinput">
         <div class="inputtable">
           <span>Name</span>
-          <el-input />
+          <el-input required v-model="name" />
         </div>
         <div class="inputtable">
           <span>Phone</span>
-          <el-input />
+          <el-input v-model="phone" />
         </div>
         <div class="inputtable">
           <span>Time</span>
-          <el-input />
+          <el-input :required="reqPhone" v-model="time" />
         </div>
         <div class="inputtable">
-          <div class="newbutton">
-            <el-button >
-              <span>SUBMIT</span>
-              <i class="el-icon-my-yellowright"></i>
-            </el-button>
-          </div>
+          <span>email</span>
+          <el-input :required="reqEmail" v-model="email" />
+        </div>
+      </div>
+      <div class="inputtables">
+        <div class="newbutton">
+          <el-button >
+            <span>SUBMIT</span>
+            <i class="el-icon-my-yellowright"></i>
+          </el-button>
         </div>
       </div>
       <div class="sectitle">SIMILAR VEHICLES</div>
@@ -132,6 +136,13 @@ name: 'CarDetail',
   },
   data(){
     return{
+      // 需提交的字段
+      name: '',
+      phone: '',
+      time: '',
+      email: '',
+      reqEmail: true,
+      reqPhone: true,
       information: {
         title: '2016 Mercedes-Benz CLA45',
         price: '$149000.00',
@@ -221,6 +232,35 @@ name: 'CarDetail',
                   info2: 'Auto'
                 }
       ],
+    }
+  },
+  created() {
+    this.query()
+  },
+  watch: {
+    email() {
+      if (this.email === '') {
+        this.reqPhone === true
+      } else {
+        this.reqPhone === false
+      }
+    },
+    phone() {
+      if (this.phone === '') {
+        this.reqEmail === true
+      } else {
+        this.reqEmail === false
+      }
+    }
+  },
+  methods: {
+    // 收集信息提交
+    submit() {
+
+    },
+    // 按price的逻辑查询展示信息
+    query() {
+
     }
   }
 }
@@ -431,13 +471,63 @@ name: 'CarDetail',
         text-align:left;
         letter-spacing: 1px;
       }
+        .inputtables {
+          position: relative;
+          left: 44%;
+          top: 49px;
+          span {
+            float:left;
+            margin-bottom:10px;
+            font-size: 20px;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            color:#151515;
+            line-height: 20px;
+          }
+          .el-button {
+            width: 183px;
+            height: 58px;
+            border: 1px solid #151515 ;
+            background-color: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            margin-top:30px;
+            span {
+              color:#F4F6F8;
+              font-size: 20px;
+              font-family: DINCondensed-Bold;
+              font-weight: bold;
+              text-align: center;
+              line-height: 130px;
+              margin-right:45px;
+              padding-top: 10px;
+            }
+            .el-icon-my-yellowright {
+              background: url('../../assets/images/carDetail/youjt.png') no-repeat;
+              background-size: cover;
+              display:inline-block;
+              height: 16px;
+              width: 16px;
+              margin-right: -16px;
+              margin-top: 65px;
+            }
+          }
+        }
       .userinput {
         display: flex;
         align-items: center;
         justify-content: left;
         margin: 0 200px;
         .inputtable {
-          margin-right: 80px;
+          margin-right: 45px;
+          .el-input {
+            /deep/ .el-input__inner {
+                    width:260px;
+                    height: 49px;
+                    border-radius: 1px;
+            }
+          }
           span {
             float:left;
             margin-bottom:10px;
@@ -580,7 +670,7 @@ name: 'CarDetail',
         .el-pagination {
           /deep/ .btn-prev{
               width: 30px;
-              height: 30px;
+              height: 35px;
               background-image: url('../../assets/images/carDetail/leftjt.png');
               background-size: 100% 100%;
           }
@@ -589,7 +679,7 @@ name: 'CarDetail',
           }
           /deep/ .btn-next{
               width: 30px;
-              height: 30px;
+              height: 35px;
               background-image: url('../../assets/images/carDetail/rightjt.png');
               background-size: 100% 100%;
           }

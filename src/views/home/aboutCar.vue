@@ -135,13 +135,13 @@ export default({
             width: 42%;
             height: 100px;
             font-size: 60px;
-            margin-top: 60px;
-            margin-bottom: 43px;
+            margin-top: 85px;
+            margin-bottom: 65px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #151515;
             line-height: 100px;
-            margin-left: 45px;
+            margin-left: 40px;
         }
         .style {
             width:83%;
@@ -163,7 +163,8 @@ export default({
                     width: 250px;
                     height: 32px;
                     text-align: left;
-                    margin: 9px 0;
+                    margin-bottom: 5px;
+                    margin-top: 20px;
                     padding-bottom:12px;
                     font-size: 33px;
                     font-family: DINCondensed-Bold, DINCondensed;
