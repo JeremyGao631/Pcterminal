@@ -11,9 +11,10 @@
             <div class="content">
               <div v-for="(item, index) in content" :key="index" class="contentView">
                 <div class="yourCar">{{ item.title }}</div>
-                <div class="style">{{ item.content }}</div>
+                <div :class="textstyle[index]">{{ item.content }}</div>
               </div>
             </div>
+            <div style="clear:both" ></div>
             <div class="image">
               <div v-for="(img,index) in img" :key="index" class="imggs">
                 <img :src="img.url" alt="" class="img">
@@ -30,6 +31,7 @@
           <div class="contact">
             <div class="us">CONTACT US TO GET STARTED</div>
             <div class="started">{{ started }}</div>
+            <div class="started1">{{ started1 }}</div>
           </div>
           <div class="form">
             <!-- details提交单-->
@@ -68,7 +70,7 @@
             <div class="input2">
               <div class="input1">
                 <div class="name">Transmission*</div>
-                <el-select v-model="forms.transmission" placeholder="请选择">
+                <el-select v-model="forms.transmission" placeholder="Transmission:Any">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -94,7 +96,7 @@
               
               <div class="input1">
                 <div class="name">Logbook</div>
-                <el-select v-model="forms.logbook">
+                <el-select v-model="forms.logbook" placeholder="Yes">
                   <el-option
                     v-for="item in logbooks"
                     :key="item.value"
@@ -152,6 +154,11 @@ export default({
     },
     data() {
         return {
+          textstyle: [
+            'textstyle1',
+            'textstyle2',
+            'textstyle3',
+          ],
           // details提交单
           form: {
             name:'',
@@ -172,7 +179,8 @@ export default({
             comments: ''
           },
             point: 'The easiest way to sell your car, hassle free and stress free',
-            started: 'The team at Autohome AU make selling your car as easy and convenient as possible. Simply send us your vehicle details using the form below and let our team take care of the rest. Contact us now.',
+            started: 'The team at Autohome AU make selling your car as easy and convenient as possible.',
+            started1: 'Simply send us your vehicle details using the form below and let our team take care of the rest. Contact us now.',
             content: [
               {
                 content: 'We’ll take a look regardless of make, kilometres, or condition.', 
@@ -243,19 +251,19 @@ export default({
       width: 100%;
         .imgs {
           width: 100%;
-          height: 997px;
+          height: 830px;
         }
          .text { 
           position:absolute;
-          top: 163px;
-          left: 175px;
+          top: 150px;
+          left: 240px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
             height: 130px;
             font-size: 80px;
-            font-family: DINCondensed-Bold, DINCondensed;
+            font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
@@ -265,103 +273,135 @@ export default({
             height: 183px;
             font-size: 45px;
             text-align: left;
-            font-family: DINCondensed-Bold, DINCondensed;
+            font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 61px;
           }
         }
         .between {
-          height: 615px;
+          height: 650px;
           background: #F4F6F8;
           position: relative;
           .sell {
             .title {
               height: 32px;
-              font-size: 75px;
-              padding:90px 0 20px 116px;
-              font-family: DINCondensed-Bold, DINCondensed;
+              font-size: 100px;
+              padding: 90px 0px 40px 80px;
+              font-family: DINCondensed-Bold;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
-              letter-spacing: 75px;
+              letter-spacing: 100px;
             }
             .image {
               display: flex;
               position: relative;
-              bottom: 272px;
-              left: 7.5%;
+              bottom: 345px;
+              left: -5.5%;
               .imggs {
-                padding-left: 14%;
                 .img {
-                  width: 199px;
-                  height: 295px;
+                  width: 210px;
+                  height: 375px;
                   background: #FFFFFF;
                 }
+              }
+              .imggs:nth-child(1){
+                padding-left:15%;
+              }
+              .imggs:nth-child(2){
+                padding-left:19%;
+              }
+              .imggs:nth-child(3){
+                padding-left:19%;
               }
             }
             .imgs {
               display: flex;
               position: relative;
-              bottom: 950px;
+              bottom: 1020px;
               .imgs1 {
                 width: 43px;
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 60.5%;
-                left: 33%;
+                top: 580px;
+                left:410px;
               }
               .imgs2 {
                 width: 43px;
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 60.5%;
-                left: 58%;
+                top: 580px;
+                left: 975px;
               }
               .imgs3 {
                 width: 43px;
                 height: 43px;
                 background: #FFFFFF;
                 position: absolute;
-                top: 60.5%;
-                left: 82%;
+                top: 580px;
+                left: 1550px;
               }
             }
             .content {
-              width: 76%;
-              height: 307px;
+              width: 1638px;
+              height: 375px;
               background: #FFFFFF;
               display: flex;
               position: relative;
-              left: 24%;
+              left: 245px;
+              justify-content: left;
+              overflow: hidden;
               .contentView {
                 display:flex;
                 flex-direction: column;
                 margin-top:44px;
-                padding-right: 5%;
-                padding-left: 12%;
+                padding-right: 12%;
+                padding-left: 10%;
                 .yourCar {
-                  width: 220px;
+                  width: 211px;
                   height: 32px;
-                  font-size: 28px;
-                  text-align: left;
-                  margin-bottom: 20px;
+                  font-size: 40px;
                   font-family: DINCondensed-Bold, DINCondensed;
                   font-weight: bold;
                   color: #212020;
                   line-height: 32px;
+                  white-space: nowrap;
                 }
-                .style {
-                  width: 185px;
+                .textstyle1 {
+                  width:206px;
                   height: 110px;
-                  font-size: 12px;
-                  text-align: left;
+                  font-size: 16px;
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
                   color: #909090;
                   line-height: 22px;
+                  text-align: left;
+                  margin-top: 10px;
+                }
+                .textstyle2 {
+                  width:217px;
+                  height: 110px;
+                  font-size: 16px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #909090;
+                  line-height: 22px;
+                  text-align: left;
+                  margin-top: 10px;
+                }
+                .textstyle3 {
+                  width:202px;
+                  height: 110px;
+                  font-size: 16px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #909090;
+                  line-height: 22px;
+                  text-align: left;
+                  margin-top: 10px;
                 }
               }
             }
@@ -369,37 +409,44 @@ export default({
         }
         .bottom {
           background-color: #fff;
-          margin-left:170px;
+          margin:0 170px;
           .contact {
             width: 50%;
             margin-top:108px;
-            padding-left: 247px;
+            padding-left: 65px;
+            text-align: left;
             .us {
+              width: 725px;
               height: 100px;
-              font-size: 60px;
-              text-align: left;
+              font-size: 80px;
               font-family: DINCondensed-Bold, DINCondensed;
               font-weight: bold;
-              margin-bottom: 20px;
               color: #212020;
               line-height: 100px;
             }
             .started {
-              width: 706px;
-              height: 66px;
-              font-size: 16px;
-              text-align: left;
-              font-family: PingFangSC-Regular, PingFang SC;
+              width: 794px;
+              font-size: 17px;
+              font-family: PingFangSC-Regular;
               font-weight: 400;
               color: #4A4A4A;
               line-height: 22px;
-              margin-bottom:20px;
+              text-align: left;
+            }
+            .started1 {
+              width: 794px;
+              font-size: 17px;
+              font-family: PingFangSC-Regular;
+              font-weight: 400;
+              color: #4A4A4A;
+              line-height: 22px;
+              text-align: left;
             }
           }
           .form {
-            height: 1905px;
+            height: 1750px;
             background-color: #f4f6f8;
-            margin: 33px 249px 55px;
+            margin: 33px 100px 150px 65px;
             .detail {
               position: relative;
               top: 85px;
@@ -547,14 +594,14 @@ export default({
               }
             }
             .input3 {
-              padding-top:32px;
+              padding-top: 32px;
               display: flex;
-              margin-left: 12%;
-              margin-right: 12%;
+              margin-left: 17.5%;
+              margin-right: 15.5%;
               justify-content: center;
               padding-right: 300px;
               .input1 {
-                margin-right: 105px;
+                margin-right: 120px;
                 width: 373px;
                 height: 107px;
                 .el-input {
@@ -620,7 +667,7 @@ export default({
                 background-color: #000;
                 position: relative;
                 top: 160px;
-                left: -26px;
+                left: -4%;
               }
               
             }

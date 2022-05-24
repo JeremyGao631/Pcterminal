@@ -18,16 +18,16 @@
         </div>
         <div class="littleshow">
           <div class="showleft">
-            <img src="../../assets/images/carDetail/shandian.png" />
+            <img src="../../assets/images/carDetail/odometer.png" />
             <div class="showlefttext">
                 <span class="texttop">34719</span>
-                <span class="texttop-right>"> kms</span>
+                <span class="texttopright"> kms</span>
                 <br />
                 <span class="textbottom">Odometer</span>
             </div>
           </div>
           <div class="showleft">
-            <img src="../../assets/images/carDetail/car.png" />
+            <img src="../../assets/images/carDetail/transmission.png" />
             <div class="showlefttext">
                 <span class="texttop">Auto</span>
                 <br />
@@ -95,6 +95,7 @@
           </el-button>
         </div>
       </div>
+      <div style="clear:both;"></div>
       <div class="sectitle">SIMILAR VEHICLES</div>
       <div class="textcontent">
         <div class="textcard" v-for="index in information1" :key="index">
@@ -280,18 +281,18 @@ name: 'CarDetail',
       font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 160px 50px 200px;
+      margin: 0 0 50px 20px;
       padding-top:92px;
       text-align:left;
       letter-spacing: 1px;
     }
     .content {
-      margin:49px 160px 0px 200px;
+      margin:49px 120px 0px 20px;
       display: flex;
       align-items: top;
       justify-content: center;
       .contentleft {
-        width:35%;
+        width:40%;
         margin-right:20px;
         .pricekind {
           margin-bottom:10px;
@@ -324,21 +325,21 @@ name: 'CarDetail',
             .listname {
               float:left;
               width:170px;
-              font-size: 18px;
-              font-family: DINCondensed-Bold;
-              font-weight: 300;
+              font-size: 14px;
+              font-family: PingFangSC-Light;
+              font-weight: bold;
               color: #909090;
               line-height: 25px;
               margin-right:10px;
               text-align: left;
-              letter-spacing: 1px;
+              opacity: 0.8;
               padding-left: 30px;
             }
             .result {
               width:calc(100% - 240px;);
               float:left;
-              font-size: 18px;
-              font-family: DINCondensed-Bold;
+              font-size: 14px;
+              font-family: PingFangSC-Medium;
               font-weight: bold;
               color: black;
               line-height: 25px;
@@ -351,61 +352,71 @@ name: 'CarDetail',
            background-color: white;
         }
         .list:nth-child(2n+2) {
-           padding:0;
+           padding:5px 0;
         }
 
         .littleshow {
           background-color: white;
           width:100%;
           height:80px;
-          margin-top: 60px;
+          margin-top: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
           .showleft {
-            height: 30px;
-            margin:0 20px;
+            height: 25px;
             img {
               float:left;
               height:100%;
               border:1px dashed black;
               margin-right:5px;
+              padding:5px;
             }
             .showlefttext {
               float:left;
               height:100%;
               text-align: left;
+              letter-spacing: 1px;
               .texttop {
                 font-size: 16px;
-                font-family: DINCondensed-Bold;
+                font-family: PingFangSC-Medium;
                 font-weight: bold;
                 color: black;
                 line-height: 16px;
               }
-              .texttop-right {
-                font-size: 16px;
-                font-family: DINCondensed-Bold;
+              .texttopright {
+                font-size: 14px;
+                font-family: PingFangSC-Medium;
                 font-weight: bold;
                 color: black;
                 line-height: 16px;
               }
               .textbottom {
-                font-size: 12px;
-                font-family: DINCondensed-Bold;
+                font-size: 14px;
+                font-family: PingFangSC-Regular;
                 font-weight: 400;
                 color: #909090;
                 line-height: 12px;
               }
             }
           }
+          .showleft:nth-child(1) {
+            margin:0 50px 0 0;
+          }
+          .showleft:nth-child(2) {
+            margin:0 10px 0 10px;
+          }
+          .showleft:nth-child(3) {
+            margin:0 15px 0 15px;
+          }
         }
       }
       .contentright {
-        width:calc(65%);
+        width:calc(60%);
         margin-left:10px;
         .bigimg {
           width: 100%;
-          height: 400px;
+          height: 425px;
           img {
             height: 100%;
             width: 100%;
@@ -418,7 +429,7 @@ name: 'CarDetail',
          align-items: center;
          justify-content: center;
          overflow: hidden;
-         margin-top: 28px;
+         margin-top: 5px;
          img {
           width:calc(100% / 6 - 5px);
           float:left;
@@ -426,32 +437,37 @@ name: 'CarDetail',
           margin-right:10px;
           object-fit: cover;
          }
+         img:nth-last-child(1){
+           margin:0px;
+         }
         }
       }
     }
   }
   .detailtext {
     background-color: #FFFFFF;
-    width:1080px;
-    height:179px;
-    margin:0 380px 40px 420px;
+    width:1300px;
+    height:180px;
+    margin:0 0 40px 240px;
     .texttitle {
       width: 184px;
       height: 130px;
       font-size: 30px;
-      font-family: DINCondensed-Bold, DINCondensed;
+      font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #151515;
       line-height: 75px;
     }
     .textcontent {
-      width: 794px;
-      height: 66px;
-      font-size: 16px;
-      font-family: DINCondensed-Bold, PingFang SC;
-      font-weight: 400;
-      color: #4A4A4A;
-      line-height: 22px;
+          width: 794px;
+          height: 66px;
+          font-size: 20px;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          color: #4A4A4A;
+          line-height: 22px;
+          opacity: 0.7;
+          letter-spacing: 1px;
     }
   }
   .booking {
@@ -466,61 +482,19 @@ name: 'CarDetail',
         font-weight: bold;
         color: #212020;
         line-height: 55px;
-        margin: 0 200px 50px 200px;
+        margin: 0 0 50px 20px;
         padding-top:92px;
         text-align:left;
         letter-spacing: 1px;
       }
-        .inputtables {
-          position: relative;
-          left: 44%;
-          top: 49px;
-          span {
-            float:left;
-            margin-bottom:10px;
-            font-size: 20px;
-            font-family: DINCondensed-Bold;
-            font-weight: bold;
-            color:#151515;
-            line-height: 20px;
-          }
-          .el-button {
-            width: 183px;
-            height: 58px;
-            border: 1px solid #151515 ;
-            background-color: #151515;
-            display: flex;
-            align-items: center;
-            justify-content: right;
-            margin-top:30px;
-            span {
-              color:#F4F6F8;
-              font-size: 20px;
-              font-family: DINCondensed-Bold;
-              font-weight: bold;
-              text-align: center;
-              line-height: 130px;
-              margin-right:45px;
-              padding-top: 10px;
-            }
-            .el-icon-my-yellowright {
-              background: url('../../assets/images/carDetail/youjt.png') no-repeat;
-              background-size: cover;
-              display:inline-block;
-              height: 16px;
-              width: 16px;
-              margin-right: -16px;
-              margin-top: 65px;
-            }
-          }
-        }
       .userinput {
         display: flex;
         align-items: center;
         justify-content: left;
-        margin: 0 200px;
+        margin: 0 20px;
         .inputtable {
           margin-right: 45px;
+          text-align: left;
           .el-input {
             /deep/ .el-input__inner {
                     width:260px;
@@ -573,20 +547,54 @@ name: 'CarDetail',
           }
         }
       }
+      .newbutton {
+        float:left;
+        position: relative;
+        left: 40%;
+        .el-button {
+          width: 200px;
+          height: 60px;
+          border: 1px solid #151515 ;
+          background-color: #151515;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          margin-top:60px;
+          span {
+            color: #F4F6F8;
+            font-size: 20px;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            text-align: center;
+            line-height: 140px;
+            margin-right: 55px;
+            padding-top: 10px;
+          }
+          .el-icon-my-yellowright {
+            background: url('../../assets/images/carDetail/youjt.png') no-repeat;
+            background-size: cover;
+            display:inline-block;
+            height: 16px;
+            width: 16px;
+            margin-right: -16px;
+            margin-top: 65px;
+          }
+        }
+      }
       .sectitle {
         font-size: 70px;
         font-family: DINCondensed-Bold;
         font-weight: bold;
         color: #212020;
         line-height: 55px;
-        margin: 0 200px 50px 200px;
-        padding-top:170px;
+        margin: 0 0 50px 20px;
+        padding-top:150px;
         text-align:left;
         letter-spacing: 1px;
       }
       .textcontent {
         overflow: hidden;
-        margin-left: 200px;
+        margin-left: 20px;
         margin-right: 100px;
         .textcard {
           float:left;
