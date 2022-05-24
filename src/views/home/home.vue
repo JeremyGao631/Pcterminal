@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--轮播图-->
-    <div class="lunbo">
+    <div class="lunbo section">
       <el-carousel :interval="5000" arrow="always" >
         <el-carousel-item v-for="item in itemList" :key="item">
           <div class="content">
@@ -12,7 +12,7 @@
                 <span>DISTINCTIVE</span><br />
                 <span style="padding-left: 51px;">QUALITY</span><br />
               </span>
-              <el-button>
+              <el-button @click="contactUs()">
                 <span>BOOK SERVICE</span>
                 <i class="el-icon-my-right"></i>
               </el-button>
@@ -22,7 +22,7 @@
       </el-carousel>
     </div>
     <!--中部图片展示-->
-    <div class="middle">
+    <div class="middle section">
       <div class="title">FEATURED COLLECTIONS</div>
       <div class="texttitle clearfix">
         <div class="left">
@@ -91,7 +91,7 @@
       <div style="clear:both;"></div>
     </div>
     <!--底部内容展示-->
-    <div class="bottom">
+    <div class="bottom section">
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
         <div class="infotext" >
@@ -129,9 +129,10 @@ export default {
     return{
       itemList:[
         require('../../assets/images/home/lunbo.png'),
-        require('../../assets/images/home/onlineshowroom.png'),
-        require('../../assets/images/home/sellyourcar.png'),
-        require('../../assets/images/home/visitourstore.png')
+        require('../../assets/images/home/JVS00138.jpg'),
+        require('../../assets/images/home/JVS00355.jpg'),
+        require('../../assets/images/home/JVS00451.jpg'),
+        require('../../assets/images/home/JVS00484.jpg')
       ],
       number: 0 ,
       information: [
@@ -320,6 +321,9 @@ export default {
     change: function (index) {
             this.number = index; //重要处
           },
+    contactUs() {
+      this.$router.push('/contact')
+    },
   }
 }
 </script>
@@ -327,24 +331,24 @@ export default {
 <style lang="less" scoped>
 .lunbo {
   .el-carousel {
-    height: 997px;
+    height: 830px;
     width:100%;
     .el-carousel__item {
-      height: 997px;
+      height: 830px;
       img {
         width: 100%;
-        height: 997px;
+        height: 830px;
         position: relative;
       }
     }
     /deep/ .el-carousel__container {
       position: relative;
-      height: 997px;
+      height: 830px;
     }
   
     /deep/ .el-carousel__indicators--horizontal {
       bottom: 0;
-      left: 195px;
+      left: 240px;
       transform: translateY(-64px);
       .el-carousel__button {
         width: 10px;
@@ -371,8 +375,8 @@ export default {
   text-align: left;
   div {
     position: absolute;
-    left: 140px;
-    top: 177px;
+    left: 190px;
+    top: 100px;
     .content-title {
       font-size: 60px;
       font-family: DINCondensed-Bold;
@@ -395,7 +399,7 @@ export default {
       width: 231px;
       height: 58px;
       border: 1px solid #FFFFFF ;
-      margin-top: 45px;
+      margin-top: 10px;
       background-color: transparent;
       color:#FFFFFF;
       display: flex;
@@ -427,7 +431,7 @@ export default {
 }
 
 .middle {
-  margin: 0 180px;
+  margin: 0 180px 0 215px;
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -512,7 +516,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         padding-left: 19px;
-        padding-right: 15px;
+        padding-right: 30px;
         .contentcard-price {
           font-family:DINCondensed-Bold;
           font-weight:bold;
@@ -542,7 +546,7 @@ export default {
         justify-content: left;
         padding-left: 19px;
         span {
-          font-size: 14px;
+          font-size: 15px;
           font-family:PingFangSC-Semibold;
           font-weight: 600;
           margin-right: 30px;
@@ -638,7 +642,7 @@ export default {
             font-size:30px;
           }
           .infodetail {
-            font-family:PingFangSC-Semibold;
+            font-family:PingFangSC-Regular;
             font-weight: 400;
             color: #BEBEBE;
             font-size:14px;

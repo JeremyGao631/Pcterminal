@@ -4,10 +4,10 @@
         <div class="inlinetext">
             <span class="content-text">
                 <span style="padding-left:60px">ONLINE</span><br />
-                <span style="padding-left:60px">SHOWROOM</span><br />
+                <span style="padding-left:60px;margin-top:-10px ;">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
-            <el-button>
+            <el-button @click="contactUs()">
                 <span>BOOK SERVICE</span>
                 <i class="el-icon-my-right"></i>
             </el-button>
@@ -57,7 +57,7 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1 && show5">
                         <div>
-                            <el-checkbox v-model="checked6">any</el-checkbox>
+                            <el-checkbox v-model="checked6">Any</el-checkbox>
                         </div>
                     </div>
                     <!--tr-->
@@ -208,7 +208,7 @@ export default {
                   type: 'MERCEDES-BENZ',
                   kind: 'C63S AMG',
                   price: '$149000.00',
-                  info: "Excl.Gov's Charges",
+                  info: "Excl . Gov's Charges",
                   distance: '126295 kms',
                   info1: 'Diesel',
                   info2: 'Auto'
@@ -317,7 +317,10 @@ export default {
     },
     cardetail(){
         this.$router.push('/carDetail')
-    }
+    },
+    contactUs() {
+      this.$router.push('/contact')
+    },
   }
 }
 </script>
@@ -327,12 +330,12 @@ export default {
 .content {
     .contentimg {
         width: 100%;
-        height: 997px;
+        height: 830px;
     }
     .inlinetext {
         position: absolute;
-        left: 140px;
-        top: 229px;
+        left: 180px;
+        top: 250px;
     }
     .content-text {
         font-size: 120px;
@@ -350,7 +353,7 @@ export default {
         position: absolute;
         left:68px;
         border: 1px solid #FFFFFF ;
-        margin-top: 79px;
+        margin-top: 20px;
         background-color: transparent;
         color:#FFFFFF;
         display: flex;
@@ -380,10 +383,10 @@ export default {
     }
     .middle {
         padding-bottom: 200px;
-        margin: 0 180px;
+        margin: 0 180px 0 215px;
         .title {
             font-size: 70px;
-            font-family: DINCondensed-Bold, DINCondensed;
+            font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #151515;
             line-height: 130px;
@@ -410,7 +413,7 @@ export default {
                         left: 0;
                         top: 20px;
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -420,7 +423,7 @@ export default {
                         right: 0;
                         top: 20px;
                         font-size: 20px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -436,10 +439,11 @@ export default {
                         /deep/ .el-checkbox__label {
                             height: 22px;
                             font-size: 16px;
-                            font-family: PingFangSC-Light, PingFang SC;
+                            font-family: PingFangSC-Light;
                             font-weight: 300;
                             color: #151515;
-                            line-height: 22px
+                            line-height: 22px;
+                            opacity: 0.5;
                         }
                     }
                 }
@@ -447,7 +451,7 @@ export default {
                     margin-top: 20px;
                     .viewleft {
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -473,7 +477,7 @@ export default {
                         left: 0;
                         top: 20px;
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -483,7 +487,7 @@ export default {
                         right: 0;
                         top: 20px;
                         font-size: 20px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -498,7 +502,7 @@ export default {
                         left: 0;
                         top: 20px;
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -508,7 +512,7 @@ export default {
                         right: 0;
                         top: 20px;
                         font-size: 20px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -526,7 +530,7 @@ export default {
                         left: 0;
                         top: 20px;
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -536,7 +540,7 @@ export default {
                         right: 0;
                         top: 20px;
                         font-size: 20px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -567,6 +571,7 @@ export default {
                         font-family: PingFangSC-Light;
                         font-weight: 300;
                         color: #151515;
+                        opacity: 0.5;
                     }
                     .maxyear {
                         line-height: 48px;
@@ -579,6 +584,7 @@ export default {
                         font-family: PingFangSC-Light;
                         font-weight: 400;
                         color: #151515;
+                        opacity: 0.5;
                     }
                 }
                 .newviewyear {
@@ -593,7 +599,7 @@ export default {
                         left: 0;
                         top: 20px;
                         font-size: 27px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -603,7 +609,7 @@ export default {
                         right: 0;
                         top: 20px;
                         font-size: 20px;
-                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
                         letter-spacing: 1px;
@@ -623,6 +629,7 @@ export default {
                         font-family: PingFangSC-Light;
                         font-weight: 300;
                         color: #151515;
+                        opacity: 0.5;
                     }
                     .maxprice {
                         line-height: 48px;
@@ -635,6 +642,7 @@ export default {
                         font-family: PingFangSC-Light;
                         font-weight: 400;
                         color: #151515;
+                        opacity: 0.5;
                     }
                 }
             }
@@ -650,7 +658,7 @@ export default {
                         span {
                             height: 48px;
                             font-size: 27px;
-                            font-family: DINCondensed-Bold, DINCondensed;
+                            font-family: DINCondensed-Bold;
                             font-weight: bold;
                             color: #151515;
                             line-height: 48px;
@@ -666,16 +674,17 @@ export default {
                         .textleft {
                             height: 22px;
                             font-size: 16px;
-                            font-family: PingFangSC-Light, PingFang SC;
+                            font-family: PingFangSC-Light;
                             font-weight: 300;
                             color: #151515;
                             line-height: 48px;
                             margin-right: 10px;
+                            opacity: 0.5;
                         }
                         .textright {
                             height: 30px;
                             font-size: 20px;
-                            font-family: DINCondensed-Bold, DINCondensed;
+                            font-family: DINCondensed-Bold;
                             font-weight: bold;
                             color: #151515;
                             line-height: 48px;
@@ -691,7 +700,7 @@ export default {
                         float:left;
                         margin: 0 20px;
                         width: calc(100% / 3 - 40px);
-                        padding-bottom: 60px;
+                        padding-bottom: 30px;
                         span {
                             font-family: DINCondensed-Bold;
                             margin-left: 3px;
@@ -707,8 +716,8 @@ export default {
                         }
                         .titlecard {
                             text-align:left;
-                            padding-top: 30px;
-                            padding-bottom: 20px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
                             padding-left: 19px;
                             span {
                             font-family: DINCondensed-Bold;
@@ -720,12 +729,12 @@ export default {
                             }
                         }
                         .contentcard {
-                            padding-bottom: 20px;
+                            padding-bottom: 10px;
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
                             padding-left: 19px;
-                            padding-right: 22px;
+                            padding-right: 30px;
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
                             font-weight:bold;
@@ -750,13 +759,13 @@ export default {
                             opacity:0.1;
                         }
                         .detailcard {
-                            padding-top:20px;
+                            padding-top:10px;
                             display: flex;
                             align-items: center;
                             justify-content: left;
                             padding-left: 19px;
                             span {
-                            font-size: 14px;
+                            font-size: 15px;
                             font-family:PingFangSC-Semibold;
                             font-weight: 600;
                             margin-right: 30px;
@@ -771,6 +780,7 @@ export default {
                 }
 
                 .pagebutton {
+                    margin-top:30px;
                     .el-pagination.is-background {
                         /deep/ .btn-prev{
                             width: 144px;
@@ -780,6 +790,7 @@ export default {
                             color: #151515;
                             background-color: transparent;
                             margin-right: 14px;
+                            font-family: PingFangSC-Medium;
                         }
                         /deep/ .btn-next{
                             width: 144px;
@@ -789,6 +800,7 @@ export default {
                             color: #151515;
                             background-color: transparent;
                             margin-left: 14px;
+                            font-family: PingFangSC-Medium;
                         }
                         /deep/ .el-pager {
                             li:not(.disabled) {
@@ -800,6 +812,7 @@ export default {
                                 background-color: transparent;
                                 margin-left: 14px;
                                 line-height: 40px;
+                                font-family: PingFangSC-Medium;
                             }
                             li:not(.disabled).active {
                                 background-color: #151515;

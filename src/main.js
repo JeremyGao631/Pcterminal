@@ -10,6 +10,8 @@ import "@/assets/css/test.css"
 // 提交测试
 Vue.config.productionTip = false
 
+//整屏滚动
+// import 'fullpage.js/vendors/scrolloverflow';
 
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {

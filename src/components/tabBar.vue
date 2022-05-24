@@ -57,8 +57,14 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;
+    position:fixed;
+    background-color: #FFFFFF;
+    z-index:3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -10px;
     .img {
-      margin-left: 180px;
+      margin-left: 240px;
       width: 78px;
       height: 50px;
     }

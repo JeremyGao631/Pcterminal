@@ -49,6 +49,7 @@ export default {
 .el-header {
     text-align: center;
     line-height: 1rem;
+    padding:0;
   }
   .el-footer {
     text-align: left;
