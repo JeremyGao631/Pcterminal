@@ -148,8 +148,8 @@ export default({
             width: 42%;
             height: 100px;
             font-size: 60px;
-            margin-top: 60px;
-            margin-bottom: 43px;
+            margin-top: 100px;
+            margin-bottom: 80px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #151515;

@@ -24,7 +24,7 @@
           <div class="components">Tel: 0498698000</div>
           <div class="components">Wechat: buyingcars</div>
           <div class="components">E-mail: enquiries@autohome.com.au</div>
-          <div class="components">Addriss: 300 Parramatta Road,Burwood,NSW 2134</div>
+          <div class="components" style="white-space: nowrap;">Addriss: 300 Parramatta Road,Burwood,NSW 2134</div>
         </div>
     </div>
     
@@ -41,21 +41,21 @@
       };
     },
     methods: {
-      home() {
-        this.$router.push('/home')
-      },
-      showroom() {
-        this.$router.push('/showRoom')
-      },
-      sell() {
-        this.$router.push('/sell')
-      },
-      about() {
-        this.$router.push('/about')
-      },
-      contact() {
-        this.$router.push('/contact')
-      }
+      // home() {
+      //   this.$router.push('/home')
+      // },
+      // showroom() {
+      //   this.$router.push('/showRoom')
+      // },
+      // sell() {
+      //   this.$router.push('/sell')
+      // },
+      // about() {
+      //   this.$router.push('/about')
+      // },
+      // contact() {
+      //   this.$router.push('/contact')
+      // }
     }
   }
 </script>
@@ -70,7 +70,7 @@
         margin-left: 0;
       .img {
         margin-right: 255px;
-        margin-top: 10px;
+        margin-bottom: 20px;
         width: 88px;
         height: 54px;
       }
@@ -79,14 +79,14 @@
         padding-bottom: 10px;
         .bottom-logo {
           margin-right: 25px;
-          width: 23px;
+          width: 27px;
           height: 27px;
         }
       }
       .tips {
         width: 220px;
         height: 40px;
-        font-size: 16px;
+        font-size: 20px;
         text-align: left;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
@@ -95,7 +95,7 @@
         }
     }
     .line {
-      width: 260px;
+      width: 220px;
       height: 200px;
       margin-top: 45px;
       border-left: 1px solid #313030
@@ -136,12 +136,11 @@
     }
     .among {
       text-align: left;
-      padding-left: 110px;
-      padding-top: 15px;
+      padding-top: 25px;
       .guide {
         width: 61px;
         height: 30px;
-        padding-bottom: 10px;
+        margin-bottom: 20px;
         font-size: 30px;
         font-family: DINCondensed-Bold, DINCondensed;
         font-weight: bold;
@@ -152,7 +151,7 @@
         width: 39px;
         padding-bottom: 15px;
         height: 20px;
-        font-size: 16px;
+        font-size: 20px;
         font-family: DINCondensed-Bold, DINCondensed;
         width: 300px;
         color: #909090;

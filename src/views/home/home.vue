@@ -3,9 +3,9 @@
     <!--轮播图-->
     <div class="lunbo section">
       <el-carousel :interval="5000" arrow="always" >
-        <el-carousel-item v-for="item in itemList" :key="item">
+        <el-carousel-item v-for="index in itemList" :key="index">
           <div class="content">
-            <img :src="item"  alt="暂无图片" />
+            <img :src="index"  alt="暂无图片" />
             <div>
               <span class="content-title">Excellent-performance</span><br />
               <span class="content-text">

@@ -28,7 +28,7 @@
                         required 
                     />
                     <el-input 
-                        v-model="Address"
+                        v-model="address"
                         placeholder="Address*" 
                         required 
                     />
