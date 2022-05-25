@@ -28,8 +28,8 @@
                         required 
                     />
                     <el-input 
-                        v-model="postcode"
-                        placeholder="Postcode*" 
+                        v-model="Address"
+                        placeholder="Address*" 
                         required 
                     />
                 </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="top">
-                    <div class =information>
+                    <div class =information @click="chatQRCodeOpen()">
                         <img class="img" src="../../assets/images/contact/Wechat.png" alt="">
                         <span class="title"> {{ information[2].title }}</span>
                         <span class="contact"> {{ information[2].information }}</span>
@@ -68,6 +68,17 @@
                         <span class="title"> {{ information[3].title }}</span>
                         <span class="contact"> {{ information[3].information }}</span>
                     </div>
+                    <el-dialog
+                        title="WeChat QR Code"
+                        :visible.sync="chatQRCodeDialogVisible"
+                        width="40%"
+                        :before-close="chatQRCodeHandleClose">
+                        <div>
+                            <img src="../../assets/images/contact/WeChatQRcode.png" />
+                        </div>
+                        <span slot="footer" class="dialog-footer">
+                        </span>
+                    </el-dialog>
                 </div>
                 <!--新增-->
                 <div class="top">
@@ -76,14 +87,22 @@
                         <span class="title"> {{ information[4].title }}</span>
                         <span class="contact"> {{ information[4].information }}</span>
                     </div>
-                    <div class =information @click="code()">
+                    <div class =information @click="appQRCodeOpen()">
                         <img class="img" src="../../assets/images/contact/Address.png" alt="">
                         <span class="title"> {{ information[5].title }}</span>
                         <span class="contact"> {{ information[5].information }}</span>
                     </div>
-                </div>
-                <div>
-                    <!-- <img class="showcode" src="../../assets/images/about/CarForSale.png" alt=""> -->
+                    <el-dialog
+                        title="Whatsapp QR Code"
+                        :visible.sync="appQRCodeDialogVisible"
+                        width="40%"
+                        :before-close="appQRCodeHandleClose">
+                        <div>
+                            <img src="../../assets/images/contact/WhatsAppQRcode.png" />
+                        </div>
+                        <span slot="footer" class="dialog-footer">
+                        </span>
+                    </el-dialog>
                 </div>
             </div>
         </div>
@@ -108,6 +127,8 @@ export default({
     },
     data() {
         return {
+            appQRCodeDialogVisible: false,
+            chatQRCodeDialogVisible: false,
             name: '',
             phone: '',
             email: '',
@@ -128,7 +149,7 @@ export default({
                     information: 'Autohome_388'
                 },
                 {
-                    title:'Postcode',
+                    title:'Address',
                     information: '388 Parramatta Road，Burwood, NSW 2134'
                 },
                 {
@@ -153,11 +174,21 @@ export default({
             }
         },
         goHome() {
-            this.$router.push('/home')
+            window.location.href="https://www.facebook.com/Autohome-Australia-101055345438578/"
         },
-        code() {
+        appQRCodeHandleClose() {
+            this.appQRCodeDialogVisible = false;
+        },
+        appQRCodeOpen() {
+            this.appQRCodeDialogVisible = true;
+        },
+        chatQRCodeHandleClose() {
+            this.chatQRCodeDialogVisible = false;
+        },
+        chatQRCodeOpen() {
+            this.chatQRCodeDialogVisible = true;
+        },
 
-        }
     }
 })
 </script>
@@ -165,12 +196,12 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 997px;
+            height: 830px;
         }
         .text { 
           position:absolute;
           top: 180px;
-          left: 200px;
+          left: 240px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -186,7 +217,7 @@ export default({
         .contact-main {
             margin-left: 8px;
             .table {
-                margin: 95px 200px 35px 40%;
+                margin: 95px 200px 35px 30%;
                 width: 52%;
                 height: 750px;
                 background-color: #f4f6f8;
@@ -233,8 +264,8 @@ export default({
             }
             .left {
                 position:absolute;
-                top: 1210px;
-                left: 21%;
+                top: 1030px;
+                left: 13%;
                 .top {
                     display: flex;
                     .information {

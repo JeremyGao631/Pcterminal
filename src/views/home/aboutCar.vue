@@ -48,22 +48,22 @@ export default({
         return {
             information: [
                 {
-                    img: [require('../../assets/images/about/CarForSale.png')],
+                    img: [require('../../assets/images/about/CarForSale1.png')],
                     title:'Car for Sale',
                     information: 'Browse the fine motor vehicles via online showroom or visit our showroom in Sydney to view an exclusive range of luxury models and sports vehicles.'
                 },
                 {
-                    img: [require('../../assets/images/about/SellYourCar.png')],
+                    img: [require('../../assets/images/about/SellYourCar1.png')],
                     title:'Sell your car',
                     information: 'Our team at Autohome AU make selling your car as easy and convenient as possible. Click and simply send us your vehicle details and let our team take care of the rest.'
                 },
                 {
-                    img: [require('../../assets/images/about/FinanceSolution.png')],
+                    img: [require('../../assets/images/about/FinanceSolution1.png')],
                     title:'Finance Solution',
                     information: 'We understand financing can be a hassle, so we re here to make everything as easy as possible. Contact to us directly and let our team provide you a perfect fit.'
                 },
                 {
-                    img: [require('../../assets/images/about/ServiceAndRepairs.png')],
+                    img: [require('../../assets/images/about/ServiceAndRepairs1.png')],
                     title:'Service and Repairs',
                     information: 'We offer a one-stop car servicing on all makes and models, tailored to suit both your budget and vehicle. Book your service online now!'
                 }
@@ -103,28 +103,30 @@ export default({
         width: 100%;
         .imgs {
             width: 100%;
-            height: 997px;
+            height: 830px;
         }
         .text { 
           position:absolute;
           top: 202px;
-          left: 186px;
+          left: 240px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           .title {
+            width: 823px;
+            text-align: left;
             height: 130px;
-            font-size: 90px;
+            font-size: 120px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
           .span {
-            width: 683px;
-            height: 183px;
-            font-size: 45px;
+            width: 770px;
             text-align: left;
+            height: 183px;
+            font-size: 60px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
             color: #FFFFFF;
@@ -141,7 +143,6 @@ export default({
             font-weight: bold;
             color: #151515;
             line-height: 100px;
-            margin-left: 40px;
         }
         .spcialoffer {
             width: 42%;
@@ -157,7 +158,7 @@ export default({
         }
         .style {
             width:83%;
-            margin-bottom:160px;
+            margin-bottom:100px;
             display: flex;
             flex-wrap: wrap;
             padding-left:231px;
@@ -176,10 +177,10 @@ export default({
                     height: 32px;
                     text-align: left;
                     margin-bottom: 5px;
-                    margin-top: 20px;
-                    padding-bottom:12px;
+                    margin-top: 60px;
+                    padding-bottom: 12px;
                     font-size: 33px;
-                    font-family: DINCondensed-Bold, DINCondensed;
+                    font-family: DINCondensed-Bold;
                     font-weight: bold;
                     color: #212020;
                 }
@@ -188,11 +189,12 @@ export default({
                     height: 120px;
                     text-align: left;
                     font-size: 16px;
-                    padding-bottom: 25px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
+                    padding-bottom: 60px;
+                    font-family: PingFangSC-Regular;
+                    font-weight: bold;
                     color: #4A4A4A;
                     line-height: 28px;
+                    opacity: 0.7;
                 }
             }
         }
@@ -201,7 +203,7 @@ export default({
             flex-wrap: wrap;
             justify-content: center;
             margin-left: 119px;
-            margin-bottom: 70px;
+            margin-bottom: 120px;
             .weOffer {
                 display: flex;
                 flex-direction: column;
@@ -223,26 +225,27 @@ export default({
                     color: #212020;
                 }
                 .information {
-                    width: 185px;
-                    height: 120px;
-                    text-align: left;
+                    width: 220px;
+                    height: 152px;
                     font-size: 16px;
-                    padding-bottom: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
+                    font-weight: bold;
                     color: #4A4A4A;
                     line-height: 28px;
+                    letter-spacing: 1px;
+                    opacity: 0.7;
+                    text-align: left;
                 }
             }
         }
         .img {
             width: 100%;
-            height: 395px;
+            height: 583px;
             margin-bottom:-4px;
         }
         .visit{
             position:absolute;
-            top: 2728px;
+            top: 3190px;
             left:30%;
             .visitTitle {
                 width: 555px;
@@ -268,37 +271,35 @@ export default({
         }
         .ourStory {
             display: flex;
-            margin-left: 395px;
+            margin-left: 240px;
             margin-top: 95px;
-            margin-right:400px;
             .storyImg {
-                width: 49%;
-                height: 357px;
+                width: 690px;
+                height: 462px;
                 background: #FFFFFF;
+                margin-right:42px;
             }
             .title {
                 text-align: right;
-                margin-left:2%;
-                margin-top:38px;
+                margin-top:45px;
                 .storyTit {
-                    width: 344px;
+                    width: 570px;
                     height: 100px;
-                    font-size: 60px;
-                    padding-left:173px;
+                    font-size: 80px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
                     line-height: 100px;
                 }
                 .story {
-                    width: 456px;
-                    padding-left:56px;
+                    width: 566px;
                     height: 168px;
-                    font-size: 16px;
+                    font-size: 20px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;
                     line-height: 28px;
+                    opacity: 0.7;
                 }
             }
         }
