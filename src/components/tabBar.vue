@@ -13,7 +13,7 @@
               router
               @select="handleSelect" 
               >
-                <el-menu-item text-color="#151515" index="/home">HOME</el-menu-item>
+                <el-menu-item index="/home">HOME</el-menu-item>
                 <el-menu-item index="/showRoom">ONLINE SHOWROOM</el-menu-item>
                 <el-menu-item index="/sell">SELL YOUR CAR</el-menu-item>
                 <el-menu-item index="/about">ABOUT</el-menu-item>
