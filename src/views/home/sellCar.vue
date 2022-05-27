@@ -629,6 +629,14 @@ export default({
                 background-color: #000;
                 position: relative;
                 top: 36px;
+                /deep/ span {
+                  width: 50px;
+                  height: 130px;
+                  font-size: 20px;
+                  font-family: DINCondensed-Bold, DINCondensed;
+                  font-weight: bold;
+                  color: #FFFFFF;
+                }
               }
               
             }
@@ -668,6 +676,14 @@ export default({
                 position: relative;
                 top: 160px;
                 left: -4%;
+                /deep/ span {
+                  width: 50px;
+                  height: 130px;
+                  font-size: 20px;
+                  font-family: DINCondensed-Bold, DINCondensed;
+                  font-weight: bold;
+                  color: #FFFFFF;
+                }
               }
               
             }

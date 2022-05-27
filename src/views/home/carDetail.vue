@@ -79,12 +79,12 @@
           <el-input v-model="phone" />
         </div>
         <div class="inputtable">
-          <span>Time</span>
-          <el-input :required="reqPhone" v-model="time" />
+          <span>Email</span>
+          <el-input :required="reqEmail" v-model="email" />
         </div>
         <div class="inputtable">
-          <span>email</span>
-          <el-input :required="reqEmail" v-model="email" />
+          <span>Time</span>
+          <el-input :required="reqPhone" v-model="time" />
         </div>
       </div>
       <div class="inputtables">
@@ -611,8 +611,8 @@ name: 'CarDetail',
           }
           .titlecard {
             text-align:left;
-            padding-top: 30px;
-            padding-bottom: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             padding-left: 19px;
             span {
               font-family: DINCondensed-Bold;
@@ -624,12 +624,12 @@ name: 'CarDetail',
             }
           }
           .contentcard {
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding-left: 19px;
-            padding-right: 15px;
+            padding-right: 30px;
             .contentcard-price {
               font-family:DINCondensed-Bold;
               font-weight:bold;
@@ -642,6 +642,7 @@ name: 'CarDetail',
               color: #4A4A4A;
               line-height: 19px;
               margin-top: 3px;
+              margin-left: 5px;
               font-family:DINCondensed-Bold;
               font-weight: bold;
               opacity:0.7;
@@ -653,7 +654,7 @@ name: 'CarDetail',
             opacity:0.1;
           }
           .detailcard {
-            padding-top:20px;
+            padding-top:10px;
             display: flex;
             align-items: center;
             justify-content: left;

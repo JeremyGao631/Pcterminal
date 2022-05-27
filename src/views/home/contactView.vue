@@ -28,8 +28,8 @@
                         required 
                     />
                     <el-input 
-                        v-model="address"
-                        placeholder="Address*" 
+                        v-model="postcode"
+                        placeholder="Postcode*" 
                         required 
                     />
                 </div>
@@ -40,7 +40,7 @@
                             placeholder="Message*"
                             v-model="message" />
                 </div>
-                <el-button :disabled="this.name === '' || this.phone === '' || this.email === '' || this.address === ''" @click="contactSubmit()">SUBMIT</el-button>
+                <el-button :disabled="this.name === '' || this.phone === '' || this.email === '' || this.postcode === ''" @click="contactSubmit()">SUBMIT</el-button>
                 </div>
 
             </div>
@@ -83,12 +83,12 @@
                 <!--新增-->
                 <div class="top">
                     <div class =information @click="goHome()">
-                        <img class="img" src="../../assets/images/contact/Wechat.png" alt="">
+                        <img class="img" src="../../assets/images/contact/facebook.png" alt="">
                         <span class="title"> {{ information[4].title }}</span>
                         <span class="contact"> {{ information[4].information }}</span>
                     </div>
                     <div class =information @click="appQRCodeOpen()">
-                        <img class="img" src="../../assets/images/contact/Address.png" alt="">
+                        <img class="img" src="../../assets/images/contact/whatsapp.png" alt="">
                         <span class="title"> {{ information[5].title }}</span>
                         <span class="contact"> {{ information[5].information }}</span>
                     </div>
@@ -132,7 +132,7 @@ export default({
             name: '',
             phone: '',
             email: '',
-            address: '',
+            postcode: '',
             message: '',
             disabled: true, // 校验
             information: [
@@ -165,7 +165,7 @@ export default({
     },
     methods: {
         contactSubmit() {
-            if(this.name === '' || this.phone === '' || this.email === '' || this.address === '') {
+            if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '') {
                 this.disabled = true
                 Dialog.alert('请补充资料完整')
             } else {

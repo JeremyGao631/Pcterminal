@@ -24,7 +24,7 @@
           <div class="components">Tel: 0498698000</div>
           <div class="components">Wechat: buyingcars</div>
           <div class="components">E-mail: enquiries@autohome.com.au</div>
-          <div class="components" style="white-space: nowrap;">Addriss: 300 Parramatta Road,Burwood,NSW 2134</div>
+          <div class="components" style="white-space: nowrap;">Address: 388 Parramatta Road,Burwood,NSW 2134</div>
         </div>
     </div>
     

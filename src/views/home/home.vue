@@ -13,7 +13,7 @@
                 <span style="padding-left: 51px;">QUALITY</span><br />
               </span>
               <el-button @click="contactUs()">
-                <span>BOOK SERVICE</span>
+                <span>CONTACT US  </span>
                 <i class="el-icon-my-right"></i>
               </el-button>
             </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="test11">
         <div class="newbutton">
-          <el-button >
+          <el-button @click="jumponlineshowroom()">
             <span>SHOW ALL</span>
             <i class="el-icon-my-yellowright"></i>
           </el-button>
@@ -324,6 +324,9 @@ export default {
     contactUs() {
       this.$router.push('/contact')
     },
+    jumponlineshowroom() {
+      this.$router.push('/showRoom')
+    }
   }
 }
 </script>
@@ -486,7 +489,7 @@ export default {
       float:left;
       margin: 0 20px;
       width: calc(25% - 45px);
-      padding-bottom: 60px;
+      padding-bottom: 30px;
       .imgcard {
         width: 100%;
         height: 211px;
@@ -498,8 +501,8 @@ export default {
       }
       .titlecard {
         text-align:left;
-        padding-top: 30px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         padding-left: 19px;
         span {
           font-family: DINCondensed-Bold;
@@ -511,7 +514,7 @@ export default {
         }
       }
       .contentcard {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -529,6 +532,7 @@ export default {
           color: #4A4A4A;
           line-height: 19px;
           margin-top: 3px;
+          margin-left: 5px;
           font-family:DINCondensed-Bold;
           font-weight: bold;
           opacity:0.7;
@@ -540,7 +544,7 @@ export default {
         opacity:0.1;
       }
       .detailcard {
-        padding-top:20px;
+        padding-top:10px;
         display: flex;
         align-items: center;
         justify-content: left;
