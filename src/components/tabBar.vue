@@ -52,6 +52,9 @@
   }
 </script>
 <style lang="less" scoped>
+.el-menu-demo {
+  color:#151515;
+}
   .jj {
     width: 100%;
     display: flex;
@@ -70,14 +73,19 @@
     }
     .menu {
       position:absolute;
-      left: 47%;
+      left: 50%;
     }
   }
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
     border-bottom: none;
     font-weight: bold;
     font-weight: normal;
+    font-family: LucidaGrande-Bold, LucidaGrande;
     font-size: 16px;
+}
+.el-menu--horizontal>.el-menu-item.is-active {
+  font-weight: bold;
+  color: #151515
 }
   .el-menu.el-menu--horizontal {
     border-bottom: none;
