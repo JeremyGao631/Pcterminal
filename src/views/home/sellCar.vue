@@ -298,7 +298,7 @@ export default({
               display: flex;
               position: relative;
               bottom: 345px;
-              left: -5.5%;
+              left: -8%;
               .imggs {
                 .img {
                   width: 210px;
@@ -307,13 +307,13 @@ export default({
                 }
               }
               .imggs:nth-child(1){
-                padding-left:15%;
+                padding-left:17%;
               }
               .imggs:nth-child(2){
-                padding-left:19%;
+                padding-left:18%;
               }
               .imggs:nth-child(3){
-                padding-left:19%;
+                padding-left:18%;
               }
             }
             .imgs {
