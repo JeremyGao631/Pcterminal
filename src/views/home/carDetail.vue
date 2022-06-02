@@ -58,13 +58,14 @@
         </div>
       </div>
     </div>
+    <div class="detailtext">
+      <span class="texttitle">DEALER COMMENTS</span>
+      <br />
+      <span class="textcontent">The team at Autohome AU make selling your car as easy and convenient as possible. 
+        <br />Simply send us your vehicle details using the form below and let our team take care of the rest. 
+        <br />Contact us now.
+      </span>
   </div>
-  <div class="detailtext">
-    <span class="texttitle">DEALER COMMENTS</span>
-    <br />
-    <span class="textcontent">The team at Autohome AU make selling your car as easy and convenient as possible. 
-      <br />Simply send us your vehicle details using the form below and let our team take care of the rest. 
-      <br />Contact us now.</span>
   </div>
   <div class="booking">
     <div class="bookingtext">
@@ -446,11 +447,9 @@ name: 'CarDetail',
   }
   .detailtext {
     background-color: #FFFFFF;
-    width:1300px;
     height:180px;
-    margin:0 0 40px 240px;
+    margin: 50px 120px 0 20px;
     .texttitle {
-      width: 184px;
       height: 130px;
       font-size: 30px;
       font-family: DINCondensed-Bold;
