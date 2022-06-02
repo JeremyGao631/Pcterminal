@@ -330,12 +330,12 @@ export default {
 .content {
     .contentimg {
         width: 100%;
-        height: 830px;
+        height: calc(100vh - 10px);
     }
     .inlinetext {
         position: absolute;
-        left: 180px;
-        top: 250px;
+        left: 10%;
+        top: 20%;
     }
     .content-text {
         font-size: 120px;
@@ -382,8 +382,9 @@ export default {
         }
     }
     .middle {
+        margin: 0 auto;
+        width: 1400px;
         padding-bottom: 200px;
-        margin: 0 180px 0 215px;
         .title {
             font-size: 70px;
             font-family: DINCondensed-Bold;

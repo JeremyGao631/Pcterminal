@@ -28,8 +28,8 @@
                         required 
                     />
                     <el-input 
-                        v-model="postcode"
-                        placeholder="Postcode*" 
+                        v-model="address"
+                        placeholder="address*" 
                         required 
                     />
                 </div>
@@ -46,29 +46,30 @@
             </div>
             <div class="left">
                 <div class="top">
-                    <div class =information>
+                    <div class ="information">
                         <img class="img" src="../../assets/images/contact/Phone.png" alt="">
                         <span class="title"> {{ information[0].title }}</span>
                         <span class="contact"> {{ information[0].information }}</span>
                     </div>
-                    <div class =information>
+                    <div class ="information">
                         <img class="img" src="../../assets/images/contact/Email.png" alt="">
                         <span class="title"> {{ information[1].title }}</span>
                         <span class="contact"> {{ information[1].information }}</span>
                     </div>
                 </div>
                 <div class="top">
-                    <div class =information @click="chatQRCodeOpen()">
+                    <div class ="information">
                         <img class="img" src="../../assets/images/contact/Wechat.png" alt="">
                         <span class="title"> {{ information[2].title }}</span>
                         <span class="contact"> {{ information[2].information }}</span>
+                        <div class="code_box" id="code1"><img src="../../assets/images/contact/WeChatQRcode.png" /></div>
                     </div>
-                    <div class =information>
+                    <div class ="information">
                         <img class="img" src="../../assets/images/contact/Address.png" alt="">
                         <span class="title"> {{ information[3].title }}</span>
                         <span class="contact"> {{ information[3].information }}</span>
                     </div>
-                    <el-dialog
+                    <!-- <el-dialog
                         title="WeChat QR Code"
                         :visible.sync="chatQRCodeDialogVisible"
                         width="40%"
@@ -78,21 +79,22 @@
                         </div>
                         <span slot="footer" class="dialog-footer">
                         </span>
-                    </el-dialog>
+                    </el-dialog> -->
                 </div>
                 <!--新增-->
                 <div class="top">
-                    <div class =information @click="goHome()">
+                    <div class ="information special" @click="goHome()">
                         <img class="img" src="../../assets/images/contact/facebook.png" alt="">
                         <span class="title"> {{ information[4].title }}</span>
                         <span class="contact"> {{ information[4].information }}</span>
                     </div>
-                    <div class =information @click="appQRCodeOpen()">
+                    <div class ="information" >
                         <img class="img" src="../../assets/images/contact/whatsapp.png" alt="">
                         <span class="title"> {{ information[5].title }}</span>
                         <span class="contact"> {{ information[5].information }}</span>
+                        <div class="code_box" id="code2"><img src="../../assets/images/contact/WhatsAppQRcode.png" /></div>
                     </div>
-                    <el-dialog
+                    <!-- <el-dialog
                         title="Whatsapp QR Code"
                         :visible.sync="appQRCodeDialogVisible"
                         width="40%"
@@ -102,7 +104,7 @@
                         </div>
                         <span slot="footer" class="dialog-footer">
                         </span>
-                    </el-dialog>
+                    </el-dialog> -->
                 </div>
             </div>
         </div>
@@ -132,7 +134,7 @@ export default({
             name: '',
             phone: '',
             email: '',
-            postcode: '',
+            address: '',
             message: '',
             disabled: true, // 校验
             information: [
@@ -176,18 +178,12 @@ export default({
         goHome() {
             window.location.href="https://www.facebook.com/Autohome-Australia-101055345438578/"
         },
-        appQRCodeHandleClose() {
-            this.appQRCodeDialogVisible = false;
-        },
-        appQRCodeOpen() {
-            this.appQRCodeDialogVisible = true;
-        },
-        chatQRCodeHandleClose() {
-            this.chatQRCodeDialogVisible = false;
-        },
-        chatQRCodeOpen() {
-            this.chatQRCodeDialogVisible = true;
-        },
+        // appQRCodeOpen() {
+            
+        // },
+        // chatQRCodeOpen() {
+        //     this.chatQRCodeDialogVisible = true;
+        // },
 
     }
 })
@@ -196,7 +192,7 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: 830px;
+            height: calc(100vh - 10px);
         }
         .text { 
           position:absolute;
@@ -215,16 +211,21 @@ export default({
           }
         }
         .contact-main {
-            margin-left: 8px;
+            margin: 240px auto 0 auto;
+            width: 1400px;
+            height: 1100px;
+            position: relative;
+            display: flex;
+            align-items: center;
             .table {
-                margin: 95px 200px 35px 30%;
-                width: 52%;
-                height: 750px;
+                position: absolute;
+                right: 0;
+                width: 902px;
+                height: 955px;
                 background-color: #f4f6f8;
-                position: relative;
+                box-sizing: border-box;
                 .table1 {
-                    position: absolute;
-                    left:14%;
+                    padding:0 10% 0 15%;
                 .title {
                     margin-left: 60px;
                     font-size: 60px;
@@ -241,13 +242,16 @@ export default({
                     .el-input {
                         font-size: 20px;
                         width: 252px;
-                        margin: 10px 20px;
+                        margin: 15px 20px;
                     }
                     .el-textarea{
                         font-size: 20px;
                         margin-left: 20px;
                         margin-top:20px;
                         width: 84%;
+                        /deep/ .el-textarea__inner {
+                            margin-left: 15px;
+                        }
                     }
                 }
                 .el-button {
@@ -263,9 +267,8 @@ export default({
                 }
             }
             .left {
-                position:absolute;
-                top: 1030px;
-                left: 13%;
+                position: absolute;
+                left: 0;
                 .top {
                     display: flex;
                     .information {
@@ -274,13 +277,14 @@ export default({
                         align-items: center;
                         margin-right: 20px;
                         margin-bottom: 20px;
-                        width: 205px;
-                        height: 210px;
+                        width: 289px;
+                        height: 276px;
                         background: #FFFFFF;
                         box-shadow: 0px 14px 48px 0px rgba(73, 73, 73, 0.07);
+                        position: relative;
                         .img {
-                            margin-top:19px;
-                            margin-bottom:19px;
+                            margin-top:56px;
+                            margin-bottom:54px;
                             width: 45px;
                             height: 45px;
                         }
@@ -303,7 +307,29 @@ export default({
                             color: #151515;
                             line-height: 28px;
                         }
+                        .code_box{
+                            display: none;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px;
+                            box-sizing: border-box;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
                     } 
+                    .information:hover {
+                        .code_box {
+                            display: block;
+                        }
+                    }
+                    .special {
+                        cursor:pointer;
+                    }
                 }
                 .showcode {
                     width: 150px;

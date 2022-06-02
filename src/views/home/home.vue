@@ -334,19 +334,19 @@ export default {
 <style lang="less" scoped>
 .lunbo {
   .el-carousel {
-    height: 830px;
+    height: calc(100vh - 10px);
     width:100%;
     .el-carousel__item {
-      height: 830px;
+      height: calc(100vh - 10px);
       img {
         width: 100%;
-        height: 830px;
+        height: calc(100vh - 10px);
         position: relative;
       }
     }
     /deep/ .el-carousel__container {
       position: relative;
-      height: 830px;
+      height: calc(100vh - 75px);
     }
   
     /deep/ .el-carousel__indicators--horizontal {
@@ -378,8 +378,8 @@ export default {
   text-align: left;
   div {
     position: absolute;
-    left: 190px;
-    top: 100px;
+    left: 10%;
+    top: 20%;
     .content-title {
       font-size: 60px;
       font-family: DINCondensed-Bold;
@@ -398,7 +398,7 @@ export default {
     }
     .el-button {
       position: relative;
-      left: 59px;
+      left: 10%;
       width: 231px;
       height: 58px;
       border: 1px solid #FFFFFF ;
@@ -434,7 +434,8 @@ export default {
 }
 
 .middle {
-  margin: 0 180px 0 215px;
+  margin: 0 auto;
+  width: 1400px;
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -488,11 +489,11 @@ export default {
     .textcard {
       float:left;
       margin: 0 20px;
-      width: calc(25% - 45px);
+      width: calc(25% - 40px);
       padding-bottom: 30px;
       .imgcard {
         width: 100%;
-        height: 211px;
+        height: 210px;
         img {
           height: 100%;
           width: 100%;
@@ -564,13 +565,13 @@ export default {
     }
     .textcard:nth-last-child(1) {
       margin-right: 0px;
-      padding-bottom:120px;
+      padding-bottom:79px;
     }
   }
   .newbutton {
+    margin-bottom: 110px;
     float:right;
     position: relative;
-    left: -34px;
     .el-button {
       width: 231px;
       height: 58px;
@@ -606,6 +607,8 @@ export default {
 .bottom {
     background-color:#F4F6F8;
     .title {
+      margin: 0 auto;
+      width: 1400px;
       font-size: 70px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
@@ -613,11 +616,11 @@ export default {
       white-space: nowrap;
       padding-top:114px;
       text-align:left;
-      margin: 84px 0  0 240px;
+      
     }
     .serviceinfo {
-      margin-left: 200px;
-      margin-right:200px;
+      margin: 0 auto;
+      width: 1400px;
       display: flex;
       align-items: center;
       justify-content: center;

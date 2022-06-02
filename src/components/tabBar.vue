@@ -56,24 +56,18 @@
   color:#151515;
 }
   .jj {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    position:fixed;
-    background-color: #FFFFFF;
-    z-index:3;
+    margin: 0 auto;
+    width: 1400px;
+    height: 70px;
+    box-sizing: border-box;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: -10px;
+    display: flex;
+    justify-content: space-between;
     .img {
-      margin-left: 240px;
+      // margin-left: 240px;
       width: 78px;
       height: 50px;
-    }
-    .menu {
-      position:absolute;
-      left: 50%;
     }
   }
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
