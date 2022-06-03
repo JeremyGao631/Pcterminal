@@ -28,10 +28,12 @@
                 <div class="information">{{ items.information }}</div>
             </div>
         </div>
-        <img class="img" src="../../assets/images/about/VisitOurShowroom.png" alt="">   
-        <div class="visit">
-            <div class="visitTitle">VISIT OUR SHOWROOM</div>
-            <div class="visitText">{{ visit }}</div>
+        <div class="visit_box">
+            <img class="img" src="../../assets/images/about/VisitOurShowroom.png" alt="">   
+            <div class="visit">
+                <div class="visitTitle">VISIT OUR SHOWROOM</div>
+                <div class="visitText">{{ visit }}</div>
+            </div>
         </div>
     </div>
 </template>
@@ -103,7 +105,7 @@ export default({
         width: 100%;
         .imgs {
             width: 100%;
-            height: 830px;
+            height: calc(100vh - 10px);
         }
         .text { 
           position:absolute;
@@ -134,7 +136,8 @@ export default({
           }
         }
         .offer {
-            width: 42%;
+            margin: 0 auto;
+            width: 1400px;
             height: 100px;
             font-size: 60px;
             margin-top: 85px;
@@ -143,9 +146,11 @@ export default({
             font-weight: bold;
             color: #151515;
             line-height: 100px;
+            text-align: left;
         }
         .spcialoffer {
-            width: 42%;
+            margin: 0 auto;
+            width: 1400px;
             height: 100px;
             font-size: 60px;
             margin-top: 100px;
@@ -154,15 +159,16 @@ export default({
             font-weight: bold;
             color: #151515;
             line-height: 100px;
-            margin-left: 150px;
         }
         .style {
-            width:83%;
+            margin: 0 auto;
+            width: 1400px;
             margin-bottom:100px;
             display: flex;
             flex-wrap: wrap;
-            padding-left:231px;
-            justify-content: center;
+            padding-left: 231px;
+            box-sizing: border-box;
+            justify-content: space-between;
             .weOffer {
                 display: flex;
                 flex-direction: column;
@@ -199,10 +205,11 @@ export default({
             }
         }
         .styles {
+            margin: 0 auto;
+            width: 1400px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            margin-left: 119px;
+            justify-content: space-between;
             margin-bottom: 120px;
             .weOffer {
                 display: flex;
@@ -226,7 +233,7 @@ export default({
                 }
                 .information {
                     width: 220px;
-                    height: 152px;
+                    // height: 152px;
                     font-size: 16px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: bold;
@@ -238,41 +245,48 @@ export default({
                 }
             }
         }
-        .img {
+        .visit_box {
             width: 100%;
             height: 583px;
-            margin-bottom:-4px;
-        }
-        .visit{
-            position:absolute;
-            top: 3190px;
-            left:30%;
-            .visitTitle {
-                width: 555px;
-                height: 100px;
-                font-size: 65px;
-                text-align: center;
-                padding-left:100px;
-                font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
-                color: #FFFFFF;
-                line-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .img {
+            width: 100%;
+            height: 100%;
             }
-            .visitText {
-                width: 743px;
-                height: 66px;
-                font-size: 16px;
-                text-align: center;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #FFFFFF;
-                line-height: 22px;
+            .visit{
+                position:absolute;
+                .visitTitle {
+                    width: 555px;
+                    height: 100px;
+                    font-size: 65px;
+                    text-align: center;
+                    padding-left:100px;
+                    font-family: DINCondensed-Bold, DINCondensed;
+                    font-weight: bold;
+                    color: #FFFFFF;
+                    line-height: 100px;
+                }
+                .visitText {
+                    width: 743px;
+                    height: 66px;
+                    font-size: 16px;
+                    text-align: center;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 22px;
+                }
             }
         }
         .ourStory {
+            margin: 0 auto;
+            width: 1400px;
             display: flex;
-            margin-left: 240px;
             margin-top: 95px;
+            justify-content: space-between;
             .storyImg {
                 width: 690px;
                 height: 462px;

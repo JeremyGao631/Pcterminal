@@ -46,10 +46,24 @@ export default {
   color: #2c3e50;
   height: 100%;
 }
+
+body{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .el-header {
+  margin-top: -8px;
     text-align: center;
     line-height: 1rem;
     padding:0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70px !important;
+    position:fixed;
+    background-color: #FFFFFF;
+    z-index:3;
   }
   .el-footer {
     text-align: left;

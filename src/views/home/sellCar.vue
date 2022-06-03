@@ -2,28 +2,72 @@
     <div class="contact">
         <img class="imgs" src="../../assets/images/sellyourcar/SellYourCar.png" alt="">
         <div class="text">
-          <div class="title">SELL YOUR CAR</div>
+          <div class="title">
+            SELL YOUR CAR
+          </div>
           <div class="span">{{point}}</div>
         </div>
         <div class="between">
           <div class="sell">
-            <div class="title">SELL YOUR CAR</div>
-            <div class="content">
-              <div v-for="(item, index) in content" :key="index" class="contentView">
-                <div class="yourCar">{{ item.title }}</div>
-                <div :class="textstyle[index]">{{ item.content }}</div>
-              </div>
+            <div class="title">
+              <div>S</div>
+              <div>E</div>
+              <div>L</div>
+              <div>L</div>
+              <div>Y</div>
+              <div>O</div>
+              <div>U</div>
+              <div>R</div>
+              <div>C</div>
+              <div>A</div>
+              <div>R</div>
             </div>
-            <div style="clear:both" ></div>
-            <div class="image">
-              <div v-for="(img,index) in img" :key="index" class="imggs">
-                <img :src="img.url" alt="" class="img">
+            <!-- <div class="content_box">
+              <div class="content">
+                <div v-for="(item, index) in content" :key="index" class="contentView">
+                  <div class="yourCar">{{ item.title }}</div>
+                  <div :class="textstyle[index]">{{ item.content }}</div>
+                </div>
               </div>
-            </div>
-            <div class="imgs">
-              <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
-              <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
-              <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
+              <div style="clear:both" ></div>
+              <div class="image">
+                <div v-for="(img,index) in img" :key="index" class="imggs">
+                  <img :src="img.url" alt="" class="img">
+                </div>
+              </div>
+              <div class="imgs">
+                <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
+                <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
+                <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
+              </div>
+            </div> -->
+          </div>
+          <div class="step_box">
+            <div class="step">
+              <div class="step_item">
+                 <img src="../../assets/images/sellyourcar/BringInYourCar.png" alt="" class="img">
+                 <div class="step_info">
+                   <p>Bring in your car</p>
+                   <div>We’ll take a look regardless of make, kilometres, or condition.</div>
+                   <img src="../../assets/images/sellyourcar/1.png" alt="" class="img">
+                 </div>
+              </div>
+              <div class="step_item">
+                 <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
+                 <div class="step_info">
+                   <p>Get your instant offer</p>
+                   <div>To provide you an honest and fair offer, our appraisers here at Autohome AU Auto Traders thoroughly inspect the condition of your car and compare it against current market data.</div>
+                   <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
+                 </div>
+              </div>
+              <div class="step_item">
+                 <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
+                 <div class="step_info">
+                   <p>Get cash payment</p>
+                   <div>we will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
+                   <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
+                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -116,6 +160,9 @@
                 <el-input v-model="forms.photo" />
               </div>
               <el-button type="primary" class="btn">UPLOAD</el-button>
+              <div  class="input7">
+                <el-input disabled />
+              </div>
             </div>
             <div class="detail">COMMENTS</div>
             <div class="input4">
@@ -274,7 +321,7 @@ export default({
       width: 100%;
         .imgs {
           width: 100%;
-          height: 830px;
+          height: calc(100vh - 10px);
         }
          .text { 
           position:absolute;
@@ -303,128 +350,70 @@ export default({
           }
         }
         .between {
-          height: 650px;
+          height: 850px;
           background: #F4F6F8;
           position: relative;
           .sell {
             .title {
               height: 32px;
               font-size: 100px;
-              padding: 90px 0px 40px 80px;
+              padding: 180px 80px 40px 80px;
               font-family: DINCondensed-Bold;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
-              letter-spacing: 100px;
-            }
-            .image {
               display: flex;
-              position: relative;
-              bottom: 345px;
-              left: -5.5%;
-              .imggs {
-                .img {
-                  width: 210px;
-                  height: 375px;
-                  background: #FFFFFF;
-                }
-              }
-              .imggs:nth-child(1){
-                padding-left:15%;
-              }
-              .imggs:nth-child(2){
-                padding-left:19%;
-              }
-              .imggs:nth-child(3){
-                padding-left:19%;
+              justify-content: space-between;
+              div{
+                text-align: center;
               }
             }
-            .imgs {
+            
+          }
+          .step_box{
+            margin-left: 12%;
+            width: 88%;
+            height: 350px;
+            background-color: #fff;
+            position: relative;
+            .step{
+              position: absolute;
+              top: 72px;
+              left: -6%;
+              width: 100%;
               display: flex;
-              position: relative;
-              bottom: 1020px;
-              .imgs1 {
-                width: 43px;
-                height: 43px;
-                background: #FFFFFF;
-                position: absolute;
-                top: 580px;
-                left:410px;
-              }
-              .imgs2 {
-                width: 43px;
-                height: 43px;
-                background: #FFFFFF;
-                position: absolute;
-                top: 580px;
-                left: 975px;
-              }
-              .imgs3 {
-                width: 43px;
-                height: 43px;
-                background: #FFFFFF;
-                position: absolute;
-                top: 580px;
-                left: 1550px;
-              }
-            }
-            .content {
-              width: 1638px;
-              height: 375px;
-              background: #FFFFFF;
-              display: flex;
-              position: relative;
-              left: 245px;
-              justify-content: left;
-              overflow: hidden;
-              .contentView {
-                display:flex;
-                flex-direction: column;
-                margin-top:44px;
-                padding-right: 12%;
-                padding-left: 10%;
-                .yourCar {
-                  width: 211px;
-                  height: 32px;
-                  font-size: 40px;
-                  font-family: DINCondensed-Bold, DINCondensed;
-                  font-weight: bold;
-                  color: #212020;
-                  line-height: 32px;
-                  white-space: nowrap;
+              .step_item{
+                display: flex;
+                width: calc(100% / 3);
+                img{
+                  width: 35%;
+                  height: 300px;
                 }
-                .textstyle1 {
-                  width:206px;
-                  height: 110px;
-                  font-size: 16px;
-                  font-family: PingFangSC-Regular, PingFang SC;
-                  font-weight: 400;
-                  color: #909090;
-                  line-height: 22px;
-                  text-align: left;
-                  margin-top: 10px;
-                }
-                .textstyle2 {
-                  width:217px;
-                  height: 110px;
-                  font-size: 16px;
-                  font-family: PingFangSC-Regular, PingFang SC;
-                  font-weight: 400;
-                  color: #909090;
-                  line-height: 22px;
-                  text-align: left;
-                  margin-top: 10px;
-                }
-                .textstyle3 {
-                  width:202px;
-                  height: 110px;
-                  font-size: 16px;
-                  font-family: PingFangSC-Regular, PingFang SC;
-                  font-weight: 400;
-                  color: #909090;
-                  line-height: 22px;
-                  text-align: left;
-                  margin-top: 10px;
+                .step_info{
+                  margin: 0 15px;
+                  width: calc(65% - 30px);
+                  position: relative;
+                  p{
+                    margin: 10px 0;
+                    color: #212020;
+                    font-size: 36px;
+                    font-family: 'DINCondensed-Bold';
+                    text-align: left;
+                  }
+                  div{
+                    color: #909090;
+                    font-size: 14px;
+                    font-family: 'PingFangSC-Regular';
+                    line-height: 1.5;
+                    text-align: left;
+                  }
+                  img{
+                    position: absolute;
+                    left: 0;
+                    bottom: 40px;
+                    width: 40px;
+                    height: 40px;
+                  }
                 }
               }
             }
@@ -432,12 +421,15 @@ export default({
         }
         .bottom {
           background-color: #fff;
-          margin:0 170px;
+          margin: 0 auto;
+          width: 1400px;
+          margin-bottom: 175px;
           .contact {
-            width: 50%;
+            margin: 0 auto;
+            width: 1400px;
             margin-top:108px;
-            padding-left: 65px;
             text-align: left;
+            margin-bottom: 50px;
             .us {
               width: 725px;
               height: 100px;
@@ -469,7 +461,8 @@ export default({
           .form {
             height: 1750px;
             background-color: #f4f6f8;
-            margin: 33px 100px 150px 65px;
+            margin: 0 auto;
+            width: 1400px;
             .detail {
               position: relative;
               top: 85px;
@@ -619,14 +612,11 @@ export default({
             .input3 {
               padding-top: 32px;
               display: flex;
-              margin-left: 17.5%;
-              margin-right: 15.5%;
-              justify-content: center;
-              padding-right: 300px;
+              margin-left: 17%;
+              justify-content: left;
+              align-items: center;
               .input1 {
-                margin-right: 120px;
-                width: 373px;
-                height: 107px;
+                margin-right: 81px;
                 .el-input {
                   /deep/ .el-input__inner {
                     width:420px;
@@ -634,7 +624,7 @@ export default({
                 }
               }
               .name{
-                margin-left:20px;
+                margin-left: 35px;
                 text-align: left;
                 font-size: 20px;
                 margin-bottom: 15px;
@@ -643,15 +633,17 @@ export default({
               }
               /deep/.el-input__inner {
                 width: 80%;
-                margin-left:6%;
+                margin-left: 35px
               }
               .btn{
+                border: none;
                 width: 147px;
                 height: 44px;
                 color: #fff;
                 background-color: #000;
                 position: relative;
-                top: 36px;
+                top: 18px;
+                margin-left: -50px;
                 /deep/ span {
                   width: 50px;
                   height: 130px;
@@ -661,11 +653,23 @@ export default({
                   color: #FFFFFF;
                 }
               }
+              .input7 {
+                margin-left: 77px;
+                .el-input {
+                  /deep/ .el-input__inner {
+                    width:260px;
+                  }
+                }
+                /deep/.el-input.is-disabled .el-input__inner {
+                  border:none;
+                }
+              }
               
             }
             .input4 {
               padding-top:130px;
-              margin-left: 87px;
+              margin-left: 163px;
+              margin-right: 163px;
               .input1 {
                 width: 82%;
                 height: 107px;
@@ -692,6 +696,7 @@ export default({
                 font-weight: bold;
               }
               .btn{
+                border: none;
                 width: 185px;
                 height: 44px;
                 color: fff;
@@ -765,8 +770,8 @@ export default({
               font-size: 16px;
               text-align: left;
               margin-top:51px;
-              padding-left: 11%;
-              padding-right: 20%;
+              padding-left: 17%;
+              padding-right: 17%;
               line-height: 20px;
               font-weight: 400;
               font-family: PingFangSC-Light, PingFang SC;
@@ -776,8 +781,8 @@ export default({
               font-size: 16px;
               text-align: left;
               margin-top:5px;
-              padding-left: 11%;
-              padding-right: 20%;
+              padding-left: 17%;
+              padding-right: 17%;
               line-height: 20px;
               font-weight: 400;
               font-family: PingFangSC-Light, PingFang SC;
