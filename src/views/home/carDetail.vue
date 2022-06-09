@@ -90,7 +90,7 @@
       </div>
       <div class="inputtables">
         <div class="newbutton">
-          <el-button >
+          <el-button @click="submit()">
             <span>SUBMIT</span>
             <i class="el-icon-my-yellowright"></i>
           </el-button>
@@ -132,6 +132,8 @@
 </template>
 
 <script>
+import { inspection } from '@/api'
+
 export default {
 name: 'CarDetail',
   components: {
@@ -258,7 +260,15 @@ name: 'CarDetail',
   methods: {
     // 收集信息提交
     submit() {
-
+            inspection({
+              // 缺少email字段
+                        name:'huli',
+                        phone: '12738721838',
+                        // email:'1232ui@qq.com',
+                        time: '2022-05-20 17:30:05',
+            }).then( res => {
+                console.log(res, '提交成功')
+            })
     },
     // 按price的逻辑查询展示信息
     query() {

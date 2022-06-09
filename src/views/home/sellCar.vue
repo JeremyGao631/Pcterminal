@@ -170,7 +170,7 @@
                 <div class="name special">COMMENTS</div>
                 <el-input v-model="forms.comments" type="textarea" :rows="8" />
               </div>
-              <el-button type="primary" class="btn">SUBMIT</el-button>
+              <el-button @click="submit()" type="primary" class="btn">SUBMIT</el-button>
             </div>
             <div class="privacy">PRIVACY</div>
             <div class="formText">
@@ -193,6 +193,8 @@
 </template>
 <script>
 // import { Dialog } from "element-ui";
+import { vehicle } from '@/api'
+
 
 
 export default({
@@ -289,6 +291,27 @@ export default({
       book(item) {
         this.logbook = item.label
         console.log(this.logbook)
+      },
+      submit() {
+        vehicle({
+          // 缺少字段
+              name:'hu1q2',
+              phone: '127837897982',
+              email:'98920738@qq.com',
+              year: '1',
+              make: 'any',
+              model: 'any',
+              transmission: 'any',
+              odometer: '12',
+              regonumber: 'jijiiuj',
+              color: 'yellow',
+              trim: 'dsadsa',
+              logbook: 'yes',
+              photo: ' sjdisjdwjhsdjkdkjkldsbase64',
+              comments: 'daiohdjsahdj'
+            }).then( res => {
+                console.log(res, '提交成功')
+            })
       }
     }
 })

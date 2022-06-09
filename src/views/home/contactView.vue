@@ -40,7 +40,7 @@
                             placeholder="Message*"
                             v-model="message" />
                 </div>
-                <el-button :disabled="this.name === '' || this.phone === '' || this.email === '' || this.postcode === ''" @click="contactSubmit()">SUBMIT</el-button>
+                <el-button @click="contactSubmit()">SUBMIT</el-button>
                 </div>
 
             </div>
@@ -119,7 +119,8 @@
     </div>
 </template>
 <script>
-import { Dialog } from "element-ui";
+// import { Dialog } from "element-ui";
+import { fetch } from '@/api'
 // import contactCom from "../components/contact-com.vue"
 
 
@@ -167,13 +168,24 @@ export default({
     },
     methods: {
         contactSubmit() {
-            if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '') {
-                this.disabled = true
-                Dialog.alert('请补充资料完整')
-            } else {
-                this.disabled = false
+            // if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '') {
+            //     this.disabled = true
+            //     Dialog.alert('请补充资料完整')
+            // } else {
+            //     this.disabled = false
                 
-            }
+            // }
+            console.log('123')
+            // code值为0 成功
+            fetch({
+                        name:'huli12',
+                        phone: '13738721837',
+                        email:'1232ui@qq.com',
+                        message:'hshdkjahdshadkjh',
+                        address:'khjnb2  lkskhkdn2  lkjlkllkjd saydh'
+            }).then( res => {
+                console.log(res, '提交成功')
+            })
         },
         goHome() {
             window.location.href="https://www.facebook.com/Autohome-Australia-101055345438578/"
@@ -352,7 +364,7 @@ export default({
             top: 275px;
             right: 3.3%;
             .border {
-                width: 410px;
+                width: 256px;
                 height: 210px;
             }
             .top {
