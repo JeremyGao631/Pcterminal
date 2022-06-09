@@ -3,14 +3,14 @@
     <!--轮播图-->
     <div class="lunbo section">
       <el-carousel :interval="5000" arrow="always" >
-        <el-carousel-item v-for="index in itemList" :key="index">
+        <el-carousel-item v-for="(item,index) in itemList" :key="index">
           <div class="content">
-            <img :src="index"  alt="暂无图片" />
+            <img :src="item.url"  alt="暂无图片" />
             <div>
-              <span class="content-title">Excellent-performance</span><br />
+              <span class="content-title">{{item.title}}</span><br />
               <span class="content-text">
-                <span>DISTINCTIVE</span><br />
-                <span style="padding-left: 51px;">QUALITY</span><br />
+                <span>{{item.text1}}</span><br />
+                <span style="padding-left: 51px;">{{item.text2}}</span><br />
               </span>
               <el-button @click="contactUs()">
                 <span>CONTACT US  </span>
@@ -128,11 +128,30 @@ export default {
   data(){
     return{
       itemList:[
-        require('../../assets/images/home/lunbo.png'),
-        require('../../assets/images/home/JVS00138.jpg'),
-        require('../../assets/images/home/JVS00355.jpg'),
-        require('../../assets/images/home/JVS00451.jpg'),
-        require('../../assets/images/home/JVS00484.jpg')
+        {
+          url: require('../../assets/images/home/lunbo.png'),
+          title: 'Excellent-performance',
+          text1: 'EXCEPTIONAL',
+          text2: 'QUALITY'
+        },
+        {
+          url: require('../../assets/images/home/JVS00355.jpg'),
+          title: 'Customer-centricity',
+          text1: 'EXCELLENT',
+          text2: 'VALUE'
+        },
+        {
+          url: require('../../assets/images/home/JVS00451.jpg'),
+          title: 'Trustworthy',
+          text1: 'HIGH',
+          text2: 'INTEGRITY'
+        },
+        {
+          url: require('../../assets/images/home/JVS00484.jpg'),
+          title: 'Passion-oriented',
+          text1: 'STRONG',
+          text2: 'ENTHUSIASM'
+        },
       ],
       number: 0 ,
       information: [

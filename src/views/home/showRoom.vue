@@ -1,16 +1,24 @@
 <template>
-    <div class="content">
-        <img class="contentimg" src="../../assets/images/onlineshowroom/OnlineShowroom.png"  alt="暂无图片" />
-        <div class="inlinetext">
-            <span class="content-text">
-                <span style="padding-left:60px">ONLINE</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">SHOWROOM</span><br />
-                <div style="clear:both;"></div>
-            </span>
-            <el-button @click="contactUs()">
-                <span>BOOK SERVICE</span>
-                <i class="el-icon-my-right"></i>
-            </el-button>
+    <div class="showroom">
+        <div class="lunbo section">
+            <el-carousel :interval="5000" arrow="always" >
+                <el-carousel-item v-for="(item,index) in itemList" :key="index">
+                    <div class="content">
+                        <img :src="item.url"  alt="暂无图片" />
+                        <div>
+                        <span class="content-title">{{item.title}}</span><br />
+                        <span class="content-text">
+                            <span>{{item.text1}}</span><br />
+                            <span style="padding-left: 51px;">{{item.text2}}</span><br />
+                        </span>
+                        <el-button @click="contactUs()" :style="{'display':`${item.type}`}">
+                            <span>CONTACT US  </span>
+                            <i class="el-icon-my-right"></i>
+                        </el-button>
+                        </div>
+                    </div>
+                </el-carousel-item>
+            </el-carousel>
         </div>
         <div class="middle">
             <div class="title">START A NEW SEARCH</div>
@@ -187,6 +195,36 @@ export default {
   },
   data(){
     return{
+        itemList:[
+        {
+          url: require('../../assets/images/onlineshowroom/04.png'),
+          title: 'Extraordinary-experience',
+          text1: 'ONLINE',
+          text2: 'SHOWROOM',
+          type:''
+        },
+        {
+          url: require('../../assets/images/onlineshowroom/05.png'),
+          title: 'Thoughtful-service',
+          text1: 'SELL',
+          text2: 'YOUR CAR',
+          type:''
+        },
+        {
+          url: require('../../assets/images/onlineshowroom/06.png'),
+          title: 'Get to know us',
+          text1: 'ABOUT',
+          text2: 'AUTOHOME AU',
+          type:''
+        },
+        {
+          url: require('../../assets/images/onlineshowroom/07.png'),
+          title: '',
+          text1: '',
+          text2: '',
+          type:'none'
+        },
+      ],
         show:true,
         show1:true,
         show2:true,
@@ -327,60 +365,108 @@ export default {
 
 
 <style lang="less" scoped>
-.content {
-    .contentimg {
-        width: 100%;
-        height: calc(100vh - 10px);
-    }
-    .inlinetext {
-        position: absolute;
-        left: 10%;
-        top: 20%;
-    }
-    .content-text {
-        font-size: 120px;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        color: #FFFFFF;
-        line-height: 130px;
-        span {
-            float:left;
+.showroom {
+    .lunbo {
+        .el-carousel {
+            height: calc(100vh - 10px);
+            width:100%;
+            .el-carousel__item {
+            height: calc(100vh - 10px);
+            img {
+                width: 100%;
+                height: calc(100vh - 10px);
+                position: relative;
+            }
+            }
+            /deep/ .el-carousel__container {
+            position: relative;
+            height: calc(100vh - 75px);
+            }
+        
+            /deep/ .el-carousel__indicators--horizontal {
+            bottom: 0;
+            left: 240px;
+            transform: translateY(-64px);
+            .el-carousel__button {
+                width: 10px;
+                height: 10px;
+                background: transparent;
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                opacity: 0.5;
+                margin-right: 5px;
+            }
+            }
+            /deep/ .el-carousel__indicator--horizontal.is-active .el-carousel__button{
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 1;
+            margin-right: 5px;
+            }
         }
-    }
-    .el-button {
-        width: 231px;
-        height: 58px;
-        position: absolute;
-        left:68px;
-        border: 1px solid #FFFFFF ;
-        margin-top: 20px;
-        background-color: transparent;
-        color:#FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        span{
-            width: 91px;
-            height: 130px;
-            font-size: 20px;
+        }
+
+    .content {
+        text-align: left;
+        div {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            .content-title {
+            font-size: 60px;
             font-family: DINCondensed-Bold;
             font-weight: bold;
-            line-height: 25px;
-            text-align: center;
             color: #FFFFFF;
-            line-height: 130px;
-            margin-left: 20px;
-            margin-right: 50px;
+            padding-left:51px;
+            line-height: 36px;
+            padding-bottom: 10px;
+            }
+            .content-text {
+            font-size: 120px;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            padding-left: 51px;
+            color: #FFFFFF;
+            }
+            .el-button {
+            position: relative;
+            left: 10%;
+            width: 231px;
+            height: 58px;
+            border: 1px solid #FFFFFF ;
+            margin-top: 10px;
+            background-color: transparent;
+            color:#FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            span {
+                width: 91px;
+                height: 130px;
+                font-size: 20px;
+                font-family: DINCondensed-Bold;
+                font-weight: bold;
+                line-height: 25px;
+                text-align: center;
+                color: #FFFFFF;
+                line-height: 130px;
+                margin-left: 20px;
+                margin-right: 50px;
+            }
+            .el-icon-my-right {
+                background: url('../../assets/images/home/right.png') no-repeat;
+                background-size: cover;
+                display:inline-block;
+                height: 16px;
+                width: 16px;
+                margin-right: -16px;
+            }
+            }
         }
-        .el-icon-my-right {
-            background: url('../../assets/images/home/right.png') no-repeat;
-            background-size: cover;
-            display:inline-block;
-            height: 16px;
-            width: 16px;
-            margin-right: -16px;
         }
-    }
+    
     .middle {
         margin: 0 auto;
         width: 1400px;
