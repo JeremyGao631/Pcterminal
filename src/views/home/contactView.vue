@@ -1,49 +1,7 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/contact/ContactUsNow.png" alt="">
-        <div class="text">
-          <div class="title">CONTACT US NOW</div>
-        </div>
+        <img class="imgs" src="../../assets/images/home/JVS00138.jpg" alt="">
         <div class="contact-main">
-            <div class= "table">
-                <div class="table1">
-                <span class="title">CONTACT</span>
-                <div class="input-view">
-                    <el-input 
-                        v-model="name"
-                        placeholder="Name*" 
-                        required 
-                    />
-                    <el-input 
-                        v-model="phone"
-                        placeholder="Phone*" 
-                        required 
-                    />
-                </div>
-
-                <div class="input-view">
-                    <el-input 
-                        v-model="email"
-                        placeholder="Email*" 
-                        required 
-                    />
-                    <el-input 
-                        v-model="address"
-                        placeholder="address*" 
-                        required 
-                    />
-                </div>
-                <div class="input-view">
-                        <el-input
-                            type="textarea"
-                            :autosize="{ minRows: 5, maxRows: 20}"
-                            placeholder="Message*"
-                            v-model="message" />
-                </div>
-                <el-button @click="contactSubmit()">SUBMIT</el-button>
-                </div>
-
-            </div>
             <div class="left">
                 <div class="top">
                     <div class ="information">
@@ -107,6 +65,45 @@
                     </el-dialog> -->
                 </div>
             </div>
+            <div class= "table">
+                <div class="table1">
+                <span class="title">CONTACT</span>
+                <div class="input-view">
+                    <el-input 
+                        v-model="name"
+                        placeholder="Name*" 
+                        required 
+                    />
+                    <el-input 
+                        v-model="phone"
+                        placeholder="Phone*" 
+                        required 
+                    />
+                </div>
+
+                <div class="input-view">
+                    <el-input 
+                        v-model="email"
+                        placeholder="Email*" 
+                        required 
+                    />
+                    <el-input 
+                        v-model="address"
+                        placeholder="address*" 
+                        required 
+                    />
+                </div>
+                <div class="input-view">
+                        <el-input
+                            type="textarea"
+                            :autosize="{ minRows: 5, maxRows: 20}"
+                            placeholder="Message*"
+                            v-model="message" />
+                </div>
+                <el-button @click="contactSubmit()">SUBMIT</el-button>
+                </div>
+
+            </div>
         </div>
         <div class="location">
             <img class="border" src="../../assets/images/contact/LocationIconBackground.png" alt="">
@@ -141,7 +138,7 @@ export default({
             information: [
                 {
                     title:'Phone',
-                    information: '0406 118 999'
+                    information: '(02) 8386 3564'
                 },
                 {
                     title:'E-mail',
@@ -226,18 +223,17 @@ export default({
             margin: 240px auto 0 auto;
             width: 1400px;
             height: 1100px;
-            position: relative;
             display: flex;
             align-items: center;
             .table {
-                position: absolute;
                 right: 0;
-                width: 902px;
+                width: 750px;
                 height: 955px;
                 background-color: #f4f6f8;
                 box-sizing: border-box;
+                margin-left: -125px;
                 .table1 {
-                    padding:0 10% 0 15%;
+                    padding: 20% 0 0 10%;
                 .title {
                     margin-left: 60px;
                     font-size: 60px;
@@ -279,8 +275,6 @@ export default({
                 }
             }
             .left {
-                position: absolute;
-                left: 0;
                 .top {
                     display: flex;
                     .information {
@@ -364,7 +358,7 @@ export default({
             top: 275px;
             right: 3.3%;
             .border {
-                width: 256px;
+                width: 400px;
                 height: 210px;
             }
             .top {
@@ -391,6 +385,7 @@ export default({
 border: 1px solid #000 ;
 border-radius: 0 ;
 font-size: 14px;
+background-color: #f4f6f8;
 }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
@@ -398,6 +393,7 @@ font-size: 14px;
 /deep/.el-textarea__inner {
   border: 1px solid #000 ;
   border-radius: 0 ;
+  background-color: #f4f6f8;
 }
 /deep/.el-input__inner {
     width: 217px;

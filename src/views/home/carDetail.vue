@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="showleft">
-            <img src="../../assets/images/carDetail/rili.png" />
+            <img src="../../assets/images/carDetail/rili.jpg" />
             <div class="showlefttext">
                 <span class="texttop">2016</span>
                 <br />
@@ -292,13 +292,15 @@ name: 'CarDetail',
       font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 0 50px 20px;
-      padding-top:92px;
+      margin: 0 40px 50px 20px;
+      padding-top:150px;
       text-align:left;
       letter-spacing: 1px;
     }
     .content {
-      margin:49px 120px 0px 20px;
+      margin-left: 20px;
+      margin-top: 70px;
+      margin-right: 40px;
       display: flex;
       align-items: top;
       justify-content: center;
@@ -458,7 +460,7 @@ name: 'CarDetail',
   .detailtext {
     background-color: #FFFFFF;
     height:180px;
-    margin: 50px 120px 0 20px;
+    margin: 50px 40px 0 20px;
     .texttitle {
       height: 130px;
       font-size: 30px;
@@ -499,8 +501,9 @@ name: 'CarDetail',
       .userinput {
         display: flex;
         align-items: center;
-        justify-content: left;
-        margin: 0 20px;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 40px;
         .inputtable {
           margin-right: 45px;
           text-align: left;

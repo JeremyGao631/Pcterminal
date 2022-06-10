@@ -21,7 +21,7 @@
         </div> -->
         <div class="among">
           <div class="guide">CONTACT</div>
-          <div class="components">Tel: 0498698000</div>
+          <div class="components">Tel: (02) 8386 3564</div>
           <div class="components">Wechat: buyingcars</div>
           <div class="components">E-mail: enquiries@autohome.com.au</div>
           <div class="components" style="white-space: nowrap;">Address: 388 Parramatta Road,Burwood,NSW 2134</div>
@@ -68,6 +68,8 @@
     justify-content: center;
     .left {
         margin-left: 0;
+        padding-top: 100px;
+        padding-bottom: 100px;
       .img {
         margin-right: 255px;
         margin-bottom: 20px;
@@ -102,7 +104,8 @@
     }
     .right {
       text-align: left;
-      padding-top: 80px;
+      padding-top: 100px;
+      padding-bottom: 100px;
       .guide {
         width: 61px;
         height: 30px;

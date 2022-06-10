@@ -1,9 +1,17 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/about/OurMission.png" alt="">
-        <div class="text">
-          <div class="title">OUR MISSION</div>
-          <div class="span">Offer our customers exceptional quality and excellent value with our integrity and enthusiasm.</div>
+        <img class="contentimg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
+        <div class="inlinetext">
+            <span class="content-title">Get to know us</span><br />
+            <span class="content-text">
+                <span style="padding-left:60px">ABOUT</span><br />
+                <span style="padding-left:60px;margin-top:-10px ;">AUTOHOME AU</span><br />
+                <div style="clear:both;"></div>
+            </span>
+            <el-button class="clickbtn" @click="contactUs()">
+                <span>CONTACT US</span>
+                <i class="el-icon-my-right"></i>
+            </el-button>
         </div>
         <div class="offer">WHAT WE OFFER</div>
         <div class="style">
@@ -14,7 +22,7 @@
             </div>
         </div>
         <div class="ourStory">
-            <img class="storyImg" src="../../assets/images/about/OurStory.png" alt="">
+            <img class="storyImg" src="../../assets/images/about/JVS00326-Edit-3.jpg" alt="">
             <div class="title">
                 <div class="storyTit">OUR STORY</div>
                 <div class="story">{{ story }}</div>
@@ -29,10 +37,12 @@
             </div>
         </div>
         <div class="visit_box">
-            <img class="img" src="../../assets/images/about/VisitOurShowroom.png" alt="">   
+            <img class="img" src="../../assets/images/home/JVS00366-Edit-3.jpg" alt="">   
             <div class="visit">
                 <div class="visitTitle">VISIT OUR SHOWROOM</div>
                 <div class="visitText">{{ visit }}</div>
+                <div class="visitText">{{ visit1 }}</div>
+                <div class="visitText">{{ visit2 }}</div>
             </div>
         </div>
     </div>
@@ -92,8 +102,10 @@ export default({
                     information: 'Our employees share a deep passion for cars.'
                 }
             ],
-            visit: 'Please visit our showroom in Burwood to inspect our range of vehicles and discuss your needs. Our Sales team speak English and Chinese, and we look forward to helping you with your next car sale or purchase.',
-            story: 'Autohome Australia were established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.'
+            visit: 'Please visit our showroom in Burwood to inspect our range of vehicles and discuss your needs.',
+            visit1: 'Our Sales team speak English and Chinese.',
+            visit2: 'and we look forward to helping you with your next car sale or purchase.',
+            story: 'Autohome Australia was established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.Our core principle and belief is that ‘we sell quality.’ We provide a streamlined process that is simple, transparent and efficient. You can be reassured that all our vehicles undergo a comprehensive inspection by qualified expert mechanics to ensure safety and quality for peace of mind.'
         }
     },
     methods: {
@@ -103,37 +115,66 @@ export default({
 <style lang="less" scoped>
     .contact {
         width: 100%;
-        .imgs {
-            width: 100%;
-            height: calc(100vh - 10px);
+        .contentimg {
+        width: 100%;
+        height: calc(100vh - 10px);
         }
-        .text { 
-          position:absolute;
-          top: 202px;
-          left: 240px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          .title {
-            width: 823px;
-            text-align: left;
-            height: 130px;
+        .inlinetext {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+        }
+        .content-title {
+          font-size: 50px;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          color: #FFFFFF;
+          line-height: 50px;
+          margin-left: -230px;
+        }
+        .content-text {
             font-size: 120px;
-            font-family: DINCondensed-Bold, DINCondensed;
+            font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
-          }
-          .span {
-            width: 770px;
-            text-align: left;
-            height: 183px;
-            font-size: 60px;
-            font-family: DINCondensed-Bold, DINCondensed;
-            font-weight: bold;
-            color: #FFFFFF;
-            line-height: 61px;
-          }
+            span {
+                float:left;
+            }
+        }
+        .clickbtn {
+            width: 231px;
+            height: 58px;
+            position: absolute;
+            left:68px;
+            border: 1px solid #FFFFFF ;
+            margin-top: 20px;
+            background-color: transparent;
+            color:#FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            span{
+                width: 91px;
+                height: 130px;
+                font-size: 20px;
+                font-family: DINCondensed-Bold;
+                font-weight: bold;
+                line-height: 25px;
+                text-align: center;
+                color: #FFFFFF;
+                line-height: 130px;
+                margin-left: 20px;
+                margin-right: 50px;
+            }
+            .el-icon-my-right {
+                background: url('../../assets/images/home/right.png') no-repeat;
+                background-size: cover;
+                display:inline-block;
+                height: 16px;
+                width: 16px;
+                margin-right: -16px;
+            }
         }
         .offer {
             margin: 0 auto;
@@ -166,9 +207,8 @@ export default({
             margin-bottom:100px;
             display: flex;
             flex-wrap: wrap;
-            padding-left: 231px;
             box-sizing: border-box;
-            justify-content: space-between;
+            justify-content: left;
             .weOffer {
                 display: flex;
                 flex-direction: column;
@@ -263,21 +303,19 @@ export default({
                     height: 100px;
                     font-size: 65px;
                     text-align: center;
-                    padding-left:100px;
+                    padding-left:160px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #FFFFFF;
                     line-height: 100px;
                 }
                 .visitText {
-                    width: 743px;
-                    height: 66px;
-                    font-size: 16px;
+                    height: 40px;
+                    font-size: 20px;
                     text-align: center;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #FFFFFF;
-                    line-height: 22px;
                 }
             }
         }

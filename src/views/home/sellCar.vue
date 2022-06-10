@@ -1,26 +1,32 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/sellyourcar/SellYourCar.png" alt="">
-        <div class="text">
-          <div class="title">
-            SELL YOUR CAR
-          </div>
-          <div class="span">{{point}}</div>
+        <img class="contentimg" src="../../assets/images/sellyourcar/JVS00048-5.jpg"  alt="暂无图片" />
+        <div class="inlinetext">
+            <span class="content-title">Thoughtful-service</span><br />
+            <span class="content-text">
+                <span style="padding-left:60px">SELL</span><br />
+                <span style="padding-left:60px;margin-top:-10px ;">YOUR CAR</span><br />
+                <div style="clear:both;"></div>
+            </span>
+            <el-button class="clickbtn" @click="contactUs()">
+                <span>CONTACT US</span>
+                <i class="el-icon-my-right"></i>
+            </el-button>
         </div>
         <div class="between">
           <div class="sell">
             <div class="title">
-              <div>S</div>
-              <div>E</div>
+              <div>S E L L</div>
+              <!-- <div>E</div>
               <div>L</div>
-              <div>L</div>
-              <div>Y</div>
-              <div>O</div>
+              <div>L</div> -->
+              <div>Y O U R</div>
+              <!-- <div>O</div>
               <div>U</div>
-              <div>R</div>
-              <div>C</div>
-              <div>A</div>
-              <div>R</div>
+              <div>R</div> -->
+              <div>C A R</div>
+              <!-- <div>A</div>
+              <div>R</div> -->
             </div>
             <!-- <div class="content_box">
               <div class="content">
@@ -48,7 +54,7 @@
                  <img src="../../assets/images/sellyourcar/BringInYourCar.png" alt="" class="img">
                  <div class="step_info">
                    <p>Bring in your car</p>
-                   <div>We’ll take a look regardless of make, kilometres, or condition.</div>
+                   <div style="width: 170px;">We’ll take a look regardless of make, kilometres, or condition.</div>
                    <img src="../../assets/images/sellyourcar/1.png" alt="" class="img">
                  </div>
               </div>
@@ -56,7 +62,7 @@
                  <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get your instant offer</p>
-                   <div>To provide you an honest and fair offer, our appraisers here at Autohome AU Auto Traders thoroughly inspect the condition of your car and compare it against current market data.</div>
+                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU Auto Traders thoroughly inspect the condition of your car and compare it against current market data.</div>
                    <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
                  </div>
               </div>
@@ -64,7 +70,7 @@
                  <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get cash payment</p>
-                   <div>we will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
+                   <div style="width: 200px;">we will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
                    <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
                  </div>
               </div>
@@ -227,7 +233,6 @@ export default({
             photo: '',
             comments: ''
           },
-            point: 'The easiest way to sell your car, hassle free and stress free',
             started: 'The team at Autohome AU make selling your car as easy and convenient as possible.',
             started1: 'Simply send us your vehicle details using the form below and let our team take care of the rest. Contact us now.',
             content: [
@@ -319,35 +324,65 @@ export default({
 <style lang="less" scoped>
     .contact {
       width: 100%;
-        .imgs {
-          width: 100%;
-          height: calc(100vh - 10px);
+        .contentimg {
+        width: 100%;
+        height: calc(100vh - 10px);
         }
-         .text { 
-          position:absolute;
-          top: 150px;
-          left: 240px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          .title {
-            height: 130px;
-            font-size: 80px;
+        .inlinetext {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+        }
+        .content-title {
+          font-size: 50px;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          color: #FFFFFF;
+          line-height: 50px;
+        }
+        .content-text {
+            font-size: 120px;
             font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
-          }
-          .span {
-            width: 497px;
-            height: 183px;
-            font-size: 45px;
-            text-align: left;
-            font-family: DINCondensed-Bold;
-            font-weight: bold;
-            color: #FFFFFF;
-            line-height: 61px;
-          }
+            span {
+                float:left;
+            }
+        }
+        .clickbtn {
+            width: 231px;
+            height: 58px;
+            position: absolute;
+            left:68px;
+            border: 1px solid #FFFFFF ;
+            margin-top: 20px;
+            background-color: transparent;
+            color:#FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            span{
+                width: 91px;
+                height: 130px;
+                font-size: 20px;
+                font-family: DINCondensed-Bold;
+                font-weight: bold;
+                line-height: 25px;
+                text-align: center;
+                color: #FFFFFF;
+                line-height: 130px;
+                margin-left: 20px;
+                margin-right: 50px;
+            }
+            .el-icon-my-right {
+                background: url('../../assets/images/home/right.png') no-repeat;
+                background-size: cover;
+                display:inline-block;
+                height: 16px;
+                width: 16px;
+                margin-right: -16px;
+            }
         }
         .between {
           height: 850px;
@@ -357,13 +392,15 @@ export default({
             .title {
               height: 32px;
               font-size: 100px;
-              padding: 180px 80px 40px 80px;
+              padding: 180px 200px 40px 80px;
               font-family: DINCondensed-Bold;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
               display: flex;
               justify-content: space-between;
+              letter-spacing: 30px;
+              opacity: 0.4;
               div{
                 text-align: center;
               }
@@ -516,6 +553,7 @@ export default({
                 .el-input {
                   /deep/ .el-input__inner {
                     width:260px;
+                    background-color: #f4f6f8;
                   }
                 }
                 .el-select {
@@ -547,11 +585,15 @@ export default({
                 .el-input {
                   /deep/ .el-input__inner {
                     width:260px;
+                    background-color: #f4f6f8;
                   }
                 }
                 .el-select {
                   /deep/ .el-input{
                     width:260px;
+                  }
+                  /deep/ .el-input__inner {
+                    background-color: #f4f6f8;
                   }
                 }
               }
@@ -578,11 +620,15 @@ export default({
                 .el-input {
                   /deep/ .el-input__inner {
                     width:260px;
+                    background-color: #f4f6f8;
                   }
                 }
                 .el-select {
                   /deep/ .el-input{
                     width:260px;
+                  }
+                  /deep/ .el-input__inner {
+                    background-color: #f4f6f8;
                   }
                 }
               }
@@ -591,6 +637,7 @@ export default({
                 .el-input {
                   /deep/ .el-input__inner {
                     width:260px;
+                    background-color: #f4f6f8;
                   }
                 }
                 /deep/.el-input.is-disabled .el-input__inner {
@@ -620,6 +667,7 @@ export default({
                 .el-input {
                   /deep/ .el-input__inner {
                     width:420px;
+                    background-color: #f4f6f8;
                   }
                 }
               }
@@ -685,6 +733,7 @@ export default({
                   /deep/ .el-textarea__inner {
                     width:100%;
                     margin-left:80px;
+                    background-color: #f4f6f8;
                   }
                 }
               }
@@ -808,6 +857,13 @@ export default({
   border-radius: 0 ;
   width: 100%;
 
+}
+/deep/.el-input__inner::placeholder {
+    font-size: 20px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+color: #151515;
+line-height: 130px;
 }
 
 </style>

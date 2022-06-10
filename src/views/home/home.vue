@@ -95,21 +95,21 @@
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
         <div class="infotext" >
-          <img src="../../assets/images/home/onlineshowroom.png" /> 
+          <img src="../../assets/images/home/JVS00034-4.jpg" /> 
           <div class="infoinfo">
             <span class="infotitle" >Online Showroom</span><br />
             <span class="infodetail" >Browse our hand-selected range of elite makes and models, including rare European, luxury and sports vehicles.</span>
           </div>
         </div> 
         <div class="infotext" >
-          <img src="../../assets/images/home/sellyourcar.png" />
+          <img src="../../assets/images/home/JVS00345-4.jpg" />
           <div class="infoinfo">
             <span class="infotitle" >Sell Your Car</span><br />
             <span class="infodetail" >A fair price is your guarantee with specialist valuations and quality service to make the process simple.</span>
           </div>
         </div>
         <div class="infotext" style="margin-right:0px;" >
-          <img src="../../assets/images/home/visitourstore.png" />
+          <img src="../../assets/images/home/JVS00366-Edit-3.jpg" />
           <div class="infoinfo">
             <span class="infotitle" >Visit Our Store</span><br />
             <span class="infodetail" >Visit our store to see latest stock and xperience the unique virtual race car driving, or speak with our experienced team.</span>
@@ -135,22 +135,22 @@ export default {
           text2: 'QUALITY'
         },
         {
-          url: require('../../assets/images/home/JVS00355.jpg'),
+          url: require('../../assets/images/home/JVS00484.jpg'),
+          title: 'Passion-oriented',
+          text1: 'STRONG',
+          text2: 'ENTHUSIASM'
+        },
+        {
+          url: require('../../assets/images/home/JVS00451.jpg'),
           title: 'Customer-centricity',
           text1: 'EXCELLENT',
           text2: 'VALUE'
         },
         {
-          url: require('../../assets/images/home/JVS00451.jpg'),
+          url: require('../../assets/images/home/JVS00355.jpg'),
           title: 'Trustworthy',
           text1: 'HIGH',
           text2: 'INTEGRITY'
-        },
-        {
-          url: require('../../assets/images/home/JVS00484.jpg'),
-          title: 'Passion-oriented',
-          text1: 'STRONG',
-          text2: 'ENTHUSIASM'
         },
       ],
       number: 0 ,
@@ -398,22 +398,22 @@ export default {
   div {
     position: absolute;
     left: 10%;
-    top: 20%;
+    top: 23%;
     .content-title {
-      font-size: 60px;
+      font-size: 50px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #FFFFFF;
       padding-left:51px;
-      line-height: 36px;
-      padding-bottom: 10px;
+      line-height: 50px;
     }
     .content-text {
-      font-size: 120px;
+      font-size: 100px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
       padding-left: 51px;
       color: #FFFFFF;
+      line-height: 90px;
     }
     .el-button {
       position: relative;
@@ -421,12 +421,12 @@ export default {
       width: 231px;
       height: 58px;
       border: 1px solid #FFFFFF ;
-      margin-top: 10px;
       background-color: transparent;
       color:#FFFFFF;
       display: flex;
       align-items: center;
       justify-content: right;
+      margin-top: 60px;
       span {
         width: 91px;
         height: 130px;
@@ -591,6 +591,7 @@ export default {
     margin-bottom: 110px;
     float:right;
     position: relative;
+    margin-right: 30px;
     .el-button {
       width: 231px;
       height: 58px;
