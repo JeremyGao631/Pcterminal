@@ -300,20 +300,20 @@ export default({
       submit() {
         vehicle({
           // 缺少字段
-              name:'hu1q2',
-              phone: '127837897982',
-              email:'98920738@qq.com',
-              year: '1',
-              make: 'any',
-              model: 'any',
-              transmission: 'any',
-              odometer: '12',
-              regonumber: 'jijiiuj',
-              color: 'yellow',
-              trim: 'dsadsa',
-              logbook: 'yes',
-              photo: ' sjdisjdwjhsdjkdkjkldsbase64',
-              comments: 'daiohdjsahdj'
+              name:this.form.name,
+              phone: this.form.phone,
+              email:this.form.email,
+              year: this.forms.year,
+              make: this.forms.make,
+              model: this.forms.model,
+              transmission: this.forms.transmission,
+              odometer: this.forms.odometer,
+              regonumber: this.forms.regonumber,
+              color: this.forms.color,
+              trim: this.forms.trim,
+              logbook: this.forms.logbook,
+              photo: this.forms.photo,
+              comments: this.forms.comments
             }).then( res => {
                 console.log(res, '提交成功')
             })

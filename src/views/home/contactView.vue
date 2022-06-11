@@ -175,11 +175,11 @@ export default({
             console.log('123')
             // code值为0 成功
             fetch({
-                        name:'huli12',
-                        phone: '13738721837',
-                        email:'1232ui@qq.com',
-                        message:'hshdkjahdshadkjh',
-                        address:'khjnb2  lkskhkdn2  lkjlkllkjd saydh'
+                        name:this.name,
+                        phone: this.phone,
+                        email:this.email,
+                        message:this.message,
+                        address:this.address
             }).then( res => {
                 console.log(res, '提交成功')
             })
