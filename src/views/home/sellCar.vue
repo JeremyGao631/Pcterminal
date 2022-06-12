@@ -16,17 +16,17 @@
         <div class="between">
           <div class="sell">
             <div class="title">
-              <div>S E L L</div>
-              <!-- <div>E</div>
+              <div>S</div>
+              <div>E</div>
               <div>L</div>
-              <div>L</div> -->
-              <div>Y O U R</div>
-              <!-- <div>O</div>
+              <div>L</div>
+              <div>Y</div>
+              <div>O</div>
               <div>U</div>
-              <div>R</div> -->
-              <div>C A R</div>
-              <!-- <div>A</div>
-              <div>R</div> -->
+              <div>R</div>
+              <div>C</div>
+              <div>A</div>
+              <div>R</div>
             </div>
             <!-- <div class="content_box">
               <div class="content">
@@ -392,14 +392,13 @@ export default({
             .title {
               height: 32px;
               font-size: 100px;
-              padding: 180px 200px 40px 80px;
+              padding: 180px 42px 40px 92px;
               font-family: DINCondensed-Bold;
               font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
               display: flex;
               justify-content: space-between;
-              letter-spacing: 30px;
               opacity: 0.4;
               div{
                 text-align: center;
@@ -408,9 +407,9 @@ export default({
             
           }
           .step_box{
-            margin-left: 12%;
-            width: 88%;
-            height: 350px;
+            margin-left: 15%;
+            width: 85%;
+            height: 407px;
             background-color: #fff;
             position: relative;
             .step{
@@ -423,11 +422,11 @@ export default({
                 display: flex;
                 width: calc(100% / 3);
                 img{
-                  width: 35%;
-                  height: 300px;
+                  width: 45%;
+                  height: 385px;
                 }
                 .step_info{
-                  margin: 0 15px;
+                  margin-left: 25px;
                   width: calc(65% - 30px);
                   position: relative;
                   p{
@@ -447,7 +446,7 @@ export default({
                   img{
                     position: absolute;
                     left: 0;
-                    bottom: 40px;
+                    bottom: 72px;
                     width: 40px;
                     height: 40px;
                   }
