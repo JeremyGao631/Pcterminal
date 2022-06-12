@@ -2,10 +2,10 @@
     <div class="content">
         <img class="contentimg" src="../../assets/images/onlineshowroom/04.png"  alt="暂无图片" />
         <div class="inlinetext">
-            <span class="content-title">Excellent-performance</span><br />
+            <span class="content-title">Extraordinary-experience</span><br />
             <span class="content-text">
-                <span style="padding-left:60px">EXCEPTIONAL</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">QUALITY</span><br />
+                <span style="padding-left:60px">ONLINE</span><br />
+                <span style="padding-left:60px;margin-top:-10px ;">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -353,7 +353,7 @@ export default {
       font-weight: bold;
       color: #FFFFFF;
       line-height: 50px;
-      margin-left: -65px;
+      margin-left: 25px;
     }
     .content-text {
         font-size: 120px;

@@ -275,6 +275,7 @@ export default({
                 }
             }
             .left {
+                margin-left: 6%;
                 .top {
                     display: flex;
                     .information {
