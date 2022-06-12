@@ -262,10 +262,10 @@ name: 'CarDetail',
     submit() {
             inspection({
               // 缺少email字段
-                        name:'huli',
-                        phone: '12738721838',
-                        // email:'1232ui@qq.com',
-                        time: '2022-05-20 17:30:05',
+                        name:this.name,
+                        phone: this.phone,
+                        email:this.email,
+                        time: this.time,
             }).then( res => {
                 console.log(res, '提交成功')
             })
