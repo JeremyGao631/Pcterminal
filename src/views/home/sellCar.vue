@@ -307,7 +307,7 @@ export default({
         vehicle({
           // 缺少字段
               name:this.form.name,
-              phone: this.form.phone,
+              phone: this.form.mobile,
               email:this.form.email,
               year: this.forms.year,
               make: this.forms.make,
