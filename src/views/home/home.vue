@@ -9,7 +9,7 @@
             <div>
               <span class="content-title">{{item.title}}</span><br />
               <span class="content-text">
-                <span>{{item.text1}}</span><br />
+                <span style="padding-left: 51px;">{{item.text1}}</span><br />
                 <span style="padding-left: 51px;">{{item.text2}}</span><br />
               </span>
               <el-button @click="contactUs()">
@@ -404,20 +404,19 @@ export default {
       font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #FFFFFF;
-      padding-left:51px;
       line-height: 50px;
+      margin-left: 55px;
     }
     .content-text {
-      font-size: 100px;
+      font-size: 90px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
-      padding-left: 51px;
       color: #FFFFFF;
       line-height: 90px;
     }
     .el-button {
       position: relative;
-      left: 10%;
+      left: 12%;
       width: 231px;
       height: 58px;
       border: 1px solid #FFFFFF ;
@@ -438,7 +437,7 @@ export default {
         color: #FFFFFF;
         line-height: 130px;
         margin-left: 20px;
-        margin-right: 50px;
+        margin-right: 60px;
       }
       .el-icon-my-right {
         background: url('../../assets/images/home/right.png') no-repeat;
