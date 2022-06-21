@@ -168,10 +168,26 @@
             </div>
             <div class="input3">
               <div class="input1">
-                <div class="name">Photo Upload</div>
-                <el-input v-model="forms.photo" />
+                <!-- <div class="name" @click="handleRemove()">Photo Upload</div>
+                <el-input v-model="forms.photo" /> -->
+                <el-upload
+                  list-type="picture"
+                  action=''
+                  accept=".jpg, .png"
+                  :limit="1"
+                  :auto-upload="false"
+                  :on-change="getFile"
+                  :on-preview="handlePictureCardPreview"
+                  :on-remove="handleUploadRemove"
+                >
+                  <el-button size="small" type="primary">选择图片上传</el-button>
+                  <div slot="tip" class="el-upload__tip">只能上传一张jpg/png文件</div>
+                </el-upload>
+                <el-dialog :visible.sync="dialogVisible" append-to-body>
+                  <img width="100%" :src="dialogImageUrl" alt />
+                </el-dialog>
               </div>
-              <el-button type="primary" class="btn">UPLOAD</el-button>
+              <!-- <el-button type="primary" class="btn">UPLOAD</el-button> -->
               <div  class="input7">
                 <el-input disabled />
               </div>
@@ -302,6 +318,40 @@ export default({
       book(item) {
         this.logbook = item.label
         console.log(this.logbook)
+      },
+      getFile(file) {
+        this.getBase64(file.raw).then(res => {
+          const params = res.split(',')
+          console.log(params, '111111')
+          if (params.length > 0) {
+            this.proofImage = params[1]
+            this.forms.photo = this.proofImage
+          }
+          console.log(this.forms.photo,'22222')
+        })
+      },
+      getBase64(file) {
+      return new Promise(function (resolve, reject) {
+        const reader = new FileReader()
+        let imgResult = ''
+        reader.readAsDataURL(file)
+        reader.onload = function () {
+          imgResult = reader.result
+        }
+        reader.onerror = function (error) {
+          reject(error)
+        }
+        reader.onloadend = function () {
+          resolve(imgResult)
+        }
+      })
+        },
+      handleUploadRemove() {
+        this.proofImage = '';
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
       },
       submit() {
         vehicle({

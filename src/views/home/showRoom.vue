@@ -143,7 +143,7 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="showimg">
-                        <div class="textcard" v-for="index in information" :key="index" @click="cardetail()">
+                        <div class="textcard" v-for="index in information.silce(0,9)" :key="index"  @click="cardetail()">
                             <div class="imgcard"  >
                                 <img :src="index.url"  />
                             </div>
@@ -165,7 +165,7 @@
                         </div>
                         <div style="clear:both;"></div>
                     </div>
-                    <div class="newbutton">
+                    <div class="newbutton" @click="loadmore()">
                         <el-button>
                             <span>LOAD MORE</span>
                             <i class="el-icon-my-yellowright"></i>
@@ -268,6 +268,138 @@ export default {
                 },
                 {
                   url: require('../../assets/images/home/7.jpg'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
+                  year:'2019',
+                  type: 'MERCEDES-BENZ',
+                  kind: 'C63S AMG',
+                  price: '$149000.00',
+                  info: "Excl . Gov's Charges",
+                  distance: '126295 kms',
+                  info1: 'Diesel',
+                  info2: 'Auto'
+                },
+                {
+                  url: require('../../assets/images/home/8.png'),
                   year:'2019',
                   type: 'MERCEDES-BENZ',
                   kind: 'C63S AMG',
