@@ -16,17 +16,23 @@
         <div class="between">
           <div class="sell">
             <div class="title">
-              <div>S</div>
-              <div>E</div>
-              <div>L</div>
-              <div>L</div>
-              <div>Y</div>
-              <div>O</div>
-              <div>U</div>
-              <div>R</div>
-              <div>C</div>
-              <div>A</div>
-              <div>R</div>
+              <div>
+                <div>S</div>
+                <div>E</div>
+                <div>L</div>
+                <div>L</div>
+              </div>
+              <div>
+                <div>Y</div>
+                <div>O</div>
+                <div>U</div>
+                <div>R</div>
+              </div>
+              <div>
+                <div>C</div>
+                <div>A</div>
+                <div>R</div>
+              </div>
             </div>
             <!-- <div class="content_box">
               <div class="content">
@@ -162,10 +168,26 @@
             </div>
             <div class="input3">
               <div class="input1">
-                <div class="name">Photo Upload</div>
-                <el-input v-model="forms.photo" />
+                <!-- <div class="name" @click="handleRemove()">Photo Upload</div>
+                <el-input v-model="forms.photo" /> -->
+                <el-upload
+                  list-type="picture"
+                  action=''
+                  accept=".jpg, .png"
+                  :limit="1"
+                  :auto-upload="false"
+                  :on-change="getFile"
+                  :on-preview="handlePictureCardPreview"
+                  :on-remove="handleUploadRemove"
+                >
+                  <el-button size="small" type="primary">选择图片上传</el-button>
+                  <div slot="tip" class="el-upload__tip">只能上传一张jpg/png文件</div>
+                </el-upload>
+                <el-dialog :visible.sync="dialogVisible" append-to-body>
+                  <img width="100%" :src="dialogImageUrl" alt />
+                </el-dialog>
               </div>
-              <el-button type="primary" class="btn">UPLOAD</el-button>
+              <!-- <el-button type="primary" class="btn">UPLOAD</el-button> -->
               <div  class="input7">
                 <el-input disabled />
               </div>
@@ -297,6 +319,40 @@ export default({
         this.logbook = item.label
         console.log(this.logbook)
       },
+      getFile(file) {
+        this.getBase64(file.raw).then(res => {
+          const params = res.split(',')
+          console.log(params, '111111')
+          if (params.length > 0) {
+            this.proofImage = params[1]
+            this.forms.photo = this.proofImage
+          }
+          console.log(this.forms.photo,'22222')
+        })
+      },
+      getBase64(file) {
+      return new Promise(function (resolve, reject) {
+        const reader = new FileReader()
+        let imgResult = ''
+        reader.readAsDataURL(file)
+        reader.onload = function () {
+          imgResult = reader.result
+        }
+        reader.onerror = function (error) {
+          reject(error)
+        }
+        reader.onloadend = function () {
+          resolve(imgResult)
+        }
+      })
+        },
+      handleUploadRemove() {
+        this.proofImage = '';
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+      },
       submit() {
         vehicle({
           // 缺少字段
@@ -339,9 +395,10 @@ export default({
           font-weight: bold;
           color: #FFFFFF;
           line-height: 50px;
+          margin-left: 60px;
         }
         .content-text {
-            font-size: 120px;
+            font-size: 90px;
             font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
@@ -373,7 +430,7 @@ export default({
                 color: #FFFFFF;
                 line-height: 130px;
                 margin-left: 20px;
-                margin-right: 50px;
+                margin-right: 60px;
             }
             .el-icon-my-right {
                 background: url('../../assets/images/home/right.png') no-repeat;
@@ -406,7 +463,7 @@ export default({
                 text-align: center;
                 display: flex;
                 justify-content: space-between;
-                width: 350px;
+                width: 550px;
               }
             }
             

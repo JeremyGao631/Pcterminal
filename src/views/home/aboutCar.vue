@@ -142,10 +142,10 @@ export default({
           font-weight: bold;
           color: #FFFFFF;
           line-height: 50px;
-          margin-left: -230px;
+          margin-left: -90px;
         }
         .content-text {
-            font-size: 120px;
+            font-size: 90px;
             font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
@@ -155,7 +155,7 @@ export default({
             }
         }
         .clickbtn {
-            width: 231px;
+            width:160px;
             height: 58px;
             position: absolute;
             left:68px;
@@ -177,7 +177,7 @@ export default({
                 color: #FFFFFF;
                 line-height: 130px;
                 margin-left: 20px;
-                margin-right: 50px;
+                margin-right: 30px;
             }
             .el-icon-my-right {
                 background: url('../../assets/images/home/right.png') no-repeat;

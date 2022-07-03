@@ -509,7 +509,7 @@ name: 'CarDetail',
           text-align: left;
           .el-input {
             /deep/ .el-input__inner {
-                    width:260px;
+                    width:310px;
                     height: 49px;
                     border-radius: 1px;
             }
@@ -607,7 +607,7 @@ name: 'CarDetail',
       .textcontent {
         overflow: hidden;
         margin-left: 20px;
-        margin-right: 100px;
+        margin-right: 5px;
         .textcard {
           float:left;
           margin-right:30px;
@@ -686,7 +686,7 @@ name: 'CarDetail',
         }
       }
       .choosepage {
-        margin: 20px 120px 0 200px;
+        margin: 20px 40px 0 200px;
         text-align: right;
         .el-pagination {
           /deep/ .btn-prev{

@@ -88,8 +88,8 @@
                         required 
                     />
                     <el-input 
-                        v-model="address"
-                        placeholder="address*" 
+                        v-model="postcode"
+                        placeholder="postcode*" 
                         required 
                     />
                 </div>
@@ -132,7 +132,7 @@ export default({
             name: '',
             phone: '',
             email: '',
-            address: '',
+            postcode: '',
             message: '',
             disabled: true, // 校验
             information: [
@@ -179,7 +179,7 @@ export default({
                         phone: this.phone,
                         email:this.email,
                         message:this.message,
-                        address:this.address
+                        address:this.postcode
             }).then( res => {
                 console.log(res, '提交成功')
             })
