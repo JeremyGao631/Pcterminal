@@ -1,13 +1,16 @@
 <template>
     <div class="jj">
         <div class="left">
-            <img class="img" src="../assets/images/components/BottomBar.png" alt="">
+            <img class="img" :src="firstImg" alt="">
             <div class="bottom">
-              <img class="bottom-logo" src="../assets/images/components/facebook.png" alt="">
-              <img class="bottom-logo" src="../assets/images/components/twitter.png" alt="">
+              <div  v-for="(item, idx) in lefts" :key="idx">
+                <img class="bottom-logo" :src="item.targeUrl" alt="">
+              </div>
+              <!-- <img class="bottom-logo" src="../assets/images/components/twitter.png" alt="">
               <img class="bottom-logo" src="../assets/images/components/instagram.png" alt="">
-              <img class="bottom-logo" src="../assets/images/components/Youtube.png" alt="">
+              <img class="bottom-logo" src="../assets/images/components/Youtube.png" alt=""> -->
             </div>
+            <div class="tips">{{tip}}</div>
             <div class="tips">{{tips}}</div>
         </div>
         <div class="line"/>
@@ -20,11 +23,13 @@
           <div @click="contact()" class="component">CONTACT</div>
         </div> -->
         <div class="among">
-          <div class="guide">CONTACT</div>
-          <div class="components">Tel: (02) 8386 3564</div>
-          <div class="components">Wechat: buyingcars</div>
+          <div class="guide">{{ content }}</div>
+          <div  v-for="(item,index) in rights" :key="index">
+            <div class="components">{{ item.describtion }}</div>
+          </div>
+          <!-- <div class="components">Wechat: buyingcars</div>
           <div class="components">E-mail: enquiries@autohome.com.au</div>
-          <div class="components" style="white-space: nowrap;">Address: 388 Parramatta Road,Burwood,NSW 2134</div>
+          <div class="components" style="white-space: nowrap;">Address: 388 Parramatta Road,Burwood,NSW 2134</div> -->
         </div>
     </div>
     
@@ -38,7 +43,13 @@
     },
     data() {
       return {
-        tips: 'Autohome AU.ALL right reserved. @Copyright 2020'
+        tip: 'Autohome AU.ALL right reserved.',
+        tips: '@Copyright 2020',
+        lefts: [],
+        rights: [],
+        content: '',
+        firstImg: '',
+
       };
     },
     created() {
@@ -53,12 +64,18 @@
           pageSize: '10',
           title: 'FOOTER-LEFT'
         }).then(res => {
+          this.tip = res.data.records[5].describtion
+          this.tips = res.data.records[6].describtion
+          this.firstImg = res.data.records[0].targeUrl
           res.data.records.forEach(ele => {
+            if (ele.targeUrl != null && ele.sort != 1) {
               const items = {
-                describtion: ele.describtion,
+                // describtion: ele.describtion,
                 targeUrl: ele.targeUrl
               }
             this.lefts.push(items)
+            }
+
           })
         console.log(this.lefts, '1')
       })
@@ -70,11 +87,15 @@
         pageSize: '10',
         title: 'FOOTER-RIGHT'
       }).then(res => {
+        this.content = res.data.records[0].describtion
         res.data.records.forEach(ele => {
-            const item = {
+          if (ele.sort != 1) {
+              const item = {
                 describtion: ele.describtion
-            }
+              }
             this.rights.push(item)
+          }
+
         })
         console.log(this.rights, '2')
       })
@@ -115,6 +136,7 @@
         height: 54px;
       }
       .bottom {
+        display: flex;
         padding-top: 10px;
         padding-bottom: 10px;
         .bottom-logo {
@@ -194,7 +216,7 @@
         height: 20px;
         font-size: 20px;
         font-family: DINCondensed-Bold, DINCondensed;
-        width: 300px;
+        width: 337px;
         color: #909090;
         line-height: 24px;
       }

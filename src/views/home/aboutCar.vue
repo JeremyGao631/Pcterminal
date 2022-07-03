@@ -16,9 +16,9 @@
         <div class="offer">WHAT WE OFFER</div>
         <div class="style">
             <div v-for="(items,index) in information" :key="index" class="weOffer">
-                <img :src="items.img" alt="" class="imgStyle">
-                <div class="title">{{ items.title }}</div>
-                <div class="information">{{ items.information }}</div>
+                <img :src="items.targeUrl" alt="" class="imgStyle">
+                <div class="title">{{ items.secondtitle }}</div>
+                <div class="information">{{ items.describtion }}</div>
             </div>
         </div>
         <div class="ourStory">
@@ -59,26 +59,26 @@ export default({
     data() {
         return {
             information: [
-                {
-                    img: [require('../../assets/images/about/CarForSale1.png')],
-                    title:'Car for Sale',
-                    information: 'Browse the fine motor vehicles via online showroom or visit our showroom in Sydney to view an exclusive range of luxury models and sports vehicles.'
-                },
-                {
-                    img: [require('../../assets/images/about/SellYourCar1.png')],
-                    title:'Sell your car',
-                    information: 'Our team at Autohome AU make selling your car as easy and convenient as possible. Click and simply send us your vehicle details and let our team take care of the rest.'
-                },
-                {
-                    img: [require('../../assets/images/about/FinanceSolution1.png')],
-                    title:'Finance Solution',
-                    information: 'We understand financing can be a hassle, so we re here to make everything as easy as possible. Contact to us directly and let our team provide you a perfect fit.'
-                },
-                {
-                    img: [require('../../assets/images/about/ServiceAndRepairs1.png')],
-                    title:'Service and Repairs',
-                    information: 'We offer a one-stop car servicing on all makes and models, tailored to suit both your budget and vehicle. Book your service online now!'
-                }
+                // {
+                //     img: [require('../../assets/images/about/CarForSale1.png')],
+                //     title:'Car for Sale',
+                //     information: 'Browse the fine motor vehicles via online showroom or visit our showroom in Sydney to view an exclusive range of luxury models and sports vehicles.'
+                // },
+                // {
+                //     img: [require('../../assets/images/about/SellYourCar1.png')],
+                //     title:'Sell your car',
+                //     information: 'Our team at Autohome AU make selling your car as easy and convenient as possible. Click and simply send us your vehicle details and let our team take care of the rest.'
+                // },
+                // {
+                //     img: [require('../../assets/images/about/FinanceSolution1.png')],
+                //     title:'Finance Solution',
+                //     information: 'We understand financing can be a hassle, so we re here to make everything as easy as possible. Contact to us directly and let our team provide you a perfect fit.'
+                // },
+                // {
+                //     img: [require('../../assets/images/about/ServiceAndRepairs1.png')],
+                //     title:'Service and Repairs',
+                //     information: 'We offer a one-stop car servicing on all makes and models, tailored to suit both your budget and vehicle. Book your service online now!'
+                // }
             ],
             chooses: [
                 {
@@ -118,7 +118,14 @@ export default({
                 pageSize: '10',
                 title: 'ABOUT'
             }).then(res => {
-                console.log(res, 'about')
+                res.data.records.forEach(ele => {
+                    const item = {
+                    targeUrl: ele.targeUrl,
+                    secondtitle: ele.secondtitle,
+                    describtion: ele.describtion
+                    }
+                this.information.push(item)
+                })
             })
         }
     }
@@ -220,7 +227,7 @@ export default({
             display: flex;
             flex-wrap: wrap;
             box-sizing: border-box;
-            justify-content: left;
+            justify-content: center;
             .weOffer {
                 display: flex;
                 flex-direction: column;

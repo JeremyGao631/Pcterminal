@@ -5,12 +5,12 @@
       <el-carousel :interval="5000" arrow="always" >
         <el-carousel-item v-for="(item,index) in itemList" :key="index">
           <div class="content">
-            <img :src="item.url"  alt="暂无图片" />
+            <img :src="item.targeUrl"  alt="暂无图片" />
             <div>
-              <span class="content-title">{{item.title}}</span><br />
+              <span class="content-title">{{item.secondtitle}}</span><br />
               <span class="content-text">
-                <span style="padding-left: 51px;">{{item.text1}}</span><br />
-                <span style="padding-left: 51px;">{{item.text2}}</span><br />
+                <span style="padding-left: 51px;">{{item.span}}</span><br />
+                <span style="padding-left: 51px;">{{item.span1}}</span><br />
               </span>
               <el-button @click="contactUs()">
                 <span>CONTACT US  </span>
@@ -94,14 +94,14 @@
     <div class="bottom section">
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
-        <div class="infotext" >
-          <img src="../../assets/images/home/JVS00034-4.jpg" /> 
+        <div  v-for="(item,idx) in service" :key="idx" class="infotext" >
+          <img :src="item.targeUrl" /> 
           <div class="infoinfo">
-            <span class="infotitle" >Online Showroom</span><br />
-            <span class="infodetail" >Browse our hand-selected range of elite makes and models, including rare European, luxury and sports vehicles.</span>
+            <span class="infotitle" >{{ item.secondtitle }}</span><br />
+            <span class="infodetail" >{{ item.describtion}}</span>
           </div>
         </div> 
-        <div class="infotext" >
+        <!-- <div class="infotext" >
           <img src="../../assets/images/home/JVS00345-4.jpg" />
           <div class="infoinfo">
             <span class="infotitle" >Sell Your Car</span><br />
@@ -114,7 +114,7 @@
             <span class="infotitle" >Visit Our Store</span><br />
             <span class="infodetail" >Visit our store to see latest stock and xperience the unique virtual race car driving, or speak with our experienced team.</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -129,30 +129,30 @@ export default {
   data(){
     return{
       itemList:[
-        {
-          url: require('../../assets/images/home/lunbo.png'),
-          title: 'Excellent-performance',
-          text1: 'EXCEPTIONAL',
-          text2: 'QUALITY'
-        },
-        {
-          url: require('../../assets/images/home/JVS00484.jpg'),
-          title: 'Passion-oriented',
-          text1: 'STRONG',
-          text2: 'ENTHUSIASM'
-        },
-        {
-          url: require('../../assets/images/home/JVS00451.jpg'),
-          title: 'Customer-centricity',
-          text1: 'EXCELLENT',
-          text2: 'VALUE'
-        },
-        {
-          url: require('../../assets/images/home/JVS00355.jpg'),
-          title: 'Trustworthy',
-          text1: 'HIGH',
-          text2: 'INTEGRITY'
-        },
+        // {
+        //   url: require('../../assets/images/home/lunbo.png'),
+        //   title: 'Excellent-performance',
+        //   text1: 'EXCEPTIONAL',
+        //   text2: 'QUALITY'
+        // },
+        // {
+        //   url: require('../../assets/images/home/JVS00484.jpg'),
+        //   title: 'Passion-oriented',
+        //   text1: 'STRONG',
+        //   text2: 'ENTHUSIASM'
+        // },
+        // {
+        //   url: require('../../assets/images/home/JVS00451.jpg'),
+        //   title: 'Customer-centricity',
+        //   text1: 'EXCELLENT',
+        //   text2: 'VALUE'
+        // },
+        // {
+        //   url: require('../../assets/images/home/JVS00355.jpg'),
+        //   title: 'Trustworthy',
+        //   text1: 'HIGH',
+        //   text2: 'INTEGRITY'
+        // },
       ],
       number: 0 ,
       information: [
@@ -334,7 +334,9 @@ export default {
                   info1: 'Diesel',
                   info2: 'Auto'
                 }
-      ]
+      ],
+      service: [],
+
     }
   },
   created() {
@@ -359,6 +361,18 @@ export default {
         title: 'FIRST'
       }).then(res => {
         console.log(res, '1212')
+        res.data.records.forEach(ele => {
+          const arr = ele.describtion.split('-')
+          const item = {
+            targeUrl: ele.targeUrl,
+            span: arr[0],
+            span1: arr[1],
+            secondtitle: ele.secondtitle,
+            describtion: ele.describtion
+          }
+          this.itemList.push(item)
+        })
+        console.log('01',this.itemList )
       })
     },
     // our services
@@ -368,7 +382,15 @@ export default {
         pageSize: '10',
         title: 'OUR SERVICES'
       }).then(services => {
-        console.log(services, '1212')
+        services.data.records.forEach(ele => {
+          const item = {
+            targeUrl: ele.targeUrl,
+            secondtitle: ele.secondtitle,
+            describtion: ele.describtion
+          }
+          this.service.push(item)
+        })
+        console.log(this.service, '1212')
       })
     }
   }
@@ -670,6 +692,7 @@ export default {
       justify-content: center;
       padding-top:52px;
       padding-bottom:200px;
+      justify-content: flex-end;
       .infotext {
         margin-right:85px;
         width: calc(100% / 3 - 125px);
