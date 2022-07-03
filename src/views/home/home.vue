@@ -121,6 +121,7 @@
 </template>
 
 <script>
+import { describtion } from '@/api'
 export default {
   name: 'HomeView',
   components: {
@@ -336,6 +337,10 @@ export default {
       ]
     }
   },
+  created() {
+    this.desc()
+    this.services()
+  },
   methods: {
     change: function (index) {
             this.number = index; //重要处
@@ -345,6 +350,26 @@ export default {
     },
     jumponlineshowroom() {
       this.$router.push('/showRoom')
+    },
+    // 轮播图
+    desc() {
+      describtion({
+        current: '1',
+        pageSize: '10',
+        title: 'FIRST'
+      }).then(res => {
+        console.log(res, '1212')
+      })
+    },
+    // our services
+    services() {
+      describtion({
+        current: '1',
+        pageSize: '10',
+        title: 'OUR SERVICES'
+      }).then(services => {
+        console.log(services, '1212')
+      })
     }
   }
 }

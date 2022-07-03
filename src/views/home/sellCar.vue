@@ -389,10 +389,12 @@ export default({
           background: #F4F6F8;
           position: relative;
           .sell {
+            width: 100%;
             .title {
               height: 32px;
               font-size: 100px;
-              padding: 180px 42px 40px 92px;
+              padding-top:180px;
+              padding-bottom:40px;
               font-family: DINCondensed-Bold;
               font-weight: bold;
               color: #e4e6ea;
@@ -402,6 +404,9 @@ export default({
               opacity: 0.4;
               div{
                 text-align: center;
+                display: flex;
+                justify-content: space-between;
+                width: 350px;
               }
             }
             

@@ -51,7 +51,7 @@
 // import { Dialog } from "element-ui";
 // import contactCom from "../components/contact-com.vue"
 
-
+import {describtion} from '@/api'
 export default({
     name: "aboutView",
     components: {
@@ -108,7 +108,19 @@ export default({
             story: 'Autohome Australia was established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.Our core principle and belief is that ‘we sell quality.’ We provide a streamlined process that is simple, transparent and efficient. You can be reassured that all our vehicles undergo a comprehensive inspection by qualified expert mechanics to ensure safety and quality for peace of mind.'
         }
     },
+    created() {
+        this.aboutData()
+    },
     methods: {
+        aboutData() {
+            describtion({
+                current: '1',
+                pageSize: '10',
+                title: 'ABOUT'
+            }).then(res => {
+                console.log(res, 'about')
+            })
+        }
     }
 })
 </script>
