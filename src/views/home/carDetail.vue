@@ -200,7 +200,7 @@ name: 'CarDetail',
       var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
       var istrue = emailText.test(this.email)
       if(!istrue) {
-          this.$message('请填写正确的邮箱格式')
+          this.$message('Please enter a valid email address.')
           this.email = ''
       }
     },
@@ -290,7 +290,7 @@ name: 'CarDetail',
     // 收集信息提交
     submit() {
       if (this.name === '' || this.phone === '' || this.email === '' || this.time === '') {
-        this.$message('请检查信息是否填写完整')
+        this.$message('Please check the page information is completed')
       } else {
         inspection({
           // 缺少email字段
@@ -300,7 +300,7 @@ name: 'CarDetail',
                     time: this.time,
         }).then( res => {
           if (res.code === 0) {
-            this.$message('提交成功')
+            this.$message('Submission successfull')
           }
         })
       }

@@ -339,7 +339,7 @@ export default({
         var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
         var istrue = emailText.test(this.form.email)
         if(!istrue) {
-            this.$message('请填写正确的邮箱格式')
+            this.$message('Please enter a valid email address.')
             this.email = ''
         }
         },
@@ -388,7 +388,7 @@ export default({
       },
       submit() {
         if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model || this.forms.transmission === '' || this.forms.odometer === '') {
-            this.$message('请检查信息是否填写完整')
+            this.$message('Please check the page information is completed')
             return
         } else {
           vehicle({
@@ -408,9 +408,9 @@ export default({
               photo: this.forms.photo,
               comments: this.forms.comments
             }).then( res => {
-                console.log(res, '提交成功')
+                console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                  this.$message('提交成功')
+                  this.$message('Submission successfull')
                 }
             })
           }

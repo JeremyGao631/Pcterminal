@@ -168,7 +168,7 @@ export default({
         contactSubmit() {
             if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '' || this.message === '') {
                 // this.disabled = true
-                this.$message('请仔细检查页面信息是否填写完整')
+                this.$message('Please check the page information is completed')
             } else {
                 // this.disabled = false
                 fetch({
@@ -178,9 +178,9 @@ export default({
                     message:this.message,
                     address:this.postcode
             }).then( res => {
-                console.log(res, '提交成功')
+                console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                    this.$message('提交成功')
+                    this.$message('Submission successfull')
                 }
             })
             }
@@ -191,7 +191,7 @@ export default({
             var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
             var istrue = emailText.test(this.email)
             if(!istrue) {
-                this.$message('请填写正确的邮箱格式')
+                this.$message('Please enter a valid email address.')
                 this.email = ''
             }
         },
