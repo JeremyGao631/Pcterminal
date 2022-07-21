@@ -3,12 +3,19 @@
         <div class="left">
             <img class="img" :src="firstImg" alt="">
             <div class="bottom">
-              <div  v-for="(item, idx) in lefts" :key="idx">
+              <!-- <div  v-for="(item, idx) in lefts" :key="idx">
                 <img class="bottom-logo" :src="item.targeUrl" alt="">
-              </div>
-              <!-- <img class="bottom-logo" src="../assets/images/components/twitter.png" alt="">
-              <img class="bottom-logo" src="../assets/images/components/instagram.png" alt="">
-              <img class="bottom-logo" src="../assets/images/components/Youtube.png" alt=""> -->
+              </div> -->
+              <a href="https://www.facebook.com/Autohome-Australia-112046877077530" target="_blank">
+                <img class="bottom-logo" :src="lefts[0].targeUrl" alt="">
+              </a>
+              <a href="https://twitter.com/AutoHome19" target="_blank">
+                <img class="bottom-logo" :src="lefts[1].targeUrl" alt="">
+              </a>
+              <a href="https://www.instagram.com/autohome_au/" target="_blank">
+                <img class="bottom-logo" :src="lefts[2].targeUrl" alt="">
+              </a>
+              <!-- <img class="bottom-logo" :src="lefts[3].targeUrl" alt=""> 甲方 -->
             </div>
             <div class="tips">{{tip}}</div>
             <div class="tips">{{tips}}</div>
@@ -57,6 +64,15 @@
       this.right()
     },
     methods: {
+      // facebook() {
+      //   window.location.href="https://www.facebook.com/Autohome-Australia-112046877077530"
+      // },
+      ins() {
+        window.location.href="https://www.instagram.com/autohome_au/"
+      },
+      twitter() {
+        window.location.href="https://twitter.com/AutoHome19"
+      },
       left() {
         this.lefts = []
         describtion({
@@ -146,7 +162,7 @@
         }
       }
       .tips {
-        width: 220px;
+        width: 320px;
         height: 40px;
         font-size: 20px;
         text-align: left;
@@ -177,7 +193,6 @@
         letter-spacing: 1px;
       }
       .components {
-        width: 39px;
         padding-bottom: 15px;
         height: 20px;
         font-size: 16px;
@@ -211,12 +226,12 @@
         letter-spacing: 1px;
       }
       .components {
-        width: 39px;
         padding-bottom: 15px;
         height: 20px;
         font-size: 20px;
+        letter-spacing: 1px;
         font-family: DINCondensed-Bold, DINCondensed;
-        width: 337px;
+        width: 390px;
         color: #909090;
         line-height: 24px;
       }

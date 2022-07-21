@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-dupe-keys -->
 <template>
     <div class="contact">
         <img class="contentimg" src="../../assets/images/sellyourcar/JVS00048-5.jpg"  alt="暂无图片" />
@@ -21,14 +22,10 @@
                 <div>E</div>
                 <div>L</div>
                 <div>L</div>
-              </div>
-              <div>
                 <div>Y</div>
                 <div>O</div>
                 <div>U</div>
                 <div>R</div>
-              </div>
-              <div>
                 <div>C</div>
                 <div>A</div>
                 <div>R</div>
@@ -76,7 +73,7 @@
                  <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get cash payment</p>
-                   <div style="width: 200px;">we will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
+                   <div style="width: 200px;">We will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
                    <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
                  </div>
               </div>
@@ -103,7 +100,7 @@
               </div>
               <div class="input1">
                 <div class="name">Email</div>
-                <el-input v-model="form.email" />
+                <el-input v-model="form.email" @blur="emails" />
               </div>
 
             </div>
@@ -170,22 +167,36 @@
               <div class="input1">
                 <!-- <div class="name" @click="handleRemove()">Photo Upload</div>
                 <el-input v-model="forms.photo" /> -->
-                <el-upload
-                  list-type="picture"
-                  action=''
-                  accept=".jpg, .png"
-                  :limit="1"
-                  :auto-upload="false"
-                  :on-change="getFile"
-                  :on-preview="handlePictureCardPreview"
-                  :on-remove="handleUploadRemove"
-                >
-                  <el-button size="small" type="primary">选择图片上传</el-button>
+                <!-- <el-upload
+                  class="avatar-uploader"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  :show-file-list="false"
+                  :on-success="handleAvatarSuccess"
+                  :before-upload="beforeAvatarUpload">
+                  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload> -->
+                  <!-- <el-button size="small" type="primary">选择图片上传</el-button>
                   <div slot="tip" class="el-upload__tip">只能上传一张jpg/png文件</div>
-                </el-upload>
-                <el-dialog :visible.sync="dialogVisible" append-to-body>
+                </el-upload> -->
+                <!-- <el-dialog :visible.sync="dialogVisible" append-to-body>
                   <img width="100%" :src="dialogImageUrl" alt />
                 </el-dialog>
+                <el-upload -->
+              <el-upload
+                action="https://jsonplaceholder.typicode.com/posts/"
+                list-type="picture-card"
+                accept=".jpg, .png"
+                :limit="1"
+                :on-change="getFile"
+                :on-preview="handlePicture"
+                :on-remove="handleRemove">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+              <el-button size="small" type="primary">Image upload</el-button>
+              <el-dialog :visible.sync="dialogVisible">
+                <img width="100%" :src="dialogImageUrl" alt="">
+              </el-dialog>
               </div>
               <!-- <el-button type="primary" class="btn">UPLOAD</el-button> -->
               <div  class="input7">
@@ -231,6 +242,8 @@ export default({
     },
     data() {
         return {
+          dialogImageUrl: '',
+          dialogVisible: false,
           textstyle: [
             'textstyle1',
             'textstyle2',
@@ -319,6 +332,23 @@ export default({
         this.logbook = item.label
         console.log(this.logbook)
       },
+      // 邮箱校验
+      emails() {
+        var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        var istrue = emailText.test(this.form.email)
+        if(!istrue) {
+            this.$message('请填写正确的邮箱格式')
+            this.email = ''
+        }
+        },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview(file) {
+        console.log(file, '12121')
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+      },
       getFile(file) {
         this.getBase64(file.raw).then(res => {
           const params = res.split(',')
@@ -349,12 +379,17 @@ export default({
       handleUploadRemove() {
         this.proofImage = '';
       },
-      handlePictureCardPreview(file) {
+      // eslint-disable-next-line no-dupe-keys
+      handlePicture(file) {
         this.dialogImageUrl = file.url;
         this.dialogVisible = true;
       },
       submit() {
-        vehicle({
+        if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model || this.forms.transmission === '' || this.forms.odometer === '') {
+            this.$message('请检查信息是否填写完整')
+            return
+        } else {
+          vehicle({
           // 缺少字段
               name:this.form.name,
               phone: this.form.mobile,
@@ -372,12 +407,36 @@ export default({
               comments: this.forms.comments
             }).then( res => {
                 console.log(res, '提交成功')
+                if (res.code === 0) {
+                  this.$message('提交成功')
+                }
             })
-      }
+          }
+        }
     }
 })
 </script>
 <style lang="less" scoped>
+/deep/.el-upload--picture-card {
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 148px;
+    position: relative;
+    left: 37px;
+    height: 148px;
+    cursor: pointer;
+    line-height: 146px;
+    vertical-align: top;
+    margin-bottom: 15px;
+
+}
+  .el-upload__tip {
+      position: relative;
+      left: 33px;
+  }
     .contact {
       width: 100%;
         .contentimg {
@@ -463,7 +522,8 @@ export default({
                 text-align: center;
                 display: flex;
                 justify-content: space-between;
-                width: 550px;
+                padding-left: 10px;
+                width: 100%;
               }
             }
             
@@ -477,8 +537,8 @@ export default({
             .step{
               position: absolute;
               top: 72px;
-              left: -6%;
-              width: 100%;
+              left: -8%;
+              width: 103%;
               display: flex;
               .step_item{
                 display: flex;
@@ -529,7 +589,7 @@ export default({
             text-align: left;
             margin-bottom: 50px;
             .us {
-              width: 725px;
+              width: 100%;
               height: 100px;
               font-size: 80px;
               font-family: DINCondensed-Bold, DINCondensed;
@@ -807,19 +867,21 @@ export default({
               }
               .btn{
                 border: none;
-                width: 185px;
-                height: 44px;
+                width: 200px;
+                height: 59px;
                 color: fff;
+                padding-top:15px;
                 background-color: #000;
                 position: relative;
                 top: 160px;
                 left: -4%;
                 /deep/ span {
-                  width: 50px;
-                  height: 130px;
-                  font-size: 20px;
-                  font-family: DINCondensed-Bold, DINCondensed;
-                  font-weight: bold;
+                  // width: 50px;
+                  // height: 130px;
+                  padding-top: 10px;
+                  font-size: 21px;
+                  font-family: DINCondensed-Bold;
+                  // font-weight: bold;
                   color: #FFFFFF;
                 }
               }
@@ -872,6 +934,7 @@ export default({
             }
           }
           .formText {
+            background-color: #f4f6f8;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -891,6 +954,7 @@ export default({
               font-size: 16px;
               text-align: left;
               margin-top:5px;
+              padding-bottom: 5px;
               padding-left: 17%;
               padding-right: 17%;
               line-height: 20px;
@@ -926,5 +990,12 @@ font-weight: bold;
 color: #151515;
 line-height: 130px;
 }
-
+/deep/.el-button--small {
+  position: relative;
+  left: 20px;
+}
+/deep/.el-button--primary {
+  background-color: #000;
+  border-color: #000;
+}
 </style>

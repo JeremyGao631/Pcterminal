@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="ourStory">
-            <img class="storyImg" src="../../assets/images/about/JVS00326-Edit-3.jpg" alt="">
+            <img class="storyImg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
             <div class="title">
                 <div class="storyTit">OUR STORY</div>
                 <div class="story">{{ story }}</div>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="visit_box">
-            <img class="img" src="../../assets/images/home/JVS00366-Edit-3.jpg" alt="">   
+            <img class="img" src="../../assets/images/home/JVS00366-Edit-3-copy.jpg" alt="">   
             <div class="visit">
                 <div class="visitTitle">VISIT OUR SHOWROOM</div>
                 <div class="visitText">{{ visit }}</div>
@@ -103,7 +103,7 @@ export default({
                 }
             ],
             visit: 'Please visit our showroom in Burwood to inspect our range of vehicles and discuss your needs.',
-            visit1: 'Our Sales team speak English and Chinese.',
+            visit1: 'Our Sales team speak English and Chinese,',
             visit2: 'and we look forward to helping you with your next car sale or purchase.',
             story: 'Autohome Australia was established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.Our core principle and belief is that ‘we sell quality.’ We provide a streamlined process that is simple, transparent and efficient. You can be reassured that all our vehicles undergo a comprehensive inspection by qualified expert mechanics to ensure safety and quality for peace of mind.'
         }
@@ -253,10 +253,10 @@ export default({
                     width: 335px;
                     height: 120px;
                     text-align: left;
-                    font-size: 16px;
+                    font-size: 18px;
                     padding-bottom: 60px;
                     font-family: PingFangSC-Regular;
-                    font-weight: bold;
+                    // font-weight: bold;
                     color: #4A4A4A;
                     line-height: 28px;
                     opacity: 0.7;
@@ -293,9 +293,9 @@ export default({
                 .information {
                     width: 220px;
                     // height: 152px;
-                    font-size: 16px;
+                    font-size: 18px;
                     font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: bold;
+                    // font-weight: bold;
                     color: #4A4A4A;
                     line-height: 28px;
                     letter-spacing: 1px;
@@ -329,8 +329,8 @@ export default({
                     line-height: 100px;
                 }
                 .visitText {
-                    height: 40px;
-                    font-size: 20px;
+                    height: 35px;
+                    font-size: 18px;
                     text-align: center;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -365,7 +365,8 @@ export default({
                 .story {
                     width: 566px;
                     height: 168px;
-                    font-size: 20px;
+                    font-size: 18px;
+                    word-spacing: 0.5px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;

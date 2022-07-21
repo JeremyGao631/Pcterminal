@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/home/JVS00138.jpg" alt="">
+        <img class="imgs" src="../../assets/images/home/JVS00138.png" alt="">
         <div class="contact-main">
             <div class="left">
                 <div class="top">
@@ -76,20 +76,22 @@
                     />
                     <el-input 
                         v-model="phone"
+                        maxlength="10"
                         placeholder="Phone*" 
                         required 
                     />
                 </div>
 
                 <div class="input-view">
-                    <el-input 
+                    <el-input
                         v-model="email"
                         placeholder="Email*" 
+                        @blur="emails"
                         required 
                     />
                     <el-input 
                         v-model="postcode"
-                        placeholder="postcode*" 
+                        placeholder="Postcode*" 
                         required 
                     />
                 </div>
@@ -119,7 +121,6 @@
 // import { Dialog } from "element-ui";
 import { fetch } from '@/api'
 // import contactCom from "../components/contact-com.vue"
-
 
 export default({
     name: "contactView",
@@ -165,24 +166,34 @@ export default({
     },
     methods: {
         contactSubmit() {
-            // if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '') {
-            //     this.disabled = true
-            //     Dialog.alert('请补充资料完整')
-            // } else {
-            //     this.disabled = false
-                
-            // }
-            console.log('123')
-            // code值为0 成功
-            fetch({
-                        name:this.name,
-                        phone: this.phone,
-                        email:this.email,
-                        message:this.message,
-                        address:this.postcode
+            if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '' || this.message === '') {
+                // this.disabled = true
+                this.$message('请仔细检查页面信息是否填写完整')
+            } else {
+                // this.disabled = false
+                fetch({
+                    name:this.name,
+                    phone: this.phone,
+                    email:this.email,
+                    message:this.message,
+                    address:this.postcode
             }).then( res => {
                 console.log(res, '提交成功')
+                if (res.code === 0) {
+                    this.$message('提交成功')
+                }
             })
+            }
+            console.log('123')
+            // code值为0 成功
+        },
+        emails() {
+            var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+            var istrue = emailText.test(this.email)
+            if(!istrue) {
+                this.$message('请填写正确的邮箱格式')
+                this.email = ''
+            }
         },
         goHome() {
             window.location.href="https://www.facebook.com/Autohome-Australia-101055345438578/"
@@ -201,7 +212,7 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: calc(100vh - 10px);
+            height: calc(100vh - 15px);
         }
         .text { 
           position:absolute;
@@ -220,7 +231,7 @@ export default({
           }
         }
         .contact-main {
-            margin: 240px auto 0 auto;
+            margin: 150px auto 0 auto;
             width: 1400px;
             height: 1100px;
             display: flex;
@@ -234,14 +245,14 @@ export default({
                 margin-left: -125px;
                 .table1 {
                     padding: 20% 0 0 10%;
-                .title {
-                    margin-left: 60px;
-                    font-size: 60px;
-                    font-family: DINCondensed-Bold, DINCondensed;
-                    font-weight: bold;
-                    color: #151515;
-                    line-height: 193px;
-                }
+                    .title {
+                        margin-left: 60px;
+                        font-size: 60px;
+                        font-family: DINCondensed-Bold, DINCondensed;
+                        font-weight: bold;
+                        color: #151515;
+                        line-height: 193px;
+                    }
                 .input-view {
                     margin-left: 70px;
                     margin-top: -34px;
@@ -264,11 +275,13 @@ export default({
                 }
                 .el-button {
                     margin-top: 10px;
+                    padding-top:15px;
                     margin-left: 31px;
-                    width: 180px;
-                    font-size: 13px;
-                    height: 46px;
-                    border-radius: 0;
+                    width: 200px;
+                    font-size: 21px;
+                    height: 58px;
+                    font-family: DINCondensed-Bold;
+                    border-radius: 1px;
                     color:#fff;
                     background-color: #151515;
                 }
@@ -276,6 +289,7 @@ export default({
             }
             .left {
                 margin-left: 6%;
+                margin-top: 20px;
                 .top {
                     display: flex;
                     .information {
@@ -383,7 +397,7 @@ export default({
         }
     }
 /deep/.el-input__inner {
-border: 1px solid #000 ;
+border: 1px solid #c4c9cf ;
 border-radius: 0 ;
 font-size: 14px;
 background-color: #f4f6f8;
@@ -392,28 +406,30 @@ background-color: #f4f6f8;
   padding-right: 14px !important;
 }
 /deep/.el-textarea__inner {
-  border: 1px solid #000 ;
+  border: 1px solid #c4c9cf ;
   border-radius: 0 ;
   background-color: #f4f6f8;
 }
 /deep/.el-input__inner {
     width: 217px;
+    padding-top: 3px;
 }
 /deep/.el-textarea__inner {
     margin-left:18px;
     width: 508px;
 }
 /deep/.el-input__inner::placeholder {
-    font-size: 20px;
-font-family: DINCondensed-Bold, DINCondensed;
-font-weight: bold;
-color: #151515;
-line-height: 130px;
+    font-size: 16px;
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-weight: bold;
+    padding-top: 3px;
+    color: #151515;
+    line-height: 130px;
 }
 /deep/.el-textarea__inner::placeholder{
     font-size: 20px;
-font-family: DINCondensed-Bold, DINCondensed;
-font-weight: bold;
-color:#151515;
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-weight: bold;
+    color:#151515;
 }
 </style>

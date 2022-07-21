@@ -24,11 +24,20 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show">
-                        <div>
-                            <el-checkbox v-model="checked1">Abarth</el-checkbox>
+                    <div class="choosetext">
+                        <!-- <div>
+                            <el-checkbox v-model="checked1">{{ item.mak }}</el-checkbox>
+                        </div> -->
+                        <div v-for="(item,idx) in makeList" :key="idx">
+                            <!-- <el-checkbox-group v-model="makeList">
+                                <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
+                            </el-checkbox-group> -->
+                            <el-radio-group v-model="radio" @change="makeChange(item)">
+                                <el-radio :label="idx">{{item.mak }}</el-radio>
+                            </el-radio-group>
                         </div>
-                        <div>
+
+                        <!-- <div>
                             <el-checkbox v-model="checked2">Alfa Romeo</el-checkbox>
                         </div>
                         <div>
@@ -39,7 +48,7 @@
                         </div>
                         <div>
                             <el-checkbox v-model="checked5">BMW</el-checkbox>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
@@ -58,7 +67,7 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1 && show5">
                         <div>
-                            <el-checkbox v-model="checked6">Any</el-checkbox>
+                            <el-radio :label="2">Any</el-radio>
                         </div>
                     </div>
                     <!--tr-->
@@ -71,10 +80,13 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show2 && show5">
                         <div>
-                            <el-checkbox v-model="checked7">Auto</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked8">Manual</el-checkbox>
+                            <!-- <el-checkbox-group v-model="makeList">
+                                <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
+                            </el-checkbox-group> -->
+                            <el-radio-group v-model="radio" disabled>
+                                <el-radio :label="1">Auto</el-radio>
+                                <el-radio :label="2">Manual</el-radio>
+                            </el-radio-group>
                         </div>
                     </div>
                     <!--year-->
@@ -87,17 +99,16 @@
                     <div style="clear:both;"></div>
                     <div class="block" v-show="show3 && show5">
                         <el-slider
-                        v-model="value"
+                        v-model="year"
                         range
-                        show-stops
-                        :min="2008"
-                        :max="2022"
-                        @change="move(value)">
+                        :min= minYears
+                        :max= maxYears
+                        @change="years(year)">
                         </el-slider>
                     </div>
                     <div class="showyear" v-show="show3 && show5">
-                        <div class="minyear">2008</div>
-                        <div class="maxyear">2022</div>
+                        <div class="minyear">{{minYear}}</div>
+                        <div class="maxyear">{{maxYear}}</div>
                     </div>
                     <!--price-->
                     <div class="viewprice" v-show="show5">
@@ -109,17 +120,17 @@
                     <div style="clear:both;"></div>
                     <div class="block" v-show="show4 && show5">
                         <el-slider
-                        v-model="value"
+                        v-model="price"
                         range
                         show-stops
-                        :min="2008"
-                        :max="2022"
-                        @change="move(value)">
+                        :min= minPrices
+                        :max= maxPrices
+                        @change="move(price)">
                         </el-slider>
                     </div>
                     <div class="showprice" v-show="show4 && show5">
-                        <div class="minprice">$0</div>
-                        <div class="maxprice">$190303</div>
+                        <div class="minprice">${{minPrice}}</div>
+                        <div class="maxprice">${{maxPrice}}</div>
                     </div>
                 </div>
                 <div style="clear:both;"></div>
@@ -127,12 +138,12 @@
                     <div class="texttitle">
                         <div class="titleleft">
                             <span >SORT BY</span>
-                            <el-select v-model="value" placeholder="Date:High To Low">
+                            <el-select @change="change" v-model="sortBy" placeholder="Date:High To Low">
                                 <el-option
                                 v-for="item in options"
                                 :key="item.value"
                                 :label="item.label"
-                                :value="item.value">
+                                :value="item.label">
                                 </el-option>
                             </el-select>
                         </div>
@@ -143,24 +154,24 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="showimg">
-                        <div class="textcard" v-for="index in information.silce(0,9)" :key="index"  @click="cardetail()">
-                            <div class="imgcard"  >
-                                <img :src="index.url"  />
+                        <div class="textcard" v-for="(item,index) in information" :key="index"  @click="cardetail(item)">
+                            <div class="imgcard">
+                                <img :src="item.photo[0]"  />
                             </div>
                             <div class="titlecard" >
-                                <span >{{index.year}} {{index.type}}</span>
+                                <span >{{item.year}} {{item.fueltype}}</span>
                                 <br />
-                                <span >{{index.kind}}</span>
+                                <span >{{item.make}}</span>
                             </div>
                             <div class="contentcard">
-                                <span class="contentcard-price">{{index.price}}</span>
-                                <span class="contentcard-info">{{index.info}}</span>
+                                <span class="contentcard-price">${{item.price}}</span>
+                                <span class="contentcard-info">Excl . Gov's Charges</span>
                             </div>
                             <div class="break" ></div>
                             <div class="detailcard" >
-                                <span >{{index.distance}}</span>
-                                <span >{{index.info1}}</span>
-                                <span >{{index.info2}}</span>
+                                <span >{{item.odometer}}kms</span>
+                                <span >{{item.body}}</span>
+                                <span >{{item.color}}</span>
                             </div>
                         </div>
                         <div style="clear:both;"></div>
@@ -179,6 +190,7 @@
 </template>
 
 <script>
+import { car } from '@/api'
 export default {
   name: 'OnlineShowroom',
   components: {
@@ -199,243 +211,81 @@ export default {
         checked6:false,
         checked7:false,
         checked8:false,
+        makeList: [],
         information: [
-                {
-                  url: require('../../assets/images/home/1.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/2.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/3.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/4.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/5.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/6.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/7.jpg'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
-                {
-                  url: require('../../assets/images/home/8.png'),
-                  year:'2019',
-                  type: 'MERCEDES-BENZ',
-                  kind: 'C63S AMG',
-                  price: '$149000.00',
-                  info: "Excl . Gov's Charges",
-                  distance: '126295 kms',
-                  info1: 'Diesel',
-                  info2: 'Auto'
-                },
+                // {
+                //   url: require('../../assets/images/home/1.jpg'),
+                //   year:'2019',
+                //   type: 'MERCEDES-BENZ',
+                //   kind: 'C63S AMG',
+                //   price: '$149000.00',
+                //   info: "Excl . Gov's Charges",
+                //   distance: '126295 kms',
+                //   info1: 'Diesel',
+                //   info2: 'Auto'
+                // },
 
+      ],
+        orderByPrice: 1,
+        orderByYear: 1,
+        sortBy:'',
+        minYear: '',
+        minYears: '', // 筛选时
+        maxYears: '', // 筛选时
+        maxYear: '',
+        minPrice:'',
+        maxPrice: '',
+        minPrices:'',
+        maxPrices: '',
+        photo: [], // 汽车图
+        year: [],
+        price: [],
+        radio: '1',
+      options: [
+        {
+          value: '1',
+          label: 'Price: low to high'
+        },
+        {
+          value: '2',
+          label: 'Price: high to low'
+        }, 
+        {
+          value: '3',
+          label: 'Date: low to high'
+        }, 
+        {
+          value: '4',
+          label: 'Date: high to low'
+        },
       ]
     }
   },
+  created() {
+    this.allCar()
+  },
   methods: {
+    // sortby查询
+    change(val) {
+        console.log('12', val)
+        if(val == 'Price: low to high') {
+            this.orderByPrice = 2
+            this.orderByYear = ''
+            this.allCar()
+        }else if(val == 'Price: high to low') {
+            this.orderByPrice = 1
+            this.orderByYear = ''
+            this.allCar()
+        } else if (val == 'Date: low to high') {
+            this.orderByPrice = ''
+            this.orderByYear = 2
+            this.allCar()
+        } else {
+            this.orderByPrice = ''
+            this.orderByYear = 1
+            this.allCar()
+        }
+    },
     testshow(){
         this.show = !this.show;
     },
@@ -455,13 +305,206 @@ export default {
         this.show5 = !this.show5;
     },
     move(value){
-        return value;
+        console.log(value,'1515')
+        this.minPrice = this.price[0]
+        this.maxPrice = this.price[1]
+        this.selects()
     },
-    cardetail(){
-        this.$router.push('/carDetail')
+    years(value) {
+        console.log(value, '1515')
+        this.minYear = this.year[0]
+        this.maxYear = this.year[1]
+        this.selects()
+    },
+    makeChange(item) {
+        console.log(item,'15')
+        car({
+        current: '1',
+        pageSize: '1000',
+        make: item.mak,
+        yearStart: this.minYear,
+        yearEnd: this.maxYear,
+        priceStart: this.minPrice,
+        priceEnd: this.maxPrice,
+        orderByPrice: this.orderByPrice,
+        orderByYear: this.orderByYear
+      }).then(car => {
+        // this.information = car.data.records
+        this.information = []
+        car.data.records.forEach(ele => {
+            const item = {
+                year: ele.year,
+                fueltype: ele.fueltype,
+                make: ele.make,
+                price: ele.price,
+                odometer: ele.odometer,
+                body: ele.body,
+                model: ele.model,
+                geartype: ele.geartype,
+                enginesize: ele.enginesize,
+                cylinders: ele.cylinders,
+                doornum: ele.doornum,
+                color: ele.color,
+                photo: ele.photo.split(',')
+            }
+            this.information.push(item)
+            console.log('102',this.information)
+        })
+        // this.maxPrice = car.data.records[0].price
+        // this.makeList = []
+        // this.minPrice = car.data.records[car.data.records.length-1].price
+        // this.price = [this.minPrice,this.maxPrice]
+        // const lengths = makesList.length
+        // for(i === lengths,)
+         
+      })
+    },
+    // 条件筛选
+    
+    selects() {
+      car({
+        current: '1',
+        pageSize: '1000',
+        make: '',
+        yearStart: this.minYear,
+        yearEnd: this.maxYear,
+        priceStart: this.minPrice,
+        priceEnd: this.maxPrice,
+        orderByPrice: this.orderByPrice,
+        orderByYear: this.orderByYear
+      }).then(car => {
+        // this.information = car.data.records
+        this.information = []
+        car.data.records.forEach(ele => {
+            const item = {
+                year: ele.year,
+                fueltype: ele.fueltype,
+                make: ele.make,
+                price: ele.price,
+                odometer: ele.odometer,
+                body: ele.body,
+                model: ele.model,
+                geartype: ele.geartype,
+                enginesize: ele.enginesize,
+                cylinders: ele.cylinders,
+                doornum: ele.doornum,
+                color: ele.color,
+                photo: ele.photo.split(',')
+            }
+            this.information.push(item)
+            console.log('155',this.information)
+        })
+        this.maxPrice = car.data.records[0].price
+        // this.makeList = []
+        // this.minPrice = car.data.records[car.data.records.length-1].price
+        // this.price = [this.minPrice,this.maxPrice]
+        // console.log(this.information, 'car')
+        // 点击价格和年份时不筛选车型搜索框
+        // const makesList = []
+        // car.data.records.forEach(ele => {
+        //   const makes = ele.make
+        //   if(makesList.indexOf(makes) === -1) {
+        //     makesList.push(makes)
+        //     // this.makeList.push(item)
+        //   }
+        // })
+        // const lengths = makesList.length
+        // for(i === lengths,)
+        //   console.log('1',makesList)
+        //   for(var i = 0; i < makesList.length; i++) {
+        //     const item = {
+        //       mak: makesList[i]
+        //     }
+        //     this.makeList.push(item)
+        //     console.log('5',this.makeList)
+        //   }
+      })
+    },
+    cardetail(item){
+        this.$router.push({path: '/carDetail', query: {item: item}})
     },
     contactUs() {
       this.$router.push('/contact')
+    },
+    allCar() {
+      car({
+        current: '1',
+        pageSize: '5000',
+        make: '',
+        yearStart: '',
+        yearEnd: '',
+        priceStart: '',
+        priceEnd: '',
+        orderByPrice: this.orderByPrice,
+        orderByYear: this.orderByYear
+      }).then(car => {
+        this.maxPrice = car.data.records[0].price
+        this.minPrice = car.data.records[car.data.records.length-1].price
+        this.maxPrices = car.data.records[0].price
+        this.minPrices = car.data.records[car.data.records.length-1].price
+        this.price = [this.minPrice,this.maxPrice]
+
+        // console.log(this.information, 'car')
+        this.makeList = []
+        const makesList = []
+        car.data.records.forEach(ele => {
+          const makes = ele.make
+          if(makesList.indexOf(makes) === -1) {
+            makesList.push(makes)
+            // this.makeList.push(item)
+          }
+        })
+        // const lengths = makesList.length
+        // for(i === lengths,)
+          console.log('10',makesList.length)
+          for(var i = 0; i < makesList.length; i++) {
+            const item = {
+              mak: makesList[i]
+            }
+            this.makeList.push(item)
+          }
+          console.log('0',this.makeList)
+        this.information = []
+        car.data.records.forEach(ele => {
+            const item = {
+                year: ele.year,
+                fueltype: ele.fueltype,
+                make: ele.make,
+                price: ele.price,
+                odometer: ele.odometer,
+                body: ele.body,
+                model: ele.model,
+                geartype: ele.geartype,
+                enginesize: ele.enginesize,
+                cylinders: ele.cylinders,
+                doornum: ele.doornum,
+                color: ele.color,
+                photo: ele.photo.split(',')
+            }
+            this.information.push(item)
+        })
+        console.log(this.information,'158')
+      })
+      car({
+        current: '1',
+        pageSize: '500',
+        make: '',
+        yearStart: '',
+        yearEnd: '',
+        priceStart: '',
+        priceEnd: '',
+        // orderByPrice: '1',
+        orderByYear: '1'
+      }).then(res => {
+        console.log('res',res)
+        this.maxYear = res.data.records[0].year
+        this.minYear = res.data.records[res.data.records.length-1].year
+        this.maxYears = res.data.records[0].year
+        this.minYears = res.data.records[res.data.records.length-1].year
+        console.log('445',this.minYear)
+        this.year = [this.minYear,this.maxYear]
+        console.log('12',this.year)
+      })
     },
   }
 }
@@ -585,6 +628,7 @@ export default {
                     margin-top: 60px;
                     div:nth-child(n+1) {
                         margin-top: 10px;
+                        font-family: PingFangSC-Semibold;
                     }
                     .el-checkbox {
                         /deep/ .el-checkbox__label {
@@ -800,19 +844,24 @@ export default {
             .right {
                 width: calc(80% - 40px);
                 margin-left: 20px;
+                margin-top: -4px;
                 display:inline-block;
                 .texttitle {
-                    height: 48px;
+                    // height: 48px;
+                    // margin-top:5px;
                     margin-left:20px;
                     .titleleft {
                         float: left;
+                        display: flex;
+                        align-items: center;
                         span {
-                            height: 48px;
+                            // height: 48px;
                             font-size: 27px;
                             font-family: DINCondensed-Bold;
                             font-weight: bold;
                             color: #151515;
-                            line-height: 48px;
+                            text-align: center;
+                            // line-height: 48px;
                             letter-spacing: 1px;
                             margin-right: 20px;
                         }
@@ -869,7 +918,7 @@ export default {
                             text-align:left;
                             padding-top: 10px;
                             padding-bottom: 10px;
-                            padding-left: 19px;
+                            // padding-left: 19px;
                             span {
                             font-family: DINCondensed-Bold;
                             margin-left: 3px;
@@ -884,8 +933,8 @@ export default {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            padding-left: 19px;
-                            padding-right: 30px;
+                            padding-left: 7px;
+                            padding-right: 8px;
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
                             font-weight:bold;
@@ -913,16 +962,16 @@ export default {
                             padding-top:10px;
                             display: flex;
                             align-items: center;
-                            justify-content: left;
-                            padding-left: 19px;
+                            justify-content: space-between;
+                            padding-left: 7px;
                             span {
                             font-size: 15px;
                             font-family:PingFangSC-Semibold;
                             font-weight: 600;
-                            margin-right: 30px;
+                            margin-right: 6px;
                             color: #4A4A4A;
                             opacity:0.7;
-                            margin-right: 36px;
+                            // margin-right: 36px;
                             line-height: 20px;
                             white-space: nowrap;
                             }
@@ -935,7 +984,7 @@ export default {
                     margin-top: 20px;
                     margin-right: 30px;
                     .el-button {
-                    width: 231px;
+                    width: 215px;
                     height: 58px;
                     border: 1px solid #F7941E ;
                     background-color: transparent;
@@ -945,7 +994,7 @@ export default {
                     justify-content: right;
                     span {
                         color:#F7941E;
-                        font-size: 20px;
+                        font-size: 18px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         line-height: 25px;
@@ -968,5 +1017,11 @@ export default {
         }
     }
 }
-
+/deep/.el-select-dropdown__list {
+    font-family: PingFangSC-Semibold;
+}
+/deep/.el-tooltip__popper.is-dark {
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+}
 </style>
