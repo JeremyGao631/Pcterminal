@@ -132,8 +132,8 @@
           page-size:='8'
           @next-click="next"
           @prev-click ="shang"
-          :total="30">
-          
+          :total="40">
+
         </el-pagination>
       </div>
     </div>
@@ -750,8 +750,8 @@ name: 'CarDetail',
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 7px;
-            padding-right: 8px;
+            // padding-left: 7px;
+            padding-right: 5px;
             .contentcard-price {
               font-family:DINCondensed-Bold;
               font-weight:bold;
@@ -780,7 +780,7 @@ name: 'CarDetail',
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 7px;
+            // padding-left: 7px;
             span {
               font-size: 15px;
               font-family:PingFangSC-Semibold;
@@ -802,7 +802,7 @@ name: 'CarDetail',
           /deep/ .btn-prev{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/leftjt.png');
+              background-image: url('../../assets/images/carDetail/leftjt.jpg');
               background-size: 100% 100%;
           }
           /deep/ i {
@@ -811,14 +811,14 @@ name: 'CarDetail',
           /deep/ .btn-next{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/rightjt.png');
+              background-image: url('../../assets/images/carDetail/rightjt.jpg');
               background-size: 100% 100%;
           }
           /deep/ .el-pager {
             margin-top:15px;
               li:not(.disabled) {
                   width:10px;
-                  height:2px;
+                  height:4px;
                   border:1px solid #151515;
                   font-weight: bold;
                   color: #151515;

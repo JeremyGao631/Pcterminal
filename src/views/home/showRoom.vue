@@ -143,7 +143,8 @@
                                 v-for="item in options"
                                 :key="item.value"
                                 :label="item.label"
-                                :value="item.label">
+                                :value="item.value">
+                                <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                                 </el-option>
                             </el-select>
                         </div>
@@ -515,7 +516,8 @@ export default {
 .content {
     .contentimg {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
     }
     .inlinetext {
         position: absolute;
@@ -933,8 +935,8 @@ export default {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            padding-left: 7px;
-                            padding-right: 8px;
+                            // padding-left: 7px;
+                            padding-right: 5px;
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
                             font-weight:bold;
@@ -963,7 +965,7 @@ export default {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            padding-left: 7px;
+                            // padding-left: 7px;
                             span {
                             font-size: 15px;
                             font-family:PingFangSC-Semibold;
@@ -1024,4 +1026,18 @@ export default {
     font-family: PingFangSC-Semibold;
     font-size: 14px;
 }
+/deep/.el-input__inner::placeholder {
+    font-size: 16px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+line-height: 130px;
+}
+/deep/.el-input__inner {
+        border-radius: 0 ;
+        width: 100%;
+        font-size: 16px;
+        font-family: DINCondensed-Bold, DINCondensed;
+        color: #000;
+        font-weight: bold;
+      }
 </style>

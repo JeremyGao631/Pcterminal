@@ -136,7 +136,8 @@ export default({
         width: 100%;
         .contentimg {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
         }
         .inlinetext {
             position: absolute;

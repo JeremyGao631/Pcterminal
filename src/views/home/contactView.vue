@@ -98,7 +98,7 @@
                 <div class="input-view">
                         <el-input
                             type="textarea"
-                            :autosize="{ minRows: 5, maxRows: 20}"
+                            :autosize="{ minRows: 5, maxRows: 10}"
                             placeholder="Message*"
                             v-model="message" />
                 </div>
@@ -212,7 +212,8 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: calc(100vh - 15px);
+            // height: calc(100vh - 15px);
+            height: 900px;
         }
         .text { 
           position:absolute;
@@ -231,7 +232,7 @@ export default({
           }
         }
         .contact-main {
-            margin: 150px auto 0 auto;
+            margin: 105px auto 0 auto;
             width: 1400px;
             height: 1100px;
             display: flex;
@@ -427,7 +428,7 @@ background-color: #f4f6f8;
     line-height: 130px;
 }
 /deep/.el-textarea__inner::placeholder{
-    font-size: 20px;
+    font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
     font-weight: bold;
     color:#151515;

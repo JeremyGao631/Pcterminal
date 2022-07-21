@@ -129,6 +129,7 @@
                     :key="item.value"
                     :label="item.label"
                     :value="item.value">
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </div>
@@ -156,6 +157,7 @@
                     :label="item.label"
                     :value="item.value"
                     @click="book(item)">
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </div>
@@ -287,21 +289,21 @@ export default({
             options: [
               {
                 value:'1',
-                label:''
+                label:'Any'
               },
               {
                 value:'2',
-                label:'yes'
+                label:'Auto'
               },
               {
                 value:'3',
-                label:'no'
+                label:'Manual'
               }
             ],
             logbooks: [
               {
                 value:'1',
-                label:'full dealer service history'
+                label:'Full dealer service history'
               },
               {
                 value:'2',
@@ -441,7 +443,8 @@ export default({
       width: 100%;
         .contentimg {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
         }
         .inlinetext {
             position: absolute;
@@ -998,4 +1001,10 @@ line-height: 130px;
   background-color: #000;
   border-color: #000;
 }
+
+
+// /deep/.el-select-dropdown .el-scrollbar .el-select-dropdown__wrap .el-scrollbar__view .el-select-dropdown__item span{
+// font-size: 20px;
+// font-family: DINCondensed-Bold;
+// }
 </style>
