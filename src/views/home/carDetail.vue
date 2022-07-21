@@ -55,6 +55,9 @@
           <img :src="informations.photo[4]" />
           <img :src="informations.photo[5]" />
           <img :src="informations.photo[6]" />
+          <!-- <div v-for="(item,idx) in informations.photo" :key="idx">
+            <img :src="informations.photo[idx]" />
+          </div> -->
         </div>
       </div>
     </div>
@@ -738,7 +741,6 @@ name: 'CarDetail',
             // padding-left: 19px;
             span {
               font-family: DINCondensed-Bold;
-              margin-left: 3px;
               font-weight:bold;
               font-size: 30px;
               color: #212020;
@@ -802,7 +804,7 @@ name: 'CarDetail',
           /deep/ .btn-prev{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/leftjt.jpg');
+              background-image: url('../../assets/images/carDetail/left.svg');
               background-size: 100% 100%;
           }
           /deep/ i {
@@ -811,7 +813,7 @@ name: 'CarDetail',
           /deep/ .btn-next{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/rightjt.jpg');
+              background-image: url('../../assets/images/carDetail/right.svg');
               background-size: 100% 100%;
           }
           /deep/ .el-pager {

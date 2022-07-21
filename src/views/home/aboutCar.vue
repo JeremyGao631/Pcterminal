@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="ourStory">
-            <img class="storyImg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
+            <img class="storyImg" src="../../assets/images/about/ourstory.jpeg" alt="">
             <div class="title">
                 <div class="storyTit">OUR STORY</div>
                 <div class="story">{{ story }}</div>
@@ -99,7 +99,7 @@ export default({
                 {
                     img:[require('../../assets/images/about/StrongEnthusiasm.png')],
                     title: 'Strong Enthusiasm',
-                    information: 'Our employees share a deep passion for cars.'
+                    information: 'Our employees share a deep passion for cars. Many have worked extensively within the industry and profess expertise across many makes and models.'
                 }
             ],
             visit: 'Please visit our showroom in Burwood to inspect our range of vehicles and discuss your needs.',

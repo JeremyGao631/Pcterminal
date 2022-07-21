@@ -65,7 +65,7 @@
                  <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get your instant offer</p>
-                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU Auto Traders thoroughly inspect the condition of your car and compare it against current market data.</div>
+                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU thoroughly inspect the condition of your car and compare it against current market data.</div>
                    <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
                  </div>
               </div>
@@ -73,7 +73,7 @@
                  <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get cash payment</p>
-                   <div style="width: 200px;">We will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
+                   <div style="width: 200px;">We will pay cash or electronic transfer on the same day on completion of vehicle transfer.</div>
                    <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
                  </div>
               </div>
@@ -195,7 +195,7 @@
                 :on-remove="handleRemove">
                 <i class="el-icon-plus"></i>
               </el-upload>
-              <el-button size="small" type="primary">Image upload</el-button>
+              <el-button size="small" type="primary" class="imgbtn">Image upload</el-button>
               <el-dialog :visible.sync="dialogVisible">
                 <img width="100%" :src="dialogImageUrl" alt="">
               </el-dialog>
@@ -822,6 +822,23 @@ export default({
                   width: 50px;
                   height: 130px;
                   font-size: 20px;
+                  font-family: DINCondensed-Bold, DINCondensed;
+                  font-weight: bold;
+                  color: #FFFFFF;
+                }
+              }
+              .imgbtn {
+                border: none;
+                width: 110px;
+                height: 44px;
+                color: #fff;
+                background-color: #000;
+                position: relative;
+                top: 18px;
+                /deep/ span {
+                  width: 50px;
+                  height: 130px;
+                  font-size: 18px;
                   font-family: DINCondensed-Bold, DINCondensed;
                   font-weight: bold;
                   color: #FFFFFF;

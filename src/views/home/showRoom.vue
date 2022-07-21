@@ -24,32 +24,21 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext">
-                        <!-- <div>
-                            <el-checkbox v-model="checked1">{{ item.mak }}</el-checkbox>
-                        </div> -->
-                        <div v-for="(item,idx) in makeList" :key="idx">
-                            <!-- <el-checkbox-group v-model="makeList">
-                                <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
-                            </el-checkbox-group> -->
+                    <div class="choosetext" v-show="show && show5">
+                        <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
                             <el-radio-group v-model="radio" @change="makeChange(item)">
                                 <el-radio :label="idx">{{item.mak }}</el-radio>
                             </el-radio-group>
                         </div>
-
-                        <!-- <div>
-                            <el-checkbox v-model="checked2">Alfa Romeo</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked3">Audi</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked4">Bentiey</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked5">BMW</el-checkbox>
-                        </div> -->
                     </div>
+                    <div class="choosetext" v-show="show && !show5">
+                        <div v-for="(item,idx) in makeList" :key="idx">
+                            <el-radio-group v-model="radio" @change="makeChange(item)">
+                                <el-radio :label="idx">{{item.mak }}</el-radio>
+                            </el-radio-group>
+                        </div>
+                    </div>
+                    
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
                         <div class="viewright" @click="testshow5()" v-show="show5">∨</div>
@@ -58,27 +47,27 @@
                     </div>
                     <div style="clear:both;"></div>
                     <!--model-->
-                    <div class="viewmodel" v-show="show5">
+                    <div class="viewmodel">
                         <div class="modelleft">Model</div>
                         <div class="modelright" @click="testshow1()" v-show="show1">-</div>
                         <div class="modelright" @click="testshow1()" v-show="!show1">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show1 && show5">
+                    <div class="choosetext" v-show="show1">
                         <div>
                             <el-radio :label="2">Any</el-radio>
                         </div>
                     </div>
                     <!--tr-->
-                    <div class="viewtr" :class="{ newviewtr:!show1}" v-show="show5">
+                    <div class="viewtr" :class="{ newviewtr:!show1}" >
                         <div class="trleft">Transmission</div>
                         <div class="trright" @click="testshow2()" v-show="show2">-</div>
                         <div class="trright" @click="testshow2()" v-show="!show2">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show2 && show5">
+                    <div class="choosetext" v-show="show2">
                         <div>
                             <!-- <el-checkbox-group v-model="makeList">
                                 <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
@@ -90,14 +79,14 @@
                         </div>
                     </div>
                     <!--year-->
-                    <div class="viewyear" :class="{ newviewyear:!show2}" v-show="show5">
+                    <div class="viewyear" :class="{ newviewyear:!show2}" >
                         <div class="yearleft">Year</div>
                         <div class="yearright" @click="testshow3()" v-show="show3">-</div>
                         <div class="yearright" @click="testshow3()" v-show="!show3">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show3 && show5">
+                    <div class="block" v-show="show3">
                         <el-slider
                         v-model="year"
                         range
@@ -106,19 +95,19 @@
                         @change="years(year)">
                         </el-slider>
                     </div>
-                    <div class="showyear" v-show="show3 && show5">
+                    <div class="showyear" v-show="show3 ">
                         <div class="minyear">{{minYear}}</div>
                         <div class="maxyear">{{maxYear}}</div>
                     </div>
                     <!--price-->
-                    <div class="viewprice" v-show="show5">
+                    <div class="viewprice" >
                         <div class="priceleft">Price</div>
                         <div class="priceright" @click="testshow4()" v-show="show4">-</div>
                         <div class="priceright" @click="testshow4()" v-show="!show4">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show4 && show5">
+                    <div class="block" v-show="show4 ">
                         <el-slider
                         v-model="price"
                         range
@@ -128,7 +117,7 @@
                         @change="move(price)">
                         </el-slider>
                     </div>
-                    <div class="showprice" v-show="show4 && show5">
+                    <div class="showprice" v-show="show4 ">
                         <div class="minprice">${{minPrice}}</div>
                         <div class="maxprice">${{maxPrice}}</div>
                     </div>
@@ -657,11 +646,12 @@ export default {
                         float:left;
                     }
                     .viewright {
-                        width: 9px;
+                        width: 25px;
                         height: 5px;
                         font-weight: bold;
                         float:left;
                         padding-left: 5px;
+                        padding-top: 2px;
                     }
                 }
                 .newviewall {
@@ -753,7 +743,8 @@ export default {
                     }
                     /deep/  .el-slider__button {
                         background-color:#151515;
-                        border: 2px solid #151515;
+                        border: 3px solid #FFFFFF;
+                        box-shadow:2px 2px 10px #909090;
                     }
                 }
                 .showyear {
@@ -1024,9 +1015,9 @@ export default {
 /deep/.el-select-dropdown__list {
     font-family: PingFangSC-Semibold;
 }
-/deep/.el-tooltip__popper.is-dark {
-    font-family: PingFangSC-Semibold;
-    font-size: 14px;
+/deep/.el-tooltip__popper.is-dark span{
+    font-family: DINCondensed-Bold;
+    font-size: 20px;
 }
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
