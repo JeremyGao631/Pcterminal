@@ -4,8 +4,8 @@
         <div class="inlinetext">
             <span class="content-title">Extraordinary-experience</span><br />
             <span class="content-text">
-                <span style="padding-left:60px">ONLINE</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">SHOWROOM</span><br />
+                <span style="padding-left:51px">ONLINE</span><br />
+                <span style="padding-left:51px">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -522,58 +522,60 @@ export default {
     .inlinetext {
         position: absolute;
         left: 10%;
-        top: 20%;
+        top: 23%;
     }
     .content-title {
-      font-size: 50px;
+      font-size: 44px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
+      margin-bottom: 5px;
       color: #FFFFFF;
-      line-height: 50px;
-      margin-left : 60px;
+      line-height: 70px;
+      margin-left: 55px;
     }
     .content-text {
         font-size: 90px;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        color: #FFFFFF;
-        line-height: 130px;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 100px;
         span {
             float:left;
         }
     }
     .clickbtn {
-        width: 231px;
-        height: 58px;
-        position: absolute;
-        left:68px;
-        border: 1px solid #FFFFFF ;
-        margin-top: 20px;
-        background-color: transparent;
-        color:#FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: right;
+      position: relative;
+      left: 12%;
+      width: 231px;
+      height: 58px;
+      padding-top: 15px;
+      border: 1px solid #FFFFFF ;
+      background-color: transparent;
+      color:#FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 60px;
         span{
             width: 91px;
-            height: 130px;
-            font-size: 20px;
-            font-family: DINCondensed-Bold;
-            font-weight: bold;
-            line-height: 25px;
-            text-align: center;
-            color: #FFFFFF;
-            line-height: 130px;
-            margin-left: 20px;
-            margin-right: 60px;
+        height: 130px;
+        font-size: 20px;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 130px;
+        margin-left: 20px;
+        margin-right: 60px;
         }
         .el-icon-my-right {
             background: url('../../assets/images/home/right.png') no-repeat;
             background-size: cover;
-            display:inline-block;
-            height: 16px;
-            width: 16px;
-            margin-right: -16px;
+        display:inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: -16px;
         }
     }
     .middle {

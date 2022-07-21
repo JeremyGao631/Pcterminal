@@ -4,8 +4,8 @@
         <div class="inlinetext">
             <span class="content-title">Get to know us</span><br />
             <span class="content-text">
-                <span style="padding-left:60px">ABOUT</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">AUTOHOME AU</span><br />
+                <span style="padding-left:51px">ABOUT</span><br />
+                <span style="padding-left:51px;">AUTOHOME AU</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -142,38 +142,40 @@ export default({
         .inlinetext {
             position: absolute;
             left: 10%;
-            top: 20%;
+            top: 23%;
         }
         .content-title {
-          font-size: 50px;
-          font-family: DINCondensed-Bold;
-          font-weight: bold;
-          color: #FFFFFF;
-          line-height: 50px;
-          margin-left: -90px;
+          font-size: 44px;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+            line-height: 70px;
+            margin-left: -130px;
         }
         .content-text {
             font-size: 90px;
             font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
-            line-height: 130px;
-            span {
-                float:left;
-            }
+            line-height: 100px;
+                span {
+                    float:left;
+                }
         }
         .clickbtn {
-            width:160px;
+            position: relative;
+            left: 12%;
+            width: 231px;
             height: 58px;
-            position: absolute;
-            left:68px;
+            padding-top: 15px;
             border: 1px solid #FFFFFF ;
-            margin-top: 20px;
             background-color: transparent;
             color:#FFFFFF;
             display: flex;
             align-items: center;
             justify-content: right;
+            margin-top: 60px;
             span{
                 width: 91px;
                 height: 130px;
@@ -185,7 +187,7 @@ export default({
                 color: #FFFFFF;
                 line-height: 130px;
                 margin-left: 20px;
-                margin-right: 30px;
+                margin-right: 60px;
             }
             .el-icon-my-right {
                 background: url('../../assets/images/home/right.png') no-repeat;
