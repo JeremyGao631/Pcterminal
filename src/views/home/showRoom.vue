@@ -41,8 +41,8 @@
                     
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
-                        <div class="viewright" @click="testshow5()" v-show="show5">∨</div>
-                        <div class="viewright" @click="testshow5()" v-show="!show5">∧</div>
+                        <div class="viewright" @click="testshow5()" v-show="show5"><i class="el-icon-arrow-down"></i></div>
+                        <div class="viewright" @click="testshow5()" v-show="!show5"><i class="el-icon-arrow-up"></i></div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
@@ -599,7 +599,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -623,22 +623,23 @@ export default {
                         margin-top: 10px;
                         font-family: PingFangSC-Semibold;
                     }
-                    .el-checkbox {
-                        /deep/ .el-checkbox__label {
-                            height: 22px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Light;
-                            font-weight: 300;
-                            color: #151515;
-                            line-height: 22px;
-                            opacity: 0.5;
-                        }
+                    /deep/ .el-radio__label {
+                        height: 22px;
+                        font-size: 16px;
+                        font-family: PingFangSC-Light;
+                        font-weight: bold;
+                        color: #151515;
+                        line-height: 22px;
+                        opacity: 0.5;
+                    }
+                    /deep/ .el-radio__inner {
+                        border-radius: 0;
                     }
                 }
                 .viewall {
                     margin-top: 20px;
                     .viewleft {
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -652,6 +653,14 @@ export default {
                         float:left;
                         padding-left: 5px;
                         padding-top: 2px;
+                        /deep/ .el-icon-arrow-down {
+                            font-weight: 600;
+                            padding-top: 4px;
+                        }
+                        /deep/ .el-icon-arrow-up {
+                            font-weight: 600;
+                            padding-top: 4px;
+                        }
                     }
                 }
                 .newviewall {
@@ -665,7 +674,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -690,7 +699,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -718,7 +727,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -788,7 +797,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -851,7 +860,7 @@ export default {
                         align-items: center;
                         span {
                             // height: 48px;
-                            font-size: 27px;
+                            font-size: 24px;
                             font-family: DINCondensed-Bold;
                             font-weight: bold;
                             color: #151515;
@@ -1015,10 +1024,6 @@ export default {
 /deep/.el-select-dropdown__list {
     font-family: PingFangSC-Semibold;
 }
-/deep/.el-tooltip__popper.is-dark span{
-    font-family: DINCondensed-Bold;
-    font-size: 20px;
-}
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
 font-family: DINCondensed-Bold, DINCondensed;
@@ -1033,4 +1038,5 @@ line-height: 130px;
         color: #000;
         font-weight: bold;
       }
+
 </style>
