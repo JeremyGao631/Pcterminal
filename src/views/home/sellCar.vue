@@ -5,8 +5,8 @@
         <div class="inlinetext">
             <span class="content-title">Thoughtful-service</span><br />
             <span class="content-text">
-                <span style="padding-left:60px">SELL</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">YOUR CAR</span><br />
+                <span style="padding-left:55px">SELL</span><br />
+                <span style="padding-left:55px;">YOUR CAR</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -65,7 +65,7 @@
                  <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get your instant offer</p>
-                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU Auto Traders thoroughly inspect the condition of your car and compare it against current market data.</div>
+                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU thoroughly inspect the condition of your car and compare it against current market data.</div>
                    <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
                  </div>
               </div>
@@ -73,7 +73,7 @@
                  <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
                  <div class="step_info">
                    <p>Get cash payment</p>
-                   <div style="width: 200px;">We will pay cash or electroic transfer on the same day on completion of vehicle transfer.</div>
+                   <div style="width: 200px;">We will pay cash or electronic transfer on the same day on completion of vehicle transfer.</div>
                    <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
                  </div>
               </div>
@@ -129,6 +129,7 @@
                     :key="item.value"
                     :label="item.label"
                     :value="item.value">
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </div>
@@ -156,6 +157,7 @@
                     :label="item.label"
                     :value="item.value"
                     @click="book(item)">
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </div>
@@ -193,7 +195,7 @@
                 :on-remove="handleRemove">
                 <i class="el-icon-plus"></i>
               </el-upload>
-              <el-button size="small" type="primary">Image upload</el-button>
+              <el-button size="small" type="primary" class="imgbtn">Image upload</el-button>
               <el-dialog :visible.sync="dialogVisible">
                 <img width="100%" :src="dialogImageUrl" alt="">
               </el-dialog>
@@ -287,21 +289,21 @@ export default({
             options: [
               {
                 value:'1',
-                label:''
+                label:'Any'
               },
               {
                 value:'2',
-                label:'yes'
+                label:'Auto'
               },
               {
                 value:'3',
-                label:'no'
+                label:'Manual'
               }
             ],
             logbooks: [
               {
                 value:'1',
-                label:'full dealer service history'
+                label:'Full dealer service history'
               },
               {
                 value:'2',
@@ -337,7 +339,7 @@ export default({
         var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
         var istrue = emailText.test(this.form.email)
         if(!istrue) {
-            this.$message('请填写正确的邮箱格式')
+            this.$message('Please enter a valid email address.')
             this.email = ''
         }
         },
@@ -386,7 +388,7 @@ export default({
       },
       submit() {
         if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model || this.forms.transmission === '' || this.forms.odometer === '') {
-            this.$message('请检查信息是否填写完整')
+            this.$message('Please check the page information is completed')
             return
         } else {
           vehicle({
@@ -406,9 +408,9 @@ export default({
               photo: this.forms.photo,
               comments: this.forms.comments
             }).then( res => {
-                console.log(res, '提交成功')
+                console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                  this.$message('提交成功')
+                  this.$message('Submission successfull')
                 }
             })
           }
@@ -441,63 +443,66 @@ export default({
       width: 100%;
         .contentimg {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
         }
         .inlinetext {
             position: absolute;
             left: 10%;
-            top: 20%;
+            top: 23%;
         }
         .content-title {
-          font-size: 50px;
-          font-family: DINCondensed-Bold;
-          font-weight: bold;
-          color: #FFFFFF;
-          line-height: 50px;
-          margin-left: 60px;
+          font-size: 44px;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #FFFFFF;
+      line-height: 70px;
+      margin-left: 50px;
         }
         .content-text {
             font-size: 90px;
-            font-family: DINCondensed-Bold;
-            font-weight: bold;
-            color: #FFFFFF;
-            line-height: 130px;
-            span {
-                float:left;
-            }
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 100px;
+        span {
+            float:left;
+        }
         }
         .clickbtn {
-            width: 231px;
-            height: 58px;
-            position: absolute;
-            left:68px;
-            border: 1px solid #FFFFFF ;
-            margin-top: 20px;
-            background-color: transparent;
-            color:#FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: right;
+            position: relative;
+      left: 17%;
+      width: 231px;
+      height: 58px;
+      padding-top: 15px;
+      border: 1px solid #FFFFFF ;
+      background-color: transparent;
+      color:#FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 60px;
             span{
                 width: 91px;
-                height: 130px;
-                font-size: 20px;
-                font-family: DINCondensed-Bold;
-                font-weight: bold;
-                line-height: 25px;
-                text-align: center;
-                color: #FFFFFF;
-                line-height: 130px;
-                margin-left: 20px;
-                margin-right: 60px;
+        height: 130px;
+        font-size: 20px;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 130px;
+        margin-left: 20px;
+        margin-right: 60px;
             }
             .el-icon-my-right {
                 background: url('../../assets/images/home/right.png') no-repeat;
                 background-size: cover;
-                display:inline-block;
-                height: 16px;
-                width: 16px;
-                margin-right: -16px;
+        display:inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: -16px;
             }
         }
         .between {
@@ -822,6 +827,23 @@ export default({
                   color: #FFFFFF;
                 }
               }
+              .imgbtn {
+                border: none;
+                width: 110px;
+                height: 44px;
+                color: #fff;
+                background-color: #000;
+                position: relative;
+                top: 18px;
+                /deep/ span {
+                  width: 50px;
+                  height: 130px;
+                  font-size: 18px;
+                  font-family: DINCondensed-Bold, DINCondensed;
+                  font-weight: bold;
+                  color: #FFFFFF;
+                }
+              }
               .input7 {
                 margin-left: 77px;
                 .el-input {
@@ -998,4 +1020,10 @@ line-height: 130px;
   background-color: #000;
   border-color: #000;
 }
+
+
+// /deep/.el-select-dropdown .el-scrollbar .el-select-dropdown__wrap .el-scrollbar__view .el-select-dropdown__item span{
+// font-size: 20px;
+// font-family: DINCondensed-Bold;
+// }
 </style>

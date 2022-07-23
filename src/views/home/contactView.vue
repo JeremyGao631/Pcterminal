@@ -98,7 +98,7 @@
                 <div class="input-view">
                         <el-input
                             type="textarea"
-                            :autosize="{ minRows: 5, maxRows: 20}"
+                            :autosize="{ minRows: 5, maxRows: 10}"
                             placeholder="Message*"
                             v-model="message" />
                 </div>
@@ -168,7 +168,7 @@ export default({
         contactSubmit() {
             if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '' || this.message === '') {
                 // this.disabled = true
-                this.$message('请仔细检查页面信息是否填写完整')
+                this.$message('Please check the page information is completed')
             } else {
                 // this.disabled = false
                 fetch({
@@ -178,9 +178,9 @@ export default({
                     message:this.message,
                     address:this.postcode
             }).then( res => {
-                console.log(res, '提交成功')
+                console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                    this.$message('提交成功')
+                    this.$message('Submission successfull')
                 }
             })
             }
@@ -191,7 +191,7 @@ export default({
             var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
             var istrue = emailText.test(this.email)
             if(!istrue) {
-                this.$message('请填写正确的邮箱格式')
+                this.$message('Please enter a valid email address.')
                 this.email = ''
             }
         },
@@ -212,7 +212,8 @@ export default({
     .contact {
         .imgs {
             width: 100%;
-            height: calc(100vh - 15px);
+            // height: calc(100vh - 15px);
+            height: 900px;
         }
         .text { 
           position:absolute;
@@ -231,7 +232,7 @@ export default({
           }
         }
         .contact-main {
-            margin: 150px auto 0 auto;
+            margin: 105px auto 0 auto;
             width: 1400px;
             height: 1100px;
             display: flex;
@@ -427,7 +428,7 @@ background-color: #f4f6f8;
     line-height: 130px;
 }
 /deep/.el-textarea__inner::placeholder{
-    font-size: 20px;
+    font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
     font-weight: bold;
     color:#151515;

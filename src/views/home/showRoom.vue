@@ -4,8 +4,8 @@
         <div class="inlinetext">
             <span class="content-title">Extraordinary-experience</span><br />
             <span class="content-text">
-                <span style="padding-left:60px">ONLINE</span><br />
-                <span style="padding-left:60px;margin-top:-10px ;">SHOWROOM</span><br />
+                <span style="padding-left:51px">ONLINE</span><br />
+                <span style="padding-left:51px">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -24,61 +24,50 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext">
-                        <!-- <div>
-                            <el-checkbox v-model="checked1">{{ item.mak }}</el-checkbox>
-                        </div> -->
-                        <div v-for="(item,idx) in makeList" :key="idx">
-                            <!-- <el-checkbox-group v-model="makeList">
-                                <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
-                            </el-checkbox-group> -->
+                    <div class="choosetext" v-show="show && show5">
+                        <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
                             <el-radio-group v-model="radio" @change="makeChange(item)">
                                 <el-radio :label="idx">{{item.mak }}</el-radio>
                             </el-radio-group>
                         </div>
-
-                        <!-- <div>
-                            <el-checkbox v-model="checked2">Alfa Romeo</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked3">Audi</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked4">Bentiey</el-checkbox>
-                        </div>
-                        <div>
-                            <el-checkbox v-model="checked5">BMW</el-checkbox>
-                        </div> -->
                     </div>
+                    <div class="choosetext" v-show="show && !show5">
+                        <div v-for="(item,idx) in makeList" :key="idx">
+                            <el-radio-group v-model="radio" @change="makeChange(item)">
+                                <el-radio :label="idx">{{item.mak }}</el-radio>
+                            </el-radio-group>
+                        </div>
+                    </div>
+                    
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
-                        <div class="viewright" @click="testshow5()" v-show="show5">∨</div>
-                        <div class="viewright" @click="testshow5()" v-show="!show5">∧</div>
+                        <div class="viewright" @click="testshow5()" v-show="show5"><i class="el-icon-arrow-down"></i></div>
+                        <div class="viewright" @click="testshow5()" v-show="!show5"><i class="el-icon-arrow-up"></i></div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
                     <!--model-->
-                    <div class="viewmodel" v-show="show5">
+                    <div class="viewmodel">
                         <div class="modelleft">Model</div>
                         <div class="modelright" @click="testshow1()" v-show="show1">-</div>
                         <div class="modelright" @click="testshow1()" v-show="!show1">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show1 && show5">
+                    <div class="choosetext" v-show="show1">
                         <div>
                             <el-radio :label="2">Any</el-radio>
                         </div>
                     </div>
                     <!--tr-->
-                    <div class="viewtr" :class="{ newviewtr:!show1}" v-show="show5">
+                    <div class="viewtr" :class="{ newviewtr:!show1}" >
                         <div class="trleft">Transmission</div>
                         <div class="trright" @click="testshow2()" v-show="show2">-</div>
                         <div class="trright" @click="testshow2()" v-show="!show2">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show2 && show5">
+                    <div class="choosetext" v-show="show2">
                         <div>
                             <!-- <el-checkbox-group v-model="makeList">
                                 <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
@@ -90,14 +79,14 @@
                         </div>
                     </div>
                     <!--year-->
-                    <div class="viewyear" :class="{ newviewyear:!show2}" v-show="show5">
+                    <div class="viewyear" :class="{ newviewyear:!show2}" >
                         <div class="yearleft">Year</div>
                         <div class="yearright" @click="testshow3()" v-show="show3">-</div>
                         <div class="yearright" @click="testshow3()" v-show="!show3">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show3 && show5">
+                    <div class="block" v-show="show3">
                         <el-slider
                         v-model="year"
                         range
@@ -106,19 +95,19 @@
                         @change="years(year)">
                         </el-slider>
                     </div>
-                    <div class="showyear" v-show="show3 && show5">
+                    <div class="showyear" v-show="show3 ">
                         <div class="minyear">{{minYear}}</div>
                         <div class="maxyear">{{maxYear}}</div>
                     </div>
                     <!--price-->
-                    <div class="viewprice" v-show="show5">
+                    <div class="viewprice" >
                         <div class="priceleft">Price</div>
                         <div class="priceright" @click="testshow4()" v-show="show4">-</div>
                         <div class="priceright" @click="testshow4()" v-show="!show4">+</div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="block" v-show="show4 && show5">
+                    <div class="block" v-show="show4 ">
                         <el-slider
                         v-model="price"
                         range
@@ -128,7 +117,7 @@
                         @change="move(price)">
                         </el-slider>
                     </div>
-                    <div class="showprice" v-show="show4 && show5">
+                    <div class="showprice" v-show="show4 ">
                         <div class="minprice">${{minPrice}}</div>
                         <div class="maxprice">${{maxPrice}}</div>
                     </div>
@@ -143,7 +132,8 @@
                                 v-for="item in options"
                                 :key="item.value"
                                 :label="item.label"
-                                :value="item.label">
+                                :value="item.value">
+                                <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                                 </el-option>
                             </el-select>
                         </div>
@@ -515,63 +505,66 @@ export default {
 .content {
     .contentimg {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
     }
     .inlinetext {
         position: absolute;
         left: 10%;
-        top: 20%;
+        top: 23%;
     }
     .content-title {
-      font-size: 50px;
+      font-size: 44px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
+      margin-bottom: 5px;
       color: #FFFFFF;
-      line-height: 50px;
-      margin-left : 60px;
+      line-height: 70px;
+      margin-left: 55px;
     }
     .content-text {
         font-size: 90px;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        color: #FFFFFF;
-        line-height: 130px;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 100px;
         span {
             float:left;
         }
     }
     .clickbtn {
-        width: 231px;
-        height: 58px;
-        position: absolute;
-        left:68px;
-        border: 1px solid #FFFFFF ;
-        margin-top: 20px;
-        background-color: transparent;
-        color:#FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: right;
+      position: relative;
+      left: 12%;
+      width: 231px;
+      height: 58px;
+      padding-top: 15px;
+      border: 1px solid #FFFFFF ;
+      background-color: transparent;
+      color:#FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 60px;
         span{
             width: 91px;
-            height: 130px;
-            font-size: 20px;
-            font-family: DINCondensed-Bold;
-            font-weight: bold;
-            line-height: 25px;
-            text-align: center;
-            color: #FFFFFF;
-            line-height: 130px;
-            margin-left: 20px;
-            margin-right: 60px;
+        height: 130px;
+        font-size: 20px;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 130px;
+        margin-left: 20px;
+        margin-right: 60px;
         }
         .el-icon-my-right {
             background: url('../../assets/images/home/right.png') no-repeat;
             background-size: cover;
-            display:inline-block;
-            height: 16px;
-            width: 16px;
-            margin-right: -16px;
+        display:inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: -16px;
         }
     }
     .middle {
@@ -606,7 +599,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -630,22 +623,23 @@ export default {
                         margin-top: 10px;
                         font-family: PingFangSC-Semibold;
                     }
-                    .el-checkbox {
-                        /deep/ .el-checkbox__label {
-                            height: 22px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Light;
-                            font-weight: 300;
-                            color: #151515;
-                            line-height: 22px;
-                            opacity: 0.5;
-                        }
+                    /deep/ .el-radio__label {
+                        height: 22px;
+                        font-size: 16px;
+                        font-family: PingFangSC-Light;
+                        font-weight: bold;
+                        color: #151515;
+                        line-height: 22px;
+                        opacity: 0.5;
+                    }
+                    /deep/ .el-radio__inner {
+                        border-radius: 0;
                     }
                 }
                 .viewall {
                     margin-top: 20px;
                     .viewleft {
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -653,11 +647,20 @@ export default {
                         float:left;
                     }
                     .viewright {
-                        width: 9px;
+                        width: 25px;
                         height: 5px;
                         font-weight: bold;
                         float:left;
                         padding-left: 5px;
+                        padding-top: 2px;
+                        /deep/ .el-icon-arrow-down {
+                            font-weight: 600;
+                            padding-top: 4px;
+                        }
+                        /deep/ .el-icon-arrow-up {
+                            font-weight: 600;
+                            padding-top: 4px;
+                        }
                     }
                 }
                 .newviewall {
@@ -671,7 +674,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -696,7 +699,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -724,7 +727,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -749,7 +752,8 @@ export default {
                     }
                     /deep/  .el-slider__button {
                         background-color:#151515;
-                        border: 2px solid #151515;
+                        border: 3px solid #FFFFFF;
+                        box-shadow:2px 2px 10px #909090;
                     }
                 }
                 .showyear {
@@ -793,7 +797,7 @@ export default {
                         position: absolute;
                         left: 0;
                         top: 20px;
-                        font-size: 27px;
+                        font-size: 24px;
                         font-family: DINCondensed-Bold;
                         font-weight: bold;
                         color: #151515;
@@ -856,7 +860,7 @@ export default {
                         align-items: center;
                         span {
                             // height: 48px;
-                            font-size: 27px;
+                            font-size: 24px;
                             font-family: DINCondensed-Bold;
                             font-weight: bold;
                             color: #151515;
@@ -933,8 +937,8 @@ export default {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            padding-left: 7px;
-                            padding-right: 8px;
+                            // padding-left: 7px;
+                            padding-right: 5px;
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
                             font-weight:bold;
@@ -963,7 +967,7 @@ export default {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            padding-left: 7px;
+                            // padding-left: 7px;
                             span {
                             font-size: 15px;
                             font-family:PingFangSC-Semibold;
@@ -1020,8 +1024,19 @@ export default {
 /deep/.el-select-dropdown__list {
     font-family: PingFangSC-Semibold;
 }
-/deep/.el-tooltip__popper.is-dark {
-    font-family: PingFangSC-Semibold;
-    font-size: 14px;
+/deep/.el-input__inner::placeholder {
+    font-size: 16px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+line-height: 130px;
 }
+/deep/.el-input__inner {
+        border-radius: 0 ;
+        width: 100%;
+        font-size: 16px;
+        font-family: DINCondensed-Bold, DINCondensed;
+        color: #000;
+        font-weight: bold;
+      }
+
 </style>

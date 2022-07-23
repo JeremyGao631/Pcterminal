@@ -95,3 +95,10 @@ body{
     line-height: 320px;
   }
 </style>
+
+<style lang="css">
+.el-tooltip__popper {
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-size: 16px;
+}
+</style>

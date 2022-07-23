@@ -55,6 +55,9 @@
           <img :src="informations.photo[4]" />
           <img :src="informations.photo[5]" />
           <img :src="informations.photo[6]" />
+          <!-- <div v-for="(item,idx) in informations.photo" :key="idx">
+            <img :src="informations.photo[idx]" />
+          </div> -->
         </div>
       </div>
     </div>
@@ -132,8 +135,8 @@
           page-size:='8'
           @next-click="next"
           @prev-click ="shang"
-          :total="30">
-          
+          :total="40">
+
         </el-pagination>
       </div>
     </div>
@@ -200,7 +203,7 @@ name: 'CarDetail',
       var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
       var istrue = emailText.test(this.email)
       if(!istrue) {
-          this.$message('请填写正确的邮箱格式')
+          this.$message('Please enter a valid email address.')
           this.email = ''
       }
     },
@@ -290,7 +293,7 @@ name: 'CarDetail',
     // 收集信息提交
     submit() {
       if (this.name === '' || this.phone === '' || this.email === '' || this.time === '') {
-        this.$message('请检查信息是否填写完整')
+        this.$message('Please check the page information is completed')
       } else {
         inspection({
           // 缺少email字段
@@ -300,7 +303,7 @@ name: 'CarDetail',
                     time: this.time,
         }).then( res => {
           if (res.code === 0) {
-            this.$message('提交成功')
+            this.$message('Submission successfull')
           }
         })
       }
@@ -738,7 +741,6 @@ name: 'CarDetail',
             // padding-left: 19px;
             span {
               font-family: DINCondensed-Bold;
-              margin-left: 3px;
               font-weight:bold;
               font-size: 30px;
               color: #212020;
@@ -750,8 +752,8 @@ name: 'CarDetail',
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 7px;
-            padding-right: 8px;
+            // padding-left: 7px;
+            padding-right: 5px;
             .contentcard-price {
               font-family:DINCondensed-Bold;
               font-weight:bold;
@@ -780,7 +782,7 @@ name: 'CarDetail',
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 7px;
+            // padding-left: 7px;
             span {
               font-size: 15px;
               font-family:PingFangSC-Semibold;
@@ -802,7 +804,7 @@ name: 'CarDetail',
           /deep/ .btn-prev{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/leftjt.png');
+              background-image: url('../../assets/images/carDetail/left.svg');
               background-size: 100% 100%;
           }
           /deep/ i {
@@ -811,14 +813,14 @@ name: 'CarDetail',
           /deep/ .btn-next{
               width: 30px;
               height: 35px;
-              background-image: url('../../assets/images/carDetail/rightjt.png');
+              background-image: url('../../assets/images/carDetail/right.svg');
               background-size: 100% 100%;
           }
           /deep/ .el-pager {
             margin-top:15px;
               li:not(.disabled) {
                   width:10px;
-                  height:2px;
+                  height:4px;
                   border:1px solid #151515;
                   font-weight: bold;
                   color: #151515;

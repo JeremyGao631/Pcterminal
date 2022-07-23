@@ -72,7 +72,7 @@
     <div class="bottom section">
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
-        <div  v-for="(item,idx) in service" :key="idx" class="infotext" >
+        <div  v-for="(item,idx) in service" :key="idx" class="infotext" @click="jumppage(idx)">
           <img :src="item.targeUrl" /> 
           <div class="infoinfo">
             <span class="infotitle" >{{ item.secondtitle }}</span><br />
@@ -133,6 +133,15 @@ export default {
     this.allCar()
   },
   methods: {
+    jumppage(idx){
+      if(idx == 0){
+        this.$router.push('/showRoom')
+      }else if(idx == 1){
+        this.$router.push('/sell')
+      }else {
+        this.$router.push('/about')
+      }
+    },
     // change: function (index) {
     //         this.number = index; //重要处
     //       },
@@ -228,13 +237,16 @@ export default {
 <style lang="less" scoped>
 .lunbo {
   .el-carousel {
-    height: calc(100vh - 10px);
+    // height: calc(100vh - 10px);
+    height: 900px;
     width:100%;
     .el-carousel__item {
-      height: calc(100vh - 10px);
+      // height: calc(100vh - 10px);
+      height: 900px;
       img {
         width: 100%;
-        height: calc(100vh - 10px);
+        // height: calc(100vh - 10px);
+        height: 900px;
         position: relative;
       }
     }
@@ -414,8 +426,8 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-left: 7px;
-        padding-right: 8px;
+        // padding-left: 7px;
+        padding-right: 5px;
         .contentcard-price {
           font-family:DINCondensed-Bold;
           font-weight:bold;
@@ -444,7 +456,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-left: 7px;
+        // padding-left: 7px;
         span {
           font-size: 15px;
           font-family:PingFangSC-Semibold;

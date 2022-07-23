@@ -1,7 +1,7 @@
 <template>
     <div class="jj">
         <div>
-            <img class="img" src="../assets/images/components/TopBar.png" alt="">
+            <img class="img" src="../assets/images/components/TopBar.png" alt="" @click="jumphomepage()">
         </div>
         <!-- text-color="#fff"
               active-text-color="#ffd04b"-->
@@ -48,6 +48,9 @@
         console.log(key, keyPath)
         this.$router.push(keyPath)
       },
+      jumphomepage(){
+        this.$router.push('/home')
+      }
     }
   }
 </script>
