@@ -326,7 +326,7 @@ export default {
                 year: ele.year,
                 fueltype: ele.fueltype,
                 make: ele.make,
-                price: ele.price,
+                price: ele.priceDesc,
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
@@ -370,7 +370,7 @@ export default {
                 year: ele.year,
                 fueltype: ele.fueltype,
                 make: ele.make,
-                price: ele.price,
+                price: ele.priceDesc,
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
@@ -460,7 +460,7 @@ export default {
                 year: ele.year,
                 fueltype: ele.fueltype,
                 make: ele.make,
-                price: ele.price,
+                price: ele.priceDesc,
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
@@ -907,7 +907,7 @@ export default {
                         padding-bottom: 30px;
                         span {
                             font-family: DINCondensed-Bold;
-                            margin-left: 3px;
+                            // margin-left: 3px;
                         }
                         .imgcard {
                             width:100%;
@@ -925,7 +925,7 @@ export default {
                             // padding-left: 19px;
                             span {
                             font-family: DINCondensed-Bold;
-                            margin-left: 3px;
+                            // margin-left: 3px;
                             font-weight:bold;
                             font-size: 30px;
                             color: #212020;

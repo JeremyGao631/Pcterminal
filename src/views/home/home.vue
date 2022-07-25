@@ -12,10 +12,10 @@
                 <span style="padding-left: 51px;">{{item.span}}</span><br />
                 <span style="padding-left: 51px;">{{item.span1}}</span><br />
               </span>
-              <el-button @click="contactUs()">
+              <div class="contact_btn" @click="contactUs()">
                 <span>CONTACT US  </span>
                 <i class="el-icon-my-right"></i>
-              </el-button>
+              </div>
             </div>
           </div>
         </el-carousel-item>
@@ -24,7 +24,7 @@
     <!--中部图片展示-->
     <div class="middle section">
       <div class="title">FEATURED COLLECTIONS</div>
-      <div class="texttitle clearfix">
+      <div class="texttitle">
         <div class="left">
           <span class="btn_anniu" @click="change(0)" :class="{ newStyle:0===number}">NEW ARRIVALS</span>
           <!-- <span class="btn_anniu" @click="change(1)" :class="{ newStyle:1===number}">SEARCH INVENTORY</span> -->
@@ -32,7 +32,6 @@
         <div class="right">
           <span type="text">AVAILABLE 55 CARS</span>
         </div>
-        <div class="clearfix"></div>
       </div>
       <div class="textcontent">
         <div v-show='0===number'>
@@ -169,7 +168,7 @@ export default {
                 year: ele.year,
                 fueltype: ele.fueltype,
                 make: ele.make,
-                price: ele.price,
+                price: ele.priceDesc,
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
@@ -302,39 +301,31 @@ export default {
       color: #FFFFFF;
       line-height: 100px;
     }
-    .el-button {
+    .contact_btn {
       position: relative;
-      left: 12%;
-      width: 231px;
-      height: 58px;
-      padding-top: 15px;
-      border: 1px solid #FFFFFF ;
-      background-color: transparent;
-      color:#FFFFFF;
+      margin-top: 60px;
+      margin-left: 20px;
+      padding: 15px 0;
+      width: 180px;
+      border:1px solid #fff;
+      border-radius: 4px;
       display: flex;
       align-items: center;
-      justify-content: right;
-      margin-top: 60px;
+      justify-content: center;
+      cursor: pointer;
       span {
-        width: 91px;
-        height: 130px;
         font-size: 20px;
         font-family: DINCondensed-Bold;
         font-weight: bold;
-        line-height: 25px;
-        text-align: center;
         color: #FFFFFF;
-        line-height: 130px;
-        margin-left: 20px;
-        margin-right: 60px;
       }
       .el-icon-my-right {
+        margin-left: 15px;
         background: url('../../assets/images/home/right.png') no-repeat;
         background-size: cover;
         display:inline-block;
         height: 16px;
         width: 16px;
-        margin-right: -16px;
       }
     }
   }
@@ -355,15 +346,14 @@ export default {
   }
   .texttitle {
     margin: 0 20px;
-    padding-top: 78px;
+    margin-top: 78px;
     border-bottom: 2px solid #12100f;
-    height: 35px;
+    height: 50px;
     font-family: DINCondensed-Bold;
       .left {
         float: left;
         .btn_anniu {
           margin-right: 20px;
-          padding: 10px 25px;
           font-size: 22px;
           color: #909090;
         }
@@ -372,9 +362,12 @@ export default {
           border-bottom: none;
           font-weight: bold;
           margin-right: 20px;
-          padding: 10px 25px;
           font-size: 22px;
           color: #212020;
+          display: block;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 20px;
         }
       }
       .right {
@@ -384,6 +377,7 @@ export default {
           font-family: DINCondensed-Bold;
           color: #212020;
           font-size: 22px;
+          line-height: 50px;
         }
       }
       .clearfix {
@@ -414,7 +408,7 @@ export default {
         // padding-left: 19px;
         span {
           font-family: DINCondensed-Bold;
-          margin-left: 3px;
+          // margin-left: 3px;
           font-weight:bold;
           font-size: 30px;
           color: #212020;

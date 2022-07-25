@@ -46,15 +46,16 @@
       </div>
       <div class="contentright">
         <div class="bigimg">
-          <img :src="informations.photo[0]" />
+          <img :src="firstPhoto" />
         </div>
         <div class="smallimg">
-          <img :src="informations.photo[1]" />
-          <img :src="informations.photo[2]" />
-          <img :src="informations.photo[3]" />
-          <img :src="informations.photo[4]" />
-          <img :src="informations.photo[5]" />
-          <img :src="informations.photo[6]" />
+          <!-- <photo-com :imgUrlList="photos" changeImg(item,index)/> -->
+          <img :src="photo1" @click="getPhoto(photo1)" />
+          <img :src="photo2" @click="getPhoto(photo2)" />
+          <img :src="photo3" @click="getPhoto(photo3)" />
+          <img :src="photo4" @click="getPhoto(photo4)" />
+          <img :src="photo5" @click="getPhoto(photo5)" />
+          <img :src="photo6" @click="getPhoto(photo6)" />
           <!-- <div v-for="(item,idx) in informations.photo" :key="idx">
             <img :src="informations.photo[idx]" />
           </div> -->
@@ -147,6 +148,7 @@
 <script>
 import { inspection } from '@/api'
 import { car } from '@/api'
+// import {photoCom} from '../components/photo-com.vue'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
@@ -154,6 +156,7 @@ locale.use(lang)
 export default {
 name: 'CarDetail',
   components: {
+    // photoCom
   },
   data(){
     return{
@@ -162,6 +165,8 @@ name: 'CarDetail',
       phone: '',
       time: '',
       email: '',
+      photo: {},
+      photos: [],
       // reqEmail: true,
       // reqPhone: true,
       information: {
@@ -170,6 +175,15 @@ name: 'CarDetail',
         kind: "Excl. Gov's Charges" 
       },
       List: [],
+      firstPhoto: '',
+      // 会优化部分
+      photo1: '',
+      photo2: '',
+      photo3: '',
+      photo4: '',
+      photo5: '',
+      photo6: '',
+
       information1: [
       ],
       informations: []
@@ -178,9 +192,17 @@ name: 'CarDetail',
   created() {
     this.query()
     this.informations = this.$route.query.item
+    this.firstPhoto = this.informations.photo[0]
+    this.photo1 = this.informations.photo[1]
+    this.photo2 = this.informations.photo[2]
+    this.photo3 = this.informations.photo[3]
+    this.photo4 = this.informations.photo[4]
+    this.photo5 = this.informations.photo[5]
+    this.photo6 = this.informations.photo[6]
     this.price = this.informations.price
     this.init()
     this.allCar()
+    this.setPhoto()
   },
   watch: {
     // email() {
@@ -199,6 +221,17 @@ name: 'CarDetail',
     // }
   },
   methods: {
+    setPhoto() {
+            this.photo = this.$route.query.item.photo
+            this.photos = []
+            for(var i = 0; i<=this.photo.length; i++ ) {
+                const img = {
+                    img: this.photo[i]
+                }
+                this.photos.push(img)
+            }
+            console.log(this.photos, '1212')
+        },
     emails() {
       var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
       var istrue = emailText.test(this.email)
@@ -206,6 +239,9 @@ name: 'CarDetail',
           this.$message('Please enter a valid email address.')
           this.email = ''
       }
+    },
+    getPhoto(val) {
+      this.firstPhoto = val
     },
     cardetail(item){
       this.$router.push({path: '/carDetail', query: {item: item}})
@@ -226,6 +262,7 @@ name: 'CarDetail',
                 orderByYear: '1'
             }).then(car => {
                 // this.information1 = car.data.records
+                this.photo = this.$route.query.item.photo
                 console.log(this.information1, 'car')
                 this.information1 = []
                 car.data.records.forEach(ele => {
@@ -233,7 +270,7 @@ name: 'CarDetail',
                         year: ele.year,
                         fueltype: ele.fueltype,
                         make: ele.make,
-                        price: ele.price,
+                        price: ele.priceDesc,
                         odometer: ele.odometer,
                         body: ele.body,
                         model: ele.model,
@@ -274,7 +311,7 @@ name: 'CarDetail',
                         year: ele.year,
                         fueltype: ele.fueltype,
                         make: ele.make,
-                        price: ele.price,
+                        price: ele.priceDesc,
                         odometer: ele.odometer,
                         body: ele.body,
                         model: ele.model,
@@ -331,7 +368,7 @@ name: 'CarDetail',
                         year: ele.year,
                         fueltype: ele.fueltype,
                         make: ele.make,
-                        price: ele.price,
+                        price: ele.priceDesc,
                         odometer: ele.odometer,
                         body: ele.body,
                         model: ele.model,
@@ -386,6 +423,9 @@ name: 'CarDetail',
 </script>
 
 <style lang="less" scoped>
+.topImg {
+  width: 250px;
+}
 .carDetail {
   background-color: #F4F6F8;
   width:100%;
