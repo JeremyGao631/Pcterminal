@@ -26,14 +26,14 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show && show5">
                         <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
-                            <el-radio-group v-model="radio" @change="makeChange(item)">
+                            <el-radio-group v-model="radio" @change="makeChange(item)" @click.native="clickitem(e)">
                                 <el-radio :label="idx">{{item.mak }}</el-radio>
                             </el-radio-group>
                         </div>
                     </div>
                     <div class="choosetext" v-show="show && !show5">
                         <div v-for="(item,idx) in makeList" :key="idx">
-                            <el-radio-group v-model="radio" @change="makeChange(item)">
+                            <el-radio-group v-model="radio" @change="makeChange(item)" @click.native="clickitem(e)">
                                 <el-radio :label="idx">{{item.mak }}</el-radio>
                             </el-radio-group>
                         </div>
@@ -55,9 +55,9 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1">
-                        <div>
-                            <el-radio :label="2">Any</el-radio>
-                        </div>
+                        <el-radio-group v-model="radio1" >
+                            <el-radio label="2" @click.native="clickitem1('2')">Any</el-radio>
+                        </el-radio-group>
                     </div>
                     <!--tr-->
                     <div class="viewtr" :class="{ newviewtr:!show1}" >
@@ -69,12 +69,13 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show2">
                         <div>
-                            <!-- <el-checkbox-group v-model="makeList">
-                                <el-checkbox :label="item.mak" >{{ item.mak }}</el-checkbox>
-                            </el-checkbox-group> -->
-                            <el-radio-group v-model="radio" disabled>
-                                <el-radio :label="1">Auto</el-radio>
-                                <el-radio :label="2">Manual</el-radio>
+                            <el-radio-group v-model="radio2" >
+                                <el-radio label="1" @click.native="clickitem2('1')">Auto</el-radio>
+                            </el-radio-group>
+                        </div>
+                        <div>
+                            <el-radio-group v-model="radio3" @click.native="clickitem2()">
+                                <el-radio label="2" @click.native="clickitem2('2')">Manual</el-radio>
                             </el-radio-group>
                         </div>
                     </div>
@@ -231,6 +232,9 @@ export default {
         year: [],
         price: [],
         radio: '1',
+        radio1: '1',
+        radio2: '1',
+        radio3: '1',
       options: [
         {
           value: '1',
@@ -255,6 +259,35 @@ export default {
     this.allCar()
   },
   methods: {
+    clickitem(e){
+      if (this.flags === true) {
+        this.radio === e ? this.radio = '' : this.radio= e
+      }
+      this.flags = true
+      setTimeout(() => {
+        this.flags = false
+      }, 300)
+    },
+
+    clickitem1(e){
+      if (this.flags === true) {
+        this.radio1 === e ? this.radio1 = '' : this.radio1= e
+      }
+      this.flags = true
+      setTimeout(() => {
+        this.flags = false
+      }, 300)
+    },
+
+    clickitem2(e){
+      if (this.flags === true) {
+        this.radio2 === e ? this.radio2 = '' : this.radio2= e
+      }
+      this.flags = true
+      setTimeout(() => {
+        this.flags = false
+      }, 300)
+    },
     // sortby查询
     change(val) {
         console.log('12', val)

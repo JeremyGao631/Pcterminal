@@ -40,9 +40,7 @@
               <img :src="item.photo[0]" />
             </div>
             <div class="titlecard" >
-              <span >{{item.year}} {{item.fueltype}}</span>
-              <br />
-              <span >{{item.make}}</span>
+              <span >{{item.year}} {{item.make}} {{item.model}}</span>
             </div>
             <div class="contentcard">
               <span class="contentcard-price">${{item.price}}</span>
@@ -50,9 +48,10 @@
             </div>
             <div class="break" ></div>
             <div class="detailcard" >
-              <span >{{item.odometer}}</span>
-              <span >{{item.body}}</span>
-              <span >{{item.color}}</span>
+              <span >{{item.odometer}} kms</span>
+              <!-- <span >{{item.body}}</span> -->
+              <span>{{item.fueltype.substring(0,6)}}</span>
+              <span >{{item.geartype}}</span>
             </div>
           </div>
         </div>
@@ -469,6 +468,24 @@ export default {
       padding-bottom:79px;
     }
   }
+
+  // @media screen and (min-width: 1920px) {
+  //   .middle {
+  //     width: 1400px;
+  //   }
+  //   .textcard {
+  //     float:left;
+  //     margin: 0 ;
+  //     // width: calc(25% - 40px);
+  //     width: 317px;
+  //     padding-bottom: 30px;
+  //   }
+  //   .textcard:nth-last-child(1) {
+  //     margin-right: 0px;
+  //     padding-bottom:79px;
+  //   }
+  // } 
+
   .newbutton {
     margin-bottom: 110px;
     float:right;

@@ -396,13 +396,13 @@ name: 'CarDetail',
                     result: this.informations.model
                 },{
                     name: 'Body Type',
-                    result: this.informations.geartype
+                    result: this.informations.body
                 },{
                     name: 'Color',
                     result: this.informations.color
                 },{
                     name: 'Engine Size',
-                    result: this.informations.enginesize
+                    result: (this.informations.enginesize / 1000).toFixed(1)
                 },{
                     name: 'Fuel Type',
                     result: this.informations.fueltype
@@ -414,7 +414,7 @@ name: 'CarDetail',
                     result: this.informations.doornum
                 },{
                     name: 'Seats',
-                    result: this.informations.body
+                    result: this.informations.seats
                 },
                 ]
         },

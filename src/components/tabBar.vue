@@ -63,12 +63,13 @@
     width: 1400px;
     height: 70px;
     box-sizing: border-box;
-    padding-top: 10px;
+    padding-top: 5px;
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     .img {
       // margin-left: 240px;
+      padding-top: 5px;
       width: 78px;
       height: 50px;
     }

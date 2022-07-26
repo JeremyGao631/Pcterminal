@@ -72,7 +72,7 @@
               <div class="step_item">
                  <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
                  <div class="step_info">
-                   <p>Get cash payment</p>
+                   <p>Get instant payment</p>
                    <div style="width: 200px;">We will pay cash or electronic transfer on the same day on completion of vehicle transfer.</div>
                    <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
                  </div>
@@ -387,7 +387,7 @@ export default({
         this.dialogVisible = true;
       },
       submit() {
-        if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model || this.forms.transmission === '' || this.forms.odometer === '') {
+        if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model === '' || this.forms.transmission === '' || this.forms.odometer === '') {
             this.$message('Please check the page information is completed')
             return
         } else {
