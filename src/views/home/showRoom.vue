@@ -24,18 +24,18 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show && show5">
+                    <div class="choosetext" v-show="show && !show5">
                         <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
-                            <el-radio-group v-model="radio" @change="makeChange(item)" @click.native="clickitem(e)">
-                                <el-radio :label="idx">{{item.mak }}</el-radio>
-                            </el-radio-group>
+                            <el-checkbox-group v-model="radios" @change="makeChange(radios)">
+                                <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
+                            </el-checkbox-group>
                         </div>
                     </div>
-                    <div class="choosetext" v-show="show && !show5">
+                    <div class="choosetext" v-show="show && show5">
                         <div v-for="(item,idx) in makeList" :key="idx">
-                            <el-radio-group v-model="radio" @change="makeChange(item)" @click.native="clickitem(e)">
-                                <el-radio :label="idx">{{item.mak }}</el-radio>
-                            </el-radio-group>
+                            <el-checkbox-group v-model="checkboxs" @change="makeChange(checkboxs)">
+                                <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
+                            </el-checkbox-group>
                         </div>
                     </div>
                     
@@ -231,6 +231,8 @@ export default {
         photo: [], // 汽车图
         year: [],
         price: [],
+        radios: [],
+        checkboxs: [], // 复选框绑定值
         radio: '1',
         radio1: '1',
         radio2: '1',
@@ -344,7 +346,7 @@ export default {
         car({
         current: '1',
         pageSize: '1000',
-        make: item.mak,
+        make: item.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -388,7 +390,7 @@ export default {
       car({
         current: '1',
         pageSize: '1000',
-        make: '',
+        make: this.checkboxs.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -453,7 +455,7 @@ export default {
       car({
         current: '1',
         pageSize: '5000',
-        make: '',
+        make:'',
         yearStart: '',
         yearEnd: '',
         priceStart: '',
