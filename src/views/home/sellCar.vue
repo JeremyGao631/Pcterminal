@@ -1015,7 +1015,6 @@ export default({
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
-  text-align: center;
 }
 /deep/.el-textarea__inner {
   border: 1px solid #000 ;
@@ -1028,7 +1027,8 @@ export default({
 font-family: DINCondensed-Bold, DINCondensed;
 font-weight: bold;
 color: #151515;
-line-height: 130px;
+line-height: 20px;
+padding-top : 5px;
 
 }
 /deep/.el-button--small {

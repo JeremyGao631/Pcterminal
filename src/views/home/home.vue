@@ -34,8 +34,9 @@
         </div>
       </div>
       <div class="textcontent">
-        <div v-show='0===number'>
-          <div class="textcard" v-for="(item,index) in information" :key="index" @click="cardetail(item)">
+        <!--自适应样式更改-->
+        <el-row :gutter="20">
+          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index" @click="cardetail(item)">
             <div class="imgcard">
               <img :src="item.photo[0]" />
             </div>
@@ -53,8 +54,8 @@
               <span>{{item.fueltype.substring(0,6)}}</span>
               <span >{{item.geartype}}</span>
             </div>
-          </div>
-        </div>
+          </el-col>
+        </el-row>
       </div>
       <div class="test11">
         <div class="newbutton">
@@ -234,6 +235,7 @@ export default {
 
 <style lang="less" scoped>
 .lunbo {
+  width:100%;
   .el-carousel {
     // height: calc(100vh - 10px);
     height: 900px;
@@ -303,9 +305,9 @@ export default {
     .contact_btn {
       position: relative;
       margin-top: 60px;
-      margin-left: 20px;
+      margin-left: 10px;
       padding: 15px 0;
-      width: 180px;
+      width: 231px;
       border:1px solid #fff;
       border-radius: 4px;
       display: flex;
@@ -317,6 +319,8 @@ export default {
         font-family: DINCondensed-Bold;
         font-weight: bold;
         color: #FFFFFF;
+        margin-left: 70px;
+        margin-right: 45px;
       }
       .el-icon-my-right {
         margin-left: 15px;
@@ -386,10 +390,11 @@ export default {
   .textcontent {
     padding-top: 60px;
     overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
     .textcard {
       float:left;
-      margin: 0 20px;
-      width: calc(25% - 40px);
+      // margin: 0 20px;
       padding-bottom: 30px;
       .imgcard {
         width: 100%;
@@ -468,23 +473,6 @@ export default {
       padding-bottom:79px;
     }
   }
-
-  // @media screen and (min-width: 1920px) {
-  //   .middle {
-  //     width: 1400px;
-  //   }
-  //   .textcard {
-  //     float:left;
-  //     margin: 0 ;
-  //     // width: calc(25% - 40px);
-  //     width: 317px;
-  //     padding-bottom: 30px;
-  //   }
-  //   .textcard:nth-last-child(1) {
-  //     margin-right: 0px;
-  //     padding-bottom:79px;
-  //   }
-  // } 
 
   .newbutton {
     margin-bottom: 110px;
