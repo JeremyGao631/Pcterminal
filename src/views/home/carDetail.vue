@@ -236,7 +236,11 @@ name: 'CarDetail',
       var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
       var istrue = emailText.test(this.email)
       if(!istrue) {
-          this.$message('Please enter a valid email address.')
+          // this.$message('Please enter a valid email address.')
+          this.$message({
+              dangerouslyUseHTMLString: true,
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please enter a valid email address.</span>'
+              });
           this.email = ''
       }
     },
@@ -330,7 +334,11 @@ name: 'CarDetail',
     // 收集信息提交
     submit() {
       if (this.name === '' || this.phone === '' || this.email === '' || this.time === '') {
-        this.$message('Please check the page information is completed')
+        // this.$message('Please check the page information is completed')
+        this.$message({
+              dangerouslyUseHTMLString: true,
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
+              });
       } else {
         inspection({
           // 缺少email字段
@@ -340,7 +348,11 @@ name: 'CarDetail',
                     time: this.time,
         }).then( res => {
           if (res.code === 0) {
-            this.$message('Submission successfull')
+            // this.$message('Submission successfull')
+            this.$message({
+                  dangerouslyUseHTMLString: true,
+                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                  });
           }
         })
       }
