@@ -168,7 +168,11 @@ export default({
         contactSubmit() {
             if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '' || this.message === '') {
                 // this.disabled = true
-                this.$message('Please check the page information is completed')
+                // this.$message('Please check the page information is completed')
+                this.$message({
+                dangerouslyUseHTMLString: true,
+                message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
+                });
             } else {
                 // this.disabled = false
                 fetch({
@@ -180,7 +184,11 @@ export default({
             }).then( res => {
                 console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                    this.$message('Submission successfull')
+                    // this.$message('Submission successfull')
+                    this.$message({
+                  dangerouslyUseHTMLString: true,
+                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                  });
                 }
             })
             }
@@ -191,7 +199,11 @@ export default({
             var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
             var istrue = emailText.test(this.email)
             if(!istrue) {
-                this.$message('Please enter a valid email address.')
+                // this.$message('Please enter a valid email address.')
+                this.$message({
+              dangerouslyUseHTMLString: true,
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please enter a valid email address.</span>'
+              });
                 this.email = ''
             }
         },

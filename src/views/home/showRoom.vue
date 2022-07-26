@@ -71,11 +71,8 @@
                         <div>
                             <el-radio-group v-model="radio2" >
                                 <el-radio label="1" @click.native="clickitem2('1')">Auto</el-radio>
-                            </el-radio-group>
-                        </div>
-                        <div>
-                            <el-radio-group v-model="radio3" @click.native="clickitem2()">
-                                <el-radio label="2" @click.native="clickitem2('2')">Manual</el-radio>
+                                <br />
+                                <el-radio label="2" @click.native="clickitem3('2')" style="margin-top: 20px;">Manual</el-radio>
                             </el-radio-group>
                         </div>
                     </div>
@@ -150,9 +147,7 @@
                                 <img :src="item.photo[0]"  />
                             </div>
                             <div class="titlecard" >
-                                <span >{{item.year}} {{item.fueltype}}</span>
-                                <br />
-                                <span >{{item.make}}</span>
+                                <span >{{item.year}} {{item.make}} {{item.model}}</span>
                             </div>
                             <div class="contentcard">
                                 <span class="contentcard-price">${{item.price}}</span>
@@ -161,8 +156,8 @@
                             <div class="break" ></div>
                             <div class="detailcard" >
                                 <span >{{item.odometer}}kms</span>
-                                <span >{{item.body}}</span>
-                                <span >{{item.color}}</span>
+                                <span>{{item.fueltype.substring(0,6)}}</span>
+                                <span >{{item.geartype}}</span>
                             </div>
                         </div>
                         <div style="clear:both;"></div>
@@ -240,19 +235,19 @@ export default {
       options: [
         {
           value: '1',
-          label: 'Price: low to high'
+          label: 'Price: Low to High'
         },
         {
           value: '2',
-          label: 'Price: high to low'
+          label: 'Price: High to Low'
         }, 
         {
           value: '3',
-          label: 'Date: low to high'
+          label: 'Date: Low to High'
         }, 
         {
           value: '4',
-          label: 'Date: high to low'
+          label: 'Date: High to Low'
         },
       ]
     }
@@ -1072,6 +1067,7 @@ line-height: 130px;
         font-family: DINCondensed-Bold, DINCondensed;
         color: #000;
         font-weight: bold;
+        text-align: center;
       }
 
 </style>

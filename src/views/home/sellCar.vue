@@ -339,7 +339,11 @@ export default({
         var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
         var istrue = emailText.test(this.form.email)
         if(!istrue) {
-            this.$message('Please enter a valid email address.')
+            // this.$message('Please enter a valid email address.')
+            this.$message({
+              dangerouslyUseHTMLString: true,
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please enter a valid email address.</span>'
+              });
             this.email = ''
         }
         },
@@ -388,7 +392,10 @@ export default({
       },
       submit() {
         if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model === '' || this.forms.transmission === '' || this.forms.odometer === '') {
-            this.$message('Please check the page information is completed')
+            this.$message({
+              dangerouslyUseHTMLString: true,
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
+              });
             return
         } else {
           vehicle({
@@ -410,7 +417,11 @@ export default({
             }).then( res => {
                 console.log(res, 'Submission successfull')
                 if (res.code === 0) {
-                  this.$message('Submission successfull')
+                  // this.$message('Submission successfull')
+                  this.$message({
+                  dangerouslyUseHTMLString: true,
+                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                  });
                 }
             })
           }
@@ -419,6 +430,10 @@ export default({
 })
 </script>
 <style lang="less" scoped>
+/deep/ .el-message__content {
+  font-family: DINCondensed-Bold;
+  font-size: 20px;
+}
 /deep/.el-upload--picture-card {
     background-color: #fbfdff;
     border: 1px dashed #c0ccda;
@@ -961,6 +976,7 @@ export default({
             flex-direction: column;
             position: relative;
             top:234px;
+            padding-bottom: 50px;
             .tex {
               font-size: 16px;
               text-align: left;
@@ -995,6 +1011,7 @@ export default({
         font-family: DINCondensed-Bold, DINCondensed;
         color: #000;
         font-weight: bold;
+        
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
@@ -1003,14 +1020,16 @@ export default({
   border: 1px solid #000 ;
   border-radius: 0 ;
   width: 100%;
-
+ 
 }
 /deep/.el-input__inner::placeholder {
     font-size: 20px;
 font-family: DINCondensed-Bold, DINCondensed;
 font-weight: bold;
 color: #151515;
-line-height: 130px;
+line-height: 20px;
+padding-top : 5px;
+
 }
 /deep/.el-button--small {
   position: relative;
