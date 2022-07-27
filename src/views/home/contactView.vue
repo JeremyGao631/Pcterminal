@@ -107,14 +107,14 @@
 
             </div>
         </div>
-        <div class="location">
+        <!-- <div class="location">
             <img class="border" src="../../assets/images/contact/LocationIconBackground.png" alt="">
             <div class="top">
                 <img class="logo" src="../../assets/images/contact/LocationIcon.png" alt="">
                 <div class="tips">388 Parramatta Road，Burwood, NSW 2134</div>
             </div>
-        </div>
-        <img class="img" src="../../assets/images/contact/LocationBackground.png" alt="">
+        </div> -->
+        <img class="img" src="../../assets/images/contact/ditu.png" alt="">
     </div>
 </template>
 <script>
@@ -225,7 +225,7 @@ export default({
         .imgs {
             width: 100%;
             // height: calc(100vh - 15px);
-            height: 900px;
+            object-fit: cover;
         }
         .text { 
           position:absolute;
@@ -377,8 +377,8 @@ export default({
         }
         .img {
             width: 100%;
-            height: 352px;
-            margin-bottom:-4px;
+            margin-bottom:-15px;
+            object-fit: cover;
         }
         .location {
             margin-top:-100px;

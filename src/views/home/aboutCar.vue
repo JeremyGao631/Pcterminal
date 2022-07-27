@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="visit_box">
-            <img class="img" src="../../assets/images/home/JVS00366-Edit-3-copy.jpg" alt="">   
+            <img class="img" src="../../assets/images/home/about231.jpg" alt="">   
             <div class="visit">
                 <div class="visitTitle">VISIT OUR SHOWROOM</div>
                 <div class="visitText">{{ visit }}</div>

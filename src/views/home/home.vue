@@ -533,16 +533,16 @@ export default {
       align-items: center;
       justify-content: center;
       padding-top:52px;
-      padding-bottom:200px;
+      padding-bottom:150px;
       justify-content: flex-end;
       .infotext {
         margin-right:85px;
         width: calc(100% / 3 - 125px);
-        height: 508px;
+        height: 458px;
         background: #FFFFFF;
         img {
           width: 100%;
-          height:240px;
+          object-fit: cover;
         }
         .infoinfo {
           display: flex;

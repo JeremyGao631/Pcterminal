@@ -114,9 +114,7 @@
             <img :src="item.photo[0]" />
           </div>
           <div class="titlecard" >
-            <span >{{item.year}} {{item.fueltype}}</span>
-            <br />
-            <span >{{item.make}}</span>
+            <span >{{item.year}} {{item.make}} {{item.model}}</span>
           </div>
           <div class="contentcard">
             <span class="contentcard-price">${{item.price}}</span>
@@ -125,8 +123,9 @@
           <div class="break" ></div>
           <div class="detailcard" >
             <span >{{item.odometer}}kms</span>
-            <span >{{item.body}}</span>
-            <span >{{item.color}}</span>
+            <!-- <span >{{item.body}}</span> -->
+              <span>{{item.fueltype.substring(0,6)}}</span>
+              <span >{{item.geartype}}</span>
           </div>
         </div>
       </div>
@@ -425,8 +424,8 @@ name: 'CarDetail',
                     name: 'Doors',
                     result: this.informations.doornum
                 },{
-                    name: 'Seats',
-                    result: this.informations.seats
+                    name: 'Drive',
+                    result: this.informations.drive
                 },
                 ]
         },
