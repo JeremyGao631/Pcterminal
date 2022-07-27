@@ -24,15 +24,15 @@
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="choosetext" v-show="show && !show5">
+                    <div class="choosetext" >
                         <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
                             <el-checkbox-group v-model="radios" @change="makeChange(radios)">
                                 <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
                     </div>
-                    <div class="choosetext" v-show="show && show5">
-                        <div v-for="(item,idx) in makeList" :key="idx">
+                    <div class="choosetext1" v-show="show && !show5">
+                        <div v-for="(item,idx) in makeList.slice(3)" :key="idx">
                             <el-checkbox-group v-model="checkboxs" @change="makeChange(checkboxs)">
                                 <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
                             </el-checkbox-group>
@@ -41,8 +41,8 @@
                     
                     <div class="viewall" :class="{ newviewall:!show}">
                         <div class="viewleft">VIEW ALL</div>
-                        <div class="viewright" @click="testshow5()" v-show="show5"><i class="el-icon-arrow-down"></i></div>
                         <div class="viewright" @click="testshow5()" v-show="!show5"><i class="el-icon-arrow-up"></i></div>
+                        <div class="viewright" @click="testshow5()" v-show="show5"><i class="el-icon-arrow-down"></i></div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
@@ -70,9 +70,9 @@
                     <div class="choosetext" v-show="show2">
                         <div>
                             <el-radio-group v-model="radio2" >
-                                <el-radio label="1" @click.native="clickitem2('1')">Auto</el-radio>
+                                <el-radio label="2" @click.native="clickitem2('2')">Auto</el-radio>
                                 <br />
-                                <el-radio label="2" @click.native="clickitem3('2')" style="margin-top: 20px;">Manual</el-radio>
+                                <el-radio label="3" @click.native="clickitem3('3')" style="margin-top: 20px;">Manual</el-radio>
                             </el-radio-group>
                         </div>
                     </div>
@@ -108,6 +108,7 @@
                     <div class="block" v-show="show4 ">
                         <el-slider
                         v-model="price"
+                        :step="1000"
                         range
                         show-stops
                         :min= minPrices
@@ -277,6 +278,16 @@ export default {
     },
 
     clickitem2(e){
+      if (this.flags === true) {
+        this.radio2 === e ? this.radio2 = '' : this.radio2= e
+      }
+      this.flags = true
+      setTimeout(() => {
+        this.flags = false
+      }, 300)
+    },
+
+    clickitem3(e){
       if (this.flags === true) {
         this.radio2 === e ? this.radio2 = '' : this.radio2= e
       }
@@ -649,6 +660,25 @@ export default {
                 .choosetext {
                     text-align: left;
                     margin-top: 60px;
+                    div:nth-child(n+1) {
+                        margin-top: 10px;
+                        font-family: PingFangSC-Semibold;
+                    }
+                    /deep/ .el-radio__label {
+                        height: 22px;
+                        font-size: 16px;
+                        font-family: PingFangSC-Light;
+                        font-weight: bold;
+                        color: #151515;
+                        line-height: 22px;
+                        opacity: 0.5;
+                    }
+                    /deep/ .el-radio__inner {
+                        border-radius: 0;
+                    }
+                }
+                .choosetext1 {
+                    text-align: left;
                     div:nth-child(n+1) {
                         margin-top: 10px;
                         font-family: PingFangSC-Semibold;
@@ -1069,5 +1099,4 @@ line-height: 130px;
         font-weight: bold;
         text-align: center;
       }
-
 </style>
