@@ -57,7 +57,7 @@
                     <div class="choosetext" v-show="show1">
                         <div v-for="(item,idx) in bodys" :key="idx">
                             <el-checkbox-group v-model="bodySel" @change="bodyChange(checkboxs)">
-                                <el-checkbox :label="item.mak">{{item.body }}</el-checkbox>
+                                <el-checkbox :label="item.body">{{item.body }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
                     </div>
