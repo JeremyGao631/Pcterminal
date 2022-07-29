@@ -55,9 +55,11 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1">
-                        <el-radio-group v-model="radio1" >
-                            <el-radio label="2" @click.native="clickitem1('2')">Any</el-radio>
-                        </el-radio-group>
+                        <div v-for="(item,idx) in bodys" :key="idx">
+                            <el-checkbox-group v-model="bodySel" @change="bodyChange(checkboxs)">
+                                <el-checkbox :label="item.mak">{{item.body }}</el-checkbox>
+                            </el-checkbox-group>
+                        </div>
                     </div>
                     <!--tr-->
                     <div class="viewtr" :class="{ newviewtr:!show1}" >
@@ -229,6 +231,8 @@ export default {
         price: [],
         radios: [],
         checkboxs: [], // 复选框绑定值
+        bodys: [], // body数组
+        bodySel: [], //body选中值
         radio: '1',
         radio1: '1',
         radio2: '1',
@@ -380,7 +384,7 @@ export default {
             }
             this.information.push(item)
             console.log('102',this.information)
-        })
+            })
         // this.maxPrice = car.data.records[0].price
         // this.makeList = []
         // this.minPrice = car.data.records[car.data.records.length-1].price
@@ -493,7 +497,7 @@ export default {
               mak: makesList[i]
             }
             this.makeList.push(item)
-          }
+        }
           console.log('0',this.makeList)
         this.information = []
         car.data.records.forEach(ele => {
@@ -515,6 +519,24 @@ export default {
             this.information.push(item)
         })
         console.log(this.information,'158')
+        // body
+            this.bodys = []
+            const bodyes = []
+            car.data.records.forEach(ele => {
+            const body = ele.body
+            if(bodyes.indexOf(body) === -1) {
+                bodyes.push(body)
+                // this.makeList.push(item)
+            }
+            })
+            // const lengths = makesList.length
+            // for(i === lengths,)
+            for(var bo = 0; bo < bodyes.length; bo++) {
+                const item = {
+                body: bodyes[bo]
+                }
+                this.bodys.push(item)
+            }
       })
       car({
         current: '1',
