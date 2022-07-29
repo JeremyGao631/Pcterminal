@@ -1011,7 +1011,7 @@ export default({
         font-family: DINCondensed-Bold, DINCondensed;
         color: #000;
         font-weight: bold;
-        
+        padding-top: 5px;
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
@@ -1028,8 +1028,6 @@ font-family: DINCondensed-Bold, DINCondensed;
 font-weight: bold;
 color: #151515;
 line-height: 20px;
-padding-top : 5px;
-
 }
 /deep/.el-button--small {
   position: relative;

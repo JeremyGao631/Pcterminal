@@ -68,7 +68,6 @@ body{
   .el-footer {
     text-align: left;
     padding: 0;
-    margin: 0 7px;
   }
   .main-content {
     flex: 1;

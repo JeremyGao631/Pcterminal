@@ -238,15 +238,15 @@ export default {
   width:100%;
   .el-carousel {
     // height: calc(100vh - 10px);
-    height: 900px;
+    // height: 900px;
     width:100%;
     .el-carousel__item {
       // height: calc(100vh - 10px);
-      height: 900px;
+      // height: 900px;
       img {
         width: 100%;
         // height: calc(100vh - 10px);
-        height: 900px;
+        object-fit: cover;
         position: relative;
       }
     }
@@ -336,7 +336,7 @@ export default {
 
 .middle {
   margin: 0 auto;
-  width: 1400px;
+  width: 80%;
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -417,6 +417,8 @@ export default {
           font-size: 30px;
           color: #212020;
           line-height: 32px;
+          display: block;
+          height: 50px;
         }
       }
       .contentcard {
@@ -516,7 +518,7 @@ export default {
     background-color:#F4F6F8;
     .title {
       margin: 0 auto;
-      width: 1400px;
+      width: 80%;
       font-size: 70px;
       font-family: DINCondensed-Bold;
       font-weight: bold;
@@ -528,7 +530,7 @@ export default {
     }
     .serviceinfo {
       margin: 0 auto;
-      width: 1400px;
+      width: 80%;
       display: flex;
       align-items: center;
       justify-content: center;

@@ -44,22 +44,37 @@
           </div>
         </div>
       </div>
-      <div class="contentright">
+      <!-- <div class="contentright">
         <div class="bigimg">
           <img :src="firstPhoto" />
         </div>
         <div class="smallimg">
-          <!-- <photo-com :imgUrlList="photos" changeImg(item,index)/> -->
           <img :src="photo1" @click="getPhoto(photo1)" />
           <img :src="photo2" @click="getPhoto(photo2)" />
           <img :src="photo3" @click="getPhoto(photo3)" />
           <img :src="photo4" @click="getPhoto(photo4)" />
           <img :src="photo5" @click="getPhoto(photo5)" />
           <img :src="photo6" @click="getPhoto(photo6)" />
-          <!-- <div v-for="(item,idx) in informations.photo" :key="idx">
-            <img :src="informations.photo[idx]" />
-          </div> -->
         </div>
+      </div> -->
+      <div class="contentright">
+        <el-carousel ref="carousel" @change="changebigimg()" arrow="never" indicator-position="none" interval="5000">
+          <el-carousel-item v-for="(item1,index) in imgUrlList" :key="index" >
+            <div class="bigimg">
+                <!-- <img :src="mainImgUrl"> -->
+                <img :src="item1">
+            </div>
+          </el-carousel-item>
+        </el-carousel>
+          <div style="width: 100%;">
+              <i style="z-index: 2;font-size: 30px;display: inline-block;position: relative;top: -220px;cursor: pointer;left: -390px;border: 1px solid #fff;color: #fff;border-radius: 50%;padding: 2px;margin-left: 10px;" class="el-icon-back" @click="imgLeft()"></i>
+                <ul class="Img_ul">
+                    <li v-for="(item,index) in imgUrlList" :key="index" class="Img_li" :style="imgStyle" @click="changeImg(index)">
+                        <img :class="index === imgActiveIndex ? 'img_activeBorder' : ''" :src="item">
+                    </li>
+                </ul>
+              <i style="z-index: 2;font-size: 30px;display: inline-block;position: relative;left: 370px;top: -345px;cursor: pointer;border: 1px solid #fff;color: #fff;border-radius: 50%;padding: 2px;" class="el-icon-right" @click="imgRight()"></i>
+          </div>
       </div>
     </div>
     <div class="detailtext">
@@ -159,6 +174,16 @@ name: 'CarDetail',
   },
   data(){
     return{
+      mainImgUrl: '',
+      item1: '',
+      item: '',
+      imgUrlList: [
+      ],
+      imgActiveIndex: 0, // 当前移动图片的索引值
+      imgDistance: 0, // 移动的距离
+      allDistance: 0, // 总移动距离
+
+
       // 需提交的字段
       name: '',
       phone: '',
@@ -191,14 +216,25 @@ name: 'CarDetail',
   created() {
     this.query()
     this.informations = this.$route.query.item
-    this.firstPhoto = this.informations.photo[0]
-    this.photo1 = this.informations.photo[1]
-    this.photo2 = this.informations.photo[2]
-    this.photo3 = this.informations.photo[3]
-    this.photo4 = this.informations.photo[4]
-    this.photo5 = this.informations.photo[5]
-    this.photo6 = this.informations.photo[6]
-    this.price = this.informations.price
+    // var imgUrlLists = this.informations.photo
+    // var index=imgUrlLists.length
+    // var a=0;
+    // var that=this
+    // if(index>1){
+    //    setInterval(function(){
+    //       if(a<index-1){
+    //          a++
+    //        //that.mainImgUrl = imgUrlLists[a]
+    //        that.imgActiveIndex=a
+    //       }else if(a==index-1){
+    //         that.imgActiveIndex=0
+    //       }
+    // },1000)
+    // }
+    // this.imgUrlList = imgUrlLists
+    
+    this.imgUrlList = this.informations.photo
+    this.mainImgUrl = this.informations.photo[0]
     this.init()
     this.allCar()
     this.setPhoto()
@@ -219,7 +255,106 @@ name: 'CarDetail',
     //   }
     // }
   },
+  computed: {
+        imgStyle() {
+            return {
+                transform: `translate3d(${this.imgDistance}px, 0, 0)` // 计算移动的距离(x,y,z)
+            }
+        }
+    },
   methods: {
+    changebigimg(){
+      var idx = this.$refs.carousel.activeIndex
+      console.log("changebigimg",idx)
+      this.mainImgUrl = this.imgUrlList[idx];
+      this.imgActiveIndex = idx
+    },
+
+
+    changeImg(index) {
+          console.log("changeImg",index);
+            this.$refs.carousel.setActiveItem(index)
+            this.imgActiveIndex = index
+        },
+        imgLeft() {
+            if (this.imgActiveIndex > 0) {
+                this.imgActiveIndex--  // 索引值-1
+                this.imgUrlList.forEach((item, index) => { // 循环小图,通过判断索引值赋值给大图
+                    if (this.imgActiveIndex === index) {
+                        this.$refs.carousel.setActiveItem(index)
+                        this.mainImgUrl = item
+                    }
+                })
+            }
+            if (this.imgActiveIndex >= 4) {
+                var index = 0
+                const temp = window.setInterval(() => { // 利用定时器实现图片左右移动的动画效果
+                    if (index < 33) { // 移动次数(33次)
+                        this.imgDistance += 4 // 每次向左移动的距离 (移动总距离为33*this.imgDistance)
+                        index++
+                        return
+                    } else {
+                        window.clearInterval(temp) // 移动完清除定时器
+                    }
+                }, 10)
+            }
+        },
+        imgRight() {
+            if (this.imgActiveIndex < this.imgUrlList.length - 1) {
+                this.imgActiveIndex++
+                this.imgUrlList.forEach((item, index) => {
+                    if (this.imgActiveIndex === index) {
+                      this.$refs.carousel.setActiveItem(index)
+                        this.mainImgUrl = item
+                    }
+                })
+                if (this.imgActiveIndex >= 5) {
+                    this.allDistance = -66 * (this.imgActiveIndex - 4)
+                    var index = 0
+                    const temp = window.setInterval(() => {
+                        if (index < 33) {
+                            this.imgDistance -= 4 // 每次向右移动的距离
+                            index++
+                            return
+                        } else {
+                            window.clearInterval(temp)
+                        }
+                    }, 10)
+                }
+            } else if (this.imgActiveIndex === this.imgUrlList.length - 1) { // 到达最后一张图片，再点击跳转回第一张
+                this.imgActiveIndex = 0;
+                this.mainImgUrl = this.imgUrlList[0]
+                var idx = 0
+                const temp = window.setInterval(() => { // 利用定时器实现图片左右移动的动画效果
+                    if (idx < Math.abs(this.allDistance/2)) { // 取绝对值再除
+                        this.imgDistance += 4 // 每次向左移动的距离 (移动总距离为33*this.imgDistance)
+                        idx++
+                        return
+                    } else {
+                        window.clearInterval(temp) // 移动完清除定时器
+                    }
+                }, 1)
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     setPhoto() {
             this.photo = this.$route.query.item.photo
             this.photos = []
@@ -590,7 +725,7 @@ name: 'CarDetail',
         width:calc(60%);
         margin-left:10px;
         .bigimg {
-          width: 100%;
+          width: calc((100% - 16px) + 5px);
           height: 425px;
           img {
             height: 100%;
@@ -890,4 +1025,31 @@ name: 'CarDetail',
   }
 }
 
+.Img_ul{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    // height: 80px;
+    margin: 0 ;
+    top: -27px;
+    white-space: nowrap;
+}
+.Img_li{
+    display: inline-block;
+    width: calc((100% / 6) - 16px);
+    padding-right: 1px;
+    margin-right:16px;
+    cursor: pointer;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+/deep/ .el-carousel__container {
+  height: 425px;
+}
 </style>

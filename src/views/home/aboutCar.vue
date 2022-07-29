@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="visit_box">
-            <img class="img" src="../../assets/images/home/about231.jpg" alt="">   
+            <img class="img" src="../../assets/images/home/about232.png" alt="">   
             <div class="visit">
                 <div class="visitTitle">VISIT OUR SHOWROOM</div>
                 <div class="visitText">{{ visit }}</div>
@@ -309,14 +309,13 @@ export default({
         }
         .visit_box {
             width: 100%;
-            height: 583px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             .img {
             width: 100%;
-            height: 100%;
+            object-fit: cover;
             }
             .visit{
                 position:absolute;

@@ -48,7 +48,7 @@
                     <div style="clear:both;"></div>
                     <!--model-->
                     <div class="viewmodel">
-                        <div class="modelleft">Model</div>
+                        <div class="modelleft">Body</div>
                         <div class="modelright" @click="testshow1()" v-show="show1">-</div>
                         <div class="modelright" @click="testshow1()" v-show="!show1">+</div>
                         <div style="clear:both;"></div>
@@ -684,7 +684,6 @@ export default {
                         font-family: PingFangSC-Semibold;
                     }
                     /deep/ .el-radio__label {
-                        height: 22px;
                         font-size: 16px;
                         font-family: PingFangSC-Light;
                         font-weight: bold;
@@ -1095,8 +1094,70 @@ line-height: 130px;
         width: 100%;
         font-size: 16px;
         font-family: DINCondensed-Bold, DINCondensed;
-        color: #000;
         font-weight: bold;
         text-align: center;
       }
+
+/deep/ .el-checkbox__inner {
+    width: 16px;
+    height: 16px;
+}
+/deep/ .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: transparent;
+    border-color: #DCDFE6;
+}
+/deep/ .el-checkbox__inner::after {
+    box-sizing: content-box;
+    content: "";
+    border: 3px solid #151515;
+    border-left: 0;
+    border-top: 0;
+    height: 7px;
+    left: 4px;
+    position: absolute;
+    top: 1px;
+    width: 3px;
+    transition: transform .15s ease-in .05s,-webkit-transform .15s ease-in .05s;
+    transform-origin: center;
+}
+/deep/ .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #151515;
+    font-size: 16px;
+    font-family: PingFangSC-Light;
+    font-weight: bold;
+    opacity: 0.5;
+}
+/deep/ .el-checkbox__label {
+    color: #151515;
+    font-size: 16px;
+    font-family: PingFangSC-Light;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+
+/deep/ .el-radio__inner {
+    width: 16px;
+    height: 16px;
+}
+/deep/ .el-radio__input.is-checked .el-radio__inner {
+    background-color: transparent;
+    border-color: #DCDFE6;
+}
+/deep/ .el-radio__input.is-checked .el-radio__inner::after {
+    content: "";
+    width: 7px;
+    height: 3px;
+    border: 3px solid #151515;
+    border-top: transparent;
+    border-right: transparent;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    transform: rotate(-45deg);
+    border-radius: 0px;
+    background: none;
+}
 </style>
