@@ -26,7 +26,7 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" >
                         <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
-                            <el-checkbox-group v-model="radios" @change="makeChange(radios)">
+                            <el-checkbox-group v-model="checkboxs" @change="makeChange(checkboxs)">
                                 <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
@@ -56,7 +56,7 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1">
                         <div v-for="(item,idx) in bodys" :key="idx">
-                            <el-checkbox-group v-model="bodySel" @change="bodyChange(checkboxs)">
+                            <el-checkbox-group v-model="bodySel" @change="bodyChange(bodySel)">
                                 <el-checkbox :label="item.body">{{item.body }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
@@ -229,7 +229,6 @@ export default {
         photo: [], // 汽车图
         year: [],
         price: [],
-        radios: [],
         checkboxs: [], // 复选框绑定值
         bodys: [], // body数组
         bodySel: [], //body选中值
