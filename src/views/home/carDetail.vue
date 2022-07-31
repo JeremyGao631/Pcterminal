@@ -44,19 +44,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="contentright">
-        <div class="bigimg">
-          <img :src="firstPhoto" />
-        </div>
-        <div class="smallimg">
-          <img :src="photo1" @click="getPhoto(photo1)" />
-          <img :src="photo2" @click="getPhoto(photo2)" />
-          <img :src="photo3" @click="getPhoto(photo3)" />
-          <img :src="photo4" @click="getPhoto(photo4)" />
-          <img :src="photo5" @click="getPhoto(photo5)" />
-          <img :src="photo6" @click="getPhoto(photo6)" />
-        </div>
-      </div> -->
       <div class="contentright">
         <el-carousel ref="carousel" @change="changebigimg()" arrow="never" indicator-position="none" :interval="5000">
           <el-carousel-item v-for="(item1,index) in imgUrlList" :key="index" >
@@ -134,19 +121,19 @@
       <div class="sectitle">SIMILAR VEHICLES</div>
       <div class="textcontent">
         <el-row :gutter="20">
-          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information1" :key="index" @click="cardetail(item)">
-            <div class="imgcard">
+          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information1" :key="index" @click="jumpCardDetail(item)">
+            <div class="imgcard" @click="jumpCardDetail(item)">
               <img :src="item.photo[0]" />
             </div>
-            <div class="titlecard" >
+            <div class="titlecard" @click="jumpCardDetail(item)" >
               <span >{{item.year}} {{item.make}} {{item.model}}</span>
             </div>
-            <div class="contentcard">
+            <div class="contentcard" @click="jumpCardDetail(item)">
               <span class="contentcard-price">${{item.price}}</span>
               <span class="contentcard-info">Excl . Gov's Charges</span>
             </div>
             <div class="break" ></div>
-            <div class="detailcard" >
+            <div class="detailcard" @click="jumpCardDetail(item)">
               <span >{{item.odometer}} kms</span>
               <!-- <span >{{item.body}}</span> -->
               <span>{{item.fueltype.substring(0,6)}}</span>
@@ -210,7 +197,6 @@ name: 'CarDetail',
         kind: "Excl. Gov's Charges" 
       },
       List: [],
-      firstPhoto: '',
       // 会优化部分
       photo1: '',
       photo2: '',
@@ -378,8 +364,6 @@ name: 'CarDetail',
 
 
 
-
-
     setPhoto() {
             this.photo = this.$route.query.item.photo
             this.photos = []
@@ -406,9 +390,19 @@ name: 'CarDetail',
     getPhoto(val) {
       this.firstPhoto = val
     },
-    cardetail(item){
-      this.$router.push({path: '/carDetail', query: {item: item}})
-      this.informations = item
+    jumpCardDetail(item) {
+        this.price = item.price
+        this.informations = item
+        this.imgUrlList = item.photo
+        this.init()
+        this.allCar()
+        // 回到顶部
+        window.scrollTo(
+            {
+                top: 0,
+                behavior:"smooth"
+            }        
+        )
     },
     next(val) {
     //   this.allCar()
@@ -437,6 +431,7 @@ name: 'CarDetail',
                         odometer: ele.odometer,
                         body: ele.body,
                         model: ele.model,
+                        drive: ele.drive,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,
                         cylinders: ele.cylinders,
@@ -477,6 +472,7 @@ name: 'CarDetail',
                         price: ele.priceDesc,
                         odometer: ele.odometer,
                         body: ele.body,
+                        drive: ele.drive,
                         model: ele.model,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,
@@ -542,6 +538,7 @@ name: 'CarDetail',
                         price: ele.priceDesc,
                         odometer: ele.odometer,
                         body: ele.body,
+                        drive: ele.drive,
                         model: ele.model,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,

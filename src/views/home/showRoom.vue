@@ -28,14 +28,14 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" >
                         <div v-for="(item,idx) in makeList.slice(0,3)" :key="idx">
-                            <el-checkbox-group v-model="radios" @change="makeChange(radios)">
+                            <el-checkbox-group v-model="checkboxs" @change="bodyChange()">
                                 <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
                     </div>
                     <div class="choosetext1" v-show="show && !show5">
                         <div v-for="(item,idx) in makeList.slice(3)" :key="idx">
-                            <el-checkbox-group v-model="checkboxs" @change="makeChange(checkboxs)">
+                            <el-checkbox-group v-model="checkboxs" @change="bodyChange()">
                                 <el-checkbox :label="item.mak">{{item.mak }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
@@ -58,7 +58,7 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show1">
                         <div v-for="(item,idx) in bodys" :key="idx">
-                            <el-checkbox-group v-model="bodySel" @change="bodyChange(checkboxs)">
+                            <el-checkbox-group v-model="bodySel" @change="bodyChange()">
                                 <el-checkbox :label="item.body">{{item.body }}</el-checkbox>
                             </el-checkbox-group>
                         </div>
@@ -130,7 +130,7 @@
                     <div class="texttitle">
                         <div class="titleleft">
                             <span >SORT BY</span>
-                            <el-select @change="change" v-model="sortBy" placeholder="Date:High To Low">
+                            <el-select @change="sortChange(sortBy)" v-model="sortBy" placeholder="Price:High To Low">
                                 <el-option
                                 v-for="item in options"
                                 :key="item.value"
@@ -190,6 +190,7 @@ export default {
   },
   data(){
     return{
+        loading: true,
         show:true,
         show1:true,
         show2:true,
@@ -233,7 +234,6 @@ export default {
         photo: [], // 汽车图
         year: [],
         price: [],
-        radios: [],
         checkboxs: [], // 复选框绑定值
         bodys: [], // body数组
         bodySel: [], //body选中值
@@ -263,6 +263,7 @@ export default {
   },
   created() {
     this.allCar()
+    this.load()
   },
   methods: {
     clickitem(e){
@@ -307,23 +308,6 @@ export default {
     // sortby查询
     change(val) {
         console.log('12', val)
-        if(val == 'Price: low to high') {
-            this.orderByPrice = 2
-            this.orderByYear = ''
-            this.allCar()
-        }else if(val == 'Price: high to low') {
-            this.orderByPrice = 1
-            this.orderByYear = ''
-            this.allCar()
-        } else if (val == 'Date: low to high') {
-            this.orderByPrice = ''
-            this.orderByYear = 2
-            this.allCar()
-        } else {
-            this.orderByPrice = ''
-            this.orderByYear = 1
-            this.allCar()
-        }
     },
     testshow(){
         this.show = !this.show;
@@ -345,22 +329,42 @@ export default {
     },
     move(value){
         console.log(value,'1515')
-        this.minPrice = this.price[0]
-        this.maxPrice = this.price[1]
+        this.minPrice = value[0]
+        this.maxPrice = value[1]
         this.selects()
     },
     years(value) {
         console.log(value, '1515')
-        this.minYear = this.year[0]
-        this.maxYear = this.year[1]
+        this.minYear = value[0]
+        this.maxYear = value[1]
         this.selects()
     },
-    makeChange(item) {
-        console.log(item,'15')
+    // sort查询
+    sortChange(val) {
+        // 1 Price: low to high ; 2 Price: high to low 3 Date: low to high 4 Date: high to low
+        console.log('val', val)
+        if(val == 1) {
+            this.orderByPrice = 2
+            this.orderByYear = ''
+        }else if(val == 2) {
+            this.orderByPrice = 1
+            this.orderByYear = ''
+        } else if (val == 3) {
+            this.orderByPrice = ''
+            this.orderByYear = 2
+        } else {
+            this.orderByPrice = ''
+            this.orderByYear = 1
+        }
+        this.bodyChange()
+    },
+    // make 和body筛选
+    bodyChange() {
         car({
         current: '1',
         pageSize: '1000',
-        make: item.toString(),
+        make: this.checkboxs.toString(),
+        body: this.bodySel.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -379,6 +383,7 @@ export default {
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
+                drive: ele.drive,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -387,24 +392,21 @@ export default {
                 photo: ele.photo.split(',')
             }
             this.information.push(item)
+            this.loading = false
             console.log('102',this.information)
             })
-        // this.maxPrice = car.data.records[0].price
-        // this.makeList = []
-        // this.minPrice = car.data.records[car.data.records.length-1].price
-        // this.price = [this.minPrice,this.maxPrice]
-        // const lengths = makesList.length
-        // for(i === lengths,)
-         
-      })
+        })
     },
     // 条件筛选
     
     selects() {
+        console.log('45', this.checkboxs.toString())
+        console.log('45', this.bodySel.toString())
       car({
         current: '1',
         pageSize: '1000',
         make: this.checkboxs.toString(),
+        body: this.bodySel.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -423,6 +425,7 @@ export default {
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
+                drive: ele.drive,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -433,30 +436,6 @@ export default {
             this.information.push(item)
             console.log('155',this.information)
         })
-        this.maxPrice = car.data.records[0].price
-        // this.makeList = []
-        // this.minPrice = car.data.records[car.data.records.length-1].price
-        // this.price = [this.minPrice,this.maxPrice]
-        // console.log(this.information, 'car')
-        // 点击价格和年份时不筛选车型搜索框
-        // const makesList = []
-        // car.data.records.forEach(ele => {
-        //   const makes = ele.make
-        //   if(makesList.indexOf(makes) === -1) {
-        //     makesList.push(makes)
-        //     // this.makeList.push(item)
-        //   }
-        // })
-        // const lengths = makesList.length
-        // for(i === lengths,)
-        //   console.log('1',makesList)
-        //   for(var i = 0; i < makesList.length; i++) {
-        //     const item = {
-        //       mak: makesList[i]
-        //     }
-        //     this.makeList.push(item)
-        //     console.log('5',this.makeList)
-        //   }
       })
     },
     cardetail(item){
@@ -469,11 +448,12 @@ export default {
       car({
         current: '1',
         pageSize: '5000',
-        make:'',
-        yearStart: '',
-        yearEnd: '',
-        priceStart: '',
-        priceEnd: '',
+        make: this.checkboxs.toString(),
+        body: this.bodySel.toString(),
+        yearStart: this.minYear,
+        yearEnd: this.maxYear,
+        priceStart: this.minPrice,
+        priceEnd: this.maxPrice,
         orderByPrice: this.orderByPrice,
         orderByYear: this.orderByYear
       }).then(car => {
@@ -513,6 +493,7 @@ export default {
                 odometer: ele.odometer,
                 body: ele.body,
                 model: ele.model,
+                drive: ele.drive,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -562,8 +543,14 @@ export default {
         this.year = [this.minYear,this.maxYear]
         console.log('12',this.year)
       })
-    },
-  }
+      this.load()
+  },
+  load() {
+    if ( this.information != []) {
+        this.loading = false
+    }
+}
+}
 }
 </script>
 

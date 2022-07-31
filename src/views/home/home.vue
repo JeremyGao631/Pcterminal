@@ -40,18 +40,18 @@
         <!--自适应样式更改-->
         <el-row :gutter="20">
           <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index" @click="cardetail(item)">
-            <div class="imgcard">
+            <div class="imgcard" @click="cardetail(item)">
               <img :src="item.photo[0]" />
             </div>
-            <div class="titlecard" >
+            <div class="titlecard" @click="cardetail(item)">
               <span >{{item.year}} {{item.make}} {{item.model}}</span>
             </div>
-            <div class="contentcard">
+            <div class="contentcard" @click="cardetail(item)">
               <span class="contentcard-price">${{item.price}}</span>
               <span class="contentcard-info">Excl . Gov's Charges</span>
             </div>
             <div class="break" ></div>
-            <div class="detailcard" >
+            <div class="detailcard" @click="cardetail(item)">
               <span >{{item.odometer}} kms</span>
               <!-- <span >{{item.body}}</span> -->
               <span>{{item.fueltype.substring(0,6)}}</span>
@@ -154,6 +154,7 @@ export default {
     //       },
         // 车辆信息
     cardetail(item){
+      console.log('1', 1111)
       this.$router.push({path: '/carDetail', query: {item: item}})
     },
     allCar() {
@@ -179,6 +180,7 @@ export default {
                 price: ele.priceDesc,
                 odometer: ele.odometer,
                 body: ele.body,
+                drive: ele.drive,
                 model: ele.model,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
