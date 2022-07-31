@@ -1,12 +1,13 @@
 <!-- eslint-disable vue/no-dupe-keys -->
 <template>
     <div class="contact">
-        <img class="contentimg" src="../../assets/images/sellyourcar/JVS00048-5.jpg"  alt="暂无图片" />
+      <div class="banner">
+        <img class="contentimg" src="../../assets/images/onlineshowroom/05.png"  alt="暂无图片" />
         <div class="inlinetext">
-            <span class="content-title">Thoughtful-service</span><br />
+            <p class="content-title">Thoughtful-service</p><br />
             <span class="content-text">
-                <span style="padding-left:55px">SELL</span><br />
-                <span style="padding-left:55px;">YOUR CAR</span><br />
+                <span class="span1" >SELL</span><br />
+                <span class="span2" >YOUR CAR</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -14,6 +15,7 @@
                 <i class="el-icon-my-right"></i>
             </el-button>
         </div>
+      </div>
         <div class="between">
           <div class="sell">
             <div class="title">
@@ -455,71 +457,71 @@ export default({
       left: 33px;
   }
     .contact {
+      .banner{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .contentimg {
+      position: relative;
       width: 100%;
-        .contentimg {
-        width: 100%;
-        // height: calc(100vh - 10px);
-        height: 900px;
-        }
-        .inlinetext {
-            position: absolute;
-            left: 10%;
-            top: 23%;
-        }
-        .content-title {
-          font-size: 44px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #FFFFFF;
-      line-height: 70px;
-      margin-left: 50px;
-        }
-        .content-text {
-            font-size: 90px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #FFFFFF;
-      line-height: 100px;
-        span {
-            float:left;
-        }
-        }
-        .clickbtn {
-            position: relative;
-      left: 17%;
-      width: 231px;
-      height: 58px;
-      padding-top: 15px;
-      border: 1px solid #FFFFFF ;
-      background-color: transparent;
-      color:#FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: right;
-      margin-top: 60px;
-            span{
-                width: 91px;
-        height: 130px;
-        font-size: 20px;
+    }
+    .inlinetext {
+      position: absolute;
+      left: 10%;
+      text-align: left;
+      .content-title {
+        font-size: 2vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
-        line-height: 25px;
-        text-align: center;
+        margin: 0;
         color: #FFFFFF;
-        line-height: 130px;
-        margin-left: 20px;
-        margin-right: 60px;
-            }
-            .el-icon-my-right {
-                background: url('../../assets/images/home/right.png') no-repeat;
-                background-size: cover;
-        display:inline-block;
-        height: 16px;
-        width: 16px;
-        margin-right: -16px;
-            }
+      }
+      .content-text {
+        font-size: 5vw;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        color: #FFFFFF;
+        .span1 {
+          float:left;
+          margin-top: -20px;
         }
+        .span2 {
+          float:left;
+          margin-top: -30px;
+        }
+
+      }
+      .clickbtn {
+        position: relative;
+        border: 1px solid #FFFFFF ;
+        background-color: transparent;
+        color:#FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-top: 30px;
+        padding: 15px 5px;
+        span{
+          font-size: 1vw;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          line-height: 1;
+          text-align: center;
+          color: #FFFFFF;
+          margin-left: 40px;
+        }
+        .el-icon-my-right {
+          margin-left: 40px;
+          background: url('../../assets/images/home/right.png') no-repeat;
+          background-size: cover;
+          display:inline-block;
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+  }
         .between {
           height: 850px;
           background: #F4F6F8;

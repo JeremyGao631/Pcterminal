@@ -58,7 +58,7 @@
         </div>
       </div> -->
       <div class="contentright">
-        <el-carousel ref="carousel" @change="changebigimg()" arrow="never" indicator-position="none" interval="5000">
+        <el-carousel ref="carousel" @change="changebigimg()" arrow="never" indicator-position="none" :interval="5000">
           <el-carousel-item v-for="(item1,index) in imgUrlList" :key="index" >
             <div class="bigimg">
                 <!-- <img :src="mainImgUrl"> -->
@@ -90,28 +90,37 @@
     <div class="bookingtext">
       <div class="title">BOOK INSPECTION</div>
       <div class="userinput">
-        <div class="inputtable">
-          <span>Name</span>
-          <el-input required v-model="name" />
-        </div>
-        <div class="inputtable">
-          <span>Phone</span>
-          <el-input maxlength="10" v-model="phone" />
-        </div>
-        <div class="inputtable">
-          <span>Email</span>
-          <el-input v-model="email" @blur="emails" />
-        </div>
-        <div class="inputtable">
-          <span>Time</span>
-          <div class="block">
-            <el-date-picker
-              v-model="time"
-              type="date"
-              placeholder="Select date">
-            </el-date-picker>
-          </div>
-        </div>
+        <el-row :gutter="20">
+            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+              <div class="inputtable">
+                <span>Name</span>
+                <el-input required v-model="name" />
+              </div>
+            </el-col>
+            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+              <div class="inputtable">
+                <span>Phone</span>
+                <el-input maxlength="10" v-model="phone" />
+              </div>
+            </el-col>
+            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+              <div class="inputtable">
+                <span>Email</span>
+                <el-input v-model="email" @blur="emails" />
+              </div>
+            </el-col>  
+            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+              <div class="inputtable">
+                <span>Time</span>
+                <el-date-picker
+                  v-model="time"
+                  type="date"
+                  placeholder="Select date"
+                  style=" position: relative;font-size: 14px;display: inline-block;width: 100%;">
+                </el-date-picker>
+              </div>
+            </el-col>
+        </el-row>
       </div>
       <div class="inputtables">
         <div class="newbutton">
@@ -124,25 +133,27 @@
       <div style="clear:both;"></div>
       <div class="sectitle">SIMILAR VEHICLES</div>
       <div class="textcontent">
-        <div class="textcard" v-for="(item,index) in information1" :key="index" @click="cardetail(item)">
-          <div class="imgcard">
-            <img :src="item.photo[0]" />
-          </div>
-          <div class="titlecard" >
-            <span >{{item.year}} {{item.make}} {{item.model}}</span>
-          </div>
-          <div class="contentcard">
-            <span class="contentcard-price">${{item.price}}</span>
-            <span class="contentcard-info">Excl . Gov's Charges</span>
-          </div>
-          <div class="break" ></div>
-          <div class="detailcard" >
-            <span >{{item.odometer}}kms</span>
-            <!-- <span >{{item.body}}</span> -->
+        <el-row :gutter="20">
+          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information1" :key="index" @click="cardetail(item)">
+            <div class="imgcard">
+              <img :src="item.photo[0]" />
+            </div>
+            <div class="titlecard" >
+              <span >{{item.year}} {{item.make}} {{item.model}}</span>
+            </div>
+            <div class="contentcard">
+              <span class="contentcard-price">${{item.price}}</span>
+              <span class="contentcard-info">Excl . Gov's Charges</span>
+            </div>
+            <div class="break" ></div>
+            <div class="detailcard" >
+              <span >{{item.odometer}} kms</span>
+              <!-- <span >{{item.body}}</span> -->
               <span>{{item.fueltype.substring(0,6)}}</span>
-              <span >{{item.geartype}}</span>
-          </div>
-        </div>
+              <span >{{item.geartype.slice(0,4)}}</span>
+            </div>
+          </el-col>
+        </el-row>
       </div>
       <div class="choosepage">
         <el-pagination
@@ -277,6 +288,13 @@ name: 'CarDetail',
             this.imgActiveIndex = index
         },
         imgLeft() {
+          // var nowidx = this.$refs.carousel.activeIndex
+          // console.log(nowidx,"xxxsss")
+          // this.mainImgUrl = this.imgUrlList[nowidx];
+          // this.imgActiveIndex = nowidx
+          // console.log(this.imgActiveIndex,"sdfasdasddad")
+          // this.item = nowidx
+          // console.log(this.item,"sdfasd111111111asddad")
             if (this.imgActiveIndex > 0) {
                 this.imgActiveIndex--  // 索引值-1
                 this.imgUrlList.forEach((item, index) => { // 循环小图,通过判断索引值赋值给大图
@@ -300,6 +318,13 @@ name: 'CarDetail',
             }
         },
         imgRight() {
+          // var nowidx = this.$refs.carousel.activeIndex
+          // console.log(nowidx,"xxxsss")
+          // this.mainImgUrl = this.imgUrlList[nowidx];
+          // this.imgActiveIndex = nowidx
+          // console.log(this.imgActiveIndex,"sdfasdasddad")
+          // this.item = nowidx
+          // console.log(this.item,"sdfasd111111111asddad")
             if (this.imgActiveIndex < this.imgUrlList.length - 1) {
                 this.imgActiveIndex++
                 this.imgUrlList.forEach((item, index) => {
@@ -822,8 +847,8 @@ name: 'CarDetail',
           }
           /deep/ .el-input__inner {
             border: 1px solid black;
-            height:58px;
-            width:231px;
+            // height:58px;
+            // width:231px;
           }
           .el-button {
             width: 171px;

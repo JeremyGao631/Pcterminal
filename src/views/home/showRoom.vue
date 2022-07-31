@@ -1,11 +1,12 @@
 <template>
     <div class="content">
+      <div class="banner">
         <img class="contentimg" src="../../assets/images/onlineshowroom/04.png"  alt="暂无图片" />
         <div class="inlinetext">
-            <span class="content-title">Extraordinary-experience</span><br />
+            <p class="content-title">Extraordinary-experience</p><br />
             <span class="content-text">
-                <span style="padding-left:51px">ONLINE</span><br />
-                <span style="padding-left:51px">SHOWROOM</span><br />
+                <span class="span1">ONLINE</span><br />
+                <span class="span2">SHOWROOM</span><br />
                 <div style="clear:both;"></div>
             </span>
             <el-button class="clickbtn" @click="contactUs()">
@@ -13,7 +14,8 @@
                 <i class="el-icon-my-right"></i>
             </el-button>
         </div>
-        <div class="middle">
+      </div>
+      <div class="middle">
             <div class="title">START A NEW SEARCH</div>
             <div class="show" >
                 <div class="left">
@@ -145,24 +147,26 @@
                     </div>
                     <div style="clear:both;"></div>
                     <div class="showimg">
-                        <div class="textcard" v-for="(item,index) in information" :key="index"  @click="cardetail(item)">
-                            <div class="imgcard">
-                                <img :src="item.photo[0]"  />
-                            </div>
-                            <div class="titlecard" >
-                                <span >{{item.year}} {{item.make}} {{item.model}}</span>
-                            </div>
-                            <div class="contentcard">
-                                <span class="contentcard-price">${{item.price}}</span>
-                                <span class="contentcard-info">Excl . Gov's Charges</span>
-                            </div>
-                            <div class="break" ></div>
-                            <div class="detailcard" >
-                                <span >{{item.odometer}}kms</span>
-                                <span>{{item.fueltype.substring(0,6)}}</span>
-                                <span >{{item.geartype}}</span>
-                            </div>
-                        </div>
+                        <el-row :gutter="15" >
+                            <el-col :lg="8" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"  >
+                                    <div class="imgcard" @click="cardetail(item)">
+                                        <img :src="item.photo[0]"  />
+                                    </div>
+                                    <div class="titlecard" @click="cardetail(item)">
+                                        <span >{{item.year}} {{item.make}} {{item.model}}</span>
+                                    </div>
+                                    <div class="contentcard" @click="cardetail(item)">
+                                        <span class="contentcard-price">${{item.price}}</span>
+                                        <span class="contentcard-info">Excl . Gov's Charges</span>
+                                    </div>
+                                    <div class="break" ></div>
+                                    <div class="detailcard" @click="cardetail(item)">
+                                        <span >{{item.odometer}}kms</span>
+                                        <span>{{item.fueltype.substring(0,6)}}</span>
+                                        <span >{{item.geartype.slice(0,4)}}</span>
+                                    </div>
+                            </el-col>
+                        </el-row>
                         <div style="clear:both;"></div>
                     </div>
                     <div class="newbutton" @click="loadmore()">
@@ -566,73 +570,74 @@ export default {
 
 <style lang="less" scoped>
 .content {
+  .banner{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
     .contentimg {
-        width: 100%;
-        // height: calc(100vh - 10px);
-        height: 900px;
+      position: relative;
+      width: 100%;
     }
     .inlinetext {
-        position: absolute;
-        left: 10%;
-        top: 23%;
-    }
-    .content-title {
-      font-size: 44px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #FFFFFF;
-      line-height: 70px;
-      margin-left: 55px;
-    }
-    .content-text {
-        font-size: 90px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #FFFFFF;
-      line-height: 100px;
-        span {
-            float:left;
-        }
-    }
-    .clickbtn {
-      position: relative;
-      left: 12%;
-      width: 231px;
-      height: 58px;
-      padding-top: 15px;
-      border: 1px solid #FFFFFF ;
-      background-color: transparent;
-      color:#FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: right;
-      margin-top: 60px;
-        span{
-            width: 91px;
-        height: 130px;
-        font-size: 20px;
+      position: absolute;
+      left: 10%;
+      text-align: left;
+      .content-title {
+        font-size: 2vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
-        line-height: 25px;
-        text-align: center;
+        margin: 0;
         color: #FFFFFF;
-        line-height: 130px;
-        margin-left: 20px;
-        margin-right: 60px;
+      }
+      .content-text {
+        font-size: 5vw;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        color: #FFFFFF;
+        .span1 {
+          float:left;
+          margin-top: -20px;
+        }
+        .span2 {
+          float:left;
+          margin-top: -30px;
+        }
+
+      }
+      .clickbtn {
+        position: relative;
+        border: 1px solid #FFFFFF ;
+        background-color: transparent;
+        color:#FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-top: 30px;
+        padding: 15px 5px;
+        span{
+          font-size: 1vw;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          line-height: 1;
+          text-align: center;
+          color: #FFFFFF;
+          margin-left: 40px;
         }
         .el-icon-my-right {
-            background: url('../../assets/images/home/right.png') no-repeat;
-            background-size: cover;
-        display:inline-block;
-        height: 16px;
-        width: 16px;
-        margin-right: -16px;
+          margin-left: 40px;
+          background: url('../../assets/images/home/right.png') no-repeat;
+          background-size: cover;
+          display:inline-block;
+          height: 16px;
+          width: 16px;
         }
+      }
     }
-    .middle {
+  }
+  .middle {
         margin: 0 auto;
-        width: 1400px;
+        width: 80%;
         padding-bottom: 200px;
         .title {
             font-size: 70px;
@@ -979,12 +984,13 @@ export default {
                     }
                 }
                 .showimg {
+                    padding:0 20px;
                     margin-top: 40px;
                     overflow: hidden;
                     .textcard {
                         float:left;
-                        margin: 0 20px;
-                        width: calc(100% / 3 - 40px);
+                        // margin: 0 20px;
+                        // width: calc(100% / 3 - 40px);
                         padding-bottom: 30px;
                         span {
                             font-family: DINCondensed-Bold;
@@ -1011,6 +1017,8 @@ export default {
                             font-size: 30px;
                             color: #212020;
                             line-height: 32px;
+                            display: block;
+                            height: 50px;
                             }
                         }
                         .contentcard {

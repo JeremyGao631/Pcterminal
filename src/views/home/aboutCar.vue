@@ -1,17 +1,19 @@
 <template>
     <div class="contact">
-        <img class="contentimg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
-        <div class="inlinetext">
-            <span class="content-title">Get to know us</span><br />
-            <span class="content-text">
-                <span style="padding-left:51px">ABOUT</span><br />
-                <span style="padding-left:51px;">AUTOHOME AU</span><br />
-                <div style="clear:both;"></div>
-            </span>
-            <el-button class="clickbtn" @click="contactUs()">
-                <span>CONTACT US</span>
-                <i class="el-icon-my-right"></i>
-            </el-button>
+        <div class="banner">
+            <img class="contentimg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
+            <div class="inlinetext">
+                <p class="content-title">Get to know us</p><br />
+                <span class="content-text">
+                    <span class="span1" >ABOUT</span><br />
+                    <span class="span2" >AUTOHOME AU</span><br />
+                    <div style="clear:both;"></div>
+                </span>
+                <el-button class="clickbtn" @click="contactUs()">
+                    <span>CONTACT US</span>
+                    <i class="el-icon-my-right"></i>
+                </el-button>
+            </div>
         </div>
         <div class="offer">WHAT WE OFFER</div>
         <div class="style">
@@ -133,74 +135,74 @@ export default({
 </script>
 <style lang="less" scoped>
     .contact {
+        .banner{
         width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
         .contentimg {
+        position: relative;
         width: 100%;
-        // height: calc(100vh - 10px);
-        height: 900px;
         }
         .inlinetext {
-            position: absolute;
-            left: 10%;
-            top: 23%;
-        }
+        position: absolute;
+        left: 10%;
+        text-align: left;
         .content-title {
-          font-size: 44px;
+            font-size: 2vw;
             font-family: DINCondensed-Bold;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin: 0;
             color: #FFFFFF;
-            line-height: 70px;
-            margin-left: -130px;
         }
         .content-text {
-            font-size: 90px;
+            font-size: 5vw;
             font-family: DINCondensed-Bold;
             font-weight: bold;
             color: #FFFFFF;
-            line-height: 100px;
-                span {
-                    float:left;
-                }
+            .span1 {
+            float:left;
+            margin-top: -20px;
+            }
+            .span2 {
+            float:left;
+            margin-top: -30px;
+            }
+
         }
         .clickbtn {
             position: relative;
-            left: 12%;
-            width: 231px;
-            height: 58px;
-            padding-top: 15px;
             border: 1px solid #FFFFFF ;
             background-color: transparent;
             color:#FFFFFF;
             display: flex;
             align-items: center;
             justify-content: right;
-            margin-top: 60px;
+            margin-top: 30px;
+            padding: 15px 5px;
             span{
-                width: 91px;
-                height: 130px;
-                font-size: 20px;
-                font-family: DINCondensed-Bold;
-                font-weight: bold;
-                line-height: 25px;
-                text-align: center;
-                color: #FFFFFF;
-                line-height: 130px;
-                margin-left: 20px;
-                margin-right: 60px;
+            font-size: 1vw;
+            font-family: DINCondensed-Bold;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            color: #FFFFFF;
+            margin-left: 40px;
             }
             .el-icon-my-right {
-                background: url('../../assets/images/home/right.png') no-repeat;
-                background-size: cover;
-                display:inline-block;
-                height: 16px;
-                width: 16px;
-                margin-right: -16px;
+            margin-left: 40px;
+            background: url('../../assets/images/home/right.png') no-repeat;
+            background-size: cover;
+            display:inline-block;
+            height: 16px;
+            width: 16px;
             }
         }
+    }
+  }
         .offer {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             height: 100px;
             font-size: 60px;
             margin-top: 85px;
@@ -213,7 +215,7 @@ export default({
         }
         .spcialoffer {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             height: 100px;
             font-size: 60px;
             margin-top: 100px;
@@ -225,7 +227,7 @@ export default({
         }
         .style {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             margin-bottom:100px;
             display: flex;
             flex-wrap: wrap;
@@ -268,7 +270,7 @@ export default({
         }
         .styles {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -342,17 +344,19 @@ export default({
         }
         .ourStory {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             display: flex;
             margin-top: 95px;
             justify-content: space-between;
             .storyImg {
-                width: 690px;
+                width: 65%;
                 height: 462px;
+                object-fit: cover;
                 background: #FFFFFF;
                 margin-right:42px;
             }
             .title {
+                width: 35%;
                 text-align: right;
                 margin-top:45px;
                 .storyTit {
@@ -377,5 +381,24 @@ export default({
                 }
             }
         }
+
+        @media screen and (max-width:1400px){
+            .ourStory {
+               margin: 0 auto;
+                width: 80%;
+                margin-top: 95px;
+                display: block;
+               .storyImg {
+                width: 100%;
+                height: 462px;
+                object-fit: cover;
+                background: #FFFFFF;
+               }
+               .title {
+                    text-align: left;
+               }
+            }
+        }
+
     }
 </style>

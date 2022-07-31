@@ -5,16 +5,19 @@
       <el-carousel :interval="5000" arrow="always" >
         <el-carousel-item v-for="(item,index) in itemList" :key="index">
           <div class="content">
-            <img :src="item.targeUrl"  alt="暂无图片" />
-            <div>
-              <span class="content-title">{{item.secondtitle}}</span><br />
-              <span class="content-text">
-                <span style="padding-left: 51px;">{{item.span}}</span><br />
-                <span style="padding-left: 51px;">{{item.span1}}</span><br />
-              </span>
-              <div class="contact_btn" @click="contactUs()">
-                <span>CONTACT US  </span>
-                <i class="el-icon-my-right"></i>
+            <div class="banner">
+              <img class="contentimg" :src="item.targeUrl"  alt="暂无图片" />
+              <div class="inlinetext">
+                <p class="content-title">{{item.secondtitle}}</p><br />
+                <span class="content-text">
+                  <span class="span1">{{item.span}}</span><br />
+                  <span class="span2">{{item.span1}}</span><br />
+                  <div style="clear:both;"></div>
+                </span>
+                <el-button class="clickbtn" @click="contactUs()">
+                  <span>CONTACT US  </span>
+                  <i class="el-icon-my-right"></i>
+                </el-button>
               </div>
             </div>
           </div>
@@ -52,7 +55,7 @@
               <span >{{item.odometer}} kms</span>
               <!-- <span >{{item.body}}</span> -->
               <span>{{item.fueltype.substring(0,6)}}</span>
-              <span >{{item.geartype}}</span>
+              <span >{{item.geartype.slice(0,4)}}</span>
             </div>
           </el-col>
         </el-row>
@@ -68,16 +71,21 @@
       <div style="clear:both;"></div>
     </div>
     <!--底部内容展示-->
+    <!--底部内容展示-->
     <div class="bottom section">
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
-        <div  v-for="(item,idx) in service" :key="idx" class="infotext" @click="jumppage(idx)">
-          <img :src="item.targeUrl" /> 
-          <div class="infoinfo">
-            <span class="infotitle" >{{ item.secondtitle }}</span><br />
-            <span class="infodetail" >{{ item.describtion}}</span>
-          </div>
-        </div> 
+        <el-row :gutter="40" style="padding-left:132px;padding-right: 132px" >
+          <el-col el-col :sm="24" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx" >
+            <div class="infotext" @click="jumppage(idx)">
+              <img :src="item.targeUrl" />
+              <div class="infoinfo">
+                <span class="infotitle" >{{ item.secondtitle }}</span><br />
+                <span class="infodetail" >{{ item.describtion}}</span>
+              </div>
+            </div>
+          </el-col>
+        </el-row>
         <!-- <div class="infotext" >
           <img src="../../assets/images/home/JVS00345-4.jpg" />
           <div class="infoinfo">
@@ -238,11 +246,11 @@ export default {
   width:100%;
   .el-carousel {
     // height: calc(100vh - 10px);
-    // height: 900px;
+    height: 1100px;
     width:100%;
     .el-carousel__item {
       // height: calc(100vh - 10px);
-      // height: 900px;
+      height: 1100px;
       img {
         width: 100%;
         // height: calc(100vh - 10px);
@@ -256,8 +264,10 @@ export default {
     }
   
     /deep/ .el-carousel__indicators--horizontal {
-      bottom: 0;
-      left: 240px;
+      display: none;
+      position: absolute;
+      left: 10%;
+      // left: 240px;
       transform: translateY(-64px);
       .el-carousel__button {
         width: 10px;
@@ -280,55 +290,71 @@ export default {
   }
 }
 
+
 .content {
-  text-align: left;
-  div {
-    position: absolute;
-    left: 10%;
-    top: 23%;
-    .content-title {
-      font-size: 44px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #FFFFFF;
-      line-height: 70px;
-      margin-left: 55px;
-    }
-    .content-text {
-      font-size: 90px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #FFFFFF;
-      line-height: 100px;
-    }
-    .contact_btn {
+  .banner{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .contentimg {
       position: relative;
-      margin-top: 60px;
-      margin-left: 10px;
-      padding: 15px 0;
-      width: 231px;
-      border:1px solid #fff;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      span {
-        font-size: 20px;
+      width: 100%;
+    }
+    .inlinetext {
+      position: absolute;
+      left: 10%;
+      top: 23%;
+      text-align: left;
+      .content-title {
+        font-size: 2vw;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        margin: 0;
+        color: #FFFFFF;
+      }
+      .content-text {
+        font-size: 5vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
         color: #FFFFFF;
-        margin-left: 70px;
-        margin-right: 45px;
+        .span1 {
+          float:left;
+          margin-top: -20px;
+        }
+        .span2 {
+          float:left;
+          margin-top: -30px;
+        }
+
       }
-      .el-icon-my-right {
-        margin-left: 15px;
-        background: url('../../assets/images/home/right.png') no-repeat;
-        background-size: cover;
-        display:inline-block;
-        height: 16px;
-        width: 16px;
+      .clickbtn {
+        position: relative;
+        border: 1px solid #FFFFFF ;
+        background-color: transparent;
+        color:#FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-top: 30px;
+        padding: 15px 5px;
+        span{
+          font-size: 1vw;
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          line-height: 1;
+          text-align: center;
+          color: #FFFFFF;
+          margin-left: 40px;
+        }
+        .el-icon-my-right {
+          margin-left: 40px;
+          background: url('../../assets/images/home/right.png') no-repeat;
+          background-size: cover;
+          display:inline-block;
+          height: 16px;
+          width: 16px;
+        }
       }
     }
   }
@@ -531,20 +557,15 @@ export default {
     .serviceinfo {
       margin: 0 auto;
       width: 80%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding-top:52px;
-      padding-bottom:150px;
-      justify-content: flex-end;
+      padding-bottom:200px;
       .infotext {
-        margin-right:85px;
-        width: calc(100% / 3 - 125px);
-        height: 458px;
+        margin-bottom: 20px;
+        height: 508px;
         background: #FFFFFF;
         img {
           width: 100%;
-          object-fit: cover;
+          height:240px;
         }
         .infoinfo {
           display: flex;
@@ -552,7 +573,7 @@ export default {
           justify-content: center;
           align-items: center;
           width:100%;
-          height: 268px;
+          height: 300px;
           .infotitle {
             font-family:DINCondensed-Bold;
             font-weight: bold;
@@ -569,7 +590,7 @@ export default {
         }
       }
     }
-  }
+}
 
 
 </style>
