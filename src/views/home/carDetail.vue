@@ -65,10 +65,12 @@
       </div>
     </div>
     <div class="detailtext">
-      <span class="texttitle">{{information.advtitle}} 1111</span>
+      <span class="texttitle">DEALER COMMENTS</span>
+      <br/>
+      <span class="texttitle1">{{advTitle}}</span>
       <br />
-      <!-- <span class="textcontent" v-html="information1.advbody">
-      </span> -->
+      <span class="textcontent" v-html="advbody">
+      </span>
   </div>
   </div>
   <div class="booking">
@@ -187,6 +189,8 @@ name: 'CarDetail',
       email: '',
       photo: {},
       photos: [],
+      advTitle: '',
+      advbody: '',
       // reqEmail: true,
       // reqPhone: true,
       information: {
@@ -211,7 +215,8 @@ name: 'CarDetail',
   created() {
     this.query()
     this.informations = this.$route.query.item
-
+    this.advTitle = this.informations.advTitle
+    this.advbody = this.informations.advbody
     this.imgUrlList = this.informations.photo
     this.mainImgUrl = this.informations.photo[0]
     this.init()
@@ -375,6 +380,8 @@ name: 'CarDetail',
     jumpCardDetail(item) {
         this.price = item.price
         this.informations = item
+        this.advTitle = item.advTitle
+        this.advbody = item.advbody
         this.imgUrlList = item.photo
         this.init()
         this.allCar()
@@ -414,6 +421,8 @@ name: 'CarDetail',
                         body: ele.body,
                         model: ele.model,
                         drive: ele.drive,
+                        advbody: ele.advbody,
+                        advTitle: ele.advTitle,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,
                         cylinders: ele.cylinders,
@@ -456,6 +465,8 @@ name: 'CarDetail',
                         body: ele.body,
                         drive: ele.drive,
                         model: ele.model,
+                        advbody: ele.advbody,
+                        advTitle: ele.advTitle,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,
                         cylinders: ele.cylinders,
@@ -522,6 +533,8 @@ name: 'CarDetail',
                         body: ele.body,
                         drive: ele.drive,
                         model: ele.model,
+                        advbody: ele.advbody,
+                        advTitle: ele.advTitle,
                         geartype: ele.geartype,
                         enginesize: ele.enginesize,
                         cylinders: ele.cylinders,
@@ -760,8 +773,8 @@ name: 'CarDetail',
   }
   .detailtext {
     background-color: #FFFFFF;
-    height:180px;
-    margin: 50px 40px 0 20px;
+    // height:180px;
+    margin: 50px 40px 15px 20px;
     .texttitle {
       height: 130px;
       font-size: 30px;
@@ -770,9 +783,19 @@ name: 'CarDetail',
       color: #151515;
       line-height: 75px;
     }
+    .texttitle1 {
+      height: 130px;
+      font-size: 25px;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #151515;
+      line-height: 75px;
+    }
     .textcontent {
+          text-align: left;
           width: 794px;
-          height: 66px;
+          // margin-bottom:10px;
+          // height: 66px;
           font-size: 20px;
           font-family: DINCondensed-Bold;
           // font-weight: bold;
@@ -780,6 +803,7 @@ name: 'CarDetail',
           line-height: 22px;
           opacity: 0.7;
           letter-spacing: 1px;
+          // position: relative;
     }
   }
   .booking {

@@ -15,7 +15,7 @@
             </el-button>
         </div>
       </div>
-      <div class="middle">
+        <div class="middle">
             <div class="title">START A NEW SEARCH</div>
             <div class="show" >
                 <div class="left">
@@ -154,21 +154,21 @@
                         <el-row :gutter="15" >
                             <el-col :lg="8" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"  >
                                     <div class="imgcard" @click="cardetail(item)">
-                                        <img :src="item.photo[0]"  />
-                                    </div>
+                                <img :src="item.photo[0]"  />
+                            </div>
                                     <div class="titlecard" @click="cardetail(item)">
-                                        <span >{{item.year}} {{item.make}} {{item.model}}</span>
-                                    </div>
+                                <span >{{item.year}} {{item.make}} {{item.model}}</span>
+                            </div>
                                     <div class="contentcard" @click="cardetail(item)">
-                                        <span class="contentcard-price">${{item.price}}</span>
-                                        <span class="contentcard-info">Excl . Gov's Charges</span>
-                                    </div>
-                                    <div class="break" ></div>
+                                <span class="contentcard-price">${{item.price}}</span>
+                                <span class="contentcard-info">Excl . Gov's Charges</span>
+                            </div>
+                            <div class="break" ></div>
                                     <div class="detailcard" @click="cardetail(item)">
                                         <span >{{item.odometer}} kms</span>
-                                        <span>{{item.fueltype.substring(0,6)}}</span>
+                                <span>{{item.fueltype.substring(0,6)}}</span>
                                         <span >{{item.geartype.slice(0,4)}}</span>
-                                    </div>
+                            </div>
                             </el-col>
                         </el-row>
                         <div style="clear:both;"></div>
@@ -188,6 +188,7 @@
 
 <script>
 import { car } from '@/api'
+import { Loading } from "element-ui";
 export default {
   name: 'OnlineShowroom',
   components: {
@@ -267,7 +268,7 @@ export default {
   },
   created() {
     this.allCar()
-    this.load()
+    // this.load()
   },
   methods: {
     clickitem(e){
@@ -364,6 +365,11 @@ export default {
     },
     // make 和body筛选
     bodyChange() {
+        let loadingInstance = null
+        loadingInstance = Loading.service({
+            fullscreen: true,
+            text: "Loading"
+        })
         car({
         current: '1',
         pageSize: '1000',
@@ -377,6 +383,13 @@ export default {
         orderByYear: this.orderByYear
       }).then(car => {
         // this.information = car.data.records
+        const res = car.data
+        if (res.code !== 0) {
+        setTimeout(() =>   loadingInstance.close(), 1000)
+        } else {
+        setTimeout(() => loadingInstance.close(), 1000)
+        return res
+        }
         this.information = []
         car.data.records.forEach(ele => {
             const item = {
@@ -388,6 +401,8 @@ export default {
                 body: ele.body,
                 model: ele.model,
                 drive: ele.drive,
+                advbody: ele.advbody,
+                advTitle: ele.advTitle,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -406,6 +421,11 @@ export default {
     selects() {
         console.log('45', this.checkboxs.toString())
         console.log('45', this.bodySel.toString())
+        let loadingInstance = null
+        loadingInstance = Loading.service({
+            fullscreen: true,
+            text: "Loading"
+        })
       car({
         current: '1',
         pageSize: '1000',
@@ -419,6 +439,13 @@ export default {
         orderByYear: this.orderByYear
       }).then(car => {
         // this.information = car.data.records
+            const res = car.data
+            if (res.code !== 0) {
+            setTimeout(() =>   loadingInstance.close(), 1000)
+            } else {
+            setTimeout(() => loadingInstance.close(), 1000)
+            return res
+            }
         this.information = []
         car.data.records.forEach(ele => {
             const item = {
@@ -430,6 +457,8 @@ export default {
                 body: ele.body,
                 model: ele.model,
                 drive: ele.drive,
+                advbody: ele.advbody,
+                advTitle: ele.advTitle,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -449,6 +478,11 @@ export default {
       this.$router.push('/contact')
     },
     allCar() {
+    let loadingInstance = null
+    loadingInstance = Loading.service({
+        fullscreen: true,
+        text: "Loading"
+    })
       car({
         current: '1',
         pageSize: '5000',
@@ -461,6 +495,13 @@ export default {
         orderByPrice: this.orderByPrice,
         orderByYear: this.orderByYear
       }).then(car => {
+        const res = car.data
+        if (res.code !== 0) {
+        setTimeout(() =>   loadingInstance.close(), 1000)
+        } else {
+        setTimeout(() => loadingInstance.close(), 1000)
+        return res
+        }
         this.maxPrice = car.data.records[0].price
         this.minPrice = car.data.records[car.data.records.length-1].price
         this.maxPrices = car.data.records[0].price
@@ -498,6 +539,8 @@ export default {
                 body: ele.body,
                 model: ele.model,
                 drive: ele.drive,
+                advbody: ele.advbody,
+                advTitle: ele.advTitle,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
@@ -549,11 +592,11 @@ export default {
       })
       this.load()
   },
-  load() {
-    if ( this.information != []) {
-        this.loading = false
-    }
-}
+//   load() {
+//     if ( this.information != []) {
+//         this.loading = false
+//     }
+// }
 }
 }
 </script>
@@ -568,26 +611,26 @@ export default {
     align-items: center;
     .contentimg {
       position: relative;
-      width: 100%;
+        width: 100%;
     }
     .inlinetext {
-      position: absolute;
-      left: 10%;
+        position: absolute;
+        left: 10%;
       text-align: left;
-      .content-title {
+    .content-title {
         font-size: 2vw;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
         margin: 0;
-        color: #FFFFFF;
-      }
-      .content-text {
+      color: #FFFFFF;
+    }
+    .content-text {
         font-size: 5vw;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        color: #FFFFFF;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #FFFFFF;
         .span1 {
-          float:left;
+            float:left;
           margin-top: -20px;
         }
         .span2 {
@@ -595,38 +638,42 @@ export default {
           margin-top: -30px;
         }
 
-      }
-      .clickbtn {
-        position: relative;
-        border: 1px solid #FFFFFF ;
-        background-color: transparent;
-        color:#FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: right;
+    }
+    .clickbtn {
+      position: relative;
+      left: 12%;
+      width: 231px;
+      height: 58px;
+      padding-top: 15px;
+      border: 1px solid #FFFFFF ;
+      background-color: transparent;
+      color:#FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: right;
         margin-top: 30px;
         padding: 15px 5px;
         span{
           font-size: 1vw;
-          font-family: DINCondensed-Bold;
-          font-weight: bold;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
           line-height: 1;
-          text-align: center;
-          color: #FFFFFF;
+        text-align: center;
+        color: #FFFFFF;
           margin-left: 40px;
         }
         .el-icon-my-right {
           margin-left: 40px;
-          background: url('../../assets/images/home/right.png') no-repeat;
-          background-size: cover;
-          display:inline-block;
-          height: 16px;
-          width: 16px;
+            background: url('../../assets/images/home/right.png') no-repeat;
+            background-size: cover;
+        display:inline-block;
+        height: 16px;
+        width: 16px;
         }
       }
+        }
     }
-  }
-  .middle {
+    .middle {
         margin: 0 auto;
         width: 80%;
         padding-bottom: 200px;

@@ -1,4 +1,5 @@
 import axios from 'axios'
+// import { Loading } from "element-ui";
 // import router from '@/router'
 
 // create an axios instance
@@ -9,9 +10,13 @@ const service = axios.create({
   headers: { ContentType: 'application/json'} // request timeout
 })
 
+// let loadingInstance = null
 service.interceptors.request.use(
   config => {
-    if (!config.disableLoading)
+  //   loadingInstance = Loading.service({
+  //     fullscreen: true,
+  //     text: "Loading"
+  //   })
     if (config.method === 'post')
 
     return config
@@ -31,24 +36,12 @@ service.interceptors.response.use(
    * You can also judge the status by HTTP Status errcode
    */
   response => {
-    const { data } = response
-    if (data.code === 0) {
-      return data
-    } else if (process.env.VUE_APP_MODE === 'per') {
-
-      return {
-        ...data,
-        _Return: '000000',
-        _TaskId: '999999999999999999999999999'
-      }
-    } else if (data.code && data.code === -9) {
-      return
+    const res = response.data
+    if (res.code !== 0) {
+    //   setTimeout(() =>   loadingInstance.close(), 1000)
     } else {
-      if (data.code) {
-        return data
-      } else {
-        return response
-      }
+    //   setTimeout(() => loadingInstance.close(), 1000)
+      return res
     }
   },
   error => {

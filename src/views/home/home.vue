@@ -182,6 +182,8 @@ export default {
                 body: ele.body,
                 drive: ele.drive,
                 model: ele.model,
+                advbody: ele.advbody,
+                advTitle: ele.advTitle,
                 geartype: ele.geartype,
                 enginesize: ele.enginesize,
                 cylinders: ele.cylinders,
