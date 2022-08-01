@@ -245,7 +245,7 @@ export default({
         }
         .contact-main {
             margin: 105px auto 0 auto;
-            width: 1400px;
+            width: 80%;
             height: 1100px;
             display: flex;
             align-items: center;
@@ -281,9 +281,6 @@ export default({
                         margin-left: 20px;
                         margin-top:20px;
                         width: 84%;
-                        /deep/ .el-textarea__inner {
-                            margin-left: 15px;
-                        }
                     }
                 }
                 .el-button {
@@ -445,4 +442,43 @@ background-color: #f4f6f8;
     font-weight: bold;
     color:#151515;
 }
+
+@media screen and (max-width:1600px) and (min-width:1200px){
+    /deep/.el-textarea__inner {
+        margin: 0;
+        width: 478px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .contact .contact-main {
+        margin: 105px auto 0 auto;
+        width: 80%;
+        display: block;
+        height: 2000px;
+    }
+    .contact .contact-main .left .top {
+        justify-content: center;
+    }
+    .contact .contact-main .table {
+        margin: 0 auto;
+    }
+    .contact .contact-main .table .table1 {
+        padding: 0;
+    }
+    .contact .contact-main .table .table1 .title {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .contact .contact-main .table{
+        margin-left: -125px;
+        width: 650px;
+    }
+    .contact .contact-main .table .table1 .title {
+        margin-left: 120px;
+    }
+}
+
 </style>

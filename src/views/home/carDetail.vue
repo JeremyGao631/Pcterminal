@@ -65,12 +65,10 @@
       </div>
     </div>
     <div class="detailtext">
-      <span class="texttitle">DEALER COMMENTS</span>
+      <span class="texttitle">{{information.advtitle}} 1111</span>
       <br />
-      <span class="textcontent">The team at Autohome AU make selling your car as easy and convenient as possible. 
-        <br />Simply send us your vehicle details using the form below and let our team take care of the rest. 
-        <br />Contact us now.
-      </span>
+      <!-- <span class="textcontent" v-html="information1.advbody">
+      </span> -->
   </div>
   </div>
   <div class="booking">
@@ -213,23 +211,7 @@ name: 'CarDetail',
   created() {
     this.query()
     this.informations = this.$route.query.item
-    // var imgUrlLists = this.informations.photo
-    // var index=imgUrlLists.length
-    // var a=0;
-    // var that=this
-    // if(index>1){
-    //    setInterval(function(){
-    //       if(a<index-1){
-    //          a++
-    //        //that.mainImgUrl = imgUrlLists[a]
-    //        that.imgActiveIndex=a
-    //       }else if(a==index-1){
-    //         that.imgActiveIndex=0
-    //       }
-    // },1000)
-    // }
-    // this.imgUrlList = imgUrlLists
-    
+
     this.imgUrlList = this.informations.photo
     this.mainImgUrl = this.informations.photo[0]
     this.init()

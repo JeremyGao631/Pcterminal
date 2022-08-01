@@ -2,23 +2,22 @@
   <div>
     <!--轮播图-->
     <div class="lunbo section">
+      <img class="default_img" :src="url"  alt="暂无图片" />
       <el-carousel :interval="5000" arrow="always" >
         <el-carousel-item v-for="(item,index) in itemList" :key="index">
-          <div class="content">
-            <div class="banner">
-              <img class="contentimg" :src="item.targeUrl"  alt="暂无图片" />
-              <div class="inlinetext">
-                <p class="content-title">{{item.secondtitle}}</p><br />
-                <span class="content-text">
-                  <span class="span1">{{item.span}}</span><br />
-                  <span class="span2">{{item.span1}}</span><br />
-                  <div style="clear:both;"></div>
-                </span>
-                <el-button class="clickbtn" @click="contactUs()">
-                  <span>CONTACT US  </span>
-                  <i class="el-icon-my-right"></i>
-                </el-button>
-              </div>
+          <div class="banner">
+            <img class="contentimg" :src="item.targeUrl"  alt="暂无图片" />
+            <div class="inlinetext">
+              <p class="content-title">{{item.secondtitle}}</p><br />
+              <span class="content-text">
+                <span class="span1">{{item.span}}</span><br />
+                <span class="span2">{{item.span1}}</span><br />
+                <div style="clear:both;"></div>
+              </span>
+              <el-button class="clickbtn" @click="contactUs()">
+                <span>CONTACT US  </span>
+                <i class="el-icon-my-right"></i>
+              </el-button>
             </div>
           </div>
         </el-carousel-item>
@@ -108,6 +107,7 @@
 <script>
 import { describtion } from '@/api'
 import { car } from '@/api'
+import banner from '@/assets/images/home/banner_bg.jpg'
 export default {
   name: 'HomeView',
   components: {
@@ -131,7 +131,7 @@ export default {
                 // },
       ],
       service: [],
-
+      url: banner
     }
   },
   created() {
@@ -246,25 +246,27 @@ export default {
 <style lang="less" scoped>
 .lunbo {
   width:100%;
+  position: relative;
+  .default_img{
+    width: 100%;
+    height: auto;
+  }
   .el-carousel {
-    // height: calc(100vh - 10px);
-    height: 1100px;
+    position: absolute;
     width:100%;
-    .el-carousel__item {
-      // height: calc(100vh - 10px);
-      height: 1100px;
-      img {
-        width: 100%;
-        // height: calc(100vh - 10px);
-        object-fit: cover;
-        position: relative;
+    height: 100%;
+    top: 0;
+    /deep/ .el-carousel__container{
+      height: 100%;
+      .el-carousel__item {
+        
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
       }
     }
-    /deep/ .el-carousel__container {
-      position: relative;
-      height: calc(100vh - 75px);
-    }
-  
     /deep/ .el-carousel__indicators--horizontal {
       display: none;
       position: absolute;
@@ -293,70 +295,68 @@ export default {
 }
 
 
-.content {
-  .banner{
-    width: 100%;
+.banner{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .contentimg {
     position: relative;
-    display: flex;
-    align-items: center;
-    .contentimg {
-      position: relative;
-      width: 100%;
+    width: 100%;
+  }
+  .inlinetext {
+    position: absolute;
+    left: 10%;
+    top: 23%;
+    text-align: left;
+    .content-title {
+      font-size: 2vw;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      margin: 0;
+      color: #FFFFFF;
     }
-    .inlinetext {
-      position: absolute;
-      left: 10%;
-      top: 23%;
-      text-align: left;
-      .content-title {
-        font-size: 2vw;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        margin: 0;
-        color: #FFFFFF;
+    .content-text {
+      font-size: 5vw;
+      font-family: DINCondensed-Bold;
+      font-weight: bold;
+      color: #FFFFFF;
+      .span1 {
+        float:left;
+        margin-top: -20px;
       }
-      .content-text {
-        font-size: 5vw;
-        font-family: DINCondensed-Bold;
-        font-weight: bold;
-        color: #FFFFFF;
-        .span1 {
-          float:left;
-          margin-top: -20px;
-        }
-        .span2 {
-          float:left;
-          margin-top: -30px;
-        }
+      .span2 {
+        float:left;
+        margin-top: -30px;
+      }
 
+    }
+    .clickbtn {
+      position: relative;
+      border: 1px solid #FFFFFF ;
+      background-color: transparent;
+      color:#FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 30px;
+      padding: 15px 5px;
+      span{
+        font-size: 1vw;
+        font-family: DINCondensed-Bold;
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+        color: #FFFFFF;
+        margin-left: 40px;
       }
-      .clickbtn {
-        position: relative;
-        border: 1px solid #FFFFFF ;
-        background-color: transparent;
-        color:#FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        margin-top: 30px;
-        padding: 15px 5px;
-        span{
-          font-size: 1vw;
-          font-family: DINCondensed-Bold;
-          font-weight: bold;
-          line-height: 1;
-          text-align: center;
-          color: #FFFFFF;
-          margin-left: 40px;
-        }
-        .el-icon-my-right {
-          margin-left: 40px;
-          background: url('../../assets/images/home/right.png') no-repeat;
-          background-size: cover;
-          display:inline-block;
-          height: 16px;
-          width: 16px;
-        }
+      .el-icon-my-right {
+        margin-left: 40px;
+        background: url('../../assets/images/home/right.png') no-repeat;
+        background-size: cover;
+        display:inline-block;
+        height: 16px;
+        width: 16px;
       }
     }
   }

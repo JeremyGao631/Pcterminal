@@ -146,7 +146,11 @@
                         </div>
                     </div>
                     <div style="clear:both;"></div>
-                    <div class="showimg">
+                    <div class="showimg" 
+                        v-loading="loading"
+                        element-loading-text="LOADING..."
+                        element-loading-spinner="loading_gif"
+                        element-loading-background="rgba(0, 0, 0, 0)">
                         <el-row :gutter="15" >
                             <el-col :lg="8" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"  >
                                     <div class="imgcard" @click="cardetail(item)">
@@ -161,7 +165,7 @@
                                     </div>
                                     <div class="break" ></div>
                                     <div class="detailcard" @click="cardetail(item)">
-                                        <span >{{item.odometer}}kms</span>
+                                        <span >{{item.odometer}} kms</span>
                                         <span>{{item.fueltype.substring(0,6)}}</span>
                                         <span >{{item.geartype.slice(0,4)}}</span>
                                     </div>
@@ -169,12 +173,12 @@
                         </el-row>
                         <div style="clear:both;"></div>
                     </div>
-                    <div class="newbutton" @click="loadmore()">
+                    <!-- <div class="newbutton" @click="loadmore()">
                         <el-button>
                             <span>LOAD MORE</span>
                             <i class="el-icon-my-yellowright"></i>
                         </el-button>
-                    </div>
+                    </div> -->
                     <div style="clear:both;"></div>
                 </div>
             </div>
@@ -1176,5 +1180,14 @@ line-height: 130px;
     transform: rotate(-45deg);
     border-radius: 0px;
     background: none;
+}
+
+.loading_gif {
+  margin: 40px auto 0 auto;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: url("~@/assets/images/onlineshowroom/loading.svg") center center no-repeat;
+  background-size: 100% 100%;
 }
 </style>

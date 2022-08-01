@@ -396,6 +396,7 @@ export default({
                }
                .title {
                     text-align: left;
+                    margin-bottom: 140px;
                }
             }
         }
