@@ -149,8 +149,8 @@
                     <div class="showimg" 
                         v-loading="loading"
                         element-loading-text="LOADING..."
-                        element-loading-spinner="loading_gif"
-                        element-loading-background="rgba(0, 0, 0, 0)">
+                        element-loading-spinner="../../assets/images/loading-icon.png"
+>
                         <el-row :gutter="15" >
                             <el-col :lg="8" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"  >
                                     <div class="imgcard" @click="cardetail(item)">
@@ -365,11 +365,12 @@ export default {
     },
     // make 和body筛选
     bodyChange() {
-        let loadingInstance = null
-        loadingInstance = Loading.service({
-            fullscreen: true,
-            text: "Loading"
-        })
+        // let loadingInstance = null
+        // loadingInstance = Loading.service({
+        //     fullscreen: true,
+        //     text: "Loading"
+        // })
+        this.loading = true
         car({
         current: '1',
         pageSize: '1000',
@@ -382,12 +383,12 @@ export default {
         orderByPrice: this.orderByPrice,
         orderByYear: this.orderByYear
       }).then(car => {
-        // this.information = car.data.records
+        this.information = car.data.records
         const res = car.data
         if (res.code !== 0) {
-        setTimeout(() =>   loadingInstance.close(), 1000)
+        setTimeout(() =>this.loading = false, 1000)
         } else {
-        setTimeout(() => loadingInstance.close(), 1000)
+        setTimeout(() =>this.loading = false, 1000)
         return res
         }
         this.information = []
@@ -411,7 +412,6 @@ export default {
                 photo: ele.photo.split(',')
             }
             this.information.push(item)
-            this.loading = false
             console.log('102',this.information)
             })
         })
@@ -421,11 +421,12 @@ export default {
     selects() {
         console.log('45', this.checkboxs.toString())
         console.log('45', this.bodySel.toString())
-        let loadingInstance = null
-        loadingInstance = Loading.service({
-            fullscreen: true,
-            text: "Loading"
-        })
+        // let loadingInstance = null
+        // loadingInstance = Loading.service({
+        //     fullscreen: true,
+        //     text: "Loading"
+        // })
+        this.loading = true
       car({
         current: '1',
         pageSize: '1000',
@@ -439,13 +440,20 @@ export default {
         orderByYear: this.orderByYear
       }).then(car => {
         // this.information = car.data.records
-            const res = car.data
-            if (res.code !== 0) {
-            setTimeout(() =>   loadingInstance.close(), 1000)
-            } else {
-            setTimeout(() => loadingInstance.close(), 1000)
-            return res
-            }
+            // const res = car.data
+            // if (res.code !== 0) {
+            // setTimeout(() =>   loadingInstance.close(), 1000)
+            // } else {
+            // setTimeout(() => loadingInstance.close(), 1000)
+            // return res
+            // }
+        const res = car.data
+        if (res.code !== 0) {
+        setTimeout(() =>this.loading = false, 1000)
+        } else {
+        setTimeout(() =>this.loading = false, 1000)
+        return res
+        }
         this.information = []
         car.data.records.forEach(ele => {
             const item = {
@@ -478,11 +486,12 @@ export default {
       this.$router.push('/contact')
     },
     allCar() {
-    let loadingInstance = null
-    loadingInstance = Loading.service({
-        fullscreen: true,
-        text: "Loading"
-    })
+    // let loadingInstance = null
+    // loadingInstance = Loading.service({
+    //     fullscreen: true,
+    //     text: "Loading"
+    // })
+    this.loading = true
       car({
         current: '1',
         pageSize: '5000',
@@ -495,11 +504,18 @@ export default {
         orderByPrice: this.orderByPrice,
         orderByYear: this.orderByYear
       }).then(car => {
+        // const res = car.data
+        // if (res.code !== 0) {
+        // setTimeout(() =>   loadingInstance.close(), 1000)
+        // } else {
+        // setTimeout(() => loadingInstance.close(), 1000)
+        // return res
+        // }
         const res = car.data
         if (res.code !== 0) {
-        setTimeout(() =>   loadingInstance.close(), 1000)
+        setTimeout(() =>this.loading = false, 1000)
         } else {
-        setTimeout(() => loadingInstance.close(), 1000)
+        setTimeout(() =>this.loading = false, 1000)
         return res
         }
         this.maxPrice = car.data.records[0].price
@@ -1023,7 +1039,6 @@ export default {
                 }
                 .showimg {
                     padding:0 20px;
-                    margin-top: 40px;
                     overflow: hidden;
                     .textcard {
                         float:left;
@@ -1234,7 +1249,7 @@ line-height: 130px;
   display: block;
   width: 200px;
   height: 200px;
-  background: url("~@/assets/images/onlineshowroom/loading.svg") center center no-repeat;
+  background: url("../../assets/images/onlineshowroom/loading.svg") center center no-repeat;
   background-size: 100% 100%;
 }
 </style>
