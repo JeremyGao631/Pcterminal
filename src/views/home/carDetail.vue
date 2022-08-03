@@ -67,7 +67,7 @@
     <div class="detailtext">
       <span class="texttitle">DEALER COMMENTS</span>
       <br/>
-      <span class="texttitle1">{{advTitle}}</span>
+      <span class="textcontent">{{advTitle}}</span>
       <br />
       <span class="textcontent" v-html="advbody">
       </span>

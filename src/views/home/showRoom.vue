@@ -188,7 +188,6 @@
 
 <script>
 import { car } from '@/api'
-import { Loading } from "element-ui";
 export default {
   name: 'OnlineShowroom',
   components: {
@@ -386,9 +385,9 @@ export default {
         this.information = car.data.records
         const res = car.data
         if (res.code !== 0) {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         } else {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         return res
         }
         this.information = []
@@ -449,9 +448,9 @@ export default {
             // }
         const res = car.data
         if (res.code !== 0) {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         } else {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         return res
         }
         this.information = []
@@ -513,9 +512,9 @@ export default {
         // }
         const res = car.data
         if (res.code !== 0) {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         } else {
-        setTimeout(() =>this.loading = false, 1000)
+        setTimeout(() =>this.loading = false, 2000)
         return res
         }
         this.maxPrice = car.data.records[0].price
@@ -1244,12 +1243,22 @@ line-height: 130px;
     background: none;
 }
 
-.loading_gif {
+/deep/ .el-loading-spinner {
+    top: 0;
+    margin-top: 0px;
+}
+/deep/ .el-loading-spinner i {
   margin: 40px auto 0 auto;
   display: block;
   width: 200px;
   height: 200px;
   background: url("../../assets/images/onlineshowroom/loading.svg") center center no-repeat;
   background-size: 100% 100%;
+}
+
+/deep/ .el-loading-spinner .el-loading-text{
+    color: #151515;
+    margin: 20px 0 20px 5px;
+    font-size: 20px;
 }
 </style>
