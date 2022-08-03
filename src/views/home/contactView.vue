@@ -447,6 +447,16 @@ background-color: #f4f6f8;
         width: 88%;
         margin-left: 12px;
     }
+
+    .contact .contact-main .left {
+        width: 100%;
+    }
+    .contact .contact-main .left .top .information {
+        width: 80%;
+    }
+    .contact .contact-main {
+        padding-right: 60px;
+    }
 }
 
 @media screen and (max-width: 1200px){

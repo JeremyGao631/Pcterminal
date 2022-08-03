@@ -503,7 +503,7 @@ export default({
         margin-top: 30px;
         padding: 15px 5px;
         span{
-          font-size: 1vw;
+          font-size: 1.5vw;
           font-family: DINCondensed-Bold;
           font-weight: bold;
           line-height: 1;
