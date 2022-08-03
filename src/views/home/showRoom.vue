@@ -656,36 +656,32 @@ export default {
     }
     .clickbtn {
       position: relative;
-      left: 12%;
-      width: 231px;
-      height: 58px;
-      padding-top: 15px;
       border: 1px solid #FFFFFF ;
       background-color: transparent;
       color:#FFFFFF;
       display: flex;
       align-items: center;
       justify-content: right;
-        margin-top: 30px;
-        padding: 15px 5px;
-        span{
-          font-size: 1vw;
+      margin-top: 30px;
+      padding: 15px 5px;
+      span{
+        font-size: 1vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
-          line-height: 1;
+        line-height: 1;
         text-align: center;
         color: #FFFFFF;
-          margin-left: 40px;
-        }
-        .el-icon-my-right {
-          margin-left: 40px;
-            background: url('../../assets/images/home/right.png') no-repeat;
-            background-size: cover;
+        margin-left: 40px;
+      }
+      .el-icon-my-right {
+        margin-left: 40px;
+        background: url('../../assets/images/home/right.png') no-repeat;
+        background-size: cover;
         display:inline-block;
         height: 16px;
         width: 16px;
-        }
       }
+    }
         }
     }
     .middle {

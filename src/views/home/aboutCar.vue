@@ -218,7 +218,6 @@ export default({
             width: 80%;
             height: 100px;
             font-size: 60px;
-            margin-top: 100px;
             margin-bottom: 80px;
             font-family: DINCondensed-Bold, DINCondensed;
             font-weight: bold;
@@ -279,7 +278,7 @@ export default({
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                width: 300px;
+                width: 250px;
                 .imgStyle {
                     width: 32px;
                     height: 34px;
@@ -322,19 +321,20 @@ export default({
             .visit{
                 position:absolute;
                 .visitTitle {
-                    width: 555px;
-                    height: 100px;
-                    font-size: 65px;
+                    /* height: 100px; */
+                    font-size: 4vw;
                     text-align: center;
-                    padding-left:160px;
+                    padding-left: 153px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #FFFFFF;
-                    line-height: 100px;
+                    /* line-height: 100px; */
+                    padding-top: 20px;
+                    padding-right: 90px;
                 }
                 .visitText {
                     height: 35px;
-                    font-size: 18px;
+                    font-size: 1vw;
                     text-align: center;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -358,25 +358,23 @@ export default({
             .title {
                 width: 35%;
                 text-align: right;
-                margin-top:45px;
+                margin-top:20px;
                 .storyTit {
-                    width: 570px;
+                    width: 100%;
                     height: 100px;
                     font-size: 80px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
-                    line-height: 100px;
                 }
                 .story {
-                    width: 566px;
-                    height: 168px;
+                    width: 100%;
+                    height: 462px;
                     font-size: 18px;
                     word-spacing: 0.5px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #4A4A4A;
-                    line-height: 28px;
                     opacity: 0.7;
                 }
             }
@@ -384,7 +382,7 @@ export default({
 
         @media screen and (max-width:1400px){
             .ourStory {
-               margin: 0 auto;
+                margin: 0 auto;
                 width: 80%;
                 margin-top: 95px;
                 display: block;
@@ -395,9 +393,18 @@ export default({
                 background: #FFFFFF;
                }
                .title {
-                    text-align: left;
-                    margin-bottom: 140px;
+                text-align: left;
+                .storyTit {
+                    width: 538px;
+                }
+                .story {
+                    width: 538px;
+                    height: 168px;
+                }
                }
+            }
+            .spcialoffer {
+                margin-top: 100px;
             }
         }
 
