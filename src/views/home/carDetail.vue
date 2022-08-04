@@ -74,6 +74,7 @@
         </div>
       </el-col>
     </el-row>
+  </div>
 
     <!-- <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden;background-color: #24262e;">
         
@@ -238,7 +239,6 @@
 <script>
 import { inspection } from '@/api'
 import { car } from '@/api'
-import swiperPhoto from '../components/photo-com.vue'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
@@ -252,7 +252,6 @@ export default {
 name: 'CarDetail',
   components: {
     // photoCom
-    swiperPhoto,
   },
   data(){
     return{
