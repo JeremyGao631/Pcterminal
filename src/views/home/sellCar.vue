@@ -503,7 +503,7 @@ export default({
         margin-top: 30px;
         padding: 15px 5px;
         span{
-          font-size: 1vw;
+          font-size: 1.5vw;
           font-family: DINCondensed-Bold;
           font-weight: bold;
           line-height: 1;
@@ -523,12 +523,14 @@ export default({
     }
   }
         .between {
+          width: 100%;
           height: 850px;
           background: #F4F6F8;
           position: relative;
           .sell {
             width: 100%;
             .title {
+              width: 100%;
               height: 32px;
               font-size: 100px;
               padding-top:180px;
@@ -602,11 +604,11 @@ export default({
         .bottom {
           background-color: #fff;
           margin: 0 auto;
-          width: 1400px;
+          width: 80%;
           margin-bottom: 175px;
           .contact {
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             margin-top:108px;
             text-align: left;
             margin-bottom: 50px;
@@ -629,7 +631,7 @@ export default({
               text-align: left;
             }
             .started1 {
-              width: 794px;
+              width: 45%;
               font-size: 17px;
               font-family: PingFangSC-Regular;
               font-weight: 400;
@@ -639,10 +641,9 @@ export default({
             }
           }
           .form {
-            height: 1750px;
             background-color: #f4f6f8;
             margin: 0 auto;
-            width: 1400px;
+            width: 80%;
             .detail {
               position: relative;
               top: 85px;
@@ -1045,4 +1046,12 @@ line-height: 20px;
 // font-size: 20px;
 // font-family: DINCondensed-Bold;
 // }
+
+@media screen and (max-width: 1400px){
+  
+}
+
+@media screen and (max-width: 992px) {
+  
+}
 </style>

@@ -251,7 +251,7 @@ export default({
             align-items: center;
             .table {
                 right: 0;
-                width: 750px;
+                width: 50%;
                 height: 955px;
                 background-color: #f4f6f8;
                 box-sizing: border-box;
@@ -280,7 +280,6 @@ export default({
                         font-size: 20px;
                         margin-left: 20px;
                         margin-top:20px;
-                        width: 84%;
                     }
                 }
                 .el-button {
@@ -421,12 +420,12 @@ background-color: #f4f6f8;
   background-color: #f4f6f8;
 }
 /deep/.el-input__inner {
-    width: 217px;
+    width: 86%;
     padding-top: 3px;
 }
 /deep/.el-textarea__inner {
     margin-left:18px;
-    width: 508px;
+    width: 86%;
 }
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
@@ -445,8 +444,18 @@ background-color: #f4f6f8;
 
 @media screen and (max-width:1600px) and (min-width:1200px){
     /deep/.el-textarea__inner {
-        margin: 0;
-        width: 478px;
+        width: 88%;
+        margin-left: 12px;
+    }
+
+    .contact .contact-main .left {
+        width: 100%;
+    }
+    .contact .contact-main .left .top .information {
+        width: 80%;
+    }
+    .contact .contact-main {
+        padding-right: 60px;
     }
 }
 
@@ -462,12 +471,17 @@ background-color: #f4f6f8;
     }
     .contact .contact-main .table {
         margin: 0 auto;
+        width: 80%;
     }
     .contact .contact-main .table .table1 {
         padding: 0;
     }
     .contact .contact-main .table .table1 .title {
         margin-left: 0;
+    }
+
+    /deep/.el-textarea__inner {
+        width: 85%;
     }
 }
 

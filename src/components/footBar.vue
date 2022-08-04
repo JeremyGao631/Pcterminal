@@ -238,4 +238,36 @@
 
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .jj {
+    .left {
+      margin-left: 10px;
+      .img {
+        margin-left: 125px;
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+      .bottom {
+        align-items: right;
+        justify-content: right;
+      }
+      .tips {
+        text-align: right;
+        width: 215px;
+        padding-right: 20px;
+        }
+    }
+    .line {
+      width: 5%;
+    }
+    .among {
+      .components {
+        width: 330px;
+      }
+
+    }
+    }
+    
+  }
 </style>

@@ -66,14 +66,22 @@
     <div>
       <!-- <swiperPhoto /> -->
     </div>
+      <div class="contentright" style="background-color: black">
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+        <div>111111111111111</div>
+      </div>
+    </div>
+
+
+
     <div class="detailtext">
-      <span class="texttitle">DEALER COMMENTS</span>
-      <br/>
-      <span class="texttitle1">{{advTitle}}</span>
-      <br />
-      <span class="textcontent" v-html="advbody">
-      </span>
-  </div>
   </div>
   <div class="booking">
     <div class="bookingtext">
@@ -215,6 +223,7 @@ name: 'CarDetail',
       informations: []
     }
   },
+
   created() {
     this.query()
     this.informations = this.$route.query.item
@@ -242,13 +251,6 @@ name: 'CarDetail',
     //   }
     // }
   },
-  computed: {
-        imgStyle() {
-            return {
-                transform: `translate3d(${this.imgDistance}px, 0, 0)` // 计算移动的距离(x,y,z)
-            }
-        }
-    },
   methods: {
     handleOver(event) {
         this.x = event.offsetX
@@ -609,7 +611,7 @@ name: 'CarDetail',
   width:100%;
   .infodetail {
     padding-bottom:40px;
-    width:1440px;
+    width:80%;
     margin: 0 auto;
     .title {
       font-size: 70px;
@@ -617,7 +619,7 @@ name: 'CarDetail',
       font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 40px 50px 20px;
+      margin: 0 20px 50px 20px;
       padding-top:150px;
       text-align:left;
       letter-spacing: 1px;
@@ -742,15 +744,6 @@ name: 'CarDetail',
               }
             }
           }
-          .showleft:nth-child(1) {
-            // margin:0 50px 0 0;
-          }
-          .showleft:nth-child(2) {
-            // margin:0 10px 0 10px;
-          }
-          .showleft:nth-child(3) {
-            // margin:0 15px 0 15px;
-          }
         }
       }
       .contentright {
@@ -790,6 +783,7 @@ name: 'CarDetail',
     background-color: #FFFFFF;
     // height:180px;
     margin: 50px 40px 15px 20px;
+    padding-bottom: 30px;
     .texttitle {
       height: 130px;
       font-size: 30px;
@@ -798,17 +792,9 @@ name: 'CarDetail',
       color: #151515;
       line-height: 75px;
     }
-    .texttitle1 {
-      height: 130px;
-      font-size: 25px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #151515;
-      line-height: 75px;
-    }
     .textcontent {
           text-align: left;
-          width: 794px;
+          width: 45%;
           // margin-bottom:10px;
           // height: 66px;
           font-size: 20px;
@@ -825,7 +811,7 @@ name: 'CarDetail',
     background-color: #FFFFFF;
     .bookingtext {
       padding-bottom:200px;
-      width:1440px;
+      width:80%;
       margin: 0 auto;
       .title {
         font-size: 70px;
@@ -845,11 +831,11 @@ name: 'CarDetail',
         margin-left: 20px;
         margin-right: 40px;
         .inputtable {
-          margin-right: 45px;
+          margin-right: 80px;
           text-align: left;
           .el-input {
             /deep/ .el-input__inner {
-                    width:310px;
+                    width:110%;
                     height: 49px;
                     border-radius: 1px;
             }
@@ -945,18 +931,17 @@ name: 'CarDetail',
         letter-spacing: 1px;
       }
       .textcontent {
+        padding-top: 60px;
         overflow: hidden;
-        margin-left: 20px;
-        margin-right: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
         .textcard {
           float:left;
-          margin-right:30px;
-          width: calc(100% / 4 - 30px);
           // margin: 0 20px;
           padding-bottom: 30px;
           .imgcard {
             width: 100%;
-            height: 211px;
+            height: 210px;
             img {
               height: 100%;
               width: 100%;
@@ -970,10 +955,13 @@ name: 'CarDetail',
             // padding-left: 19px;
             span {
               font-family: DINCondensed-Bold;
+              // margin-left: 3px;
               font-weight:bold;
               font-size: 30px;
               color: #212020;
               line-height: 32px;
+              display: block;
+              height: 50px;
             }
           }
           .contentcard {
@@ -986,12 +974,12 @@ name: 'CarDetail',
             .contentcard-price {
               font-family:DINCondensed-Bold;
               font-weight:bold;
-              font-size: 26px;
+              font-size: 24px;
               color: #212020;
               line-height: 29px;
             }
             .contentcard-info {
-              font-size: 18px;
+              font-size: 16px;
               color: #4A4A4A;
               line-height: 19px;
               margin-top: 3px;
@@ -1024,6 +1012,10 @@ name: 'CarDetail',
               white-space: nowrap;
             }
           }
+        }
+        .textcard:nth-last-child(1) {
+          margin-right: 0px;
+          padding-bottom:79px;
         }
       }
       .choosepage {
@@ -1095,4 +1087,33 @@ name: 'CarDetail',
 /deep/ .el-carousel__container {
   height: 425px;
 }
+
+
+
+@media screen and (max-width: 1400px){
+  .carDetail .infodetail .content {
+    display:block;
+  }
+  .carDetail .infodetail .content .contentleft {
+    width: 80%
+  }
+  .carDetail .infodetail .content .contentright {
+    margin-top: 50px;
+    width: 80%
+  }
+  
+}
+
+@media screen and (max-width: 768px){ 
+  .carDetail .infodetail .content .contentleft {
+    width: 100%
+  }
+  .carDetail .infodetail .content .contentleft .list .listresult .listname {
+    width: 170px;
+  }
+  .carDetail .infodetail .content .contentleft .list .listresult .result {
+    width: calc(100% - 210px);
+  }
+}
+
 </style>

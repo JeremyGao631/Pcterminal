@@ -74,7 +74,7 @@
     <div class="bottom section">
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
-        <el-row :gutter="40" style="padding-left:132px;padding-right: 132px" >
+        <el-row :gutter="40" style="padding-left:60px;padding-right: 60px" >
           <el-col el-col :sm="24" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx" >
             <div class="infotext" @click="jumppage(idx)">
               <img :src="item.targeUrl" />
@@ -344,7 +344,7 @@ export default {
       margin-top: 30px;
       padding: 15px 5px;
       span{
-        font-size: 1vw;
+        font-size: 1.5vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
         line-height: 1;
