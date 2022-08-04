@@ -73,10 +73,12 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show2">
                         <div>
-                            <el-radio-group v-model="radio2" >
-                                <el-radio label="2" @click.native="clickitem2('2')">Auto</el-radio>
+                            <el-radio-group v-model="transmission" @change="bodyChange"  @click.native="clickitem3(transmission)">
+                                <el-radio  label="Auto">Auto</el-radio>
                                 <br />
-                                <el-radio label="3" @click.native="clickitem3('3')" style="margin-top: 20px;">Manual</el-radio>
+                                <el-radio label="Manual" style="margin-top: 20px;">Manual</el-radio>
+                                <br />
+                                <el-radio label=" " style="margin-top: 20px;">Not select</el-radio>
                             </el-radio-group>
                         </div>
                     </div>
@@ -156,7 +158,7 @@
                                     <div class="imgcard" @click="cardetail(item)">
                                 <img :src="item.photo[0]"  />
                             </div>
-                                    <div class="titlecard" @click="cardetail(item)">
+                                <div class="titlecard" @click="cardetail(item)">
                                 <span >{{item.year}} {{item.make}} {{item.model}}</span>
                             </div>
                                     <div class="contentcard" @click="cardetail(item)">
@@ -188,7 +190,7 @@
 
 <script>
 import { car } from '@/api'
-import { Loading } from "element-ui";
+// import { Loading } from "element-ui";
 export default {
   name: 'OnlineShowroom',
   components: {
@@ -236,6 +238,7 @@ export default {
         maxPrice: '',
         minPrices:'',
         maxPrices: '',
+        transmission: '', //选中值
         photo: [], // 汽车图
         year: [],
         price: [],
@@ -244,8 +247,8 @@ export default {
         bodySel: [], //body选中值
         radio: '1',
         radio1: '1',
-        radio2: '1',
-        radio3: '1',
+        radio2: 'Auto',
+        radio3: 'manual',
       options: [
         {
           value: '1',
@@ -292,13 +295,8 @@ export default {
     },
 
     clickitem2(e){
-      if (this.flags === true) {
-        this.radio2 === e ? this.radio2 = '' : this.radio2= e
-      }
-      this.flags = true
-      setTimeout(() => {
-        this.flags = false
-      }, 300)
+        this.radio2 == e ? this.radio2 = '' : this.radio2= e
+        console.log('12',e)
     },
 
     clickitem3(e){
@@ -370,12 +368,14 @@ export default {
         //     fullscreen: true,
         //     text: "Loading"
         // })
+        console.log(this.transmission)
         this.loading = true
         car({
         current: '1',
         pageSize: '1000',
         make: this.checkboxs.toString(),
         body: this.bodySel.toString(),
+        geartype:this.transmission,
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -433,6 +433,7 @@ export default {
         make: this.checkboxs.toString(),
         body: this.bodySel.toString(),
         yearStart: this.minYear,
+        geartype:this.transmission,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
         priceEnd: this.maxPrice,
@@ -496,6 +497,7 @@ export default {
         current: '1',
         pageSize: '5000',
         make: this.checkboxs.toString(),
+        geartype:this.transmission,
         body: this.bodySel.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,

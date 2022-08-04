@@ -48,21 +48,23 @@
         <el-carousel ref="carousel" @change="changebigimg()" arrow="never" indicator-position="none" :interval="5000">
           <el-carousel-item v-for="(item1,index) in imgUrlList" :key="index" >
             <div class="bigimg">
-                <!-- <img :src="mainImgUrl"> -->
                 <img :src="item1">
             </div>
           </el-carousel-item>
         </el-carousel>
-          <div style="width: 100%;">
+          <div ref="scrollDiv" @mousewheel="MouseWheel($event)" style="width: 100%;">
               <i style="z-index: 2;font-size: 30px;display: inline-block;position: relative;top: -220px;cursor: pointer;left: -390px;border: 1px solid #fff;color: #fff;border-radius: 50%;padding: 2px;margin-left: 10px;" class="el-icon-back" @click="imgLeft()"></i>
                 <ul class="Img_ul">
                     <li v-for="(item,index) in imgUrlList" :key="index" class="Img_li" :style="imgStyle" @click="changeImg(index)">
-                        <img :class="index === imgActiveIndex ? 'img_activeBorder' : ''" :src="item">
+                        <el-image lazy :class="index === imgActiveIndex ? 'img_activeBorder' : ''" :src="item" />
                     </li>
                 </ul>
               <i style="z-index: 2;font-size: 30px;display: inline-block;position: relative;left: 370px;top: -345px;cursor: pointer;border: 1px solid #fff;color: #fff;border-radius: 50%;padding: 2px;" class="el-icon-right" @click="imgRight()"></i>
           </div>
       </div>
+    </div>
+    <div>
+      <!-- <swiperPhoto /> -->
     </div>
     <div class="detailtext">
       <span class="texttitle">DEALER COMMENTS</span>
@@ -160,7 +162,7 @@
 <script>
 import { inspection } from '@/api'
 import { car } from '@/api'
-// import {photoCom} from '../components/photo-com.vue'
+import swiperPhoto from '../components/photo-com.vue'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
@@ -169,6 +171,7 @@ export default {
 name: 'CarDetail',
   components: {
     // photoCom
+    swiperPhoto,
   },
   data(){
     return{
@@ -247,6 +250,18 @@ name: 'CarDetail',
         }
     },
   methods: {
+    handleOver(event) {
+        this.x = event.offsetX
+        this.y = event.offsetY
+        console.log('11')
+    },
+
+ 
+    MouseWheel(e){
+      let eventDelta = -e.wheelDelta || -e.deltaY * 40;
+      let scrollDiv = this.$refs.scrollDiv;
+      scrollDiv.scrollLeft = scrollDiv.scrollLeft + eventDelta / 2;
+    },
     changebigimg(){
       var idx = this.$refs.carousel.activeIndex
       console.log("changebigimg",idx)
