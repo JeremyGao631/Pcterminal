@@ -150,13 +150,6 @@
 
 
     <div class="detailtext">
-      <span class="texttitle">DEALER COMMENTS</span>
-      <br/>
-      <span class="textcontent">{{advTitle}}</span>
-      <br />
-      <span class="textcontent" v-html="advbody">
-      </span>
-  </div>
   </div>
   <div class="booking">
     <div class="bookingtext">
@@ -245,7 +238,7 @@
 <script>
 import { inspection } from '@/api'
 import { car } from '@/api'
-// import {photoCom} from '../components/photo-com.vue'
+import swiperPhoto from '../components/photo-com.vue'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
@@ -258,6 +251,8 @@ locale.use(lang)
 export default {
 name: 'CarDetail',
   components: {
+    // photoCom
+    swiperPhoto,
   },
   data(){
     return{
