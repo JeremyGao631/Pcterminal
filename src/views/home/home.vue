@@ -75,7 +75,7 @@
       <div class="title">OUR SERVICES</div> 
       <div class="serviceinfo">
         <el-row :gutter="40" style="padding-left:60px;padding-right: 60px" >
-          <el-col el-col :sm="24" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx" >
+          <el-col el-col  :xs="24" :sm="12" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx" >
             <div class="infotext" @click="jumppage(idx)">
               <img :src="item.targeUrl" />
               <div class="infoinfo">
@@ -342,7 +342,7 @@ export default {
       align-items: center;
       justify-content: right;
       margin-top: 30px;
-      padding: 15px 5px;
+      padding: 20px 5px 15px 5px;
       span{
         font-size: 1.5vw;
         font-family: DINCondensed-Bold;
@@ -351,7 +351,6 @@ export default {
         text-align: center;
         color: #FFFFFF;
         margin-left: 40px;
-        padding-top: 5px;
       }
       .el-icon-my-right {
         margin-left: 40px;

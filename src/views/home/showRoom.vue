@@ -666,7 +666,7 @@ export default {
       align-items: center;
       justify-content: right;
       margin-top: 30px;
-      padding: 15px 5px;
+      padding: 20px 5px 15px 5px;
       span{
         font-size: 1.5vw;
         font-family: DINCondensed-Bold;
@@ -1260,5 +1260,26 @@ line-height: 130px;
     color: #151515;
     margin: 20px 0 20px 5px;
     font-size: 20px;
+}
+
+
+@media screen and (max-width: 1700px) {
+    .content .middle .show .left .showyear .minyear {
+        left: -15px;
+    }
+    .content .middle .show .left .showyear .maxyear {
+        left: -15px;
+        top: 50px
+    }
+    .content .middle .show .left .showprice .maxprice {
+        left: -15px;
+        top: 50px
+    }
+    .content .middle .show .left .showprice .minprice {
+        left: -15px;
+    }
+    .content .middle .show .left .viewprice {
+        margin-top: 140px;
+    }
 }
 </style>

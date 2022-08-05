@@ -467,6 +467,9 @@ background-color: #f4f6f8;
         display: block;
         height: 2000px;
     }
+    .contact .contact-main .left {
+        margin-left: 0;
+    }
     .contact .contact-main .left .top {
         justify-content: center;
     }

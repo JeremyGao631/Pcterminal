@@ -179,7 +179,7 @@ export default({
             align-items: center;
             justify-content: right;
             margin-top: 30px;
-            padding: 15px 5px;
+            padding: 20px 5px 15px 5px;
             span{
             font-size: 1.5vw;
             font-family: DINCondensed-Bold;

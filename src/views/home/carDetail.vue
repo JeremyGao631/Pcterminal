@@ -1263,7 +1263,7 @@ jssor_1_slider_init : function() {
     margin-bottom: 20px;
   }
   #jssor_1 {
-    margin-left: 15%;
+    margin-left: 25%;
     margin-right: 25%;
   }
 }
