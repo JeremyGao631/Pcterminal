@@ -1263,7 +1263,7 @@ line-height: 130px;
 }
 
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1380px) {
     .content .middle .show .left .showyear .minyear {
         left: -15px;
     }
