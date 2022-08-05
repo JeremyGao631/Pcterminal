@@ -1258,16 +1258,23 @@ jssor_1_slider_init : function() {
   
 }
 
-@media screen and (max-width: 768px){ 
-  // .carDetail .infodetail .content .contentleft {
-  //   width: 100%
-  // }
-  // .carDetail .infodetail .content .contentleft .list .listresult .listname {
-  //   width: 170px;
-  // }
-  // .carDetail .infodetail .content .contentleft .list .listresult .result {
-  //   width: calc(100% - 210px);
-  // }
+@media screen and (max-width: 1200px){ 
+  .contentleft {
+    margin-bottom: 20px;
+  }
+  #jssor_1 {
+    margin-left: 15%;
+    margin-right: 25%;
+  }
+}
+
+@media screen and (max-width: 991px){ 
+  .contentleft {
+    margin-bottom: 20px;
+  }
+  #jssor_1 {
+    margin-left: 0%;
+  }
 }
 
 </style>
