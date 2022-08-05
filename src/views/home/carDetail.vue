@@ -151,6 +151,12 @@
 
 
     <div class="detailtext">
+      <span class="texttitle">DEALER COMMENTS</span>
+      <br/>
+      <span class="textcontent">{{advTitle}}</span>
+      <br />
+      <span class="textcontent" v-html="advbody">
+      </span>
   </div>
   <div class="booking">
     <div class="bookingtext">
@@ -1242,17 +1248,13 @@ jssor_1_slider_init : function() {
 
 
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1992px){
   .carDetail .infodetail .content {
     display:block;
   }
-  // .carDetail .infodetail .content .contentleft {
-  //   width: 80%
-  // }
-  // .carDetail .infodetail .content .lunboright {
-  //   margin-top: 50px;
-  //   width: 80%
-  // }
+ .carDetail .booking .bookingtext .userinput .inputtable {
+  margin-top: 30px;
+ }
   
 }
 

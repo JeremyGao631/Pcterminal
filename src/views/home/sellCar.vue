@@ -16,114 +16,101 @@
             </el-button>
         </div>
       </div>
-        <div class="between">
-          <div class="sell">
-            <div class="title">
-              <div>
-                <div>S</div>
-                <div>E</div>
-                <div>L</div>
-                <div>L</div>
-                <div>Y</div>
-                <div>O</div>
-                <div>U</div>
-                <div>R</div>
-                <div>C</div>
-                <div>A</div>
-                <div>R</div>
-              </div>
-            </div>
-            <!-- <div class="content_box">
-              <div class="content">
-                <div v-for="(item, index) in content" :key="index" class="contentView">
-                  <div class="yourCar">{{ item.title }}</div>
-                  <div :class="textstyle[index]">{{ item.content }}</div>
-                </div>
-              </div>
-              <div style="clear:both" ></div>
-              <div class="image">
-                <div v-for="(img,index) in img" :key="index" class="imggs">
-                  <img :src="img.url" alt="" class="img">
-                </div>
-              </div>
-              <div class="imgs">
-                <img class="imgs1" src="../../assets/images/sellyourcar/1.png" alt="">
-                <img class="imgs2" src="../../assets/images/sellyourcar/2.png" alt="">
-                <img class="imgs3" src="../../assets/images/sellyourcar/3.png" alt="">
-              </div>
-            </div> -->
-          </div>
-          <div class="step_box">
-            <div class="step">
-              <div class="step_item">
-                 <img src="../../assets/images/sellyourcar/BringInYourCar.png" alt="" class="img">
-                 <div class="step_info">
-                   <p>Bring in your car</p>
-                   <div style="width: 170px;">We’ll take a look regardless of make, kilometres, or condition.</div>
-                   <img src="../../assets/images/sellyourcar/1.png" alt="" class="img">
-                 </div>
-              </div>
-              <div class="step_item">
-                 <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
-                 <div class="step_info">
-                   <p>Get your instant offer</p>
-                   <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU thoroughly inspect the condition of your car and compare it against current market data.</div>
-                   <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
-                 </div>
-              </div>
-              <div class="step_item">
-                 <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
-                 <div class="step_info">
-                   <p>Get instant payment</p>
-                   <div style="width: 200px;">We will pay cash or electronic transfer on the same day on completion of vehicle transfer.</div>
-                   <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
-                 </div>
-              </div>
+      <div class="between">
+        <div class="sell">
+          <div class="title">
+            <div>
+              <div>S</div>
+              <div>E</div>
+              <div>L</div>
+              <div>L</div>
+              <div>Y</div>
+              <div>O</div>
+              <div>U</div>
+              <div>R</div>
+              <div>C</div>
+              <div>A</div>
+              <div>R</div>
             </div>
           </div>
         </div>
-        <div class="bottom">
-          <div class="contact">
-            <div class="us">CONTACT US TO GET STARTED</div>
-            <div class="started">{{ started }}</div>
-            <div class="started1">{{ started1 }}</div>
-          </div>
-          <div class="form">
-            <!-- details提交单-->
-            <div class="detail">PERSONAL DETAILS</div>
-            <div class="inputs">
-              <div class="input1">
-                <div class="name">Name*</div>
-                <el-input v-model="form.name" />
-              </div>
-              <div  class="input1">
-                <div class="name">Mobile*</div>
-                <el-input v-model="form.mobile" />
-              </div>
-              <div class="input1">
-                <div class="name">Email</div>
-                <el-input v-model="form.email" @blur="emails" />
-              </div>
-
+        <div class="step_box">
+          <div class="step">
+            <div class="step_item">
+                <img src="../../assets/images/sellyourcar/BringInYourCar.png" alt="" class="img">
+                <div class="step_info">
+                  <p>Bring in your car</p>
+                  <div style="width: 170px;">We’ll take a look regardless of make, kilometres, or condition.</div>
+                  <img src="../../assets/images/sellyourcar/1.png" alt="" class="img">
+                </div>
             </div>
-            <!-- // vehicle details提交单-->
-            <div class="detail1">MY VEHICLE DETAILS</div>
-            <div class="inputs">
-              <div class="input1">
+            <div class="step_item step_item2">
+                <img src="../../assets/images/sellyourcar/GetYourInstantOffer.png" alt="" class="img">
+                <div class="step_info">
+                  <p>Get your instant offer</p>
+                  <div style="width: 200px;">To provide you an honest and fair offer, our appraisers here at Autohome AU thoroughly inspect the condition of your car and compare it against current market data.</div>
+                  <img src="../../assets/images/sellyourcar/2.png" alt="" class="img">
+                </div>
+            </div>
+            <div class="step_item">
+                <img src="../../assets/images/sellyourcar/GetCashPayment.png" alt="" class="img">
+                <div class="step_info">
+                  <p>Get instant payment</p>
+                  <div style="width: 200px;">We will pay cash or electronic transfer on the same day on completion of vehicle transfer.</div>
+                  <img src="../../assets/images/sellyourcar/3.png" alt="" class="img">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="contact">
+          <div class="us">CONTACT US TO GET STARTED</div>
+          <div class="started">{{ started }}</div>
+          <div class="started1">{{ started1 }}</div>
+        </div>
+        <div class="form">
+          <!-- details提交单-->
+          <div class="detail">PERSONAL DETAILS</div>
+          <div class="input_cont">
+            <el-row :gutter="90" class="inputs">
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+                <div class="input1">
+                  <div class="name">Name*</div>
+                  <el-input v-model="form.name" />
+                </div>
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+                <div class="input1">
+                  <div class="name">Mobile*</div>
+                  <el-input v-model="form.mobile" />
+                </div>
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+                <div class="input1">
+                  <div class="name">Email</div>
+                  <el-input v-model="form.email" @blur="emails" />
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+          <!-- // vehicle details提交单-->
+          <div class="detail1">MY VEHICLE DETAILS</div>
+          <div class="input_cont">
+            <el-row :gutter="90" class="inputs">
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Year*</div>
                 <el-input v-model="forms.year" />
-              </div>
-              <div  class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Make*</div>
                 <el-input v-model="forms.make" />
-              </div>
-              <div class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Model*</div>
                 <el-input v-model="forms.model" />
-              </div>
-            </div>
-            <div class="input2">
-              <div class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Transmission*</div>
                 <el-select v-model="forms.transmission" placeholder="Transmission:Any">
                   <el-option
@@ -134,23 +121,20 @@
                     <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
-              </div>
-              <div  class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Odometer*</div>
                 <el-input v-model="forms.odometer" />
-              </div>
-              <div class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Color</div>
                 <el-input v-model="forms.color" />
-              </div>
-            </div>
-            <div class="input5">
-              <div  class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8"  class="input1">
                 <div class="name">Trim color</div>
                 <el-input v-model="forms.trimcolor" />
-              </div>
-              
-              <div class="input1">
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <div class="name">Logbook</div>
                 <el-select v-model="forms.logbook" placeholder="Yes">
                   <el-option
@@ -162,76 +146,58 @@
                     <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
-              </div>
-              <div  class="input7">
-                <el-input disabled />
-              </div>
-            </div>
-            <div class="input3">
-              <div class="input1">
-                <!-- <div class="name" @click="handleRemove()">Photo Upload</div>
-                <el-input v-model="forms.photo" /> -->
-                <!-- <el-upload
-                  class="avatar-uploader"
+              </el-col>
+            </el-row>
+            <el-row :gutter="90" class="inputs">
+              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
+                <el-upload
                   action="https://jsonplaceholder.typicode.com/posts/"
-                  :show-file-list="false"
-                  :on-success="handleAvatarSuccess"
-                  :before-upload="beforeAvatarUpload">
-                  <img v-if="imageUrl" :src="imageUrl" class="avatar">
-                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                </el-upload> -->
-                  <!-- <el-button size="small" type="primary">选择图片上传</el-button>
-                  <div slot="tip" class="el-upload__tip">只能上传一张jpg/png文件</div>
-                </el-upload> -->
-                <!-- <el-dialog :visible.sync="dialogVisible" append-to-body>
-                  <img width="100%" :src="dialogImageUrl" alt />
-                </el-dialog>
-                <el-upload -->
-              <el-upload
-                action="https://jsonplaceholder.typicode.com/posts/"
-                list-type="picture-card"
-                accept=".jpg, .png"
-                :limit="1"
-                :on-change="getFile"
-                :on-preview="handlePicture"
-                :on-remove="handleRemove">
-                <i class="el-icon-plus"></i>
-              </el-upload>
-              <el-button size="small" type="primary" class="imgbtn">Image upload</el-button>
-              <el-dialog :visible.sync="dialogVisible">
-                <img width="100%" :src="dialogImageUrl" alt="">
-              </el-dialog>
-              </div>
-              <!-- <el-button type="primary" class="btn">UPLOAD</el-button> -->
-              <div  class="input7">
-                <el-input disabled />
-              </div>
-            </div>
-            <div class="detail">COMMENTS</div>
-            <div class="input4">
-              <div class="input1">
-                <div class="name special">COMMENTS</div>
-                <el-input v-model="forms.comments" type="textarea" :rows="8" />
-              </div>
-              <el-button @click="submit()" type="primary" class="btn">SUBMIT</el-button>
-            </div>
-            <div class="privacy">PRIVACY</div>
-            <div class="formText">
-              <span class="tex">Your contact details are being collected by Autohome AU to enable us to record the details of the
-                                vehicle you are interested in and to consider the purchase of your trade-in vehicle. We may disclose
-                                your personal information to third parties to check whether and how, your vehicle is encumbered.</span>
-              <span class="tex1">· From time to time, Autohome AU would like to contact you and to let you know about our products
-                                and services, including special offers.</span>
-              <span class="tex1">· If you do not want us to do so, please let us know by contacting us. You can let us know at any time
-                                if you no longer wish to be contacted for these purposes. Your consent will remain current until you
-                                advise us otherwise.
-</span>
-              <span class="tex1">· If you do not provide us with your personal information, we may not be able to consider any offer
-                                made by you.
-</span>
+                  list-type="picture-card"
+                  accept=".jpg, .png"
+                  :limit="1"
+                  :on-change="getFile"
+                  :on-preview="handlePicture"
+                  :on-remove="handleRemove">
+                  <i class="el-icon-plus"></i>
+                </el-upload>
+              </el-col>
+            </el-row>
+            <el-button size="medium" type="primary" class="imgbtn">Image upload</el-button>
+          </div>
+          
+          
+          <div class="input3">
+            <div class="input1">
+            <el-dialog :visible.sync="dialogVisible">
+              <img width="100%" :src="dialogImageUrl" alt="">
+            </el-dialog>
             </div>
           </div>
+          <div class="detail">COMMENTS</div>
+          <div class="input4">
+            <div class="input1">
+              <div class="name special">COMMENTS</div>
+              <el-input v-model="forms.comments" type="textarea" :rows="8" />
+            </div>
+            <el-button @click="submit()" type="primary" class="btn">SUBMIT</el-button>
+          </div>
+          <div class="privacy">PRIVACY</div>
+          <div class="formText">
+            <span class="tex">Your contact details are being collected by Autohome AU to enable us to record the details of the
+                              vehicle you are interested in and to consider the purchase of your trade-in vehicle. We may disclose
+                              your personal information to third parties to check whether and how, your vehicle is encumbered.</span>
+            <span class="tex1">· From time to time, Autohome AU would like to contact you and to let you know about our products
+                              and services, including special offers.</span>
+            <span class="tex1">· If you do not want us to do so, please let us know by contacting us. You can let us know at any time
+                              if you no longer wish to be contacted for these purposes. Your consent will remain current until you
+                              advise us otherwise.
+</span>
+            <span class="tex1">· If you do not provide us with your personal information, we may not be able to consider any offer
+                              made by you.
+</span>
+          </div>
         </div>
+      </div>
     </div>
 </template>
 <script>
@@ -443,14 +409,11 @@ export default({
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 148px;
-    position: relative;
-    left: 37px;
     height: 148px;
     cursor: pointer;
     line-height: 146px;
     vertical-align: top;
-    margin-bottom: 15px;
-
+    margin: 20px 0;
 }
   .el-upload__tip {
       position: relative;
@@ -524,9 +487,8 @@ export default({
   }
         .between {
           width: 100%;
-          height: 850px;
           background: #F4F6F8;
-          position: relative;
+          height: 850px;
           .sell {
             width: 100%;
             .title {
@@ -572,8 +534,8 @@ export default({
                   height: 385px;
                 }
                 .step_info{
-                  margin-left: 25px;
-                  width: calc(65% - 30px);
+                  margin-left: 30px;
+                  width: calc(55% - 30px);
                   position: relative;
                   p{
                     margin: 10px 0;
@@ -622,7 +584,7 @@ export default({
               line-height: 100px;
             }
             .started {
-              width: 794px;
+              width: 100%;
               font-size: 17px;
               font-family: PingFangSC-Regular;
               font-weight: 400;
@@ -631,7 +593,7 @@ export default({
               text-align: left;
             }
             .started1 {
-              width: 45%;
+              width: 50%;
               font-size: 17px;
               font-family: PingFangSC-Regular;
               font-weight: 400;
@@ -644,11 +606,14 @@ export default({
             background-color: #f4f6f8;
             margin: 0 auto;
             width: 80%;
+            padding-top: 1px;
+            padding-bottom: 200px;
             .detail {
-              position: relative;
-              top: 85px;
-              width: 420px;
-              height: 43px;
+
+              min-width: 245px;
+              margin: 80px 0 60px 0;
+              width: 35%;
+              height: 45px;
               font-size: 30px;
               padding-right:32px;
               text-align: right;
@@ -661,7 +626,7 @@ export default({
             .privacy {
               position: relative;
               top: 240px;
-              width: 420px;
+              width: 35%;
               height: 45px;
               font-size: 30px;
               text-align: right;
@@ -673,9 +638,9 @@ export default({
               line-height: 50px;
             }
             .detail1 {
-              position: relative;
-              top: 85px;
-              width: 420px;
+              min-width: 245px;
+              margin: 80px 0 30px 0;
+              width: 35%;
               height: 45px;
               font-size: 30px;
               text-align: right;
@@ -686,43 +651,48 @@ export default({
               color: #E8E8E8;
               line-height: 50px;
             }
-            .inputs {
-              padding-top:120px;
-              display: flex;
-              margin-left: 12%;
-              justify-content: center;
-              align-items: center;
-              .input1 {
-                margin-right: 81px;
-                .el-input {
-                  /deep/ .el-input__inner {
-                    width:260px;
-                    background-color: #f4f6f8;
+            .input_cont{
+              padding: 0 100px;
+              .inputs {
+                margin: 0 100px;
+                // display: flex;
+                // margin-left: 12%;
+                // justify-content: left;
+                // align-items: center;
+                .input1 {
+                  text-align: left;
+                  padding-top: 30px;
+                  .el-input {
+                    /deep/ .el-input__inner {
+                      width:100%;
+                      background-color: #f4f6f8;
+                    }
+                  }
+                  /deep/ .el-select {
+                    width:100%;
+                    /deep/ .el-input__inner{
+                      background-color: #f4f6f8;
+                    }
                   }
                 }
-                .el-select {
-                  /deep/ .el-input {
-                    width:260px;
-                  }
+                .name{
+                  text-align: left;
+                  margin: 15px 0;
+                  font-size: 20px;
+                  font-family: DINCondensed-Bold, DINCondensed;
+                  font-weight: bold;
                 }
-              }
-              .name{
-                text-align: left;
-                margin-bottom: 15px;
-                font-size: 20px;
-                font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
-              }
-              .el-input__inner {
-                width: 100%;
-                border: 1px solid #000;
+                .el-input__inner {
+                  width: 100%;
+                  border: 1px solid #000;
+                }
               }
             }
             .input2 {
               padding-top:32px;
               display: flex;
               margin-left: 12%;
-              justify-content: center;
+              justify-content: left;
               align-items: center;
               .input1 {
                 margin-right: 81px;
@@ -757,7 +727,7 @@ export default({
               padding-top:32px;
               display: flex;
               margin-left: 12%;
-              justify-content: center;
+              justify-content: left;
               align-items: center;
               .input1 {
                 margin-right: 81px;
@@ -803,7 +773,7 @@ export default({
             .input3 {
               padding-top: 32px;
               display: flex;
-              margin-left: 17%;
+              margin-left: 9%;
               justify-content: left;
               align-items: center;
               .input1 {
@@ -876,7 +846,6 @@ export default({
               
             }
             .input4 {
-              padding-top:130px;
               margin-left: 163px;
               margin-right: 163px;
               .input1 {
@@ -1015,6 +984,7 @@ export default({
         color: #000;
         font-weight: bold;
         padding-top: 5px;
+        background-color: #f4f6f8;
       }
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
@@ -1032,9 +1002,10 @@ font-weight: bold;
 color: #151515;
 line-height: 20px;
 }
-/deep/.el-button--small {
-  position: relative;
-  left: 20px;
+/deep/.el-button--medium {
+  font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+  float: left;
 }
 /deep/.el-button--primary {
   background-color: #000;
@@ -1047,11 +1018,76 @@ line-height: 20px;
 // font-family: DINCondensed-Bold;
 // }
 
-@media screen and (max-width: 1400px){
-  
+@media screen and (max-width: 1135px){
+  .contact .bottom .contact .us {
+    margin-bottom: 100px;
+  }
 }
 
-@media screen and (max-width: 992px) {
-  
+@media screen and (max-width: 1200px){
+  .contact .bottom .form .input4 {
+    margin-left: 0;
+  }
+  .contact .bottom .form .input4 .input1 {
+    width: 100%
+  }
+  .contact .bottom .form .input4 .btn{
+    left: 75px
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400px){
+  .contact .between .step_box {
+    margin-left: 0;
+    width: 100%;
+  }
+  .contact .between .step_box .step{
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1299px){
+  .contact .between {
+    height: 1620px;
+  }
+  .contact .between .step_box {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+  .contact .between .step_box .step{
+    position: relative;
+    left: 0;
+    flex-direction: column;
+    top: 20px;
+    .step_item{
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .step_item2{
+      display: block;
+      img{
+        float: right;
+      }
+      .step_info{
+        float: left;
+        margin-left: 0;
+        margin-right: 30px;
+        height: 385px;
+        p{
+          text-align: right;
+        }
+        div{
+          float: right;
+          text-align: right;
+        }
+        img{
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
 }
 </style>

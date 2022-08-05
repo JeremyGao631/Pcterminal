@@ -299,6 +299,7 @@ export default({
             .left {
                 margin-left: 6%;
                 margin-top: 20px;
+                padding-left: 50px;
                 .top {
                     display: flex;
                     .information {
@@ -449,7 +450,7 @@ background-color: #f4f6f8;
     }
 
     .contact .contact-main .left {
-        width: 100%;
+        width: 45%;
     }
     .contact .contact-main .left .top .information {
         width: 80%;
