@@ -567,11 +567,11 @@ export default({
         .bottom {
           background-color: #fff;
           margin: 0 auto;
-          width: 80%;
+          width: 85%;
           margin-bottom: 175px;
           .contact {
             margin: 0 auto;
-            width: 80%;
+            width: 85%;
             margin-top:108px;
             text-align: left;
             margin-bottom: 50px;
@@ -606,7 +606,7 @@ export default({
           .form {
             background-color: #f4f6f8;
             margin: 0 auto;
-            width: 80%;
+            width: 85%;
             padding-top: 1px;
             padding-bottom: 200px;
             .detail {

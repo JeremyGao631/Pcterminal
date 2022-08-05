@@ -309,7 +309,6 @@ export default {
   .inlinetext {
     position: absolute;
     left: 10%;
-    top: 23%;
     text-align: left;
     .content-title {
       font-size: 2vw;

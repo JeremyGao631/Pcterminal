@@ -468,7 +468,9 @@ background-color: #f4f6f8;
         height: 2000px;
     }
     .contact .contact-main .left {
-        margin-left: 0;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding-left: 0px;
     }
     .contact .contact-main .left .top {
         justify-content: center;
