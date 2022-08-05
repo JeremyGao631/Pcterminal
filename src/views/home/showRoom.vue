@@ -73,13 +73,11 @@
                     <div style="clear:both;"></div>
                     <div class="choosetext" v-show="show2">
                         <div>
-                            <el-radio-group v-model="transmission" @change="bodyChange"  @click.native="clickitem3(transmission)">
-                                <el-radio  label="Auto">Auto</el-radio>
+                            <el-checkbox-group v-model="transmission" @change="bodyChange()">
+                                <el-checkbox  label="Auto">Auto</el-checkbox>
                                 <br />
-                                <el-radio label="Manual" style="margin-top: 20px;">Manual</el-radio>
-                                <br />
-                                <el-radio label=" " style="margin-top: 20px;">Not select</el-radio>
-                            </el-radio-group>
+                                <el-checkbox label="Manual" style="margin-top: 20px;">Manual</el-checkbox>
+                            </el-checkbox-group>
                         </div>
                     </div>
                     <!--year-->
@@ -238,7 +236,7 @@ export default {
         maxPrice: '',
         minPrices:'',
         maxPrices: '',
-        transmission: '', //选中值
+        transmission: [], //transmission选中值
         photo: [], // 汽车图
         year: [],
         price: [],
@@ -368,14 +366,13 @@ export default {
         //     fullscreen: true,
         //     text: "Loading"
         // })
-        console.log(this.transmission)
         this.loading = true
         car({
         current: '1',
         pageSize: '1000',
         make: this.checkboxs.toString(),
         body: this.bodySel.toString(),
-        geartype:this.transmission,
+        geartype:this.transmission.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
@@ -433,7 +430,7 @@ export default {
         make: this.checkboxs.toString(),
         body: this.bodySel.toString(),
         yearStart: this.minYear,
-        geartype:this.transmission,
+        geartype:this.transmission.toString(),
         yearEnd: this.maxYear,
         priceStart: this.minPrice,
         priceEnd: this.maxPrice,
@@ -497,7 +494,7 @@ export default {
         current: '1',
         pageSize: '5000',
         make: this.checkboxs.toString(),
-        geartype:this.transmission,
+        geartype:this.transmission.toString(),
         body: this.bodySel.toString(),
         yearStart: this.minYear,
         yearEnd: this.maxYear,
