@@ -426,7 +426,7 @@ background-color: #f4f6f8;
 }
 /deep/.el-textarea__inner {
     margin-left:18px;
-    width: 86%;
+    width: 88%;
 }
 /deep/.el-input__inner::placeholder {
     font-size: 16px;

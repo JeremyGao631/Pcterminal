@@ -351,6 +351,7 @@ export default {
         text-align: center;
         color: #FFFFFF;
         margin-left: 40px;
+        padding-top: 5px;
       }
       .el-icon-my-right {
         margin-left: 40px;
