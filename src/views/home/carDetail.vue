@@ -1,13 +1,13 @@
 <template>
 <div class="carDetail">
   <div class="infodetail">
-    <div class="title">{{information.title}}</div>
+    <div class="title">{{ informations.year }} {{ informations.make }} {{ informations.model }}</div>
     <el-row :gutter="20" class="content">
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <div class="contentleft">
           <div class="pricekind">
-            <span class="price"><span class="price1">$</span>{{information.price.substring(1, information.price.length)}}</span>
-            <span class="kind">{{information.kind}}</span>
+            <span class="price"><span class="price1">$</span>{{price}}</span>
+            <span class="kind">Excl . Gov's Charges</span>
           </div>
           <div style="clear:both;"></div>
           <div class="list" v-for="(item,index) in List" :key="index">
@@ -261,7 +261,6 @@ name: 'CarDetail',
   },
   data(){
     return{
-      mainImgUrl: '',
       item1: '',
       item: '',
       imgUrlList: [
@@ -277,16 +276,10 @@ name: 'CarDetail',
       time: '',
       email: '',
       photo: {},
-      photos: [],
       advTitle: '',
       advbody: '',
       // reqEmail: true,
       // reqPhone: true,
-      information: {
-        title: '2016 Mercedes-Benz CLA45',
-        price: '$149000.00',
-        kind: "Excl. Gov's Charges" 
-      },
       List: [],
       // 会优化部分
       photo1: '',
@@ -298,7 +291,8 @@ name: 'CarDetail',
 
       information1: [
       ],
-      informations: []
+      informations: [],
+      price: ''
     }
   },
 
@@ -307,11 +301,11 @@ name: 'CarDetail',
     this.informations = this.$route.query.item
     this.advTitle = this.informations.advTitle
     this.advbody = this.informations.advbody
+    // 页面要素
+    this.price = this.informations.price
     this.imgUrlList = this.informations.photo
-    this.mainImgUrl = this.informations.photo[0]
     this.init()
     this.allCar()
-    this.setPhoto()
     this.$nextTick(() => {
       this.jssor_1_slider_init()
     })
@@ -408,17 +402,6 @@ jssor_1_slider_init : function() {
 
 
 
-    setPhoto() {
-            this.photo = this.$route.query.item.photo
-            this.photos = []
-            for(var i = 0; i<=this.photo.length; i++ ) {
-                const img = {
-                    img: this.photo[i]
-                }
-                this.photos.push(img)
-            }
-            console.log(this.photos, '1212')
-        },
     emails() {
       var emailText = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
       var istrue = emailText.test(this.email)
@@ -442,6 +425,7 @@ jssor_1_slider_init : function() {
         this.imgUrlList = item.photo
         this.init()
         this.allCar()
+        // this.$router.go(0)
         // 回到顶部
         window.scrollTo(
             {
