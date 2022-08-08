@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <div class="banner">
-            <img class="contentimg" src="../../assets/images/about/JVS00341-4.jpg" alt="">
+            <img class="contentimg" src="../../assets/images/about/06.png" alt="">
             <div class="inlinetext">
                 <p class="content-title">Get to know us</p><br />
                 <span class="content-text">

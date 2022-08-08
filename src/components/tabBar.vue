@@ -77,9 +77,9 @@
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
     border-bottom: none;
     font-weight: bold;
-    font-weight: normal;
     font-family: LucidaGrande-Bold, LucidaGrande;
     font-size: 16px;
+    color: #151515
 }
 .el-menu--horizontal>.el-menu-item.is-active {
   font-weight: bold;

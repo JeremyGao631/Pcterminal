@@ -151,7 +151,7 @@
             <el-row :gutter="90" class="inputs">
               <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <el-upload
-                  action="https://jsonplaceholder.typicode.com/posts/"
+                  action="#"
                   list-type="picture-card"
                   accept=".jpg, .png"
                   :limit="1"

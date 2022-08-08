@@ -442,7 +442,7 @@ export default {
         span {
           font-family: DINCondensed-Bold;
           // margin-left: 3px;
-          font-weight:bold;
+          // font-weight:bold;
           font-size: 30px;
           color: #212020;
           line-height: 32px;
@@ -459,7 +459,7 @@ export default {
         padding-right: 5px;
         .contentcard-price {
           font-family:DINCondensed-Bold;
-          font-weight:bold;
+          // font-weight:bold;
           font-size: 24px;
           color: #212020;
           line-height: 29px;
@@ -471,7 +471,7 @@ export default {
           margin-top: 3px;
           margin-left: 5px;
           font-family:DINCondensed-Bold;
-          font-weight: bold;
+          // font-weight: bold;
           opacity:0.7;
         }
       }
