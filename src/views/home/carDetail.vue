@@ -536,11 +536,16 @@ jssor_1_slider_init : function() {
                     email:this.email,
                     time: this.time,
         }).then( res => {
-          if (res.code === 0) {
+          if (res) {
             // this.$message('Submission successfull')
             this.$message({
                   dangerouslyUseHTMLString: true,
                   message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                  });
+          } else {
+                    this.$message({
+                        dangerouslyUseHTMLString: true,
+                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">the phone is already in used, please change your phone</span>'
                   });
           }
         })

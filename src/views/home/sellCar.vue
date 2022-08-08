@@ -154,6 +154,7 @@
                   action="https://jsonplaceholder.typicode.com/posts/"
                   list-type="picture-card"
                   accept=".jpg, .png"
+                  show-file-list
                   :limit="1"
                   :on-change="getFile"
                   :on-preview="handlePicture"

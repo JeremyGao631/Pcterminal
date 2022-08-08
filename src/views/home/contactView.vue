@@ -118,7 +118,7 @@
     </div>
 </template>
 <script>
-// import { Dialog } from "element-ui";
+// import { Toast } from "element-ui";
 import { fetch } from '@/api'
 // import contactCom from "../components/contact-com.vue"
 
@@ -169,10 +169,10 @@ export default({
             if(this.name === '' || this.phone === '' || this.email === '' || this.postcode === '' || this.message === '') {
                 // this.disabled = true
                 // this.$message('Please check the page information is completed')
-                this.$message({
-                dangerouslyUseHTMLString: true,
-                message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
-                });
+                // this.$message({
+                // dangerouslyUseHTMLString: true,
+                // message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
+                // });
             } else {
                 // this.disabled = false
                 fetch({
@@ -181,13 +181,19 @@ export default({
                     email:this.email,
                     message:this.message,
                     address:this.postcode
-            }).then( res => {
+                }).then(res => {
                 console.log(res, 'Submission successfull')
-                if (res.code === 0) {
+                if (res) {
+                    console.log('1')
                     // this.$message('Submission successfull')
                     this.$message({
-                  dangerouslyUseHTMLString: true,
-                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                        dangerouslyUseHTMLString: true,
+                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
+                  });
+                } else {
+                    this.$message({
+                        dangerouslyUseHTMLString: true,
+                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">the phone is already in used, please change your phone</span>'
                   });
                 }
             })
