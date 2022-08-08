@@ -151,7 +151,7 @@
             <el-row :gutter="90" class="inputs">
               <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
                 <el-upload
-                  action="https://jsonplaceholder.typicode.com/posts/"
+                  action="#"
                   list-type="picture-card"
                   accept=".jpg, .png"
                   show-file-list
@@ -1012,6 +1012,7 @@ font-weight: bold;
 /deep/.el-button--primary {
   background-color: #000;
   border-color: #000;
+  margin-left: 25px;
 }
 
 

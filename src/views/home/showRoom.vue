@@ -42,9 +42,10 @@
                     </div>
                     
                     <div class="viewall" :class="{ newviewall:!show}">
-                        <div class="viewleft">VIEW ALL</div>
-                        <div class="viewright" @click="testshow5()" v-show="!show5"><i class="el-icon-arrow-up"></i></div>
-                        <div class="viewright" @click="testshow5()" v-show="show5"><i class="el-icon-arrow-down"></i></div>
+                        <div class="viewleft" @click="testshow5()" v-show="!show5" style="cursor:pointer">VIEW ALL</div>
+                        <div class="viewright" @click="testshow5()" v-show="!show5" style="cursor:pointer"><i class="el-icon-arrow-up"></i></div>
+                        <div class="viewleft" @click="testshow5()" v-show="show5" style="cursor:pointer">VIEW ALL</div>
+                        <div class="viewright" @click="testshow5()" v-show="show5" style="cursor:pointer"><i class="el-icon-arrow-down"></i></div>
                         <div style="clear:both;"></div>
                     </div>
                     <div style="clear:both;"></div>
@@ -136,7 +137,7 @@
                                 :key="item.value"
                                 :label="item.label"
                                 :value="item.value">
-                                <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
+                                <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;color: #000;">{{item.label}}</span>
                                 </el-option>
                             </el-select>
                         </div>
@@ -998,7 +999,6 @@ export default {
                             // height: 48px;
                             font-size: 24px;
                             font-family: DINCondensed-Bold;
-                            font-weight: bold;
                             color: #151515;
                             text-align: center;
                             // line-height: 48px;
@@ -1012,14 +1012,14 @@ export default {
                     .titleright {
                         float: right;
                         .textleft {
-                            height: 22px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Light;
-                            font-weight: 300;
+                            height: 30px;
+                            font-size: 20px;
+                            font-family: DINCondensed-Bold;
+                            font-weight: bold;
                             color: #151515;
                             line-height: 48px;
                             margin-right: 10px;
-                            opacity: 0.5;
+                            // opacity: 0.5;
                         }
                         .textright {
                             height: 30px;
@@ -1062,7 +1062,7 @@ export default {
                             span {
                             font-family: DINCondensed-Bold;
                             // margin-left: 3px;
-                            font-weight:bold;
+                            // font-weight:bold;
                             font-size: 30px;
                             color: #212020;
                             line-height: 32px;
@@ -1079,7 +1079,7 @@ export default {
                             padding-right: 5px;
                             .contentcard-price {
                             font-family:DINCondensed-Bold;
-                            font-weight:bold;
+                            // font-weight:bold;
                             font-size: 24px;
                             color: #212020;
                             line-height: 29px;
@@ -1091,7 +1091,7 @@ export default {
                             margin-top: 3px;
                             margin-left: 5px;
                             font-family:DINCondensed-Bold;
-                            font-weight: bold;
+                            // font-weight: bold;
                             opacity:0.7;
                             }
                         }
@@ -1247,15 +1247,15 @@ line-height: 130px;
 /deep/ .el-loading-spinner i {
   margin: 40px auto 0 auto;
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background: url("../../assets/images/onlineshowroom/loading.svg") center center no-repeat;
   background-size: 100% 100%;
 }
 
 /deep/ .el-loading-spinner .el-loading-text{
     color: #151515;
-    margin: 20px 0 20px 5px;
+    margin: 20px 0 20px 10px;
     font-size: 20px;
 }
 

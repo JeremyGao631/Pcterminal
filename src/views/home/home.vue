@@ -442,10 +442,10 @@ export default {
         span {
           font-family: DINCondensed-Bold;
           // margin-left: 3px;
-          font-weight:bold;
-          font-size: 30px;
+          // font-weight:bold;
+          font-size: 24px;
           color: #212020;
-          line-height: 32px;
+          line-height: 24px;
           display: block;
           height: 50px;
         }
@@ -459,7 +459,7 @@ export default {
         padding-right: 5px;
         .contentcard-price {
           font-family:DINCondensed-Bold;
-          font-weight:bold;
+          // font-weight:bold;
           font-size: 24px;
           color: #212020;
           line-height: 29px;
@@ -471,8 +471,8 @@ export default {
           margin-top: 3px;
           margin-left: 5px;
           font-family:DINCondensed-Bold;
-          font-weight: bold;
-          opacity:0.7;
+          // font-weight: bold;
+          opacity:0.5;
         }
       }
       .break {
@@ -487,12 +487,12 @@ export default {
         justify-content: space-between;
         // padding-left: 7px;
         span {
-          font-size: 15px;
+          font-size: 14px;
           font-family:PingFangSC-Semibold;
-          font-weight: 600;
+          // font-weight: 600;
           margin-right: 6px;
           color: #4A4A4A;
-          opacity:0.7;
+          opacity:0.5;
           // margin-right: 36px;
           line-height: 20px;
           white-space: nowrap;

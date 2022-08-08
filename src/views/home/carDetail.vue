@@ -52,7 +52,7 @@
               <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
               <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
           </div>
-          <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 430px; overflow: hidden;">
+          <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 430px;object-fit: contain;">
               <div data-p="144.50" style="display: none;" v-for="(item,index) in imgUrlList" :key="index">
                   <img data-u="image" :src="item" />
                   <img data-u="thumb" :src="item" />

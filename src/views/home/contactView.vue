@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/home/JVS00138.png" alt="">
+        <img class="imgs" src="../../assets/images/home/hero-01.png" alt="">
         <div class="contact-main">
             <div class="left">
                 <div class="top">
@@ -421,18 +421,22 @@ background-color: #f4f6f8;
 /deep/.el-input--suffix .el-input__inner {
   padding-right: 14px !important;
 }
-/deep/.el-textarea__inner {
-  border: 1px solid #c4c9cf ;
-  border-radius: 0 ;
-  background-color: #f4f6f8;
-}
 /deep/.el-input__inner {
     width: 86%;
     padding-top: 3px;
+    font-size: 16px;
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-weight: bold;
 }
 /deep/.el-textarea__inner {
     margin-left:18px;
-    width: 88%;
+    width: 86.5%;
+    border: 1px solid #c4c9cf ;
+    border-radius: 0 ;
+    background-color: #f4f6f8;
+    font-size: 16px;
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-weight: bold;
 }
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
