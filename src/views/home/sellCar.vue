@@ -1011,6 +1011,7 @@ font-weight: bold;
 /deep/.el-button--primary {
   background-color: #000;
   border-color: #000;
+  margin-left: 25px;
 }
 
 
