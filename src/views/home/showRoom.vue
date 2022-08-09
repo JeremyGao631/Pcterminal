@@ -143,7 +143,7 @@
                         </div>
                         <div class="titleright">
                             <span class="textleft">AVAILABLE</span>
-                            <span class="textright">55 Cars</span>
+                            <span class="textright">55 CARS</span>
                         </div>
                     </div>
                     <div style="clear:both;"></div>

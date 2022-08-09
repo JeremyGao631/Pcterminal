@@ -79,11 +79,11 @@
     font-weight: bold;
     font-family: LucidaGrande-Bold, LucidaGrande;
     font-size: 16px;
-    color: #151515
+    color: #151515;
+    opacity: 0.3;
 }
 .el-menu--horizontal>.el-menu-item.is-active {
-  font-weight: bold;
-  color: #151515
+  opacity: 1;
 }
   .el-menu.el-menu--horizontal {
     border-bottom: none;
