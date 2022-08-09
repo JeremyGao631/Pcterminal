@@ -143,7 +143,7 @@
                         </div>
                         <div class="titleright">
                             <span class="textleft">AVAILABLE</span>
-                            <span class="textright">55 Cars</span>
+                            <span class="textright">{{this.carLength}} Cars</span>
                         </div>
                     </div>
                     <div style="clear:both;"></div>
@@ -196,6 +196,7 @@ export default {
   },
   data(){
     return{
+        carLength: '', //汽车总数
         loading: true,
         show:true,
         show1:true,
@@ -523,6 +524,7 @@ export default {
         this.maxPrices = car.data.records[0].price
         this.minPrices = car.data.records[car.data.records.length-1].price
         this.price = [this.minPrice,this.maxPrice]
+        this.carLength = car.data.records.length
 
         // console.log(this.information, 'car')
         this.makeList = []

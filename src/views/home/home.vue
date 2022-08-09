@@ -32,7 +32,7 @@
           <!-- <span class="btn_anniu" @click="change(1)" :class="{ newStyle:1===number}">SEARCH INVENTORY</span> -->
         </div>
         <div class="right">
-          <span type="text">AVAILABLE 55 CARS</span>
+          <span type="text">AVAILABLE {{this.carLength}} CARS</span>
         </div>
       </div>
       <div class="textcontent">
@@ -114,6 +114,7 @@ export default {
   },
   data(){
     return{
+      carLength: '', //汽车总数
       itemList:[
       ],
       number: 0 ,
@@ -138,6 +139,7 @@ export default {
     this.desc()
     this.services()
     this.allCar()
+    this.allCars()
   },
   methods: {
     jumppage(idx){
@@ -156,6 +158,22 @@ export default {
     cardetail(item){
       console.log('1', 1111)
       this.$router.push({path: '/carDetail', query: {item: item}})
+    },
+    // 汽车总数
+    allCars() {
+      car({
+        current: '1',
+        pageSize: '500',
+        make: '',
+        yearStart: '',
+        yearEnd: '',
+        priceStart: '',
+        priceEnd: '',
+        orderByPrice: '1',
+        orderByYear: '1'
+      }).then(car => {
+        this.carLength = car.data.records.length
+      })
     },
     allCar() {
       car({
