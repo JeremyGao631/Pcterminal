@@ -350,11 +350,11 @@ export default({
             margin-top: 95px;
             justify-content: space-between;
             .storyImg {
-                width: 65%;
+                width: 60%;
                 height: 462px;
                 object-fit: cover;
                 background: #FFFFFF;
-                margin-right:42px;
+                margin-right:20px;
             }
             .title {
                 width: 35%;
