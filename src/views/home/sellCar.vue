@@ -158,7 +158,7 @@
                   :limit="1"
                   :on-change="getFile"
                   :auto-upload="false">
-                    <i slot="default" class="el-icon-plus"></i>
+                    <i  class="el-icon-plus"></i>
                     <div slot="file" slot-scope="{file}">
                       <img
                         class="el-upload-list__item-thumbnail"
@@ -188,7 +188,7 @@
                 </el-upload>
                 <div class="upImg">
                   <el-dialog :visible.sync="dialogVisible">
-                    <img width="100%" :src="dialogImageUrl" alt="">
+                    <img width="100%" height="500px" :src="dialogImageUrl" alt="">
                   </el-dialog>
                 </div>
               </el-col>
@@ -1050,6 +1050,10 @@ font-weight: bold;
   background-color: #000;
   border-color: #000;
   margin-left: 25px;
+}
+
+/deep/ .el-upload-list--picture-card .el-upload-list__item  div{
+  margin-top: 40px;
 }
 
 
