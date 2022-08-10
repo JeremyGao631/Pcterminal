@@ -1053,7 +1053,8 @@ font-weight: bold;
 }
 
 /deep/ .el-upload-list--picture-card .el-upload-list__item  div{
-  margin-top: 40px;
+  // margin-top: 40px;
+  height: 100%;
 }
 
 
