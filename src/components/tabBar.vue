@@ -56,7 +56,7 @@
 </script>
 <style lang="less" scoped>
 .el-menu-demo {
-  color:#151515;
+  color:#000;
 }
   .jj {
     margin: 0 auto;
@@ -79,8 +79,8 @@
     font-weight: bold;
     font-family: LucidaGrande-Bold, LucidaGrande;
     font-size: 16px;
-    color: #151515;
-    opacity: 0.3;
+    color: #5e6163;
+    opacity: 0.7;
 }
 .el-menu--horizontal>.el-menu-item.is-active {
   opacity: 1;
@@ -90,6 +90,7 @@
   }
 .el-menu--horizontal>.el-menu-item.is-active {
     border-bottom: none;
+    color:#000;
 }
 .el-menu--horizontal>.el-menu-item {
   border-bottom:none;

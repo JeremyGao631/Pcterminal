@@ -359,10 +359,10 @@ export default({
             .title {
                 width: 35%;
                 text-align: right;
-                margin-top:20px;
+                margin-top:-12px;
                 .storyTit {
                     width: 100%;
-                    height: 100px;
+                    // height: 100px;
                     font-size: 80px;
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
@@ -400,7 +400,7 @@ export default({
                 }
                 .story {
                     width: 538px;
-                    height: 168px;
+                    // height: 168px;
                 }
                }
             }

@@ -1276,7 +1276,7 @@ export default {
               font-family: DINCondensed-Bold;
               // margin-left: 3px;
               font-weight: bold;
-              font-size: 30px;
+              font-size: 24px;
               color: #212020;
               line-height: 32px;
               display: block;
@@ -1325,7 +1325,7 @@ export default {
             justify-content: space-between;
             // padding-left: 7px;
             span {
-              font-size: 15px;
+              font-size: 14px;
               font-family: PingFangSC-Semibold;
               font-weight: 600;
               margin-right: 6px;

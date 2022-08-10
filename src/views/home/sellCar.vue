@@ -1049,7 +1049,7 @@ font-weight: bold;
 /deep/.el-button--primary {
   background-color: #000;
   border-color: #000;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 /deep/ .el-upload-list--picture-card .el-upload-list__item  div{
