@@ -1286,7 +1286,7 @@ export default {
               font-weight: bold;
               font-size: 24px;
               color: #212020;
-              line-height: 32px;
+              line-height: 24px;
               display: block;
               height: 50px;
             }
