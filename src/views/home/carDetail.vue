@@ -77,8 +77,8 @@
                     </div>
                   </div>
                 </div>
-                <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
-                <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+                <span data-u="arrowleft" class="jssora05l" style="top:230px;left:8px;width:40px;height:40px;"></span>
+                <span data-u="arrowright" class="jssora05r" style="top:230px;right:8px;width:40px;height:40px;"></span>
               </div>
             </div>
           <!-- </el-col>

@@ -1032,6 +1032,10 @@ export default({
   border: 1px solid #000 ;
   border-radius: 0 ;
   width: 100%;
+  font-size: 17px;
+font-family: DINCondensed-Bold, DINCondensed;
+font-weight: bold;
+color: #151515;
  
 }
 /deep/.el-input__inner::placeholder {
@@ -1049,7 +1053,7 @@ font-weight: bold;
 /deep/.el-button--primary {
   background-color: #000;
   border-color: #000;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 /deep/ .el-upload-list--picture-card .el-upload-list__item  div{
