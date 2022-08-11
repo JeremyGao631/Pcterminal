@@ -394,13 +394,14 @@ export default({
                 background: #FFFFFF;
                }
                .title {
+                margin-top: 20px;
                 text-align: left;
                 .storyTit {
                     width: 538px;
                 }
                 .story {
                     width: 538px;
-                    // height: 168px;
+                    height: 200px;
                 }
                }
             }
