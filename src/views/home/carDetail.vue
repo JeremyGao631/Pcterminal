@@ -3,8 +3,8 @@
     <div class="infodetail">
       <div class="title">{{ informations.year }} {{ informations.make }} {{ informations.model }}</div>
       <div class="content">
-        <el-row :gutter="20">
-          <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="12">
+        <!-- <el-row :gutter="20">
+          <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12"> -->
             <div class="contentleft">
               <div class="pricekind">
                 <span class="price"><span class="price1">$</span>{{ price }}</span>
@@ -46,11 +46,11 @@
                 </div>
               </div>
             </div>
-          </el-col>
-          <el-col :xs="24" :sm="24" :md="24" :lg="14" :xl="12">
+          <!-- </el-col> -->
+          <!-- <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12"> -->
             <div class="img_content">
               <div id="jssor_1"
-                   style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 560px; overflow: hidden; visibility: hidden;">
+                   style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 600px; overflow: hidden; visibility: hidden;">
                 <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
                   <div
                       style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
@@ -58,7 +58,7 @@
                       style="position:absolute;display:block;top:0px;left:0px;width:100%;height:100%;"></div>
                 </div>
                 <div data-u="slides"
-                     style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 460px; overflow: hidden;">
+                     style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 490px; overflow: hidden;">
                   <div data-p="144.50" style="display: none;"
                        v-for="(item,index) in imgUrlList" :key="index">
                     <img data-u="image" :src="item"/>
@@ -66,7 +66,7 @@
                   </div>
                 </div>
                 <div data-u="thumbnavigator" class="jssort01"
-                     style="position:absolute; left:0px; bottom:0px; right:0; height:100px;" data-autocenter="1">
+                     style="position:absolute; left:0px; bottom:0px; right:0; height:110px;" data-autocenter="1">
 
                   <div data-u="slides" style="cursor: default;">
                     <div data-u="prototype" class="p">
@@ -81,8 +81,8 @@
                 <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
               </div>
             </div>
-          </el-col>
-        </el-row>
+          <!-- </el-col>
+        </el-row> -->
       </div>
     </div>
 
@@ -918,6 +918,10 @@ export default {
   height /**/: 72px;
 }
 
+.img_content {
+  width: 750px;
+  float: left;
+}
 
 .topImg {
   width: 250px;
@@ -946,8 +950,12 @@ export default {
 
     .content {
       margin-top: 70px;
+      overflow: hidden;
 
       .contentleft {
+        width: calc(100% - 770px);
+        margin-right: 20px;
+        float: left;
         .pricekind {
 
           .price {
@@ -1022,7 +1030,7 @@ export default {
           background-color: white;
           width: 100%;
           height: 80px;
-          margin-top: 10px;
+          margin-top: 47px;
           display: flex;
           align-items: center;
           justify-content: space-evenly;
@@ -1443,9 +1451,9 @@ export default {
 
 
 @media screen and (max-width: 1919px) {
-  .carDetail .infodetail .content {
-    display: block;
-  }
+  // .carDetail .infodetail .content {
+  //   display: block;
+  // }
 
   .carDetail .booking .bookingtext .userinput .inputtable {
     margin-top: 30px;
@@ -1453,7 +1461,14 @@ export default {
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
+  .carDetail .infodetail .content {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
   .contentleft {
     margin-bottom: 20px;
   }
@@ -1463,11 +1478,34 @@ export default {
   }
 }
 
-@media screen and (max-width: 991px) {
-  .contentleft {
-    margin-bottom: 20px;
+
+@media screen and (max-width: 1500px) {
+  .carDetail .infodetail .content .contentleft {
+    width:calc(100% - 720px)
   }
 
+.carDetail .infodetail .content .img_content {
+ width: 700px;
+}
+
+.carDetail .infodetail .content .contentleft .littleshow {
+  margin-top: 11px;
+}
+}
+
+
+@media screen and (max-width: 1390px) {
+  .carDetail .infodetail .content .contentleft {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+.carDetail .infodetail .content .img_content {
+ width: 100%;
+}
+.carDetail .infodetail .content .contentleft .littleshow {
+  margin-top: 20px;
+}
   #jssor_1 {
     margin: 0 auto;
   }
