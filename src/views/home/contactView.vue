@@ -183,17 +183,17 @@ export default({
                     address:this.postcode
                 }).then(res => {
                 console.log(res, 'Submission successfull')
-                if (res) {
+                if (res.code === 0) {
                     console.log('1')
                     // this.$message('Submission successfull')
                     this.$message({
                         dangerouslyUseHTMLString: true,
                         message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
                   });
-                } else {
-                    this.$message({
-                        dangerouslyUseHTMLString: true,
-                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">The phone is already in used, please change your phone</span>'
+                } else if (!res || res.code !== 0) {
+                  this.$message({
+                  dangerouslyUseHTMLString: true,
+                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission failed, please try again later</span>'
                   });
                 }
             })

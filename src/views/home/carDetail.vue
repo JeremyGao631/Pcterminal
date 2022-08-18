@@ -1,7 +1,7 @@
 <template>
   <div class="carDetail">
     <div class="infodetail">
-      <div class="title">{{ informations.year }} {{ informations.make }} {{ informations.model }}</div>
+      <div class="title">{{ informations.year }} {{ informations.make }} {{ informations.model }} {{informations.badge}}</div>
       <div class="content">
         <!-- <el-row :gutter="20">
           <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12"> -->
@@ -626,6 +626,7 @@ export default {
             price: ele.priceDesc,
             odometer: ele.odometer,
             body: ele.body,
+            badge: ele.badge,
             model: ele.model,
             drive: ele.drive,
             advbody: ele.advbody,
@@ -671,6 +672,7 @@ export default {
             odometer: ele.odometer,
             body: ele.body,
             drive: ele.drive,
+            badge: ele.badge,
             model: ele.model,
             advbody: ele.advbody,
             advTitle: ele.advTitle,
@@ -702,18 +704,18 @@ export default {
           email: this.email,
           time: this.time,
         }).then(res => {
-          if (res) {
+          if (res.code === 0) {
             // this.$message('Submission successfull')
             this.$message({
               dangerouslyUseHTMLString: true,
               message: '<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
             });
-          } else {
-            this.$message({
+          } else if (!res || res.code !== 0) {
+              this.$message({
               dangerouslyUseHTMLString: true,
-              message: '<span style="font-family:DINCondensed-Bold;font-size: 16px;">the phone is already in used, please change your phone</span>'
-            });
-          }
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission failed, please try again later</span>'
+              });
+            }
         })
       }
     },
@@ -759,6 +761,7 @@ export default {
             price: ele.priceDesc,
             odometer: ele.odometer,
             body: ele.body,
+            badge: ele.badge,
             drive: ele.drive,
             model: ele.model,
             advbody: ele.advbody,
@@ -785,7 +788,12 @@ export default {
         {
           name: 'Model',
           result: this.informations.model
-        }, {
+        }, 
+        {
+          name: 'Badge',
+          result: this.informations.badge
+        },
+        {
           name: 'Body Type',
           result: this.informations.body
         }, {

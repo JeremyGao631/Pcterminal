@@ -162,7 +162,7 @@
                   <img :src="item.photo[0]"/>
                 </div>
                 <div class="titlecard" @click="cardetail(item)">
-                  <span>{{ item.year }} {{ item.make }} {{ item.model }}</span>
+                  <span>{{ item.year }} {{ item.make }} {{ item.model }} {{item.badge}}</span>
                 </div>
                 <div class="contentcard" @click="cardetail(item)">
                   <span class="contentcard-price">${{ item.price }}</span>
@@ -403,6 +403,7 @@ export default {
             odometer: ele.odometer,
             body: ele.body,
             model: ele.model,
+            badge: ele.badge,
             drive: ele.drive,
             advbody: ele.advbody,
             advTitle: ele.advTitle,
@@ -466,6 +467,7 @@ export default {
             price: ele.priceDesc,
             odometer: ele.odometer,
             body: ele.body,
+            badge: ele.badge,
             model: ele.model,
             drive: ele.drive,
             advbody: ele.advbody,
@@ -558,6 +560,7 @@ export default {
             price: ele.priceDesc,
             odometer: ele.odometer,
             body: ele.body,
+            badge: ele.badge,
             model: ele.model,
             drive: ele.drive,
             advbody: ele.advbody,

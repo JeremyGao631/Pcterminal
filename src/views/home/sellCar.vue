@@ -426,6 +426,11 @@ export default({
                   dangerouslyUseHTMLString: true,
                   message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission successfull</span>'
                   });
+                } else if (!res || res.code !== 0) {
+                  this.$message({
+                  dangerouslyUseHTMLString: true,
+                  message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Submission failed, please try again later</span>'
+                  });
                 }
             })
           }
