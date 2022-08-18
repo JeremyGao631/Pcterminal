@@ -787,12 +787,8 @@ export default {
         },
         {
           name: 'Model',
-          result: this.informations.model
+          result: `${this.informations.model} ${this.informations.badge}`
         }, 
-        {
-          name: 'Badge',
-          result: this.informations.badge
-        },
         {
           name: 'Body Type',
           result: this.informations.body
