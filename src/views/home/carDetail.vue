@@ -287,6 +287,7 @@ export default {
       photo: {},
       advTitle: '',
       advbody: '',
+      carLength: '',
       // reqEmail: true,
       // reqPhone: true,
       List: [],

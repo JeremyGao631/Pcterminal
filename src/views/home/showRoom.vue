@@ -1109,7 +1109,7 @@ export default {
           overflow: hidden;
 
           .textcard {
-            min-height: 335px;
+            min-height: 440px;
             padding-bottom: 20px;
 
             span {

@@ -149,9 +149,10 @@
               </el-col>
             </el-row>
             <el-row :gutter="90" class="inputs">
-              <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8" class="input1">
+              <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8" class="input1">
                 <el-upload
                   ref="pictureUpload"
+                  :disabled="showPhoto"
                   list-type="picture-card"
                   action="#"
                   accept=".jpg, .png"
@@ -244,6 +245,7 @@ export default({
     data() {
         return {
           dialogImageUrl: '',
+          showPhoto: false,
           dialogVisible: false,
           textstyle: [
             'textstyle1',
@@ -348,6 +350,7 @@ export default({
         },
       handleRemove(file) {
         this.$refs.pictureUpload.uploadFiles = []
+        this.showPhoto = false
         console.log(file, '11');
       },
       handlePictureCardPreview(file) {
@@ -364,6 +367,7 @@ export default({
             this.forms.photo = this.proofImage
           }
           console.log(this.forms.photo,'22222')
+          this.showPhoto = true
         })
       },
       getBase64(file) {
