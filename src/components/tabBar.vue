@@ -60,7 +60,7 @@
 }
   .jj {
     margin: 0 auto;
-    width: 1400px;
+    width: 80%;
     height: 70px;
     box-sizing: border-box;
     padding-top: 5px;
@@ -76,7 +76,7 @@
   }
   /deep/.el-menu--horizontal > .el-menu-item[data-v-67e51b4e] {
     border-bottom: none;
-    font-weight: bold;
+    // font-weight: bold;
     font-family: LucidaGrande-Bold, LucidaGrande;
     font-size: 16px;
     color: #5e6163;
@@ -91,6 +91,7 @@
 .el-menu--horizontal>.el-menu-item.is-active {
     border-bottom: none;
     color:#000;
+    font-weight: bold;
 }
 .el-menu--horizontal>.el-menu-item {
   border-bottom:none;

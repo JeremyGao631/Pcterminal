@@ -394,7 +394,7 @@ export default({
         if (this.form.name === '' || this.form.mobile === '' || this.forms.Year === '' || this.forms.make === '' || this.forms.model === '' || this.forms.transmission === '' || this.forms.odometer === '') {
             this.$message({
               dangerouslyUseHTMLString: true,
-              message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">Please check the page information is completed</span>'
+              message:'<span style="font-family:DINCondensed-Bold;font-size: 20px;">Missing field</span><br/><span style="font-family:DINCondensed-Bold;font-size: 16px;">One of the required field is empty or contains invaild data; please check your input</span>'
               });
             return
         } else {
@@ -471,14 +471,14 @@ export default({
       .content-title {
         font-size: 2vw;
         font-family: DINCondensed-Bold;
-        font-weight: bold;
+        // font-weight: bold;
         margin: 0;
         color: #FFFFFF;
       }
       .content-text {
         font-size: 5vw;
         font-family: DINCondensed-Bold;
-        font-weight: bold;
+        // font-weight: bold;
         color: #FFFFFF;
         .span1 {
           float:left;
@@ -503,7 +503,7 @@ export default({
         span{
           font-size: 1.5vw;
           font-family: DINCondensed-Bold;
-          font-weight: bold;
+          // font-weight: bold;
           line-height: 1;
           text-align: center;
           color: #FFFFFF;
@@ -534,7 +534,7 @@ export default({
               padding-top:180px;
               padding-bottom:40px;
               font-family: DINCondensed-Bold;
-              font-weight: bold;
+              // font-weight: bold;
               color: #e4e6ea;
               line-height: 32px;
               display: flex;
@@ -615,7 +615,7 @@ export default({
               height: 100px;
               font-size: 80px;
               font-family: DINCondensed-Bold, DINCondensed;
-              font-weight: bold;
+              // font-weight: bold;
               color: #212020;
               line-height: 100px;
             }
@@ -655,7 +655,7 @@ export default({
               text-align: right;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
-              font-weight: bold;
+              // font-weight: bold;
               color: #E8E8E8;
               line-height: 50px;
             }
@@ -669,7 +669,7 @@ export default({
               padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
-              font-weight: bold;
+              // font-weight: bold;
               color: #E8E8E8;
               line-height: 50px;
             }
@@ -683,7 +683,7 @@ export default({
               padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
-              font-weight: bold;
+              // font-weight: bold;
               color: #E8E8E8;
               line-height: 50px;
             }
@@ -719,7 +719,7 @@ export default({
                   margin: 15px 0;
                   font-size: 20px;
                   font-family: DINCondensed-Bold, DINCondensed;
-                  font-weight: bold;
+                  // font-weight: bold;
                 }
                 .el-input__inner {
                   width: 100%;
@@ -755,7 +755,7 @@ export default({
                 margin-bottom: 15px;
                 font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
+                // font-weight: bold;
               }
               .el-input__inner {
                 width: 100%;
@@ -802,7 +802,7 @@ export default({
                 margin-bottom: 15px;
                 font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
+                // font-weight: bold;
               }
               .el-input__inner {
                 width: 100%;
@@ -830,7 +830,7 @@ export default({
                 font-size: 20px;
                 margin-bottom: 15px;
                 font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
+                // font-weight: bold;
               }
               /deep/.el-input__inner {
                 width: 80%;
@@ -850,7 +850,7 @@ export default({
                   height: 130px;
                   font-size: 20px;
                   font-family: DINCondensed-Bold, DINCondensed;
-                  font-weight: bold;
+                  // font-weight: bold;
                   color: #FFFFFF;
                 }
               }
@@ -867,7 +867,7 @@ export default({
                   height: 130px;
                   font-size: 18px;
                   font-family: DINCondensed-Bold, DINCondensed;
-                  font-weight: bold;
+                  // font-weight: bold;
                   color: #FFFFFF;
                 }
               }
@@ -911,7 +911,7 @@ export default({
                 margin-bottom: 15px;
                 font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
+                // font-weight: bold;
               }
               .btn{
                 border: none;
@@ -950,7 +950,7 @@ export default({
               padding-right:32px;
               background-color: #000;
               font-family: DINCondensed-Bold, DINCondensed;
-              font-weight: bold;
+              // font-weight: bold;
               color: #E8E8E8;
               line-height: 50px;
             }
@@ -973,7 +973,7 @@ export default({
                 margin-bottom: 15px;
                 font-size: 20px;
                 font-family: DINCondensed-Bold, DINCondensed;
-                font-weight: bold;
+                // font-weight: bold;
               }
               .el-input__inner {
                 width: 100%;
@@ -1015,13 +1015,13 @@ export default({
         }
     }
     /deep/.el-input__inner {
-        border: 1px solid #000 ;
+        border: 1px solid #151515 ;
         border-radius: 0 ;
         width: 100%;
         font-size: 17px;
         font-family: DINCondensed-Bold, DINCondensed;
-        color: #000;
-        font-weight: bold;
+        color: #151515;
+        // font-weight: bold;
         padding-top: 5px;
         background-color: #f4f6f8;
       }
@@ -1036,6 +1036,7 @@ export default({
 font-family: DINCondensed-Bold, DINCondensed;
 font-weight: bold;
 color: #151515;
+padding: 5px 5px;
  
 }
 /deep/.el-input__inner::placeholder {

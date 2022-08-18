@@ -102,7 +102,7 @@
                             placeholder="Message*"
                             v-model="message" />
                 </div>
-                <el-button @click="contactSubmit()">SUBMIT</el-button>
+                <el-button @click="contactSubmit()" type="primary">SUBMIT</el-button>
                 </div>
 
             </div>
@@ -193,7 +193,7 @@ export default({
                 } else {
                     this.$message({
                         dangerouslyUseHTMLString: true,
-                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">the phone is already in used, please change your phone</span>'
+                        message:'<span style="font-family:DINCondensed-Bold;font-size: 16px;">The phone is already in used, please change your phone</span>'
                   });
                 }
             })
@@ -244,13 +244,13 @@ export default({
             height: 130px;
             font-size: 100px;
             font-family: DINCondensed-Bold, DINCondensed;
-            font-weight: bold;
+            // font-weight: bold;
             color: #FFFFFF;
             line-height: 130px;
           }
         }
         .contact-main {
-            margin: 105px auto 0 auto;
+            margin: 105px auto 105px auto;
             width: 80%;
             height: 1100px;
             display: flex;
@@ -268,7 +268,7 @@ export default({
                         margin-left: 60px;
                         font-size: 60px;
                         font-family: DINCondensed-Bold, DINCondensed;
-                        font-weight: bold;
+                        // font-weight: bold;
                         color: #151515;
                         line-height: 193px;
                     }
@@ -296,9 +296,9 @@ export default({
                     font-size: 21px;
                     height: 58px;
                     font-family: DINCondensed-Bold;
-                    border-radius: 1px;
                     color:#fff;
                     background-color: #151515;
+                    border: none;
                 }
                 }
             }
@@ -330,7 +330,7 @@ export default({
                             height: 22px;
                             font-size: 30px;
                             font-family: DINCondensed-Bold, DINCondensed;
-                            font-weight: bold;
+                            // font-weight: bold;
                             color: #212020;
                             line-height: 32px;
                             margin-bottom: 19px;
@@ -427,6 +427,7 @@ background-color: #f4f6f8;
     font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
     font-weight: bold;
+    color: #151515;
 }
 /deep/.el-textarea__inner {
     margin-left:18px;
@@ -437,6 +438,7 @@ background-color: #f4f6f8;
     font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
     font-weight: bold;
+    color: #151515;
 }
 /deep/.el-input__inner::placeholder {
     font-size: 16px;

@@ -2,16 +2,16 @@
   <div>
     <!--轮播图-->
     <div class="lunbo section">
-      <img class="default_img" :src="url"  alt="暂无图片" />
-      <el-carousel :interval="5000" arrow="always" >
+      <img class="default_img" :src="url" alt="暂无图片"/>
+      <el-carousel :interval="5000" arrow="always">
         <el-carousel-item v-for="(item,index) in itemList" :key="index">
           <div class="banner">
-            <img class="contentimg" :src="item.targeUrl"  alt="暂无图片" />
+            <img class="contentimg" :src="item.targeUrl" alt="暂无图片"/>
             <div class="inlinetext">
-              <p class="content-title">{{item.secondtitle}}</p><br />
+              <p class="content-title">{{ item.secondtitle }}</p><br/>
               <span class="content-text">
-                <span class="span1">{{item.span}}</span><br />
-                <span class="span2">{{item.span1}}</span><br />
+                <span class="span1">{{ item.span }}</span><br/>
+                <span class="span2">{{ item.span1 }}</span><br/>
                 <div style="clear:both;"></div>
               </span>
               <el-button class="clickbtn" @click="contactUs()">
@@ -37,24 +37,25 @@
       </div>
       <div class="textcontent">
         <!--自适应样式更改-->
-        <el-row :gutter="20">
-          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index" @click="cardetail(item)">
+        <el-row :gutter="30">
+          <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"
+                  @click="cardetail(item)">
             <div class="imgcard" @click="cardetail(item)">
-              <img :src="item.photo[0]" />
+              <img :src="item.photo[0]"/>
             </div>
             <div class="titlecard" @click="cardetail(item)">
-              <span >{{item.year}} {{item.make}} {{item.model}}</span>
+              <span>{{ item.year }} {{ item.make }} {{ item.model }}</span>
             </div>
             <div class="contentcard" @click="cardetail(item)">
-              <span class="contentcard-price">${{item.price}}</span>
+              <span class="contentcard-price">${{ item.price }}</span>
               <span class="contentcard-info">Excl . Gov's Charges</span>
             </div>
-            <div class="break" ></div>
+            <div class="break"></div>
             <div class="detailcard" @click="cardetail(item)">
-              <span >{{item.odometer}} kms</span>
+              <span>{{ item.odometer }} kms</span>
               <!-- <span >{{item.body}}</span> -->
-              <span>{{item.fueltype.substring(0,6)}}</span>
-              <span >{{item.geartype.slice(0,4)}}</span>
+              <span>{{ item.fueltype.substring(0, 6) }}</span>
+              <span>{{ item.geartype.slice(0, 4) }}</span>
             </div>
           </el-col>
         </el-row>
@@ -72,15 +73,15 @@
     <!--底部内容展示-->
     <!--底部内容展示-->
     <div class="bottom section">
-      <div class="title">OUR SERVICES</div> 
+      <div class="title">OUR SERVICES</div>
       <div class="serviceinfo">
-        <el-row :gutter="40" style="padding-left:60px;padding-right: 60px" >
-          <el-col el-col  :xs="24" :sm="12" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx" >
+        <el-row :gutter="40" style="padding-left:60px;padding-right: 60px">
+          <el-col el-col :xs="24" :sm="12" :md="12" :lg="8" v-for="(item,idx) in service" :key="idx">
             <div class="infotext" @click="jumppage(idx)">
-              <img :src="item.targeUrl" />
+              <img :src="item.targeUrl"/>
               <div class="infoinfo">
-                <span class="infotitle" >{{ item.secondtitle }}</span><br />
-                <span class="infodetail" >{{ item.describtion}}</span>
+                <span class="infotitle">{{ item.secondtitle }}</span><br/>
+                <span class="infodetail">{{ item.describtion }}</span>
               </div>
             </div>
           </el-col>
@@ -105,31 +106,29 @@
 </template>
 
 <script>
-import { describtion } from '@/api'
-import { car } from '@/api'
+import {describtion} from '@/api'
+import {car} from '@/api'
 import banner from '@/assets/images/home/banner_bg.jpg'
+
 export default {
   name: 'HomeView',
-  components: {
-  },
-  data(){
-    return{
-      carLength: '', //汽车总数
-      itemList:[
-      ],
-      number: 0 ,
+  components: {},
+  data() {
+    return {
+      itemList: [],
+      number: 0,
       information: [
-                // {
-                //   url: require('../../assets/images/home/1.jpg'),
-                //   year:'2019',
-                //   type: 'MERCEDES-BENZ',
-                //   kind: 'C63S AMG',
-                //   price: '$149000.00',
-                //   info: "Excl . Gov's Charges",
-                //   distance: '126295 kms',
-                //   info1: 'Diesel',
-                //   info2: 'Auto'
-                // },
+        // {
+        //   url: require('../../assets/images/home/1.jpg'),
+        //   year:'2019',
+        //   type: 'MERCEDES-BENZ',
+        //   kind: 'C63S AMG',
+        //   price: '$149000.00',
+        //   info: "Excl . Gov's Charges",
+        //   distance: '126295 kms',
+        //   info1: 'Diesel',
+        //   info2: 'Auto'
+        // },
       ],
       service: [],
       url: banner
@@ -142,20 +141,20 @@ export default {
     this.allCars()
   },
   methods: {
-    jumppage(idx){
-      if(idx == 0){
+    jumppage(idx) {
+      if (idx == 0) {
         this.$router.push('/showRoom')
-      }else if(idx == 1){
+      } else if (idx == 1) {
         this.$router.push('/sell')
-      }else {
+      } else {
         this.$router.push('/about')
       }
     },
     // change: function (index) {
     //         this.number = index; //重要处
     //       },
-        // 车辆信息
-    cardetail(item){
+    // 车辆信息
+    cardetail(item) {
       console.log('1', 1111)
       this.$router.push({path: '/carDetail', query: {item: item}})
     },
@@ -173,6 +172,7 @@ export default {
         orderByYear: '1'
       }).then(car => {
         this.carLength = car.data.records.length
+        console.log(this.carLength,"12345667899")
       })
     },
     allCar() {
@@ -191,25 +191,25 @@ export default {
         console.log(this.information, 'car')
         this.information = []
         car.data.records.forEach(ele => {
-            const item = {
-                year: ele.year,
-                fueltype: ele.fueltype,
-                make: ele.make,
-                price: ele.priceDesc,
-                odometer: ele.odometer,
-                body: ele.body,
-                drive: ele.drive,
-                model: ele.model,
-                advbody: ele.advbody,
-                advTitle: ele.advTitle,
-                geartype: ele.geartype,
-                enginesize: ele.enginesize,
-                cylinders: ele.cylinders,
-                doornum: ele.doornum,
-                color: ele.color,
-                photo: ele.photo.split(',')
-            }
-            this.information.push(item)
+          const item = {
+            year: ele.year,
+            fueltype: ele.fueltype,
+            make: ele.make,
+            price: ele.priceDesc,
+            odometer: ele.odometer,
+            body: ele.body,
+            drive: ele.drive,
+            model: ele.model,
+            advbody: ele.advbody,
+            advTitle: ele.advTitle,
+            geartype: ele.geartype,
+            enginesize: ele.enginesize,
+            cylinders: ele.cylinders,
+            doornum: ele.doornum,
+            color: ele.color,
+            photo: ele.photo.split(',')
+          }
+          this.information.push(item)
         })
       })
     },
@@ -238,7 +238,7 @@ export default {
           }
           this.itemList.push(item)
         })
-        console.log('01',this.itemList )
+        console.log('01', this.itemList)
       })
     },
     // our services
@@ -265,21 +265,25 @@ export default {
 
 <style lang="less" scoped>
 .lunbo {
-  width:100%;
+  width: 100%;
   position: relative;
-  .default_img{
+
+  .default_img {
     width: 100%;
     height: auto;
   }
+
   .el-carousel {
     position: absolute;
-    width:100%;
+    width: 100%;
     height: 100%;
     top: 0;
-    /deep/ .el-carousel__container{
+
+    /deep/ .el-carousel__container {
       height: 100%;
+
       .el-carousel__item {
-        
+
         img {
           width: 100%;
           height: auto;
@@ -287,12 +291,14 @@ export default {
         }
       }
     }
+
     /deep/ .el-carousel__indicators--horizontal {
       display: none;
       position: absolute;
       left: 10%;
       // left: 240px;
       transform: translateY(-64px);
+
       .el-carousel__button {
         width: 10px;
         height: 10px;
@@ -303,7 +309,8 @@ export default {
         margin-right: 5px;
       }
     }
-    /deep/ .el-carousel__indicator--horizontal.is-active .el-carousel__button{
+
+    /deep/ .el-carousel__indicator--horizontal.is-active .el-carousel__button {
       width: 10px;
       height: 10px;
       background: #ffffff;
@@ -315,19 +322,22 @@ export default {
 }
 
 
-.banner{
+.banner {
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
+
   .contentimg {
     position: relative;
     width: 100%;
   }
+
   .inlinetext {
     position: absolute;
     left: 10%;
     text-align: left;
+
     .content-title {
       font-size: 2vw;
       font-family: DINCondensed-Bold;
@@ -335,32 +345,37 @@ export default {
       margin: 0;
       color: #FFFFFF;
     }
+
     .content-text {
       font-size: 5vw;
       font-family: DINCondensed-Bold;
       font-weight: bold;
       color: #FFFFFF;
+
       .span1 {
-        float:left;
+        float: left;
         margin-top: -20px;
       }
+
       .span2 {
-        float:left;
+        float: left;
         margin-top: -30px;
       }
 
     }
+
     .clickbtn {
       position: relative;
-      border: 1px solid #FFFFFF ;
+      border: 1px solid #FFFFFF;
       background-color: transparent;
-      color:#FFFFFF;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: right;
       margin-top: 30px;
       padding: 20px 5px 15px 5px;
-      span{
+
+      span {
         font-size: 1.5vw;
         font-family: DINCondensed-Bold;
         font-weight: bold;
@@ -369,11 +384,12 @@ export default {
         color: #FFFFFF;
         margin-left: 40px;
       }
+
       .el-icon-my-right {
         margin-left: 40px;
         background: url('../../assets/images/home/right.png') no-repeat;
         background-size: cover;
-        display:inline-block;
+        display: inline-block;
         height: 16px;
         width: 16px;
       }
@@ -384,6 +400,7 @@ export default {
 .middle {
   margin: 0 auto;
   width: 80%;
+
   .title {
     font-size: 70px;
     font-family: DINCondensed-Bold;
@@ -391,69 +408,76 @@ export default {
     color: #151515;
     white-space: nowrap;
     margin: 114px 20px 0 20px;
-    text-align:left;
-    letter-spacing: 2px; 
+    text-align: left;
+    letter-spacing: 2px;
   }
+
   .texttitle {
     margin: 0 20px;
     margin-top: 78px;
     border-bottom: 2px solid #12100f;
     height: 50px;
     font-family: DINCondensed-Bold;
-      .left {
-        float: left;
-        .btn_anniu {
-          margin-right: 20px;
-          font-size: 22px;
-          color: #909090;
-        }
-        .newStyle{
-          border: 2px solid #12100f;
-          border-bottom: none;
-          font-weight: bold;
-          margin-right: 20px;
-          font-size: 22px;
-          color: #212020;
-          display: block;
-          height: 50px;
-          line-height: 50px;
-          padding: 0 20px;
-        }
+
+    .left {
+      float: left;
+
+      .btn_anniu {
+        margin-right: 20px;
+        font-size: 22px;
+        color: #909090;
       }
-      .right {
-        float: right;
-        span {
-          font-weight:bold;
-          font-family: DINCondensed-Bold;
-          color: #212020;
-          font-size: 22px;
-          line-height: 50px;
-        }
+
+      .newStyle {
+        border: 2px solid #12100f;
+        border-bottom: none;
+        font-weight: bold;
+        margin-right: 20px;
+        font-size: 22px;
+        color: #212020;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
       }
-      .clearfix {
-        clear:both;
+    }
+
+    .right {
+      float: right;
+
+      span {
+        font-weight: bold;
+        font-family: DINCondensed-Bold;
+        color: #212020;
+        font-size: 22px;
+        line-height: 50px;
       }
+    }
+
+    .clearfix {
+      clear: both;
+    }
   }
+
   .textcontent {
     padding-top: 60px;
     overflow: hidden;
     padding-left: 20px;
     padding-right: 20px;
+
     .textcard {
-      float:left;
-      // margin: 0 20px;
-      padding-bottom: 30px;
+      min-height: 440px;
+
       .imgcard {
         width: 100%;
-        height: 210px;
+
         img {
-          height: 100%;
           width: 100%;
-          object-fit: cover;
         }
       }
+
       .titlecard {
-        text-align:left;
+        text-align: left;
         padding-top: 10px;
         padding-bottom: 10px;
         // padding-left: 19px;
@@ -468,6 +492,7 @@ export default {
           height: 50px;
         }
       }
+
       .contentcard {
         padding-bottom: 10px;
         display: flex;
@@ -475,84 +500,93 @@ export default {
         justify-content: space-between;
         // padding-left: 7px;
         padding-right: 5px;
+
         .contentcard-price {
-          font-family:DINCondensed-Bold;
+          font-family: DINCondensed-Bold;
           // font-weight:bold;
           font-size: 24px;
           color: #212020;
           line-height: 29px;
         }
+
         .contentcard-info {
           font-size: 16px;
           color: #4A4A4A;
           line-height: 19px;
           margin-top: 3px;
           margin-left: 5px;
-          font-family:DINCondensed-Bold;
+          font-family: DINCondensed-Bold;
           // font-weight: bold;
-          opacity:0.5;
+          opacity: 0.5;
         }
       }
+
       .break {
         border-bottom: 1px solid #979797;
         margin-left: 19px;
-        opacity:0.1;
+        opacity: 0.1;
       }
+
       .detailcard {
-        padding-top:10px;
+        padding-top: 15px;
+        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         // padding-left: 7px;
         span {
-          font-size: 14px;
-          font-family:PingFangSC-Semibold;
+          font-size: 16px;
+          font-family: DINCondensed-Bold;
           // font-weight: 600;
           margin-right: 6px;
           color: #4A4A4A;
-          opacity:0.5;
+          opacity: 0.5;
           // margin-right: 36px;
           line-height: 20px;
           white-space: nowrap;
         }
       }
     }
+
     .textcard:nth-last-child(1) {
       margin-right: 0px;
-      padding-bottom:79px;
+      padding-bottom: 79px;
     }
   }
 
   .newbutton {
     margin-bottom: 110px;
-    float:right;
+    float: right;
     position: relative;
     margin-right: 30px;
+
     .el-button {
       width: 222px;
       height: 58px;
-      border: 1px solid #F7941E ;
+      border: 1px solid #F7941E;
       background-color: transparent;
-      color:#F7941E;
+      color: #F7941E;
       display: flex;
       align-items: center;
       justify-content: right;
       padding-top: 15px;
+
       span {
-        color:#F7941E;
+        color: #F7941E;
         font-size: 21px;
         font-family: DINCondensed-Bold;
         font-weight: bold;
         line-height: 25px;
         text-align: center;
         line-height: 130px;
-        margin-left:20px;
-        margin-right:65px;
+        margin-left: 20px;
+        margin-right: 65px;
       }
+
       .el-icon-my-yellowright {
         background: url('../../assets/images/home/yellowright.png') no-repeat;
         background-size: cover;
-        display:inline-block;
+        display: inline-block;
         height: 16px;
         width: 16px;
         margin-right: -16px;
@@ -562,55 +596,61 @@ export default {
 }
 
 .bottom {
-    background-color:#F4F6F8;
-    .title {
-      margin: 0 auto;
-      width: 80%;
-      font-size: 70px;
-      font-family: DINCondensed-Bold;
-      font-weight: bold;
-      color: #151515;
-      white-space: nowrap;
-      padding-top:114px;
-      text-align:left;
-      
-    }
-    .serviceinfo {
-      margin: 0 auto;
-      width: 80%;
-      padding-top:52px;
-      padding-bottom:200px;
-      .infotext {
-        margin-bottom: 20px;
-        height: 508px;
-        background: #FFFFFF;
-        img {
-          width: 100%;
-          height:240px;
+  background-color: #F4F6F8;
+
+  .title {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 70px;
+    font-family: DINCondensed-Bold;
+    font-weight: bold;
+    color: #151515;
+    white-space: nowrap;
+    padding-top: 114px;
+    text-align: left;
+
+  }
+
+  .serviceinfo {
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 52px;
+    padding-bottom: 200px;
+
+    .infotext {
+      margin-bottom: 20px;
+      height: 508px;
+      background: #FFFFFF;
+
+      img {
+        width: 100%;
+      }
+
+      .infoinfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 260px;
+
+        .infotitle {
+          font-family: DINCondensed-Bold;
+          font-weight: bold;
+          color: #212020;
+          font-size: 30px;
         }
-        .infoinfo {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width:100%;
-          height: 300px;
-          .infotitle {
-            font-family:DINCondensed-Bold;
-            font-weight: bold;
-            color: #212020;
-            font-size:30px;
-          }
-          .infodetail {
-            font-family:PingFangSC-Regular;
-            font-weight: 400;
-            color: #817e7e;
-            font-size:14px;
-            margin:0 50px 45px 45px;
-          }
+
+        .infodetail {
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: #817e7e;
+          font-size: 14px;
+          margin: 0 50px 45px 45px;
         }
       }
     }
+  }
 }
 
 

@@ -207,7 +207,7 @@
           <div class="newbutton">
             <el-button @click="submit()">
               <span>SUBMIT</span>
-              <i class="el-icon-my-yellowright"></i>
+              <!-- <i class="el-icon-my-yellowright"></i> -->
             </el-button>
           </div>
         </div>
@@ -243,7 +243,7 @@
               page-size='8'
               @next-click="next"
               @prev-click="shang"
-              :total="40">
+              :total="Number(this.carLength)">
 
           </el-pagination>
         </div>
@@ -317,6 +317,7 @@ export default {
     this.$nextTick(() => {
       this.jssor_1_slider_init()
     })
+    this.allCars()
   },
   watch: {
     // email() {
@@ -719,6 +720,22 @@ export default {
     query() {
 
     },
+    allCars() {
+      car({
+        current: '1',
+        pageSize: '500',
+        make: '',
+        yearStart: '',
+        yearEnd: '',
+        priceStart: '',
+        priceEnd: '',
+        orderByPrice: '1',
+        orderByYear: '1'
+      }).then(car => {
+        this.carLength = car.data.records.length
+        console.log(this.carLength,"12345667899")
+      })
+    },
     allCar() {
       car({
         current: '1',
@@ -878,7 +895,7 @@ export default {
   left: 0px;
   width: 68px;
   height: 68px;
-  border: #000 2px solid;
+  // border: #000 2px solid;
   box-sizing: content-box;
   background: url('../../assets/t01.png') -800px -800px no-repeat;
   _background: none;
@@ -1053,11 +1070,11 @@ export default {
               letter-spacing: 1px;
 
               .texttop {
-                font-size: 16px;
+                font-size: 14px;
                 font-family: PingFangSC-Medium;
                 font-weight: bold;
                 color: black;
-                line-height: 16px;
+                line-height: 14px;
               }
 
               .texttopright {
@@ -1086,8 +1103,9 @@ export default {
   .detailtext {
     background-color: #FFFFFF;
     // height:180px;
-    margin: 50px -20px 15px 0px;
+    margin: 50px 0px 15px 0px;
     padding-bottom: 30px;
+    text-align: left;
 
     .texttitle {
       height: 130px;
@@ -1096,6 +1114,7 @@ export default {
       font-weight: bold;
       color: #151515;
       line-height: 75px;
+      padding-left: 45%;
     }
 
     .textcontent {
@@ -1111,6 +1130,8 @@ export default {
       opacity: 0.7;
       letter-spacing: 1px;
       // position: relative;
+      padding-left: 30%;
+      display: inline-block;
     }
   }
 
@@ -1260,18 +1281,13 @@ export default {
         padding-right: 20px;
 
         .textcard {
-          float: left;
-          // margin: 0 20px;
-          padding-bottom: 30px;
+          min-height: 440px;
 
           .imgcard {
             width: 100%;
-            height: 210px;
 
             img {
-              height: 100%;
               width: 100%;
-              object-fit: cover;
             }
           }
 
@@ -1316,7 +1332,7 @@ export default {
               margin-left: 5px;
               font-family: DINCondensed-Bold;
               font-weight: bold;
-              opacity: 0.7;
+              opacity: 0.5;
             }
           }
 
@@ -1327,18 +1343,19 @@ export default {
           }
 
           .detailcard {
-            padding-top: 10px;
+            padding-top: 15px;
+            padding-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             // padding-left: 7px;
             span {
-              font-size: 14px;
-              font-family: PingFangSC-Semibold;
-              font-weight: 600;
+              font-size: 16px;
+              font-family: DINCondensed-Bold;
+              // font-weight: 600;
               margin-right: 6px;
               color: #4A4A4A;
-              opacity: 0.7;
+              opacity: 0.5;
               // margin-right: 36px;
               line-height: 20px;
               white-space: nowrap;
@@ -1509,6 +1526,16 @@ export default {
   #jssor_1 {
     margin: 0 auto;
   }
+}
+
+
+/deep/.el-input__inner::placeholder {
+    font-size: 16px;
+    font-family: DINCondensed-Bold, DINCondensed;
+    font-weight: bold;
+    padding-top: 3px;
+    line-height: 130px;
+    color: #151515
 }
 
 </style>
