@@ -271,6 +271,7 @@ export default({
                         // font-weight: bold;
                         color: #151515;
                         line-height: 193px;
+                        letter-spacing: 2px;
                     }
                 .input-view {
                     margin-left: 70px;

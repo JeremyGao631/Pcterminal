@@ -221,7 +221,7 @@
                 <img :src="item.photo[0]"/>
               </div>
               <div class="titlecard" @click="jumpCardDetail(item)">
-                <span>{{ item.year }} {{ item.make }} {{ item.model }}</span>
+                <span>{{ item.year }} {{ item.make }} {{ item.model }} {{item.badge}}</span>
               </div>
               <div class="contentcard" @click="jumpCardDetail(item)">
                 <span class="contentcard-price">${{ item.price }}</span>
