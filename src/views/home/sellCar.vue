@@ -627,6 +627,7 @@ export default({
               // font-weight: bold;
               color: #212020;
               line-height: 100px;
+              letter-spacing: 2px;
             }
             .started {
               width: 100%;

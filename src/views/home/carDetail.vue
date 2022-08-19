@@ -221,7 +221,7 @@
                 <img :src="item.photo[0]"/>
               </div>
               <div class="titlecard" @click="jumpCardDetail(item)">
-                <span>{{ item.year }} {{ item.make }} {{ item.model }}</span>
+                <span>{{ item.year }} {{ item.make }} {{ item.model }} {{item.badge}}</span>
               </div>
               <div class="contentcard" @click="jumpCardDetail(item)">
                 <span class="contentcard-price">${{ item.price }}</span>
@@ -347,184 +347,184 @@ export default {
           $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
           $Opacity: 2
         },
-        {
-          $Duration: 1200,
-          x: -0.3,
-          $SlideOut: true,
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: -0.3,
-          $During: {$Left: [0.3, 0.7]},
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          $SlideOut: true,
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: 0.3,
-          $During: {$Top: [0.3, 0.7]},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: -0.3,
-          $SlideOut: true,
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: -0.3,
-          $During: {$Top: [0.3, 0.7]},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: 0.3,
-          $SlideOut: true,
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          $Cols: 2,
-          $During: {$Left: [0.3, 0.7]},
-          $ChessMode: {$Column: 3},
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          $Cols: 2,
-          $SlideOut: true,
-          $ChessMode: {$Column: 3},
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: 0.3,
-          $Rows: 2,
-          $During: {$Top: [0.3, 0.7]},
-          $ChessMode: {$Row: 12},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: 0.3,
-          $Rows: 2,
-          $SlideOut: true,
-          $ChessMode: {$Row: 12},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: 0.3,
-          $Cols: 2,
-          $During: {$Top: [0.3, 0.7]},
-          $ChessMode: {$Column: 12},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          y: -0.3,
-          $Cols: 2,
-          $SlideOut: true,
-          $ChessMode: {$Column: 12},
-          $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          $Rows: 2,
-          $During: {$Left: [0.3, 0.7]},
-          $ChessMode: {$Row: 3},
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: -0.3,
-          $Rows: 2,
-          $SlideOut: true,
-          $ChessMode: {$Row: 3},
-          $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          y: 0.3,
-          $Cols: 2,
-          $Rows: 2,
-          $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]},
-          $ChessMode: {$Column: 3, $Row: 12},
-          $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          x: 0.3,
-          y: 0.3,
-          $Cols: 2,
-          $Rows: 2,
-          $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]},
-          $SlideOut: true,
-          $ChessMode: {$Column: 3, $Row: 12},
-          $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          $Delay: 20,
-          $Clip: 3,
-          $Assembly: 260,
-          $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          $Delay: 20,
-          $Clip: 3,
-          $SlideOut: true,
-          $Assembly: 260,
-          $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          $Delay: 20,
-          $Clip: 12,
-          $Assembly: 260,
-          $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        },
-        {
-          $Duration: 1200,
-          $Delay: 20,
-          $Clip: 12,
-          $SlideOut: true,
-          $Assembly: 260,
-          $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear},
-          $Opacity: 2
-        }
+        // {
+        //   $Duration: 1200,
+        //   x: -0.3,
+        //   $SlideOut: true,
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: -0.3,
+        //   $During: {$Left: [0.3, 0.7]},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   $SlideOut: true,
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: 0.3,
+        //   $During: {$Top: [0.3, 0.7]},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: -0.3,
+        //   $SlideOut: true,
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: -0.3,
+        //   $During: {$Top: [0.3, 0.7]},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: 0.3,
+        //   $SlideOut: true,
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   $Cols: 2,
+        //   $During: {$Left: [0.3, 0.7]},
+        //   $ChessMode: {$Column: 3},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   $Cols: 2,
+        //   $SlideOut: true,
+        //   $ChessMode: {$Column: 3},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: 0.3,
+        //   $Rows: 2,
+        //   $During: {$Top: [0.3, 0.7]},
+        //   $ChessMode: {$Row: 12},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: 0.3,
+        //   $Rows: 2,
+        //   $SlideOut: true,
+        //   $ChessMode: {$Row: 12},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: 0.3,
+        //   $Cols: 2,
+        //   $During: {$Top: [0.3, 0.7]},
+        //   $ChessMode: {$Column: 12},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   y: -0.3,
+        //   $Cols: 2,
+        //   $SlideOut: true,
+        //   $ChessMode: {$Column: 12},
+        //   $Easing: {$Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   $Rows: 2,
+        //   $During: {$Left: [0.3, 0.7]},
+        //   $ChessMode: {$Row: 3},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: -0.3,
+        //   $Rows: 2,
+        //   $SlideOut: true,
+        //   $ChessMode: {$Row: 3},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   y: 0.3,
+        //   $Cols: 2,
+        //   $Rows: 2,
+        //   $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]},
+        //   $ChessMode: {$Column: 3, $Row: 12},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   x: 0.3,
+        //   y: 0.3,
+        //   $Cols: 2,
+        //   $Rows: 2,
+        //   $During: {$Left: [0.3, 0.7], $Top: [0.3, 0.7]},
+        //   $SlideOut: true,
+        //   $ChessMode: {$Column: 3, $Row: 12},
+        //   $Easing: {$Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   $Delay: 20,
+        //   $Clip: 3,
+        //   $Assembly: 260,
+        //   $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   $Delay: 20,
+        //   $Clip: 3,
+        //   $SlideOut: true,
+        //   $Assembly: 260,
+        //   $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   $Delay: 20,
+        //   $Clip: 12,
+        //   $Assembly: 260,
+        //   $Easing: {$Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // },
+        // {
+        //   $Duration: 1200,
+        //   $Delay: 20,
+        //   $Clip: 12,
+        //   $SlideOut: true,
+        //   $Assembly: 260,
+        //   $Easing: {$Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear},
+        //   $Opacity: 2
+        // }
       ];
 
       let jssor_1_options = {
@@ -540,8 +540,8 @@ export default {
         $ThumbnailNavigatorOptions: {
           $Class: $JssorThumbnailNavigator$,
           $Cols: 10,
-          $SpacingX: 8,
-          $SpacingY: 8,
+          $SpacingX: 10,
+          $SpacingY: 10,
           $Align: 360
         }
       };
@@ -873,7 +873,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 72px;
+  width: 100px;
   height: 72px;
 }
 
@@ -898,8 +898,8 @@ export default {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 68px;
-  height: 68px;
+  width: 100px;
+  height: 72px;
   // border: #000 2px solid;
   box-sizing: content-box;
   background: url('../../assets/t01.png') -800px -800px no-repeat;
@@ -911,7 +911,7 @@ export default {
   _top: 0px;
   left: 2px;
   _left: 0px;
-  width: 68px;
+  width: 100px;
   height: 68px;
   border: #000 0px solid;
   _border: #fff 2px solid;

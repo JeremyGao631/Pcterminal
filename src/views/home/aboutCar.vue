@@ -218,6 +218,7 @@ export default({
             color: #151515;
             line-height: 100px;
             text-align: left;
+            letter-spacing: 2px;
         }
         .spcialoffer {
             margin: 0 auto;
@@ -372,6 +373,7 @@ export default({
                     font-family: DINCondensed-Bold, DINCondensed;
                     font-weight: bold;
                     color: #151515;
+                    letter-spacing: 2px;
                 }
                 .story {
                     width: 100%;
