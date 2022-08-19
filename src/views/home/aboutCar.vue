@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <div class="banner">
-            <img class="contentimg" src="../../assets/images/about/06.png" alt="">
+            <img class="contentimg" :src="topImg" alt="">
             <div class="inlinetext">
                 <p class="content-title">Get to know us</p><br />
                 <span class="content-text">
@@ -60,6 +60,7 @@ export default({
     },
     data() {
         return {
+            topImg: '', // 顶部图
             information: [
                 // {
                 //     img: [require('../../assets/images/about/CarForSale1.png')],
@@ -121,12 +122,16 @@ export default({
                 title: 'ABOUT'
             }).then(res => {
                 res.data.records.forEach(ele => {
+                    if(ele.secondtitle !== 'ABOUT AUTOHOME') {
                     const item = {
-                    targeUrl: ele.targeUrl,
-                    secondtitle: ele.secondtitle,
-                    describtion: ele.describtion
+                            targeUrl: ele.targeUrl,
+                            secondtitle: ele.secondtitle,
+                            describtion: ele.describtion
+                        }
+                    this.information.push(item)
+                    } else {
+                        this.topImg = ele.targeUrl
                     }
-                this.information.push(item)
                 })
             })
         }
