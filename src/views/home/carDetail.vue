@@ -171,7 +171,7 @@
       <div class="bookingtext">
         <div class="title">BOOK INSPECTION</div>
         <div class="userinput">
-          <el-row :gutter="20">
+          <el-row :gutter="40">
             <el-col :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Name</span>
@@ -197,7 +197,8 @@
                     v-model="time"
                     type="date"
                     placeholder="Select date"
-                    style=" position: relative;font-size: 14px;display: inline-block;width: 100%;">
+                    style=" position: relative;font-size: 14px;display: inline-block;width: 100%;"
+                    popper-class="date-style">
                 </el-date-picker>
               </div>
             </el-col>
@@ -912,7 +913,7 @@ export default {
   left: 2px;
   _left: 0px;
   width: 100px;
-  height: 68px;
+  height: 72px;
   border: #000 0px solid;
   _border: #fff 2px solid;
   background-position: 50% 50%;
@@ -921,8 +922,8 @@ export default {
 .jssort01 .p:hover .c {
   top: 0px;
   left: 0px;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 72x;
   border: #fff 1px solid;
   background-position: 50% 50%;
 }
@@ -1168,12 +1169,12 @@ export default {
         margin-right: 40px;
 
         .inputtable {
-          margin-right: 80px;
+          margin-right: 110px;
           text-align: left;
 
           .el-input {
             /deep/ .el-input__inner {
-              width: 110%;
+              width: 130%;
               height: 49px;
               border-radius: 1px;
             }
@@ -1537,7 +1538,6 @@ export default {
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
-    font-weight: bold;
     padding-top: 3px;
     line-height: 130px;
     color: #151515
