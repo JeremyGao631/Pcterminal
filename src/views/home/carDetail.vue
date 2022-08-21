@@ -171,7 +171,7 @@
       <div class="bookingtext">
         <div class="title">BOOK INSPECTION</div>
         <div class="userinput">
-          <el-row :gutter="20">
+          <el-row :gutter="40">
             <el-col :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Name</span>
@@ -197,7 +197,8 @@
                     v-model="time"
                     type="date"
                     placeholder="Select date"
-                    style=" position: relative;font-size: 14px;display: inline-block;width: 100%;">
+                    style=" position: relative;font-size: 14px;display: inline-block;width: 100%;"
+                    popper-class="date-style">
                 </el-date-picker>
               </div>
             </el-col>
@@ -1168,12 +1169,12 @@ export default {
         margin-right: 40px;
 
         .inputtable {
-          margin-right: 80px;
+          margin-right: 110px;
           text-align: left;
 
           .el-input {
             /deep/ .el-input__inner {
-              width: 110%;
+              width: 130%;
               height: 49px;
               border-radius: 1px;
             }

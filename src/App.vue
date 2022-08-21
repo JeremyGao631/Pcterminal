@@ -100,5 +100,29 @@ body{
 .el-tooltip__popper {
     font-family: DINCondensed-Bold, DINCondensed;
     font-size: 16px;
+    color: #151515
+}
+
+.el-date-picker__header-label {
+      font-family: DINCondensed-Bold, DINCondensed;
+      font-size: 16px;
+      color: #151515
+    }
+
+.el-date-table th {
+  font-family: DINCondensed-Bold, DINCondensed;
+      font-size: 16px;
+      color: #151515
+}
+
+.el-date-table td span {
+  font-family: DINCondensed-Bold, DINCondensed;
+      font-size: 16px;
+}
+
+.carDetail .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+  font-family: DINCondensed-Bold, DINCondensed;
+      font-size: 16px;
+      color: #151515
 }
 </style>
