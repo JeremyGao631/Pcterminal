@@ -1339,7 +1339,7 @@ export default {
 }
 
 /deep/ .el-loading-spinner i {
-  margin: 80px auto 0 auto;
+  margin: 200px auto 0 auto;
   display: block;
   width: 80px;
   height: 80px;

@@ -912,7 +912,7 @@ export default {
   left: 2px;
   _left: 0px;
   width: 100px;
-  height: 68px;
+  height: 72px;
   border: #000 0px solid;
   _border: #fff 2px solid;
   background-position: 50% 50%;
@@ -921,8 +921,8 @@ export default {
 .jssort01 .p:hover .c {
   top: 0px;
   left: 0px;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 72x;
   border: #fff 1px solid;
   background-position: 50% 50%;
 }
@@ -1537,7 +1537,6 @@ export default {
 /deep/.el-input__inner::placeholder {
     font-size: 16px;
     font-family: DINCondensed-Bold, DINCondensed;
-    font-weight: bold;
     padding-top: 3px;
     line-height: 130px;
     color: #151515
