@@ -1343,7 +1343,7 @@ export default {
 
           .break {
             border-bottom: 1px solid #979797;
-            margin-left: 19px;
+            // margin-left: 19px;
             opacity: 0.1;
           }
 
