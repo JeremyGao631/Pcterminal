@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-        <img class="imgs" src="../../assets/images/home/hero-01.png" alt="">
+        <img class="imgs" :src="topImg" alt="">
         <div class="contact-main">
             <div class="left">
                 <div class="top">
@@ -119,7 +119,7 @@
 </template>
 <script>
 // import { Toast } from "element-ui";
-import { fetch } from '@/api'
+import { fetch, describtion } from '@/api'
 // import contactCom from "../components/contact-com.vue"
 
 export default({
@@ -136,6 +136,7 @@ export default({
             postcode: '',
             message: '',
             disabled: true, // 校验
+            topImg: '', //顶部图
             information: [
                 {
                     title:'Phone',
@@ -163,6 +164,10 @@ export default({
                 }
             ]
         }
+    },
+    created() {
+        this.contactData()
+
     },
     methods: {
         contactSubmit() {
@@ -212,6 +217,15 @@ export default({
               });
                 this.email = ''
             }
+        },
+        contactData() {
+            describtion({
+                current: '1',
+                pageSize: '10',
+                title: 'Contact'
+            }).then(res => {
+                this.topImg = res.data.records[0].targeUrl
+            })
         },
         goHome() {
             window.location.href="https://www.facebook.com/Autohome-Australia-101055345438578/"
