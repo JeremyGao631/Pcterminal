@@ -2,7 +2,7 @@
 <template>
     <div class="contact">
       <div class="banner">
-        <img class="contentimg" src="../../assets/images/onlineshowroom/05.png"  alt="暂无图片" />
+        <img class="contentimg" :src="topimg"  alt="暂无图片" />
         <div class="inlinetext">
             <p class="content-title">Thoughtful-service</p><br />
             <span class="content-text">
@@ -118,7 +118,7 @@
                     :key="item.value"
                     :label="item.label"
                     :value="item.value">
-                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </el-col>
@@ -143,7 +143,7 @@
                     :label="item.label"
                     :value="item.value"
                     @click="book(item)">
-                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;font-weight: bold;color: #000;">{{item.label}}</span>
+                    <span class="optionspan" style="font-size: 16px;font-family: DINCondensed-Bold;color: #000;">{{item.label}}</span>
                   </el-option>
                 </el-select>
               </el-col>
@@ -235,7 +235,7 @@
 <script>
 // import { Dialog } from "element-ui";
 import { vehicle } from '@/api'
-
+import { describtion } from '@/api'
 
 
 export default({
@@ -244,6 +244,7 @@ export default({
     },
     data() {
         return {
+          topImg: '', //顶部图
           dialogImageUrl: '',
           showPhoto: false,
           dialogVisible: false,
@@ -330,7 +331,23 @@ export default({
             story: 'Autohome Australia were established in 2019 and our focus is to provide a solution for all sellers and buyers. Through word of mouth and referrals from satisfied clients, our reputation has allowed us to attract both local and interstate clients. Our area of specialty is luxury and prestigious vehicles.'
         }
     },
+
+    created() {
+    this.contactData()
+  },
     methods: {
+      contactData() {
+            describtion({
+                current: '1',
+                pageSize: '10',
+                title: 'OtherPages'
+            }).then(res => {
+                this.topImg = res.data.records[2].targeUrl
+            })
+        },
+
+
+
       book(item) {
         this.logbook = item.label
         console.log(this.logbook)
@@ -1044,7 +1061,7 @@ export default({
   width: 100%;
   font-size: 17px;
 font-family: DINCondensed-Bold, DINCondensed;
-font-weight: bold;
+// font-weight: bold;
 color: #151515;
 padding: 5px 5px;
  
@@ -1052,13 +1069,13 @@ padding: 5px 5px;
 /deep/.el-input__inner::placeholder {
     font-size: 20px;
 font-family: DINCondensed-Bold, DINCondensed;
-font-weight: bold;
+// font-weight: bold;
 color: #151515;
 line-height: 20px;
 }
 /deep/.el-button--medium {
   font-family: DINCondensed-Bold, DINCondensed;
-font-weight: bold;
+// font-weight: bold;
   float: left;
 }
 /deep/.el-button--primary {

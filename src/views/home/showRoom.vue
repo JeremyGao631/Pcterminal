@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="banner">
-      <img class="contentimg" src="../../assets/images/onlineshowroom/04.png" alt="暂无图片"/>
+      <img class="contentimg" :src="topImg" alt="暂无图片"/>
       <div class="inlinetext">
         <p class="content-title">Extraordinary-experience</p><br/>
         <span class="content-text">
@@ -194,6 +194,7 @@
 <script>
 import {car} from '@/api'
 // import { Loading } from "element-ui";
+import { describtion } from '@/api'
 export default {
   name: 'OnlineShowroom',
   components: {},
@@ -230,6 +231,7 @@ export default {
         // },
 
       ],
+      topImg: '', //顶部图
       orderByPrice: 1,
       orderByYear: 1,
       sortBy: '',
@@ -273,10 +275,22 @@ export default {
     }
   },
   created() {
+    this.contactData()
     this.allCar()
     // this.load()
   },
   methods: {
+
+    contactData() {
+            describtion({
+                current: '1',
+                pageSize: '10',
+                title: 'OtherPages'
+            }).then(res => {
+                this.topImg = res.data.records[1].targeUrl
+            })
+        },
+
     clickitem(e) {
       if (this.flags === true) {
         this.radio === e ? this.radio = '' : this.radio = e
@@ -350,17 +364,17 @@ export default {
       // 1 Price: low to high ; 2 Price: high to low 3 Date: low to high 4 Date: high to low
       console.log('val', val)
       if (val == 1) {
-        this.orderByPrice = 2
-        this.orderByYear = ''
-      } else if (val == 2) {
-        this.orderByPrice = 1
-        this.orderByYear = ''
-      } else if (val == 3) {
         this.orderByPrice = ''
         this.orderByYear = 2
-      } else {
+      } else if (val == 2) {
         this.orderByPrice = ''
         this.orderByYear = 1
+      } else if (val == 3) {
+        this.orderByPrice = 2
+        this.orderByYear = ''
+      } else {
+        this.orderByPrice = 1
+        this.orderByYear = ''
       }
       this.bodyChange()
     },
@@ -1250,7 +1264,7 @@ export default {
 /deep/ .el-input__inner::placeholder {
   font-size: 16px;
   font-family: DINCondensed-Bold, DINCondensed;
-  font-weight: bold;
+  // font-weight: bold;
   line-height: 130px;
   color:#151515;
 }
@@ -1260,7 +1274,7 @@ export default {
   width: 100%;
   font-size: 16px;
   font-family: DINCondensed-Bold, DINCondensed;
-  font-weight: bold;
+  // font-weight: bold;
   text-align: center;
 }
 
@@ -1293,7 +1307,7 @@ export default {
   color: #151515;
   font-size: 16px;
   font-family: PingFangSC-Light;
-  font-weight: bold;
+  // font-weight: bold;
   opacity: 0.5;
 }
 
@@ -1301,7 +1315,7 @@ export default {
   color: #151515;
   font-size: 16px;
   font-family: PingFangSC-Light;
-  font-weight: bold;
+  // font-weight: bold;
   opacity: 0.5;
 }
 

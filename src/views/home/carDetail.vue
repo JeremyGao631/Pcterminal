@@ -171,7 +171,7 @@
       <div class="bookingtext">
         <div class="title">BOOK INSPECTION</div>
         <div class="userinput">
-          <el-row :gutter="40">
+          <el-row :gutter="60">
             <el-col :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Name</span>
@@ -962,10 +962,10 @@ export default {
     .title {
       font-size: 70px;
       font-family: DINCondensed-Bold;
-      font-weight: bold;
+      // font-weight: bold;
       color: #212020;
       line-height: 55px;
-      margin: 0 20px 50px 20px;
+      margin: 0 20px 50px 0px;
       padding-top: 150px;
       text-align: left;
       letter-spacing: 1px;
@@ -986,7 +986,7 @@ export default {
             width: 200px;
             font-size: 45px;
             font-family: DINCondensed-Bold, DINCondensed;
-            font-weight: bold;
+            // font-weight: bold;
             color: #151515;
             line-height: 48px;
             letter-spacing: 2px;
@@ -1003,7 +1003,7 @@ export default {
             float: left;
             font-size: 18px;
             font-family: DINCondensed-Bold, DINCondensed;
-            font-weight: bold;
+            // font-weight: bold;
             color: #909090;
             line-height: 22px;
             padding-top: 20px;
@@ -1117,10 +1117,10 @@ export default {
       height: 130px;
       font-size: 30px;
       font-family: DINCondensed-Bold;
-      font-weight: bold;
+      // font-weight: bold;
       color: #151515;
       line-height: 75px;
-      padding-left: 45%;
+      padding-left: 10%;
     }
 
     .textcontent {
@@ -1136,7 +1136,7 @@ export default {
       opacity: 0.7;
       letter-spacing: 1px;
       // position: relative;
-      padding-left: 30%;
+      padding-left: 10%;
       display: inline-block;
     }
   }
@@ -1152,10 +1152,10 @@ export default {
       .title {
         font-size: 70px;
         font-family: DINCondensed-Bold;
-        font-weight: bold;
+        // font-weight: bold;
         color: #212020;
         line-height: 55px;
-        margin: 0 0 50px 20px;
+        margin: 0 0 50px 0px;
         padding-top: 92px;
         text-align: left;
         letter-spacing: 1px;
@@ -1165,7 +1165,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 20px;
+        // margin-left: 20px;
         margin-right: 40px;
 
         .inputtable {
@@ -1174,7 +1174,7 @@ export default {
 
           .el-input {
             /deep/ .el-input__inner {
-              width: 130%;
+              width: 150%;
               height: 49px;
               border-radius: 1px;
             }
@@ -1185,7 +1185,7 @@ export default {
             margin-bottom: 10px;
             font-size: 20px;
             font-family: DINCondensed-Bold;
-            font-weight: bold;
+            // font-weight: bold;
             color: #151515;
             line-height: 20px;
           }
@@ -1210,7 +1210,7 @@ export default {
               color: #F4F6F8;
               font-size: 20px;
               font-family: DINCondensed-Bold;
-              font-weight: bold;
+              // font-weight: bold;
               text-align: center;
               line-height: 130px;
               margin-right: 45px;
@@ -1249,7 +1249,7 @@ export default {
             color: #F4F6F8;
             font-size: 21px;
             font-family: DINCondensed-Bold;
-            font-weight: bold;
+            // font-weight: bold;
             text-align: center;
             line-height: 140px;
             margin-right: 55px;
@@ -1271,10 +1271,10 @@ export default {
       .sectitle {
         font-size: 70px;
         font-family: DINCondensed-Bold;
-        font-weight: bold;
+        // font-weight: bold;
         color: #212020;
         line-height: 55px;
-        margin: 0 0 50px 20px;
+        margin: 0 0 50px 0px;
         padding-top: 150px;
         text-align: left;
         letter-spacing: 1px;
@@ -1283,7 +1283,7 @@ export default {
       .textcontent {
         padding-top: 60px;
         overflow: hidden;
-        padding-left: 20px;
+        // padding-left: 20px;
         padding-right: 20px;
 
         .textcard {
@@ -1305,7 +1305,7 @@ export default {
             span {
               font-family: DINCondensed-Bold;
               // margin-left: 3px;
-              font-weight: bold;
+              // font-weight: bold;
               font-size: 24px;
               color: #212020;
               line-height: 24px;
@@ -1324,7 +1324,7 @@ export default {
 
             .contentcard-price {
               font-family: DINCondensed-Bold;
-              font-weight: bold;
+              // font-weight: bold;
               font-size: 24px;
               color: #212020;
               line-height: 29px;
@@ -1337,7 +1337,7 @@ export default {
               margin-top: 3px;
               margin-left: 5px;
               font-family: DINCondensed-Bold;
-              font-weight: bold;
+              // font-weight: bold;
               opacity: 0.5;
             }
           }
