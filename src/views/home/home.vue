@@ -32,7 +32,7 @@
           <!-- <span class="btn_anniu" @click="change(1)" :class="{ newStyle:1===number}">SEARCH INVENTORY</span> -->
         </div>
         <div class="right">
-          <span type="text">AVAILABLE {{this.carLength}} CARS</span>
+          <span type="text">AVAILABLE {{ this.carLength }} CARS</span>
         </div>
       </div>
       <div class="textcontent">
@@ -41,7 +41,8 @@
           <el-col :lg="6" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information" :key="index"
                   @click="cardetail(item)">
             <div class="imgcard" @click="cardetail(item)">
-              <img :src="item.photo[0]"/>
+              <img class="placeholder_img" src="../../assets/images/placeholder_img.jpg" />
+              <img class="car_img" :src="item.photo[0]"/>
             </div>
             <div class="titlecard" @click="cardetail(item)">
               <span>{{ item.year }} {{ item.make }} {{ item.model }} {{item.badge}}</span>
@@ -131,7 +132,8 @@ export default {
         // },
       ],
       service: [],
-      url: banner
+      url: banner,
+      carLength: '', //汽车总数
     }
   },
   created() {
@@ -467,13 +469,19 @@ export default {
     padding-right: 20px;
 
     .textcard {
-      min-height: 440px;
-
+      padding-bottom: 20px;
       .imgcard {
         width: 100%;
-
-        img {
+        position: relative;
+        .placeholder_img{
           width: 100%;
+        }
+        .car_img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       }
 

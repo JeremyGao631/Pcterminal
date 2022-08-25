@@ -159,7 +159,8 @@
               <el-col :lg="8" :md="8" :sm="12" :xs="24" class="textcard" v-for="(item,index) in information"
                       :key="index">
                 <div class="imgcard" @click="cardetail(item)">
-                  <img :src="item.photo[0]"/>
+                  <img class="placeholder_img" src="../../assets/images/placeholder_img.jpg" />
+                  <img class="car_img" :src="item.photo[0]"/>
                 </div>
                 <div class="titlecard" @click="cardetail(item)">
                   <span>{{ item.year }} {{ item.make }} {{ item.model }} {{item.badge}}</span>
@@ -1126,7 +1127,6 @@ export default {
           overflow: hidden;
 
           .textcard {
-            min-height: 440px;
             padding-bottom: 20px;
 
             span {
@@ -1136,9 +1136,16 @@ export default {
 
             .imgcard {
               width: 100%;
-
-              img {
+              position: relative;
+              .placeholder_img{
                 width: 100%;
+              }
+              .car_img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
               }
             }
 
