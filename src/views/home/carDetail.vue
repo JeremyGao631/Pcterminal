@@ -59,7 +59,7 @@
                 </div>
                 <div data-u="slides"
                      style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 490px; overflow: hidden;">
-                  <div data-p="144.50" style="display: none;"
+                  <div data-p="144.50" 
                        v-for="(item,index) in imgUrlList" :key="index">
                     <img data-u="image" :src="item"/>
                     <img data-u="thumb" :src="item"/>
@@ -71,7 +71,7 @@
                   <div data-u="slides" style="cursor: default;">
                     <div data-u="prototype" class="p">
                       <div class="w">
-                        <div data-u="thumbnailtemplate" class="t"></div>
+                        <div data-u="thumbnailtemplate" class="t" style="height: 72px;width: 100px"></div>
                       </div>
                       <div class="c"></div>
                     </div>
@@ -263,7 +263,8 @@ import locale from 'element-ui/lib/locale'
 import $ from 'jquery'
 
 window.jQuery = $
-require('@/assets/jssor.slider.mini')
+require('@/assets/jssor.slider.min')
+// require('@/assets/jssor.slider.mini')
 
 locale.use(lang)
 export default {
@@ -273,6 +274,7 @@ export default {
   },
   data() {
     return {
+      jssor_1_slider: null,
       item1: '',
       item: '',
       imgUrlList: [],
@@ -315,6 +317,7 @@ export default {
     // 页面要素
     this.price = this.informations.price
     this.imgUrlList = this.informations.photo
+    console.log(this.imgUrlList,'更新前')
     this.init()
     this.allCar()
     this.$nextTick(() => {
@@ -548,15 +551,19 @@ export default {
         }
       };
 
-      let jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+      this.jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
       //responsive code begin
       //you can remove responsive code if you don't want the slider scales while window resizing
+      let that = this ;
       function ScaleSlider() {
-        let refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-        if (refSize) {
-          refSize = Math.min(refSize, 800);
-          jssor_1_slider.$ScaleWidth(refSize);
+        var MAX_WIDTH = 980;
+        var containerElement = that.jssor_1_slider.$Elmt.parentNode;
+        var containerWidth = containerElement.clientWidth;
+        if (containerWidth) {
+          var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+          that.jssor_1_slider.$ScaleWidth(expectedWidth);
         } else {
           window.setTimeout(ScaleSlider, 30);
         }
@@ -591,10 +598,19 @@ export default {
       this.advTitle = item.advTitle
       this.advbody = item.advbody
       this.imgUrlList = item.photo
+      console.log(this.imgUrlList,'更新后')
       this.init()
       this.allCar()
       // this.$router.go(0)
       // 回到顶部
+      this.urlList = this.imgUrlList
+      let slidesHtml = '';
+      for(let url of this.urlList){
+        slidesHtml += '<div><img data-u="image" src="'+url+'"  /> ' +
+            ' <img data-u="thumb" src="'+url+'" /></div> ';
+      }
+      this.jssor_1_slider.$ReloadSlides(slidesHtml)
+
       window.scrollTo(
           {
             top: 0,
