@@ -172,25 +172,25 @@
         <div class="title">BOOK INSPECTION</div>
         <div class="userinput">
           <el-row :gutter="60">
-            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+            <el-col :xl="6" :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Name</span>
                 <el-input required v-model="name"/>
               </div>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+            <el-col :xl="6" :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Phone</span>
                 <el-input maxlength="10" v-model="phone"/>
               </div>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+            <el-col :xl="6" :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Email</span>
                 <el-input v-model="email" @blur="emails"/>
               </div>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12" :xs="24">
+            <el-col :xl="6" :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Time</span>
                 <el-date-picker
@@ -1191,8 +1191,8 @@ export default {
 
           .el-input {
             /deep/ .el-input__inner {
-              width: 150%;
-              height: 49px;
+              width: 120%;
+              height: 40px;
               border-radius: 1px;
             }
           }
@@ -1475,6 +1475,9 @@ export default {
 /deep/ .el-carousel__container {
   height: 425px;
 }
+/deep/ .el-row {
+  margin-right: 0;
+}
 
 
 // #jssor_1 {
@@ -1564,6 +1567,29 @@ export default {
     padding-top: 3px;
     line-height: 130px;
     color: #151515
+}
+
+
+@media screen and (min-width: 4090px){
+    /deep/ .el-row {
+      margin-right: 0;
+      margin-left: -120px;
+    }
+    /deep/ .el-col {
+      padding-left: 120px;
+      width: 700px;
+      padding-right: 120px;
+    }
+    /deep/ .carDetail .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+      width: 110%;
+      height: 49px;
+      border-radius: 1px;
+    }
+    .carDetail .booking .bookingtext .newbutton {
+      float: left;
+      position: relative;
+      left: 50%;
+    }
 }
 
 </style>

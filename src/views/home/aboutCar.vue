@@ -429,4 +429,9 @@ export default({
         width:335px;
     }
 }
+@media screen and (min-width: 4090px){
+    .contact .style {
+        padding-left: 10%;
+    }
+}
 </style>

@@ -528,4 +528,9 @@ background-color: #f4f6f8;
     }
 }
 
+@media screen and (min-width: 4090px){
+.contact .contact-main .left{
+        margin-left: 18%
+    }
+}
 </style>
