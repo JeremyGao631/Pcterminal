@@ -2,7 +2,7 @@
 <template>
     <div class="contact">
       <div class="banner">
-        <img class="contentimg" :src="topimg"  alt="暂无图片" />
+        <img class="contentimg" :src="topImg"  alt="暂无图片" />
         <div class="inlinetext">
             <p class="content-title">Thoughtful-service</p><br />
             <span class="content-text">
@@ -343,6 +343,7 @@ export default({
                 title: 'OtherPages'
             }).then(res => {
                 this.topImg = res.data.records[2].targeUrl
+                console.log(this.topImg,"1111234")
             })
         },
 
@@ -527,7 +528,7 @@ export default({
         margin-top: 30px;
         padding: 20px 5px 15px 5px;
         span{
-          font-size: 1.5vw;
+          font-size: 1.2vw;
           font-family: DINCondensed-Bold;
           // font-weight: bold;
           line-height: 1;
@@ -537,12 +538,12 @@ export default({
           padding-top: 5px;
         }
         .el-icon-my-right {
-          margin-left: 40px;
+          margin-left: 20px;
           background: url('../../assets/images/home/right.png') no-repeat;
           background-size: cover;
           display:inline-block;
-          height: 16px;
-          width: 16px;
+          height: 0.8vw;
+          width: 0.8vw;
         }
       }
     }

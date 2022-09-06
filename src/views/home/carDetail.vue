@@ -1190,11 +1190,11 @@ export default {
           text-align: left;
 
           .el-input {
-            /deep/ .el-input__inner {
-              width: 120%;
-              height: 40px;
-              border-radius: 1px;
-            }
+            // /deep/ .el-input__inner {
+            //   width: 150%;
+            //   height: 40px;
+            //   border-radius: 1px;
+            // }
           }
 
           span {
@@ -1570,17 +1570,32 @@ export default {
 }
 
 
-@media screen and (min-width: 4090px){
-    /deep/ .el-row {
-      margin-right: 0;
-      margin-left: -120px;
+@media screen and (max-width: 3079px){
+    /deep/ .el-row .el-col {
+      
+      // width: 600px;
+      
     }
-    /deep/ .el-col {
-      padding-left: 120px;
-      width: 700px;
-      padding-right: 120px;
+    /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+      width: 150%;
+      height: 40px;
+      border-radius: 1px;
     }
-    /deep/ .carDetail .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+    .carDetail .booking .bookingtext .newbutton {
+      float: left;
+      position: relative;
+      left: 40%;
+    }
+}
+
+
+@media screen and (min-width: 3080px){
+    /deep/ .el-row .el-col {
+      
+      width: 600px;
+      
+    }
+    /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
       width: 110%;
       height: 49px;
       border-radius: 1px;
