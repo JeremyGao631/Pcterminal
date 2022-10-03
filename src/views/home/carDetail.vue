@@ -171,7 +171,7 @@
       <div class="bookingtext">
         <div class="title">BOOK INSPECTION</div>
         <div class="userinput">
-          <el-row :gutter="60">
+          <el-row >
             <el-col :xl="6" :lg="6" :md="8" :sm="12" :xs="24">
               <div class="inputtable">
                 <span>Name</span>
@@ -311,7 +311,26 @@ export default {
 
   created() {
     this.query()
-    this.informations = this.$route.query.item
+    const item = {
+advTitle:this.$route.query.advTitle,
+advbody:this.$route.query.advbody,
+badge:this.$route.query.badge,
+body:this.$route.query.body,
+color:this.$route.query.color,
+cylinders:this.$route.query.cylinders,
+doornum:this.$route.query.doornum,
+drive:this.$route.query.drive,
+enginesize:this.$route.query.enginesize,
+fueltype:this.$route.query.fueltype,
+geartype:this.$route.query.geartype,
+make:this.$route.query.make,
+model:this.$route.query.model,
+odometer:this.$route.query.odometer,
+photo:this.$route.query.photo,
+price:this.$route.query.price,
+year:this.$route.query.year,
+}
+this.informations = item
     this.advTitle = this.informations.advTitle
     this.advbody = this.informations.advbody
     // 页面要素
@@ -629,11 +648,11 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         // this.information1 = car.data.records
-        this.photo = this.$route.query.item.photo
+        // this.photo = this.informations.photo
         console.log(this.information1, 'car')
         this.information1 = []
         car.data.records.forEach(ele => {
@@ -675,8 +694,8 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         // this.information1 = car.data.records
         console.log(this.information1, 'car')
@@ -750,8 +769,8 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         this.carLength = car.data.records.length
         console.log(this.carLength,"12345667899")
@@ -766,8 +785,8 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         // this.information1 = car.data.records
         this.information1 = []
@@ -1183,19 +1202,11 @@ export default {
         align-items: center;
         justify-content: space-between;
         // margin-left: 20px;
-        margin-right: 40px;
+        // margin-right: 40px;
 
         .inputtable {
           margin-right: 110px;
           text-align: left;
-
-          .el-input {
-            // /deep/ .el-input__inner {
-            //   width: 150%;
-            //   height: 40px;
-            //   border-radius: 1px;
-            // }
-          }
 
           span {
             float: left;
@@ -1475,29 +1486,27 @@ export default {
 /deep/ .el-carousel__container {
   height: 425px;
 }
+
 /deep/ .el-row {
-  margin-right: 0;
+      margin-left: -40px;
+      margin-right: -40px; 
+      .el-col {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+
+/deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+  width: 160%;
+  height: 40px;
+  border-radius: 1px;
 }
 
-
-// #jssor_1 {
-//   position: relative;
-//   margin: 0 auto;
-//   top: 0px;
-//   left: 0px;
-//   height: 530px;
-//   overflow: hidden;
-//   .slides{
-//     cursor: default;
-//     position: relative;
-//     top: 0px;
-//     left: 0px;
-//     width: 800px;
-//     height: 430px;
-//     overflow: hidden;
-//   }
-// }
-
+.carDetail .booking .bookingtext .newbutton {
+  float: left;
+  position: relative;
+  left: 45%;
+}
 
 @media screen and (max-width: 1919px) {
   // .carDetail .infodetail .content {
@@ -1569,35 +1578,94 @@ export default {
     color: #151515
 }
 
+@media screen and (max-width: 768px){
+    /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+      width: 100%;
+      height: 40px;
+      border-radius: 1px;
+    }
+      .carDetail .booking .bookingtext .newbutton {
+      float: left;
+      position: relative;
+      left: 35%;
+    }
+}
 
-@media screen and (max-width: 3079px){
-    /deep/ .el-row .el-col {
-      
-      // width: 600px;
-      
+@media screen and (min-width: 2048px) and (max-width: 2300px){
+    /deep/ .el-row {
+      margin-left: -55px;
+      margin-right: -55px; 
+      .el-col {
+        padding-left: 55px;
+        padding-right: 55px;
+      }
     }
     /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
-      width: 150%;
+      width: 160%;
       height: 40px;
       border-radius: 1px;
     }
     .carDetail .booking .bookingtext .newbutton {
       float: left;
       position: relative;
-      left: 40%;
+      left: 45%;
     }
 }
 
-
-@media screen and (min-width: 3080px){
-    /deep/ .el-row .el-col {
-      
-      width: 600px;
-      
+@media screen and (min-width: 2303px) and (max-width: 3071px){
+    /deep/ .el-row {
+      margin-left: -88px;
+      margin-right: -88px; 
+      .el-col {
+        padding-left: 88px;
+        padding-right: 88px;
+      }
     }
     /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
-      width: 110%;
-      height: 49px;
+      width: 160%;
+      height: 40px;
+      border-radius: 1px;
+    }
+    .carDetail .booking .bookingtext .newbutton {
+      float: left;
+      position: relative;
+      left: 45%;
+    }
+}
+
+@media screen and (min-width: 3072px) and (max-width: 4090px){
+    /deep/ .el-row {
+      margin-left: -150px;
+      margin-right: -150px; 
+      .el-col {
+        padding-left: 150px;
+        padding-right: 150px;
+      }
+    }
+    /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+      width: 200%;
+      height: 40px;
+      border-radius: 1px;
+    }
+    .carDetail .booking .bookingtext .newbutton {
+      float: left;
+      position: relative;
+      left: 47%;
+    }
+}
+
+@media screen and (min-width: 4090px){
+    /deep/ .el-row {
+      margin-left: -200px;
+      margin-right: -20px; 
+      .el-col {
+        padding-left: 200px;
+        padding-right: 200px;
+      }
+    }
+    /deep/ .booking .bookingtext .userinput .inputtable .el-input .el-input__inner {
+      width: 200%;
+      height: 40px;
       border-radius: 1px;
     }
     .carDetail .booking .bookingtext .newbutton {

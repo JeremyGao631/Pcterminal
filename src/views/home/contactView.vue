@@ -294,7 +294,7 @@ export default({
                     display: flex;
                     .el-input {
                         font-size: 20px;
-                        width: 252px;
+                        width: 41%;
                         margin: 15px 20px;
                     }
                     .el-textarea{
@@ -528,9 +528,37 @@ background-color: #f4f6f8;
     }
 }
 
+@media screen and (min-width:2048px) and (max-width:2303px) {
+    .contact .contact-main .table .table1 .input-view .el-input{
+        width: 41%;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (min-width:2304px) and (max-width:3071px) {
+    .contact .contact-main .table .table1 .input-view .el-input{
+        width: 41%;
+        margin-right: 60px;
+    }
+}
+
+@media screen and (min-width:3072px) and (max-width:4090px) {
+    .contact .contact-main .table .table1 .input-view .el-input{
+        width: 41%;
+        margin-right: 90px;
+        margin-left: 0px;
+    }
+}
+
 @media screen and (min-width: 4090px){
 .contact .contact-main .left{
-        margin-left: 18%
+        margin-left: 20%
+    }
+
+    .contact .contact-main .table .table1 .input-view .el-input{
+        width: 41%;
+        margin-right: 120px;
+        margin-left: 0px;
     }
 }
 </style>

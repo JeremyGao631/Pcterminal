@@ -233,8 +233,8 @@ export default {
 
       ],
       topImg: '', //顶部图
-      orderByPrice: 1,
-      orderByYear: 1,
+      orderByPrice: '',
+      orderByYear: '',
       sortBy: '',
       minYear: '',
       minYears: '', // 筛选时
@@ -500,7 +500,25 @@ export default {
       })
     },
     cardetail(item) {
-      this.$router.push({path: '/carDetail', query: {item: item}})
+      this.$router.push({path:'/carDetail', query: {
+                    advTitle:item.advTitle,
+                    advbody:item.advbody,
+                    badge:item.badge, 
+                    body:item.body,
+                    color:item.color, 
+                    cylinders:item.cylinders,
+                    doornum:item.doornum,
+                    drive:item.drive,
+                    enginesize:item.enginesize,
+                    fueltype:item.fueltype,
+                    geartype:item.geartype,
+                    make:item.make,
+                    model:item.model,
+                    odometer:item.odometer,
+                    photo:item.photo,
+                    price:item.price,
+                    year:item.year,
+       }})
     },
     contactUs() {
       this.$router.push('/contact')
@@ -629,6 +647,26 @@ export default {
         this.year = [this.minYear, this.maxYear]
         console.log('12', this.year)
       })
+
+      car({
+        current: '1',
+        pageSize: '500',
+        make: '',
+        yearStart: '',
+        yearEnd: '',
+        priceStart: '',
+        priceEnd: '',
+        orderByPrice: '1',
+        // orderByYear: '1'
+        }).then(res => {
+        console.log('res', res)
+        this.maxPrice = car.data.records[0].price
+        this.minPrice = car.data.records[car.data.records.length - 1].price
+        this.maxPrices = car.data.records[0].price
+        this.minPrices = car.data.records[car.data.records.length - 1].price
+        this.price = [this.minPrice, this.maxPrice]
+        this.carLength = car.data.records.length
+        })
       this.load()
     },
 //   load() {

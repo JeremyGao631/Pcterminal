@@ -239,6 +239,7 @@ export default({
             flex-wrap: wrap;
             box-sizing: border-box;
             justify-content: center;
+            padding-left: 12%;
             .weOffer {
                 display: flex;
                 flex-direction: column;
@@ -419,19 +420,14 @@ export default({
 
     }
 
-@media screen and(max-width:2840px) and (min-width:2140px){
-    .contact .style .weOffer {
-        width: 745px;
-    }
-}
-@media screen and(max-width:1285px) and (min-width:975px){
-    .contact .styles .weOffer {
-        width:335px;
-    }
-}
-@media screen and (min-width: 4090px){
-    .contact .style {
-        padding-left: 10%;
-    }
-}
+// @media screen and(max-width:1285px) and (min-width:975px){
+//     .contact .styles .weOffer {
+//         width:335px;
+//     }
+// }
+// @media screen and (min-width: 4090px){
+//     .contact .style {
+//         padding-left: 20%;
+//     }
+// }
 </style>

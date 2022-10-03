@@ -158,7 +158,25 @@ export default {
     // 车辆信息
     cardetail(item) {
       console.log('1', 1111)
-      this.$router.push({path: '/carDetail', query: {item: item}})
+      this.$router.push({path:'/carDetail', query: {
+                    advTitle:item.advTitle,
+                    advbody:item.advbody,
+                    badge:item.badge, 
+                    body:item.body,
+                    color:item.color, 
+                    cylinders:item.cylinders,
+                    doornum:item.doornum,
+                    drive:item.drive,
+                    enginesize:item.enginesize,
+                    fueltype:item.fueltype,
+                    geartype:item.geartype,
+                    make:item.make,
+                    model:item.model,
+                    odometer:item.odometer,
+                    photo:item.photo,
+                    price:item.price,
+                    year:item.year,
+       }})
     },
     // 汽车总数
     allCars() {
@@ -170,8 +188,8 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         this.carLength = car.data.records.length
         console.log(this.carLength,"12345667899")
@@ -186,8 +204,8 @@ export default {
         yearEnd: '',
         priceStart: '',
         priceEnd: '',
-        orderByPrice: '1',
-        orderByYear: '1'
+        orderByPrice: '',
+        orderByYear: ''
       }).then(car => {
         this.information = car.data.records
         console.log(this.information, 'car')
