@@ -408,6 +408,7 @@ export default {
           setTimeout(() => this.loading = false, 2000)
           return res
         }
+        this.carLength = car.data.records.length
         this.information = []
         car.data.records.forEach(ele => {
           const item = {
@@ -473,6 +474,7 @@ export default {
           setTimeout(() => this.loading = false, 2000)
           return res
         }
+        this.carLength = car.data.records.length
         this.information = []
         car.data.records.forEach(ele => {
           const item = {
@@ -524,11 +526,6 @@ export default {
       this.$router.push('/contact')
     },
     allCar() {
-      // let loadingInstance = null
-      // loadingInstance = Loading.service({
-      //     fullscreen: true,
-      //     text: "Loading"
-      // })
       this.loading = true
       car({
         current: '1',
@@ -557,11 +554,6 @@ export default {
           setTimeout(() => this.loading = false, 2000)
           return res
         }
-        this.maxPrice = car.data.records[0].price
-        this.minPrice = car.data.records[car.data.records.length - 1].price
-        this.maxPrices = car.data.records[0].price
-        this.minPrices = car.data.records[car.data.records.length - 1].price
-        this.price = [this.minPrice, this.maxPrice]
         this.carLength = car.data.records.length
 
         // console.log(this.information, 'car')
@@ -660,12 +652,12 @@ export default {
         // orderByYear: '1'
         }).then(res => {
         console.log('res', res)
-        this.maxPrice = car.data.records[0].price
-        this.minPrice = car.data.records[car.data.records.length - 1].price
-        this.maxPrices = car.data.records[0].price
-        this.minPrices = car.data.records[car.data.records.length - 1].price
+        this.maxPrice = res.data.records[0].price
+        this.minPrice = res.data.records[res.data.records.length - 1].price
+        this.maxPrices = res.data.records[0].price
+        this.minPrices = res.data.records[res.data.records.length - 1].price
         this.price = [this.minPrice, this.maxPrice]
-        this.carLength = car.data.records.length
+        this.carLength = res.data.records.length
         })
       this.load()
     },
